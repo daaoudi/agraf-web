@@ -5,6 +5,22 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+function startTime(){
+  const date=new Date();
+  document.getElementById('time').innerHTML=date.toLocaleTimeString();
+  document.getElementById('date').innerHTML=date.toLocaleDateString();
+
+  setTimeout(function(){startTime()},1000);
+}
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 

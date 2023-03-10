@@ -30,9 +30,10 @@
 
 
 </head>
-<body>
-   @include('master.navbar')
+<body onload="startTime()">
 
+   @include('master.navbar')
+  
    <div class=" " >
     @yield('content')
 

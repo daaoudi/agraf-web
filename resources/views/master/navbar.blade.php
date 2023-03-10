@@ -1,7 +1,20 @@
-<!-- ======= Header ======= -->
-<header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
+
+<!-- ======= Header ======= -->
+<header id="header" class="header ">
+<div class="container-fluid   d-flex align-items-center justify-content-between  ">
+    <div>
+      <p id="time" class="text-white d-inline-block"></p>
+      <p id="date" class="text-white d-inline-block""></p>
+    </div>
+    <div>
+      <a href="#" class="btn btn-warning">Inscription</a>  <a href="#" class="btn btn-info">Connexion</a>
+    </div>
+
+  </div>
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between mb-5 ">
+
+   
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
@@ -10,7 +23,7 @@
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar ">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -38,5 +51,9 @@
         </ul>
       </nav><!-- .navbar -->
 
+
+
     </div>
+
+    
   </header><!-- End Header -->

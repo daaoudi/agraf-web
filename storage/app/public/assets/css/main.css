@@ -23,9 +23,7 @@
   --color-primary: #feb900;
   --color-secondary: #52565e;
 }
-*{
-  scroll-behavior: smooth;
-}
+
 /* Smooth scroll behavior */
 :root {
   scroll-behavior: smooth;
