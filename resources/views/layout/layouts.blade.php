@@ -54,7 +54,7 @@
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Template Main JS File xxxxxxx -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
