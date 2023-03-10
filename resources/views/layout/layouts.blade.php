@@ -27,11 +27,11 @@
 
   <!-- Template Main CSS File -->
   <link href="{{url('/storage/assets/css/main.css')}}" rel="stylesheet">
-  
+
 
 </head>
 <body>
-   @include('master.navbar') 
+   @include('master.navbar')
 
    <div class="container-fluid containter-xl">
     @yield('content')
@@ -46,13 +46,15 @@
 <!--
   <div id="preloader"></div>-->
 
-   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+   <script src={{url('/storage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}></script>
+  <script src={{url('/storage/assets/vendor/aos/aos.js')}}></script>
+  <script src={{url('/storage/assets/vendor/glightbox/js/glightbox.min.js')}}></script>
+  <script src={{url('/storage/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}></script>
+  <script src={{url('/storage/assets/vendor/swiper/swiper-bundle.min.js')}}></script>
+  <script src={{url('/storage/assets/vendor/purecounter/purecounter_vanilla.js')}}></script>
+  <script src={{url('/storage/assets/vendor/php-email-form/validate.js')}}></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
