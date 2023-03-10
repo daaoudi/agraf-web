@@ -23,7 +23,9 @@
   --color-primary: #feb900;
   --color-secondary: #52565e;
 }
-
+*{
+  scroll-behavior: smooth;
+}
 /* Smooth scroll behavior */
 :root {
   scroll-behavior: smooth;
@@ -2665,4 +2667,11 @@ section {
 
 .footer .footer-legal .credits a {
   color: var(--color-primary);
+}
+
+@media screen and (max-width: 465px) {
+  h2, h2 > span{
+    font-size: 15px;
+  }
+  
 }
