@@ -8,16 +8,16 @@
       <p id="date" class="text-white d-inline-block""></p>
     </div>
     <div>
-      <a href="#" class="btn btn-outline-warning">Inscription</a>  <a href="#" class="btn btn-outline-info">Connexion</a>
+      <a href="#" class="btn btn-outline-warning">Inscription</a>  <a href="#" class="btn btn-outline-secondary">Connexion</a>
     </div>
 
   </div>
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between mb-5 ">
 
-   
+
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt=""> 
+         <img src="storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt="">
         <h1>Agraf<span>.</span></h1>
       </a>
 
@@ -55,5 +55,5 @@
 
     </div>
 
-    
+
   </header><!-- End Header -->
