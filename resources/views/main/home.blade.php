@@ -107,7 +107,7 @@ agraf
 
     <div class="row gy-4">
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="100">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -123,7 +123,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="200">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -139,7 +139,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="300">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -155,7 +155,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="400">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -171,7 +171,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="500">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -187,7 +187,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class=" col-lg-6 " data-aos="fade-up" data-aos-delay="600">
+      <div class=" col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="600">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -203,15 +203,15 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="700">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="700">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-1.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/LePlancher.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
-                <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
+                <h4 class="card-title">Le Plancher.</h4>
                 <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
               </div>
             </div>
@@ -219,15 +219,15 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="800">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="800">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-1.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/Lélévation.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
-                <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
+                <h4 class="card-title">L'élévation.</h4>
                 <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
               </div>
             </div>
@@ -237,7 +237,7 @@ agraf
 
 
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="900">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="900">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -245,7 +245,7 @@ agraf
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
-                <h4 class="card-title">Possimus ut sed velit assumenda</h4>
+                <h4 class="card-title">La charpente</h4>
                 <p>Sunt deserunt maiores voluptatem autem est rerum perferendis rerum blanditiis. Est laboriosam qui iste numquam laboriosam voluptatem architecto. Est laudantium sunt at quas aut hic. Eum dignissimos.</p>
               </div>
             </div>
@@ -253,7 +253,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1000">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="1000">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -261,7 +261,7 @@ agraf
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
-                <h4 class="card-title">Error beatae dolor inventore aut</h4>
+                <h4 class="card-title">La toiture</h4>
                 <p>Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim molestiae facilis numquam quae quaerat ipsam omnis. Neque debitis ipsum at architecto officia laboriosam odit. Ut sunt temporibus nulla culpa.</p>
               </div>
             </div>
@@ -269,7 +269,7 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1100">
+      <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="1100">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
@@ -277,7 +277,7 @@ agraf
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
-                <h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
+                <h4 class="card-title">Les menuiseries extérieures</h4>
                 <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos doloremque architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid ea dolores libero nobis.</p>
               </div>
             </div>
@@ -301,7 +301,7 @@ agraf
 
     <div class="row gy-4">
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item  position-relative">
           <div class="icon">
             <i class="fa-solid fa-mountain-city"></i>
@@ -312,7 +312,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fa-solid fa-arrow-up-from-ground-water"></i>
@@ -323,7 +323,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fa-solid fa-compass-drafting"></i>
@@ -334,7 +334,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fa-solid fa-trowel-bricks"></i>
@@ -345,7 +345,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fa-solid fa-helmet-safety"></i>
@@ -356,7 +356,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="600">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fa-solid fa-arrow-up-from-ground-water"></i>
@@ -383,7 +383,7 @@ agraf
         <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
         <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
 
-        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="100">
           <i class="bi bi-easel flex-shrink-0"></i>
           <div>
             <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
@@ -391,7 +391,7 @@ agraf
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="200">
           <i class="bi bi-patch-check flex-shrink-0"></i>
           <div>
             <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
@@ -399,7 +399,7 @@ agraf
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="300">
           <i class="bi bi-brightness-high flex-shrink-0"></i>
           <div>
             <h4><a href="" class="stretched-link">Dine Pad</a></h4>
@@ -407,7 +407,7 @@ agraf
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="400">
           <i class="bi bi-brightness-high flex-shrink-0"></i>
           <div>
             <h4><a href="" class="stretched-link">Tride clov</a></h4>
@@ -468,7 +468,7 @@ agraf
               <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
             </ul>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 order-1 order-lg-2 text-center fade-in" data-aos="fade-up" data-aos-delay="100">
             <img src="storage/assets/img/features-1.jpg" alt="" class="img-fluid">
           </div>
         </div>
@@ -551,7 +551,7 @@ agraf
 
     <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
-      <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+      <ul class="portfolio-flters fade-in" data-aos="fade-up" data-aos-delay="100">
         <li data-filter="*" class="filter-active">All</li>
         <li data-filter=".filter-remodeling">Remodeling</li>
         <li data-filter=".filter-construction">Construction</li>
@@ -559,7 +559,7 @@ agraf
         <li data-filter=".filter-design">Design</li>
       </ul><!-- End Projects Filters -->
 
-      <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 portfolio-container fade-in" data-aos="fade-up" data-aos-delay="100">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
           <div class="portfolio-content h-100">
@@ -834,7 +834,7 @@ agraf
 
   <div class="row gy-5">
 
-    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="col-xl-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="100">
       <div class="post-item position-relative h-100">
 
         <div class="post-img position-relative overflow-hidden">
@@ -865,7 +865,7 @@ agraf
       </div>
     </div><!-- End post item -->
 
-    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="col-xl-4 col-md-6 fade-in" data-aos="fade-up" data-aos-delay="100">
       <div class="post-item position-relative h-100">
 
         <div class="post-img position-relative overflow-hidden">
@@ -897,7 +897,7 @@ agraf
     </div><!-- End post item -->
 
     <div class="col-xl-4 col-md-6">
-      <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
+      <div class="post-item position-relative h-100 fade-in" data-aos="fade-up" data-aos-delay="300">
 
         <div class="post-img position-relative overflow-hidden">
           <img src="storage/assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
