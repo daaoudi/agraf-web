@@ -8,8 +8,9 @@
   <meta content="construction " name="description">
   <meta content="" name="keywords">
 
-  <link href="storage/assets/img/favicon.png" rel="icon">
-  <link href="storage/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="storage/assets/img/agraf.png" rel="icon">
+  <link href="storage/assets/img/agraf.png" rel="">
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

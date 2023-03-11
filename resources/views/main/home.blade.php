@@ -13,9 +13,9 @@ agraf
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <h2 data-aos="fade-down">Welcome to <span>UpConstruction</span></h2>
+        <h2 data-aos="fade-down">Bienvenue au <span>Agraf</span></h2>
         <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
+        <a data-aos="fade-up" data-aos-delay="100" href="#get-started" class="btn-get-started">Commencer</a>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@ agraf
 
       <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
         <div class="content">
-          <h3>Minus hic non reiciendis ea possimus at quia.</h3>
+          <h3>Formulaire du client.</h3>
           <p>Rem id rerum. Debitis deserunt quidem delectus expedita ducimus dolor. Aut iusto ipsa. Eos ipsum nobis ipsa soluta itaque perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi possimus ut delectus dicta.
           <p>Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit eligendi labore culpa eos. Deserunt porro magni qui necessitatibus dolorem at animi cupiditate.</p>
         </div>
@@ -102,16 +102,112 @@ agraf
 
     <div class="section-header">
       <h2>Constructions</h2>
-      <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
+      <p>Les etapes de constructions</p>
     </div>
 
     <div class="row gy-4">
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-1.jpg);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/etude.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">L'étude de sol.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/Leterrassement.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">Le terrassement.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/Lexcavation.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">L'excavation.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/Lesfondations.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">Les fondations.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/Lassainissement.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class=" col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">L’assainissement.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class=" col-lg-6 " data-aos="fade-up" data-aos-delay="600">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/Lesoubassement.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">Le soubassement.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="700">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-1.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
@@ -123,11 +219,29 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="800">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-2.jpg);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-1.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-center">
+              <div class="card-body">
+                <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
+                <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Card Item -->
+
+
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="900">
+        <div class="card-item">
+          <div class="row">
+            <div class="col-xl-5">
+              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-2.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
@@ -139,11 +253,11 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1000">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-3.jpg);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-3.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
@@ -155,11 +269,11 @@ agraf
         </div>
       </div><!-- End Card Item -->
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1100">
         <div class="card-item">
           <div class="row">
             <div class="col-xl-5">
-              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-4.jpg);"></div>
+              <div class="card-bg" style="background-image: url(storage/assets/img/constructions-4.jpg); aspect-ratio:auto; filter: contrast(1);"></div>
             </div>
             <div class="col-xl-7 d-flex align-items-center">
               <div class="card-body">
@@ -277,7 +391,7 @@ agraf
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
           <i class="bi bi-patch-check flex-shrink-0"></i>
           <div>
             <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
@@ -354,7 +468,7 @@ agraf
               <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
             </ul>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="100">
             <img src="storage/assets/img/features-1.jpg" alt="" class="img-fluid">
           </div>
         </div>
@@ -445,7 +559,7 @@ agraf
         <li data-filter=".filter-design">Design</li>
       </ul><!-- End Projects Filters -->
 
-      <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
           <div class="portfolio-content h-100">
@@ -751,7 +865,7 @@ agraf
       </div>
     </div><!-- End post item -->
 
-    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
       <div class="post-item position-relative h-100">
 
         <div class="post-img position-relative overflow-hidden">

@@ -17,18 +17,18 @@
    
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>UpConstruction<span>.</span></h1>
+         <img src="storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt=""> 
+        <h1>Agraf<span>.</span></h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar ">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html" class="active">Acceuil</a></li>
+          <li><a href="about.html">à propos</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html">Projets</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
