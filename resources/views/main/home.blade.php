@@ -102,7 +102,7 @@ agraf
 
     <div class="section-header">
       <h2>Constructions</h2>
-      <p>Les etapes de constructions</p>
+      <p></p>
     </div>
 
     <div class="row gy-4">
