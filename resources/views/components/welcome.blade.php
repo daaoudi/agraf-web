@@ -1,4 +1,5 @@
-<div class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
+<div
+    class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
     <x-application-logo class="block h-12 w-auto rounded-full" />
 
     <h1 class="mt-8 text-2xl font-medium text-gray-900 dark:text-white">
@@ -7,47 +8,50 @@
 
 </div>
 
-<div class="container my-12 mx-auto px-4 md:px-12 m-36">
-    <div class="flex flex-wrap mx-1">
-        <!-- Column -->
-        <div class="col">
-
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg text-white">
-
-                <a href="#">
-                    <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
-                </a>
-
-                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                    <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black" href="#">
-                            Article Title
-                        </a>
-                    </h1>
-                    <p class="text-grey-darker text-sm">
-                        11/1/19
-                    </p>
-                </header>
-
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
-                        <p class="ml-2 text-sm">
-                            Author Name
-                        </p>
-                    </a>
-                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="hidden">Like</span>
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </footer>
-
-            </article>
-            <!-- END Article -->
-
+<div class="grid grid-cols-4 md:grid-cols-3 text-white">
+    <!-- Column -->
+    <div class="chat-notification  dark:bg-gray-600 dark:text-white">
+        <div class="chat-notification-logo-wrapper">
+          <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
         </div>
-        <!-- END Column -->
+        <div class="chat-notification-content">
+          <h4 class="chat-notification-title">ChitChat</h4>
+          <p class="chat-notification-message">You have a new message!</p>
+        </div>
+      </div>
 
-    </div>
+      <style>
+        .chat-notification {
+          display: flex;
+          max-width: 24rem;
+          margin: 0 auto;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          background-color: #fff;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .chat-notification-logo-wrapper {
+          flex-shrink: 0;
+        }
+        .chat-notification-logo {
+          height: 3rem;
+          width: 3rem;
+        }
+        .chat-notification-content {
+          margin-left: 1.5rem;
+          padding-top: 0.25rem;
+        }
+        .chat-notification-title {
+          color: #1a202c;
+          font-size: 1.25rem;
+          line-height: 1.25;
+        }
+        .chat-notification-message {
+          color: #718096;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      </style>
+    <!-- END Column -->
+
 </div>
