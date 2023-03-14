@@ -21,7 +21,7 @@ class Article extends Model
 
     public $timestamps = false;
 
-    public function ouvrier()
+    public function ouvrier():BelongsTo
 {
     return $this->belongsTo(Ouvrier::class, 'ouvrier_id');
 }
