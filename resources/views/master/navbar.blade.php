@@ -8,7 +8,8 @@
       <p id="date" class="text-white d-inline-block""></p>
     </div>
     <div>
-      <a href="#" class="btn btn-outline-warning">Inscription</a>  <a href="#" class="btn btn-outline-secondary">Connexion</a>
+      <a href="/register" class="btn btn-outline-warning">Inscription</a>
+        <a href="/login" class="btn btn-outline-secondary">Connexion</a>
     </div>
 
   </div>
