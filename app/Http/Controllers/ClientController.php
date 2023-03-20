@@ -13,6 +13,8 @@ class ClientController extends Controller
     public function index()
     {
         //
+        $clients=Client::all();
+        return view('main.showClient')->with(['clients'=>$clients]);
     }
 
     /**
@@ -21,7 +23,7 @@ class ClientController extends Controller
     public function create()
     {
         //
-        $this->authorize('create', Client::class);
+       
         return view('main.createClient');
     }
 

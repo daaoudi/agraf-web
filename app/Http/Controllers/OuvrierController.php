@@ -23,7 +23,7 @@ class OuvrierController extends Controller
     public function create()
     {
         //
-        $this->authorize('create', Ouvrier::class);
+       
         return view('main.createOuvrier');
     }
 

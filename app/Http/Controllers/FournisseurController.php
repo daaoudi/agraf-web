@@ -13,6 +13,8 @@ class FournisseurController extends Controller
     public function index()
     {
         //
+        $fournisseurs=Fournisseur::all();
+        return view('main.showFournisseur')->with(['clients'=>$fournisseurs]);
     }
 
     /**
@@ -21,7 +23,7 @@ class FournisseurController extends Controller
     public function create()
     {
         //
-        $this->authorize('create', Fournisseur::class);
+       
         return view('main.createFournisseur');
     }
 

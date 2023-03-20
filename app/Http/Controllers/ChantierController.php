@@ -23,7 +23,7 @@ class ChantierController extends Controller
     public function create()
     {
         //
-        $this->authorize('create', Chantier::class);
+       
         return view('main.createChantier');
     }
 
