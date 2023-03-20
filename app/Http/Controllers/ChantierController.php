@@ -13,6 +13,8 @@ class ChantierController extends Controller
     public function index()
     {
         //
+        $requests=Chantier::with('client')->get();
+        return view('dashboard',compact('requests'));
     }
 
     /**

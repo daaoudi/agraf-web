@@ -13,6 +13,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
+        $requests=Article::with('ouvrier')->get();
+        return view('dashboard',compact('requests'));
     }
 
     /**

@@ -13,6 +13,8 @@ class MatierController extends Controller
     public function index()
     {
         //
+        $requests=Matier::with('chantier','fournisseur')->get();
+        return view('dashboard',compact('requests'));
     }
 
     /**
@@ -29,7 +31,7 @@ class MatierController extends Controller
     public function store(Request $request)
     {
         //
-        
+
     }
 
     /**

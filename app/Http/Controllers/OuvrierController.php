@@ -13,6 +13,8 @@ class OuvrierController extends Controller
     public function index()
     {
         //
+        $requests=Ouvrier::with('chantier')->get();
+        return view('dashboard',compact('requests'));
     }
 
     /**
