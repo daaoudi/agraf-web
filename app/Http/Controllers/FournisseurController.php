@@ -21,6 +21,8 @@ class FournisseurController extends Controller
     public function create()
     {
         //
+        $this->authorize('create', Fournisseur::class);
+        return view('main.createFournisseur');
     }
 
     /**

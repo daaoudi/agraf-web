@@ -23,6 +23,8 @@ class ArticleController extends Controller
     public function create()
     {
         //
+        $this->authorize('create', Article::class);
+        return view('main.createOuvrier');
     }
 
     /**

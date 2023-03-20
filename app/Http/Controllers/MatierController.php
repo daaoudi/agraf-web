@@ -23,6 +23,8 @@ class MatierController extends Controller
     public function create()
     {
         //
+        $this->authorize('create', Matier::class);
+        return view('main.createMatier');
     }
 
     /**

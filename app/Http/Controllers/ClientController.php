@@ -21,6 +21,8 @@ class ClientController extends Controller
     public function create()
     {
         //
+        $this->authorize('create', Client::class);
+        return view('main.createClient');
     }
 
     /**
