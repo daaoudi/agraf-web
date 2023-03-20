@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('type');
             $table->string('salaire_par_semaine');
             $table->unsignedBigInteger('chantier_id');
+            $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

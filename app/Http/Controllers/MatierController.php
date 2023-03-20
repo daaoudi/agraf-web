@@ -29,6 +29,7 @@ class MatierController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -37,6 +38,7 @@ class MatierController extends Controller
     public function show(Matier $matier)
     {
         //
+        return view('main.showMatiere')->with(['post'=>$matier]);
     }
 
     /**

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('designation');
             $table->string('description');
             $table->unsignedBigInteger('ouvrier_id');
+            $table->foreign('ouvrier_id')->references('id')->on('ouvriers')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
