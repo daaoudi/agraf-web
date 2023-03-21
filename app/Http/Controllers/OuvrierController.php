@@ -33,6 +33,23 @@ class OuvrierController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'telephone' => 'required|max:10',
+            'cin' => 'required|max:10',
+            'type' => 'required',
+            'salaire_par_semaine' => 'required',
+            'chantier_id' => 'required|exists:chantiers,id',
+        ]);
+    
+        $ouvrier = new Ouvrier();
+        $ouvrier->title = $validated['title'];
+        $ouvrier->body = $validated['body'];
+        $ouvrier->user_id = $validated['user_id'];
+        $ouvrier->save();
+    
+       
     }
 
     /**
@@ -40,7 +57,8 @@ class OuvrierController extends Controller
      */
     public function show(Ouvrier $ouvrier)
     {
-        //
+        // 
+        return view('main.showOuvrier')->with(['ouvrier'=>$ouvrier]);
     }
 
     /**
@@ -49,6 +67,7 @@ class OuvrierController extends Controller
     public function edit(Ouvrier $ouvrier)
     {
         //
+        return view('main.editOuvrier')->with(['ouvrier'=>$ouvrier]);
     }
 
     /**
