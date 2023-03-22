@@ -33,6 +33,24 @@ class ChantierController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'telephone' => 'required',
+            'montant' => 'required',
+            'email' => 'required',
+            
+            
+        ]);
+
+        $chantier=new Chantier();
+        $chantier->nom=$validated['nom'];
+        $chantier->prenom=$validated['prenom'];
+        $chantier->telephone=$validated['telephone'];
+        $chantier->montant=$validated['montant'];
+        $chantier->email=$validated['email'];
+
+        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier ajoute']);
     }
 
     /**

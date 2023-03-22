@@ -33,6 +33,19 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'designation' => 'required',
+            'description' => 'required',
+            
+            'ouvrier_id' => 'required|exists:ouvriers,id',
+        ]);
+
+        $article=new Article();
+        $article->designation=$validated['designation'];
+        $article->description=$validated['description'];
+        $article->ouvrier_id=$validated['ouvrier_id'];
+
+        return redirect()->route('main.showArticle')->with(['sucess'=>'article ajoute']);
     }
 
     /**
@@ -41,6 +54,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
+        return view('main.showArticle')->with(['ouvrier'=>$article]);
     }
 
     /**
@@ -49,6 +63,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         //
+        return view('main.editArticle')->with(['ouvrier'=>$article]);
     }
 
     /**
@@ -57,6 +72,14 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+        $article->update([
+            'designation'=>$request->designation,
+            'description'=>$request->description,
+            
+            'ouvrier_id'=>$request->ouvrier_id
+        ]);
+
+        return redirect()->route('main.showArticle')->with(['sucess'=>'article modifie']);
     }
 
     /**
@@ -65,5 +88,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+        $article->delete();
+        return redirect()->route('main.showArticle')->with(['sucess'=>'article supprime']);
     }
 }

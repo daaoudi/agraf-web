@@ -44,10 +44,16 @@ class OuvrierController extends Controller
         ]);
     
         $ouvrier = new Ouvrier();
-        $ouvrier->title = $validated['title'];
-        $ouvrier->body = $validated['body'];
-        $ouvrier->user_id = $validated['user_id'];
+        $ouvrier->nom = $validated['nom'];
+        $ouvrier->prenom = $validated['prenom'];
+        $ouvrier->telephone = $validated['telephone'];
+        $ouvrier->cin = $validated['cin'];
+        $ouvrier->type = $validated['type'];
+        $ouvrier->salaire_par_semaine = $validated['salaire_par_semaine'];
+        $ouvrier->chantier_id = $validated['chantier_id'];
         $ouvrier->save();
+
+        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier ajoute']);
     
        
     }
@@ -76,6 +82,17 @@ class OuvrierController extends Controller
     public function update(Request $request, Ouvrier $ouvrier)
     {
         //
+        $ouvrier->update([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'telephone'=>$request->telephone,
+            'cin'=>$request->cin,
+            'type'=>$request->type,
+            'salaire_par_semaine'=>$request->salaire_par_semaine,
+            'chantier_id'=>$request->chantier_id
+        ]);
+
+        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier modifie']);
     }
 
     /**
@@ -84,5 +101,7 @@ class OuvrierController extends Controller
     public function destroy(Ouvrier $ouvrier)
     {
         //
+        $ouvrier->delete();
+        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier supprime']);
     }
 }
