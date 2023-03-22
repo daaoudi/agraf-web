@@ -59,6 +59,7 @@ class ChantierController extends Controller
     public function show(Chantier $chantier)
     {
         //
+        return view('main.showChantier')->with(['ouvrier'=>$chantier]);
     }
 
     /**
@@ -67,6 +68,7 @@ class ChantierController extends Controller
     public function edit(Chantier $chantier)
     {
         //
+        return view('main.editChantier')->with(['ouvrier'=>$chantier]);
     }
 
     /**
@@ -75,6 +77,17 @@ class ChantierController extends Controller
     public function update(Request $request, Chantier $chantier)
     {
         //
+        $chantier->update([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'telephone'=>$request->telephone,
+            'montant'=>$request->montant,
+            'email'=>$request->email,
+            
+            
+        ]);
+
+        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier modifie']);
     }
 
     /**
@@ -83,5 +96,7 @@ class ChantierController extends Controller
     public function destroy(Chantier $chantier)
     {
         //
+        $chantier->delete();
+        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier supprime']);
     }
 }
