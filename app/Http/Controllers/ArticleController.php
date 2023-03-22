@@ -45,7 +45,7 @@ class ArticleController extends Controller
         $article->description=$validated['description'];
         $article->ouvrier_id=$validated['ouvrier_id'];
 
-        return redirect()->route('main.showArticle')->with(['sucess'=>'article ajoute']);
+        return redirect()->route('dashboard')->with(['sucess'=>'article ajoute']);
     }
 
     /**
@@ -79,7 +79,7 @@ class ArticleController extends Controller
             'ouvrier_id'=>$request->ouvrier_id
         ]);
 
-        return redirect()->route('main.showArticle')->with(['sucess'=>'article modifie']);
+        return redirect()->route('dashboard')->with(['sucess'=>'article modifie']);
     }
 
     /**
@@ -89,6 +89,6 @@ class ArticleController extends Controller
     {
         //
         $article->delete();
-        return redirect()->route('main.showArticle')->with(['sucess'=>'article supprime']);
+        return redirect()->route('dashboard')->with(['sucess'=>'article supprime']);
     }
 }

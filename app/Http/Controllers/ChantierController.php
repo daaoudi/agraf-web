@@ -34,23 +34,23 @@ class ChantierController extends Controller
     {
         //
         $validated = $request->validate([
-            'nom' => 'required',
-            'prenom' => 'required',
-            'telephone' => 'required',
-            'montant' => 'required',
-            'email' => 'required',
+            'designation' => 'required',
+            'prix' => 'required',
+            'ville' => 'required',
+            'mode_paiment' => 'required',
+            'client_id' => 'required|exists:clients,id',
             
             
         ]);
 
         $chantier=new Chantier();
-        $chantier->nom=$validated['nom'];
-        $chantier->prenom=$validated['prenom'];
-        $chantier->telephone=$validated['telephone'];
-        $chantier->montant=$validated['montant'];
-        $chantier->email=$validated['email'];
+        $chantier->designation=$validated['designation'];
+        $chantier->prix=$validated['prix'];
+        $chantier->ville=$validated['ville'];
+        $chantier->mode_paiment=$validated['mode_paiment'];
+        $chantier->client_id=$validated['client_id'];
 
-        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier ajoute']);
+        return redirect()->route('dashboard')->with(['sucess'=>'chantier ajoute']);
     }
 
     /**
@@ -59,7 +59,7 @@ class ChantierController extends Controller
     public function show(Chantier $chantier)
     {
         //
-        return view('main.showChantier')->with(['ouvrier'=>$chantier]);
+        return view('main.showChantier')->with(['ouvriers'=>$chantier]);
     }
 
     /**
@@ -68,7 +68,7 @@ class ChantierController extends Controller
     public function edit(Chantier $chantier)
     {
         //
-        return view('main.editChantier')->with(['ouvrier'=>$chantier]);
+        return view('main.editChantier')->with(['ouvriers'=>$chantier]);
     }
 
     /**
@@ -78,16 +78,16 @@ class ChantierController extends Controller
     {
         //
         $chantier->update([
-            'nom'=>$request->nom,
-            'prenom'=>$request->prenom,
-            'telephone'=>$request->telephone,
-            'montant'=>$request->montant,
-            'email'=>$request->email,
+            'designation'=>$request->designation,
+            'prix'=>$request->prix,
+            'ville'=>$request->ville,
+            'mode_paiment'=>$request->mode_paiment,
+            'client_id'=>$request->client_id,
             
             
         ]);
 
-        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier modifie']);
+        return redirect()->route('dashboard')->with(['sucess'=>'chantier modifie']);
     }
 
     /**
@@ -97,6 +97,6 @@ class ChantierController extends Controller
     {
         //
         $chantier->delete();
-        return redirect()->route('main.showChantier')->with(['sucess'=>'chantier supprime']);
+        return redirect()->route('dashboard')->with(['sucess'=>'chantier supprime']);
     }
 }

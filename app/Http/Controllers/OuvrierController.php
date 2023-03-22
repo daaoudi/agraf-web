@@ -53,7 +53,7 @@ class OuvrierController extends Controller
         $ouvrier->chantier_id = $validated['chantier_id'];
         $ouvrier->save();
 
-        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier ajoute']);
+        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier ajoute']);
     
        
     }
@@ -92,7 +92,7 @@ class OuvrierController extends Controller
             'chantier_id'=>$request->chantier_id
         ]);
 
-        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier modifie']);
+        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier modifie']);
     }
 
     /**
@@ -102,6 +102,6 @@ class OuvrierController extends Controller
     {
         //
         $ouvrier->delete();
-        return redirect()->route('main.showOuvrier')->with(['sucess'=>'ouvrier supprime']);
+        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier supprime']);
     }
 }
