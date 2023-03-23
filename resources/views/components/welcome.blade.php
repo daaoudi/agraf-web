@@ -2,14 +2,15 @@
     class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
     <x-application-logo class="block h-12 w-auto rounded-full" />
 
-    <h1 class="mt-8 text-2xl font-medium text-gray-900 dark:text-white">
+    <h1 class="mt-8 text-2xl font-medium text-gray-900 dark:text-white text-center">
         Welcome to your Agraf Application!
     </h1>
 
 </div>
+<!--
 
 <div class="grid grid-cols-4 md:grid-cols-3 text-white">
-    <!-- Column -->
+   
     <div class="chat-notification  dark:bg-gray-600 dark:text-white">
         <div class="chat-notification-logo-wrapper">
           <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
@@ -52,6 +53,9 @@
           line-height: 1.5;
         }
       </style>
-    <!-- END Column -->
+    
+
+    
 
 </div>
+-->
