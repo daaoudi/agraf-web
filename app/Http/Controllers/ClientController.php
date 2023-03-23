@@ -50,8 +50,8 @@ class ClientController extends Controller
         $client->montant=$request->input('montant');
         $client->email=$request->input('email');
         $client->save();
-        /*return view('main.home');*/
-        return redirect()->route('clients.index')->with(['success'=>'client ajouter']);
+        return view('main.home');
+        /*return redirect()->route('clients.index')->with(['success'=>'client ajouter']);*/
         /*return redirect('/');*/
         /*return redirect()->route('main.showClient')->with(['success'=>'client ajouter'])*/ 
     }

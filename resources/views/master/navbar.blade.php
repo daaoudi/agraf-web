@@ -1,7 +1,7 @@
 
 
 <!-- ======= Header ======= -->
-<header id="header" class="header ">
+<header id="header" class="header mb-5 bg-secondary h-25">
 <div class="container-fluid   d-flex align-items-center justify-content-between  ">
     <div>
       <p id="time" class="text-white d-inline-block"></p>
@@ -9,16 +9,16 @@
     </div>
     <div>
       <a href="/register" class="btn btn-outline-warning">Inscription</a>
-        <a href="/login" class="btn btn-outline-secondary">Connexion</a>
+        <a href="/login" class="btn btn-outline-info">Connexion</a>
     </div>
 
   </div>
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between mb-5 ">
 
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt="">
+         <img src="/storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt="">
         <h1>Agraf<span>.</span></h1>
       </a>
 
