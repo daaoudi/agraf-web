@@ -33,7 +33,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([
+         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|max:10',
@@ -44,13 +44,15 @@ class ClientController extends Controller
         ]);
 
         $client=new Client();
-        $client->nom=$validated['nom'];
-        $client->prenom=$validated['prenom'];
-        $client->telephone=$validated['telephone'];
-        $client->montant=$validated['montant'];
-        $client->email=$validated['email'];
-
-        return redirect()->route('main.home');
+        $client->nom=$request->input('nom');
+        $client->prenom=$request->input('prenom');
+        $client->telephone=$request->input('telephone');
+        $client->montant=$request->input('montant');
+        $client->email=$request->input('email');
+        $client->save();
+        /*return view('main.home');*/
+        return redirect()->route('clients.index')->with(['success'=>'client ajouter']);
+        /*return redirect('/');*/
         /*return redirect()->route('main.showClient')->with(['success'=>'client ajouter'])*/ 
     }
 
@@ -78,17 +80,26 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         //
-        $client->update([
-            'nom'=>$request->nom,
-            'prenom'=>$request->prenom,
-            'telephone'=>$request->telephone,
-            'montant'=>$request->montant,
-            'email'=>$request->email,
+        $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'telephone' => 'required|max:10',
+            'montant' => 'required',
+            'email' => 'required',
             
             
         ]);
+        $client1=Client::findOrFail($client);
+        $client1->nom=$request->get('nom');
+        $client1->nom=$request->get('prenom');
+        $client1->nom=$request->get('telephone');
+        $client1->nom=$request->get('montant');
+        $client1->nom=$request->get('email');
+        $client1->update();
 
-        return redirect()->route('main.showClients')->with(['sucess'=>'client modifie']);
+        
+
+        return redirect()->route('clients.index')->with(['success'=>'client modifie']);
     }
 
     /**
@@ -97,7 +108,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
-        $client->delete();
-        return redirect()->route('main.showClients')->with(['sucess'=>'client supprime']);
+        $client1=Client::findOrFail($client);
+        $client1->delete();
+        return redirect()->route('clients.index')->with(['success'=>'client supprime']);
     }
 }

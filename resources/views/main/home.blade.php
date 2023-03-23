@@ -58,7 +58,7 @@ agraf
       </div>
 
       <div class="col-lg-5" data-aos="fade">
-        <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="POST" class="php-email-form">
+        <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="post" class="php-email-form">
           @csrf
           <h3>Get a quote</h3>
           <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
