@@ -87,10 +87,11 @@ agraf
             
 
             <div class="col-md-12 text-center">
+              
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">votre Inscription valider. Merci pour votre confiance!</div>
-
+             
               <button  type="submit">Valider</button>
             </div>
 
