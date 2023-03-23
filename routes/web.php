@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\FournisseurController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FournisseurController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main.home');
 });
+
+Route::resource('clients',ClientController::class);
 
 Route::middleware([
     'auth:sanctum',

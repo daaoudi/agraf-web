@@ -58,33 +58,40 @@ agraf
       </div>
 
       <div class="col-lg-5" data-aos="fade">
-        <form action="forms/quote.php" method="post" class="php-email-form">
+        <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="POST" class="php-email-form">
+          @csrf
           <h3>Get a quote</h3>
           <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
           <div class="row gy-3">
 
             <div class="col-md-12">
-              <input type="text" name="name" class="form-control" placeholder="Name" required>
+              <input type="text" name="nom" class="form-control" placeholder="Nom" required>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" name="prenom" class="form-control" placeholder="Prenom" required>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" name="telephone" class="form-control" placeholder="Telephone" required>
             </div>
 
             <div class="col-md-12 ">
+              <input type="text" class="form-control" name="montant" placeholder="Montant" required>
+            </div>
+
+            <div class="col-md-12">
               <input type="email" class="form-control" name="email" placeholder="Email" required>
             </div>
 
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="phone" placeholder="Phone" required>
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-            </div>
+            
 
             <div class="col-md-12 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
+              <div class="sent-message">votre Inscription valider. Merci pour votre confiance!</div>
 
-              <button type="submit">Get a quote</button>
+              <button  type="submit">Valider</button>
             </div>
 
           </div>

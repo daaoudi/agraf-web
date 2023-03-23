@@ -50,7 +50,8 @@ class ClientController extends Controller
         $client->montant=$validated['montant'];
         $client->email=$validated['email'];
 
-        return redirect()->route('main.showClients')->with(['sucess'=>'client ajoute']);
+        return redirect()->route('main.home');
+        /*return redirect()->route('main.showClient')->with(['success'=>'client ajouter'])*/ 
     }
 
     /**
