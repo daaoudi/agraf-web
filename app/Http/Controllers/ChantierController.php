@@ -14,14 +14,15 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        $chantiers=DB::table('chantiers')->join('clients',' chantiers.client_id','=','clients.id')
-        ->select('chantiers.*','clients.nom')
+        $chantiers=DB::table('clients')->join('chantiers',' clients.id','=','chantiers.client_id')
+        ->select('chantiers.*','clients.*')
         ->get();
         //dd($chantiers);
         //$chantiers=Chantier::with('client')->get();
         //$chantiers=Chantier::all();
         //return view('dashboard')->with(['chantiers'=>$chantiers]);
-        return view('dashboard',['chantiers'=>$chantiers]);
+        //return view('dashboard',['chantiers'=>$chantiers]);
+        return view('dashboard',compact('chantiers')); 
     }
 
     /**

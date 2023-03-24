@@ -34,20 +34,20 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($chantiers as $req)
+            @foreach($chantiers as $chantier)
             <tr class="bg-gray-100 border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$req->clients['nom']}}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$chantier->clients['nom']}}</td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                {{$req->designation}}
+                {{$chantier->designation}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                {{$req->prix}}
+                {{$chantier->prix}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                {{$req->ville}}
+                {{$chantier->ville}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                {{$req->mode_paiement}}
+                {{$chantier->mode_paiement}}
               </td>
             </tr>
             @endforeach
