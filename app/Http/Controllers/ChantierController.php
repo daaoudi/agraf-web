@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chantier;
 use App\Models\Client;
+use App\Models\Chantier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChantierController extends Controller
 {
@@ -13,11 +14,12 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        $chantiers=Chantier::where('clients.id','=','chantiers.client_id')->get();
+        $chantiers=DB::table('chantiers')->join('clients','clients.id','=','chantiers.client_id')->get();
+        //dd($chantiers);
         //$chantiers=Chantier::with('client')->get();
         //$chantiers=Chantier::all();
         //return view('dashboard')->with(['chantiers'=>$chantiers]);
-        return view('dashboard',compact('chantiers'));
+        return view('dashboard',['chantiers'=>$chantiers]);
     }
 
     /**
