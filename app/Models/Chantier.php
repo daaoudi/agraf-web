@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,19 +33,19 @@ class Chantier extends Model
 
 
 
-    public function matiers()
+    public function matiers():HasMany
     {
         return $this->hasMany(Matier::class);
     }
 
 
-    public function ouvriers()
+    public function ouvriers():HasMany
     {
         return $this->hasMany(Ouvrier::class);
     }
 
-    public function client()
+    public function client(): BelongsTo
 {
-    return $this->belongsTo(Client::class);
+    return $this->belongsTo(Client::class, 'client_id');
 }
 }
