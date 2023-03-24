@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\FournisseurController;
+use App\Http\Controllers\ChantierController;
+
 
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
     return view('main.home');
 });
 
-Route::resource('clients',ClientController::class);
+
 
 Route::middleware([
     'auth:sanctum',
@@ -32,5 +33,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('fournisseurs',FournisseurController::class);
+    
 });
+Route::resource('clients',ClientController::class);
+Route::resource('chantiers',ChantierController::class);

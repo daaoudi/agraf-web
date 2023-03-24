@@ -27,7 +27,7 @@ class Article extends Model
     {
         return $this->belongsTo(Ouvrier::class, 'ouvrier_id');
     }
-    public function unite(): HasMany
+    public function unites(): HasMany
     {
         return $this->hasMany(Unite::class);
     }

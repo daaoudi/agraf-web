@@ -39,7 +39,7 @@ class Matier extends Model
         return $this->belongsTo(Fournisseur::class, 'foursnisseur_id');
     }
 
-    public function unite(): HasMany
+    public function unites(): HasMany
     {
         return $this->hasMany(Unite::class);
     }

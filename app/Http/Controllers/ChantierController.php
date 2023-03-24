@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chantier;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ChantierController extends Controller
@@ -12,9 +13,11 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        //
-        $requests=Chantier::with('client')->get();
-        return view('dashboard',compact('requests'));
+        
+        $chantiers=Chantier::with('client')->get();
+        //$chantiers=Chantier::all();
+        //return view('dashboard')->with(['chantiers'=>$chantiers]);
+        return view('dashboard',compact('chantiers'));
     }
 
     /**
@@ -23,8 +26,10 @@ class ChantierController extends Controller
     public function create()
     {
         //
+
+        $requests=Client::all();
        
-        return view('main.createChantier');
+        return view('main.createChantier')->with(['clients'=>$requests]);
     }
 
     /**
@@ -39,7 +44,7 @@ class ChantierController extends Controller
             'designation' => 'required',
             'prix' => 'required',
             'ville' => 'required',
-            'mode_paiment' => 'required',
+            'mode_paiement' => 'required',
             'client_id' => 'required|exists:clients,id',
             
             
@@ -49,11 +54,11 @@ class ChantierController extends Controller
         $chantier->designation=$request->input('designation');
         $chantier->prix=$request->input('prix');
         $chantier->ville=$request->input('ville');
-        $chantier->mode_paiment=$request->input('mode_paiment');
+        $chantier->mode_paiement=$request->input('mode_paiement');
         $chantier->client_id=$request->input('client_id');
         $chantier->save();
 
-        return redirect()->route('dashboard')->with(['sucess'=>'chantier ajoute']);
+        return redirect()->route('dashboard')->with(['success'=>'chantier ajoute']);
     }
 
     /**
@@ -84,24 +89,24 @@ class ChantierController extends Controller
             'designation' => 'required',
             'prix' => 'required',
             'ville' => 'required',
-            'mode_paiment' => 'required',
+            'mode_paiement' => 'required',
             'client_id' => 'required|exists:clients,id',
             
             
         ]);
 
-        $chantier1=Chantier::findOrFail($chantier);
-
-        $chantier1->designation=$request->get('designation');
-        $chantier1->prix=$request->get('prix');
-        $chantier1->ville=$request->get('ville');
-        $chantier1->mode_paiment=$request->get('mode_paiment');
-        $chantier1->client_id=$request->get('client_id');
-        $chantier1->update();
+            $chantier->update([
+                'designation'=>$request->designation,
+                'prix'=>$request->prix,
+                'ville'=>$request->ville,
+                'mode_paiement'=>$request->mode_paiement,
+                'client_id'=>$request->client_id,
+            ]);
+       
 
         
 
-        return redirect()->route('dashboard')->with(['sucess'=>'chantier modifie']);
+        return redirect()->route('dashboard')->with(['success'=>'chantier modifie']);
     }
 
     /**
@@ -110,8 +115,8 @@ class ChantierController extends Controller
     public function destroy(Chantier $chantier)
     {
         //
-        $chantier1=Chantier::findOrFail($chantier);
-        $chantier1->delete();
+        
+        $chantier->delete();
         return redirect()->route('dashboard')->with(['success'=>'chantier supprime']);
     }
 }
