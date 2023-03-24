@@ -13,8 +13,8 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        
-        $chantiers=Chantier::with('client')->get();
+        $chantiers=Chantier::where('clients.id','=','chantiers.client_id')->get();
+        //$chantiers=Chantier::with('client')->get();
         //$chantiers=Chantier::all();
         //return view('dashboard')->with(['chantiers'=>$chantiers]);
         return view('dashboard',compact('chantiers'));
