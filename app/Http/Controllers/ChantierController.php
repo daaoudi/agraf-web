@@ -33,10 +33,12 @@ class ChantierController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([
+       
+
+        $request->validate([
             'designation' => 'required',
             'prix' => 'required',
-            'ville' => 'required',
+            'ville' => 'required|max:10',
             'mode_paiment' => 'required',
             'client_id' => 'required|exists:clients,id',
             
@@ -44,11 +46,12 @@ class ChantierController extends Controller
         ]);
 
         $chantier=new Chantier();
-        $chantier->designation=$validated['designation'];
-        $chantier->prix=$validated['prix'];
-        $chantier->ville=$validated['ville'];
-        $chantier->mode_paiment=$validated['mode_paiment'];
-        $chantier->client_id=$validated['client_id'];
+        $chantier->designation=$request->input('designation');
+        $chantier->prix=$request->input('prix');
+        $chantier->ville=$request->input('ville');
+        $chantier->mode_paiment=$request->input('mode_paiment');
+        $chantier->client_id=$request->input('client_id');
+        $chantier->save();
 
         return redirect()->route('dashboard')->with(['sucess'=>'chantier ajoute']);
     }
@@ -77,15 +80,26 @@ class ChantierController extends Controller
     public function update(Request $request, Chantier $chantier)
     {
         //
-        $chantier->update([
-            'designation'=>$request->designation,
-            'prix'=>$request->prix,
-            'ville'=>$request->ville,
-            'mode_paiment'=>$request->mode_paiment,
-            'client_id'=>$request->client_id,
+        $request->validate([
+            'designation' => 'required',
+            'prix' => 'required',
+            'ville' => 'required|max:10',
+            'mode_paiment' => 'required',
+            'client_id' => 'required|exists:clients,id',
             
             
         ]);
+
+        $chantier1=Chantier::findOrFail($chantier);
+
+        $chantier1->designation=$request->get('designation');
+        $chantier1->prix=$request->get('prix');
+        $chantier1->ville=$request->get('ville');
+        $chantier1->mode_paiment=$request->get('mode_paiment');
+        $chantier1->client_id=$request->get('client_id');
+        $chantier1->update();
+
+        
 
         return redirect()->route('dashboard')->with(['sucess'=>'chantier modifie']);
     }

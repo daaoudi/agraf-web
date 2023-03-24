@@ -4,9 +4,9 @@ l'ajout d'un client.
 @endsection
 
 @section('content')
-<div class=" " style="min-height: 720px;display:flex;justify-content:center;align-items:center;position:relative;top:120px;left:25%;">
+<div class="container-fluid" style="display:flex;justify-content:center;align-items:center;position:relative;top:50px;min-height:992px;">
     <div class="row">
-        <div class="col-lg-6 " data-aos="fade">
+        <div class="col-md-6 " data-aos="fade">
     <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="post" class="php-email-form">
       @csrf
       <h3>Get a quote</h3>
@@ -41,7 +41,7 @@ l'ajout d'un client.
           <div class="error-message"></div>
           <div class="sent-message">votre Inscription valider. Merci pour votre confiance!</div>
          
-          <button  type="submit">Valider</button>
+          <button class="btn btn-warning" type="submit">Valider</button>
         </div>
 
       </div>

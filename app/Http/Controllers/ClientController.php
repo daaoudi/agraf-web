@@ -50,10 +50,10 @@ class ClientController extends Controller
         $client->montant=$request->input('montant');
         $client->email=$request->input('email');
         $client->save();
-        return view('main.home');
-        /*return redirect()->route('clients.index')->with(['success'=>'client ajouter']);*/
+        
+        return redirect()->route('clients.index')->with(['success'=>'client ajouter']);
         /*return redirect('/');*/
-        /*return redirect()->route('main.showClient')->with(['success'=>'client ajouter'])*/ 
+        
     }
 
     /**
@@ -91,10 +91,10 @@ class ClientController extends Controller
         ]);
         $client1=Client::findOrFail($client);
         $client1->nom=$request->get('nom');
-        $client1->nom=$request->get('prenom');
-        $client1->nom=$request->get('telephone');
-        $client1->nom=$request->get('montant');
-        $client1->nom=$request->get('email');
+        $client1->prenom=$request->get('prenom');
+        $client1->telephone=$request->get('telephone');
+        $client1->montant=$request->get('montant');
+        $client1->email=$request->get('email');
         $client1->update();
 
         
