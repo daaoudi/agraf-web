@@ -14,7 +14,9 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        $chantiers=DB::table('chantiers')->join('clients','clients.id','=','chantiers.client_id')->get();
+        $chantiers=DB::table('chantiers')->join('clients',' chantiers.client_id','=','clients.id')
+        ->select('chantiers.*','clients.nom')
+        ->get();
         //dd($chantiers);
         //$chantiers=Chantier::with('client')->get();
         //$chantiers=Chantier::all();
