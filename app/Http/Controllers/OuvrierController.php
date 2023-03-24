@@ -33,27 +33,34 @@ class OuvrierController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([
+        $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'telephone' => 'required|max:10',
-            'cin' => 'required|max:10',
+            'telephone' => 'required',
+            'cin' => 'required',
             'type' => 'required',
             'salaire_par_semaine' => 'required',
+            
+            
             'chantier_id' => 'required|exists:chantiers,id',
+            
+            
         ]);
+
+
+      
     
         $ouvrier = new Ouvrier();
-        $ouvrier->nom = $validated['nom'];
-        $ouvrier->prenom = $validated['prenom'];
-        $ouvrier->telephone = $validated['telephone'];
-        $ouvrier->cin = $validated['cin'];
-        $ouvrier->type = $validated['type'];
-        $ouvrier->salaire_par_semaine = $validated['salaire_par_semaine'];
-        $ouvrier->chantier_id = $validated['chantier_id'];
+        $ouvrier->nom = $request->input('nom');
+        $ouvrier->prenom = $request->input('nom');
+        $ouvrier->telephone = $request->input('nom');
+        $ouvrier->cin = $request->input('nom');
+        $ouvrier->type = $request->input('nom');
+        $ouvrier->salaire_par_semaine = $request->input('nom');
+        $ouvrier->chantier_id = $request->input('nom');
         $ouvrier->save();
 
-        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier ajoute']);
+        return redirect()->route('dashboard')->with(['success'=>'ouvrier ajoute']);
     
        
     }
@@ -82,17 +89,35 @@ class OuvrierController extends Controller
     public function update(Request $request, Ouvrier $ouvrier)
     {
         //
-        $ouvrier->update([
-            'nom'=>$request->nom,
-            'prenom'=>$request->prenom,
-            'telephone'=>$request->telephone,
-            'cin'=>$request->cin,
-            'type'=>$request->type,
-            'salaire_par_semaine'=>$request->salaire_par_semaine,
-            'chantier_id'=>$request->chantier_id
+        $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'telephone' => 'required',
+            'cin' => 'required',
+            'type' => 'required',
+            'salaire_par_semaine' => 'required',
+            
+            
+            'chantier_id' => 'required|exists:chantiers,id',
+            
+            
         ]);
 
-        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier modifie']);
+        $ouvrier1=Ouvrier::findOrFail($ouvrier);
+
+        $ouvrier1->nom=$request->get('nom');
+        $ouvrier1->prenom=$request->get('prenom');
+        $ouvrier1->telephone=$request->get('telephone');
+        $ouvrier1->cin=$request->get('cin');
+        $ouvrier1->type=$request->get('type');
+        $ouvrier1->salaire_par_semaine=$request->get('salaire_par_semaine');
+        $ouvrier1->chantier_id=$request->get('chantier_id');
+
+        $ouvrier1->update();
+
+        
+
+        return redirect()->route('dashboard')->with(['success'=>'ouvrier modifie']);
     }
 
     /**
@@ -101,7 +126,8 @@ class OuvrierController extends Controller
     public function destroy(Ouvrier $ouvrier)
     {
         //
-        $ouvrier->delete();
+        $ouvrier1=Ouvrier::findOrFail($ouvrier);
+        $ouvrier1->delete();
         return redirect()->route('dashboard')->with(['sucess'=>'ouvrier supprime']);
     }
 }

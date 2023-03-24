@@ -38,7 +38,7 @@ class ChantierController extends Controller
         $request->validate([
             'designation' => 'required',
             'prix' => 'required',
-            'ville' => 'required|max:10',
+            'ville' => 'required',
             'mode_paiment' => 'required',
             'client_id' => 'required|exists:clients,id',
             
@@ -83,7 +83,7 @@ class ChantierController extends Controller
         $request->validate([
             'designation' => 'required',
             'prix' => 'required',
-            'ville' => 'required|max:10',
+            'ville' => 'required',
             'mode_paiment' => 'required',
             'client_id' => 'required|exists:clients,id',
             

@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Ouvrier;
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-use App\Models\Ouvrier;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Article extends Model
 {
     use HasFactory;
@@ -21,8 +23,12 @@ class Article extends Model
 
     public $timestamps = false;
 
-    public function ouvrier():BelongsTo
-{
-    return $this->belongsTo(Ouvrier::class, 'ouvrier_id');
-}
+        public function ouvrier():BelongsTo
+    {
+        return $this->belongsTo(Ouvrier::class, 'ouvrier_id');
+    }
+    public function unite(): HasMany
+    {
+        return $this->hasMany(Unite::class);
+    }
 }

@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
 use App\Models\Matier;
+use App\Models\Article;
+
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Unite extends Model
 {
@@ -14,15 +16,22 @@ class Unite extends Model
 
     protected $fillable=[
         "id",
-        "unite"
+        "unite",
+        "matiere_id",
+        "article_id",
     ];
 
     public $timestamps = false;
 
 
 
-    public function matiers():HasMany
+    public function matier():BelongsTo
     {
-        return $this->hasMany(Matier::class);
+        return $this->belongsTo(Matier::class,'matiere_id');
+    }
+
+    public function article():BelongsTo
+    {
+        return $this->belongsTo(Article::class,'article_id');
     }
 }

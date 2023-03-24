@@ -36,9 +36,9 @@ class ClientController extends Controller
          $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'telephone' => 'required|max:10',
+            'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
-            'email' => 'required',
+            'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
             
             
         ]);
@@ -71,7 +71,7 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         //
-        return view('main.editClient')->with(['clients'=>$client]);
+        return view('main.editClient')->with(['client'=>$client]);
     }
 
     /**
@@ -83,12 +83,22 @@ class ClientController extends Controller
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'telephone' => 'required|max:10',
+            'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
             
             
         ]);
+        
+        $client->update([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'telephone'=>$request->telephone,
+            'montant'=>$request->montant,
+            'email'=>$request->email,
+        ]);
+        
+        /*
         $client1=Client::findOrFail($client);
         $client1->nom=$request->get('nom');
         $client1->prenom=$request->get('prenom');
@@ -96,10 +106,11 @@ class ClientController extends Controller
         $client1->montant=$request->get('montant');
         $client1->email=$request->get('email');
         $client1->update();
-
+*/
         
 
         return redirect()->route('clients.index')->with(['success'=>'client modifie']);
+        /* return redirect()->route('clients.index')->with(['success'=>'client modifie']);*/ 
     }
 
     /**
@@ -108,8 +119,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
-        $client1=Client::findOrFail($client);
-        $client1->delete();
+        
+        $client->delete();
         return redirect()->route('clients.index')->with(['success'=>'client supprime']);
     }
 }
