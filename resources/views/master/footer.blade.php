@@ -3,7 +3,7 @@
 
 <div class="footer-content position-relative">
   <div class="container">
-    <div class="row">
+    <div class="row d-flex justify-content-evenly align-items-center">
 
       <div class="col-lg-4 col-md-6">
         <div class="footer-info">
@@ -26,11 +26,11 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
+          <li><a href="#">Acceuil</a></li>
+          <li><a href="#">A Propos</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Projets</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div><!-- End footer links column-->
 
@@ -45,27 +45,9 @@
         </ul>
       </div><!-- End footer links column-->
 
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Hic solutasetp</h4>
-        <ul>
-          <li><a href="#">Molestiae accusamus iure</a></li>
-          <li><a href="#">Excepturi dignissimos</a></li>
-          <li><a href="#">Suscipit distinctio</a></li>
-          <li><a href="#">Dilecta</a></li>
-          <li><a href="#">Sit quas consectetur</a></li>
-        </ul>
-      </div><!-- End footer links column-->
+     
 
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Nobis illum</h4>
-        <ul>
-          <li><a href="#">Ipsam</a></li>
-          <li><a href="#">Laudantium dolorum</a></li>
-          <li><a href="#">Dinera</a></li>
-          <li><a href="#">Trodelas</a></li>
-          <li><a href="#">Flexo</a></li>
-        </ul>
-      </div><!-- End footer links column-->
+     
 
     </div>
   </div>
@@ -78,7 +60,7 @@
     </div>
     <div class="credits">
       
-      Designed by <a href="#">Made</a>
+      Designed by <a href="#">Agraf-Construction</a>
     </div>
   </div>
 </div>

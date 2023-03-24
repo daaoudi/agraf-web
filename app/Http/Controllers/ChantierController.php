@@ -110,7 +110,8 @@ class ChantierController extends Controller
     public function destroy(Chantier $chantier)
     {
         //
-        $chantier->delete();
-        return redirect()->route('dashboard')->with(['sucess'=>'chantier supprime']);
+        $chantier1=Chantier::findOrFail($chantier);
+        $chantier1->delete();
+        return redirect()->route('dashboard')->with(['success'=>'chantier supprime']);
     }
 }

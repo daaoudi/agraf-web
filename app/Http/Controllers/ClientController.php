@@ -85,7 +85,7 @@ class ClientController extends Controller
             'prenom' => 'required',
             'telephone' => 'required|max:10',
             'montant' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             
             
         ]);

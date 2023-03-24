@@ -30,7 +30,7 @@
           <li><a href="about.html" class="text-dark">à propos</a></li>
           <li><a href="services.html" class="text-dark">Services</a></li>
           <li><a href="projects.html" class="text-dark">Projets</a></li>
-          <li><a href="blog.html" class="text-dark">Blog</a></li>
+         
           <li class="dropdown"><a href="#" class="text-dark"><span>Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#" class="text-dark">Ajouter</a></li>

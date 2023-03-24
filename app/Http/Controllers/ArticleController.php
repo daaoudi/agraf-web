@@ -33,17 +33,23 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([
+        $request->validate([
             'designation' => 'required',
             'description' => 'required',
             
             'ouvrier_id' => 'required|exists:ouvriers,id',
+            
+            
         ]);
 
+       
+
         $article=new Article();
-        $article->designation=$validated['designation'];
-        $article->description=$validated['description'];
-        $article->ouvrier_id=$validated['ouvrier_id'];
+        $article->designation=$request->input('designation');
+        $article->description=$request->input('description');
+        $article->ouvrier_id=$request->input('ouvrier_id');
+
+        $article->save();
 
         return redirect()->route('dashboard')->with(['sucess'=>'article ajoute']);
     }
@@ -72,14 +78,25 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
-        $article->update([
-            'designation'=>$request->designation,
-            'description'=>$request->description,
+        $request->validate([
+            'designation' => 'required',
+            'description' => 'required',
             
-            'ouvrier_id'=>$request->ouvrier_id
+            'ouvrier_id' => 'required|exists:ouvriers,id',
+            
+            
         ]);
 
-        return redirect()->route('dashboard')->with(['sucess'=>'article modifie']);
+        $article1=Article::findOrFail($article);
+
+        $article1->designation=$request->get('designation');
+        $article1->description=$request->get('description');
+        $article1->ouvrier_id=$request->get('ouvrier_id');
+        $article1->update();
+
+       
+
+        return redirect()->route('dashboard')->with(['success'=>'article modifie']);
     }
 
     /**
@@ -88,7 +105,8 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
-        $article->delete();
+        $article1=Article::findOrFail($article);
+        $article1->delete();
         return redirect()->route('dashboard')->with(['sucess'=>'article supprime']);
     }
 }
