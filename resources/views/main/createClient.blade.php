@@ -7,7 +7,7 @@ l'ajout d'un client.
 <div class="container-fluid" style="display:flex;justify-content:center;align-items:center;position:relative;top:50px;min-height:992px;">
     <div class="row">
         <div class="col-md-6 " data-aos="fade">
-    <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="post" class="php-email-form">
+    <form action="{{route('clients.store')}}" enctype="multipart/form-data"  method="post" >
       @csrf
       <h3>Get a quote</h3>
       <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
@@ -37,9 +37,7 @@ l'ajout d'un client.
 
         <div class="col-md-12 text-center">
           
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">votre Inscription valider. Merci pour votre confiance!</div>
+        
          
           <button class="btn btn-warning" type="submit">Valider</button>
         </div>
