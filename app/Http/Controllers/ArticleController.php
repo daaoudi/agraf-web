@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Ouvrier;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -23,8 +24,8 @@ class ArticleController extends Controller
     public function create()
     {
         //
-      
-        return view('main.createOuvrier');
+      $requests=Ouvrier::all();
+        return view('main.createOuvrier')->with(['ouvriers'=>$requests]);
     }
 
     /**
@@ -51,7 +52,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('dashboard')->with(['sucess'=>'article ajoute']);
+        return redirect()->route('dashboard')->with(['success'=>'article ajoute']);
     }
 
     /**
@@ -60,7 +61,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
-        return view('main.showArticle')->with(['ouvrier'=>$article]);
+        return view('main.showArticle')->with(['article'=>$article]);
     }
 
     /**
@@ -69,7 +70,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         //
-        return view('main.editArticle')->with(['ouvrier'=>$article]);
+        return view('main.editArticle')->with(['article'=>$article]);
     }
 
     /**
@@ -82,17 +83,17 @@ class ArticleController extends Controller
             'designation' => 'required',
             'description' => 'required',
             
-            'ouvrier_id' => 'required|exists:ouvriers,id',
+            //'ouvrier_id' => 'required|exists:ouvriers,id',
             
             
         ]);
 
-        $article1=Article::findOrFail($article);
+        $article->update([
+            'designation'=>$request->designation,
+            'description'=>$request->description,
+        ]);
 
-        $article1->designation=$request->get('designation');
-        $article1->description=$request->get('description');
-        $article1->ouvrier_id=$request->get('ouvrier_id');
-        $article1->update();
+      
 
        
 
@@ -105,8 +106,8 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
-        $article1=Article::findOrFail($article);
-        $article1->delete();
+        
+        $article->delete();
         return redirect()->route('dashboard')->with(['sucess'=>'article supprime']);
     }
 }

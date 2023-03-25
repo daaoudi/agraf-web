@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ouvrier;
+use App\Models\Chantier;
 use Illuminate\Http\Request;
 
 class OuvrierController extends Controller
@@ -23,8 +24,8 @@ class OuvrierController extends Controller
     public function create()
     {
         //
-       
-        return view('main.createOuvrier');
+       $requests=Chantier::all();
+        return view('main.createOuvrier')->with(['chantiers'=>$requests]);
     }
 
     /**
@@ -52,12 +53,12 @@ class OuvrierController extends Controller
     
         $ouvrier = new Ouvrier();
         $ouvrier->nom = $request->input('nom');
-        $ouvrier->prenom = $request->input('nom');
-        $ouvrier->telephone = $request->input('nom');
-        $ouvrier->cin = $request->input('nom');
-        $ouvrier->type = $request->input('nom');
-        $ouvrier->salaire_par_semaine = $request->input('nom');
-        $ouvrier->chantier_id = $request->input('nom');
+        $ouvrier->prenom = $request->input('prenom');
+        $ouvrier->telephone = $request->input('telephone');
+        $ouvrier->cin = $request->input('cin');
+        $ouvrier->type = $request->input('type');
+        $ouvrier->salaire_par_semaine = $request->input('salaire_par_paiement');
+        $ouvrier->chantier_id = $request->input('chantier_id');
         $ouvrier->save();
 
         return redirect()->route('dashboard')->with(['success'=>'ouvrier ajoute']);
@@ -92,28 +93,26 @@ class OuvrierController extends Controller
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'telephone' => 'required',
+            'telephone' => 'required|max:10',
             'cin' => 'required',
             'type' => 'required',
             'salaire_par_semaine' => 'required',
             
             
-            'chantier_id' => 'required|exists:chantiers,id',
+           // 'chantier_id' => 'required|exists:chantiers,id',
             
             
         ]);
+        $ouvrier->update([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'telephone'=>$request->telephone,
+            'cin'=>$request->cin,
+            'type'=>$request->type,
+            'salaire_par_semaine'=>$request->salaire_par_semaine,
 
-        $ouvrier1=Ouvrier::findOrFail($ouvrier);
+        ]);
 
-        $ouvrier1->nom=$request->get('nom');
-        $ouvrier1->prenom=$request->get('prenom');
-        $ouvrier1->telephone=$request->get('telephone');
-        $ouvrier1->cin=$request->get('cin');
-        $ouvrier1->type=$request->get('type');
-        $ouvrier1->salaire_par_semaine=$request->get('salaire_par_semaine');
-        $ouvrier1->chantier_id=$request->get('chantier_id');
-
-        $ouvrier1->update();
 
         
 
@@ -126,8 +125,8 @@ class OuvrierController extends Controller
     public function destroy(Ouvrier $ouvrier)
     {
         //
-        $ouvrier1=Ouvrier::findOrFail($ouvrier);
-        $ouvrier1->delete();
-        return redirect()->route('dashboard')->with(['sucess'=>'ouvrier supprime']);
+       
+        $ouvrier->delete();
+        return redirect()->route('dashboard')->with(['success'=>'ouvrier supprime']);
     }
 }
