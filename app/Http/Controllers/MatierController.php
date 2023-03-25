@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chantier;
+use App\Models\Fournisseur;
 use App\Models\Matier;
 use Illuminate\Http\Request;
 
@@ -23,8 +25,9 @@ class MatierController extends Controller
     public function create()
     {
         //
-        
-        return view('main.createMatier');
+        $chantiers=Chantier::all();
+        $fournisseurs=Fournisseur::all();
+        return view('main.createMatier')->with(['chantiers'=>$chantiers,'fournisseurs'=>$fournisseurs]);
     }
 
     /**
@@ -33,6 +36,11 @@ class MatierController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            ''
+
+
+        ]);
 
     }
 
