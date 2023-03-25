@@ -23,7 +23,7 @@ class Client extends Model
 
     public $timestamps = false;
 
-    public function chantiers():HasMany
+    public function chantiers()
     {
         return $this->hasMany(Chantier::class);
     }

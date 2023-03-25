@@ -29,17 +29,17 @@ class Matier extends Model
 
     public $timestamps = false;
 
-    public function chantier(): BelongsTo
+    public function chantier()
     {
-        return $this->belongsTo(Chantier::class, 'chantier_id');
+        return $this->belongsTo(Chantier::class);
     }
 
-    public function fournisseur(): BelongsTo
+    public function fournisseur()
     {
-        return $this->belongsTo(Fournisseur::class, 'foursnisseur_id');
+        return $this->belongsTo(Fournisseur::class);
     }
 
-    public function unites(): HasMany
+    public function unites()
     {
         return $this->hasMany(Unite::class);
     }

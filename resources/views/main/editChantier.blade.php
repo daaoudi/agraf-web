@@ -1,6 +1,6 @@
 @extends('layout.layouts')
 @section('title')
-la modification  d'un client.
+la modification  d'un chantier : {{$chantiers->designation}}.
 @endsection
 
 @section('content')
@@ -17,31 +17,38 @@ la modification  d'un client.
           </div>
       @endif
 
-    <form action="{{route('clients.update',$client->id)}}" enctype="multipart/form-data"  method="POST" >
+    <form action="{{route('chantiers.update',$chantiers->id)}}" enctype="multipart/form-data"  method="POST" >
       @csrf
       @method('PUT')
-      <h3 class="text-center text-dark">Formulaire de client: {{$client->nom}} </h3>
+      <h3 class="text-center text-dark">Formulaire de chantier: {{$chantiers->designation}} </h3>
       <p class="text-center">Remplir tout les s'il vous plait. </p>
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="nom" value="{{$client->nom}}" class="form-control" placeholder="Nom" required>
+          <input type="text" name="designation" value="{{$chantiers->designation}}" class="form-control"  required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prenom" value="{{$client->prenom}}" class="form-control" placeholder="Prenom" required>
+          <input type="text" name="prix" value="{{$chantiers->prix}}" class="form-control"  required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="telephone" value="{{$client->telephone}}" class="form-control" placeholder="Telephone" required>
+          <input type="text" name="ville" value="{{$chantiers->ville}}" class="form-control"  required>
         </div>
 
         <div class="col-md-12 ">
-          <input type="text" class="form-control" value="{{$client->montant}}" name="montant" placeholder="Montant" required>
+            <label for="paiement">Votre Type de Paiement :</label>
+          <input type="text" class="form-control" value="{{$chantiers->mode_paiement}}" id="paiement" disabled required>
         </div>
 
         <div class="col-md-12">
-          <input type="email" class="form-control" value="{{$client->email}}" name="email" placeholder="Email" required>
+            <select name="mode_paiement" class="form-select"  required>
+                <option selected>Changer votre Type de Paiment</option>
+               
+                <option value="Cheque">Cheque</option>
+                <option value="Espece">Espece</option>
+                <option value="Virement">Virement</option>
+              </select>
         </div>
 
         

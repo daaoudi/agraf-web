@@ -25,13 +25,13 @@ class Unite extends Model
 
 
 
-    public function matier():BelongsTo
+    public function matier()
     {
-        return $this->belongsTo(Matier::class,'matiere_id');
+        return $this->belongsTo(Matier::class);
     }
 
-    public function article():BelongsTo
+    public function article()
     {
-        return $this->belongsTo(Article::class,'article_id');
+        return $this->belongsTo(Article::class);
     }
 }

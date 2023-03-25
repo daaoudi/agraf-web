@@ -23,11 +23,11 @@ class Article extends Model
 
     public $timestamps = false;
 
-        public function ouvrier():BelongsTo
+        public function ouvrier()
     {
-        return $this->belongsTo(Ouvrier::class, 'ouvrier_id');
+        return $this->belongsTo(Ouvrier::class);
     }
-    public function unites(): HasMany
+    public function unites()
     {
         return $this->hasMany(Unite::class);
     }

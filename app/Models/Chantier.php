@@ -33,19 +33,19 @@ class Chantier extends Model
 
 
 
-    public function matiers():HasMany
+    public function matiers()
     {
         return $this->hasMany(Matier::class);
     }
 
 
-    public function ouvriers():HasMany
+    public function ouvriers()
     {
         return $this->hasMany(Ouvrier::class);
     }
 
-    public function client(): BelongsTo
+    public function client()
 {
-    return $this->belongsTo(Client::class, 'client_id');
+    return $this->belongsTo(Client::class);
 }
 }

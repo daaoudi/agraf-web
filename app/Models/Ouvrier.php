@@ -31,12 +31,12 @@ class Ouvrier extends Model
     public $timestamps=false;
 
 
-    public function chantier():BelongsTo
+    public function chantier()
 {
-    return $this->belongsTo(Chantier::class, 'chantier_id');
+    return $this->belongsTo(Chantier::class);
 }
 
-public function articles():HasMany
+public function articles()
 {
     return $this->hasMany(Article::class);
 }

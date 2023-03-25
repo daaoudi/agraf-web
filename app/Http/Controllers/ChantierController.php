@@ -14,15 +14,21 @@ class ChantierController extends Controller
      */
     public function index()
     {
-        $chantiers=DB::table('clients')->join('chantiers',' clients.id','=','chantiers.client_id')
+        $chantiers=Chantier::with('client')->get();
+        return view('main.showChantiers',compact('chantiers'));
+
+
+
+
+        /*$chantiers=DB::table('clients')->join('chantiers',' clients.id','=','chantiers.client_id')
         ->select('chantiers.*','clients.*')
-        ->get();
+        ->get();*/
         //dd($chantiers);
         //$chantiers=Chantier::with('client')->get();
         //$chantiers=Chantier::all();
         //return view('dashboard')->with(['chantiers'=>$chantiers]);
         //return view('dashboard',['chantiers'=>$chantiers]);
-        return view('dashboard',compact('chantiers')); 
+        //return view('dashboard',compact('chantiers')); 
     }
 
     /**
@@ -63,7 +69,7 @@ class ChantierController extends Controller
         $chantier->client_id=$request->input('client_id');
         $chantier->save();
 
-        return redirect()->route('dashboard')->with(['success'=>'chantier ajoute']);
+        return redirect()->route('chantiers.index')->with(['success'=>'chantier ajoute']);
     }
 
     /**
@@ -72,7 +78,7 @@ class ChantierController extends Controller
     public function show(Chantier $chantier)
     {
         //
-        return view('main.showChantier')->with(['ouvriers'=>$chantier]);
+        return view('main.showChantier')->with(['chantiers'=>$chantier]);
     }
 
     /**
@@ -81,7 +87,7 @@ class ChantierController extends Controller
     public function edit(Chantier $chantier)
     {
         //
-        return view('main.editChantier')->with(['ouvriers'=>$chantier]);
+        return view('main.editChantier')->with(['chantiers'=>$chantier]);
     }
 
     /**
@@ -95,7 +101,7 @@ class ChantierController extends Controller
             'prix' => 'required',
             'ville' => 'required',
             'mode_paiement' => 'required',
-            'client_id' => 'required|exists:clients,id',
+            //'client_id' => 'required|exists:clients,id',
             
             
         ]);
@@ -105,13 +111,13 @@ class ChantierController extends Controller
                 'prix'=>$request->prix,
                 'ville'=>$request->ville,
                 'mode_paiement'=>$request->mode_paiement,
-                'client_id'=>$request->client_id,
+                //'client_id'=>$request->client_id,
             ]);
        
 
         
 
-        return redirect()->route('dashboard')->with(['success'=>'chantier modifie']);
+        return redirect()->route('chantiers.index')->with(['success'=>'chantier modifie']);
     }
 
     /**
@@ -122,6 +128,6 @@ class ChantierController extends Controller
         //
         
         $chantier->delete();
-        return redirect()->route('dashboard')->with(['success'=>'chantier supprime']);
+        return redirect()->route('chantiers.index')->with(['success'=>'chantier supprime']);
     }
 }

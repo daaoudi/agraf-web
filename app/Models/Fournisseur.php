@@ -26,7 +26,7 @@ class Fournisseur extends Model
     public $timestamps=false;
 
 
-    public function matiers():HasMany
+    public function matiers()
     {
         return $this->hasMany(Matier::class);
     }
