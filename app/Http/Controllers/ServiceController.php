@@ -80,12 +80,14 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         //
+        
         $request->validate([
             'nom_service'=>'required',
             'description'=>'required',
-            'image'=>'required|image|mimes:png,jpg,lpeg,jfif|max:2048',
+            //'image'=>'required|image|mimes:png,jpg,lpeg,jfif|max:2048',
             'type_service'=>'required',
         ]);
+        
 
         if($request->has('image')){
             $file=$request->image;

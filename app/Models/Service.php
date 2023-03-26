@@ -9,6 +9,15 @@ class Service extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        "id",
+        "nom_service",
+        "description",
+        "image",
+        "type_service"
+        
+    ];
+
     public function articles()
     {
         return $this->hasMany(Article::class);
