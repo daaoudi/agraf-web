@@ -30,10 +30,10 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('mainDashboard');
     })->name('dashboard');
 
-    
+
 });
 Route::resource('clients',ClientController::class);
 Route::resource('chantiers',ChantierController::class);
