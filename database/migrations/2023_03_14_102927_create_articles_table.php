@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
-            $table->string('description');
+            $table->string('article_unite');
+            $table->text('description');
             $table->unsignedBigInteger('ouvrier_id');
+            $table->unsignedBigInteger('service_id');
             $table->foreign('ouvrier_id')->references('id')->on('ouvriers')->onDelete('cascade')->onUpdate('cascade');
-
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

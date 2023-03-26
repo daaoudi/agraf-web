@@ -15,16 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('designation');
+            $table->string('matiere_unite');
             $table->double('qte');
             $table->double('prix');
-            $table->date('date_r');
+            $table->dateTime('date_r');
             $table->double('nmbr_piece_utiliser');
             $table->unsignedBigInteger('chantier_id');
             $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('unite_id')->references('id')->on('unites')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->foreign('fournisseur_id')->references('id')->on('fournisseurs')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('fournisseur_id');
-            $table->unsignedBigInteger('unite_id');
+           
 
             $table->timestamps();
         });

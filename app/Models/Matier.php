@@ -20,6 +20,7 @@ class Matier extends Model
         "qte",
         "prix",
         "designation",
+        "matiere_unite",
         "chantier_id",
         "fournisseur_id",
         "date_r",
@@ -39,8 +40,5 @@ class Matier extends Model
         return $this->belongsTo(Fournisseur::class);
     }
 
-    public function unites()
-    {
-        return $this->hasMany(Unite::class);
-    }
+  
 }

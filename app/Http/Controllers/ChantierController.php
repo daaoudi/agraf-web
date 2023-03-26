@@ -15,6 +15,7 @@ class ChantierController extends Controller
     public function index()
     {
         $chantiers=Chantier::with('client')->get();
+        
         return view('main.showChantiers',compact('chantiers'));
 
 
