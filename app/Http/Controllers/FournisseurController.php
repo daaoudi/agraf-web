@@ -14,7 +14,7 @@ class FournisseurController extends Controller
     {
         //
         $fournisseurs=Fournisseur::all();
-        return view('main.showFournisseur')->with(['clients'=>$fournisseurs]);
+        return view('main.showFournisseurs')->with(['fournisseurs'=>$fournisseurs]);
     }
 
     /**
@@ -33,6 +33,25 @@ class FournisseurController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nom'=>'required',
+            'prenom'=>'required',
+            'email'=>'required|email',
+            'telephone'=>'required|max:10',
+            'montant'=>'required',
+            'montant_en_avance'=>'required',
+        ]);
+        $fournisseur=new Fournisseur();
+        $fournisseur->nom=$request->input('nom');
+        $fournisseur->prenom=$request->input('prenom');
+        $fournisseur->email=$request->input('email');
+        $fournisseur->telephone=$request->input('telephone');
+        $fournisseur->montant=$request->input('montant');
+        $fournisseur->montant_en_avance=$request->input('montant_en_avance');
+
+        $fournisseur->save();
+
+        return redirect()->route('fournisseurs.index')->with(['success'=>'fournisseur ajouter']);
     }
 
     /**
@@ -41,6 +60,7 @@ class FournisseurController extends Controller
     public function show(Fournisseur $fournisseur)
     {
         //
+        return view('main.showFournisseur')->with(['fournisseur'=>$fournisseur]);
     }
 
     /**
@@ -49,6 +69,7 @@ class FournisseurController extends Controller
     public function edit(Fournisseur $fournisseur)
     {
         //
+        return view('main.editFournisseur')->with(['fournisseur'=>$fournisseur]);
     }
 
     /**
@@ -57,6 +78,26 @@ class FournisseurController extends Controller
     public function update(Request $request, Fournisseur $fournisseur)
     {
         //
+
+        $request->validate([
+            'nom'=>'required',
+            'prenom'=>'required',
+            'email'=>'required|email',
+            'telephone'=>'required|max:10',
+            'montant'=>'required',
+            'montant_en_avance'=>'required',
+        ]);
+
+        $fournisseur->update([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'email'=>$request->email,
+            'telephone'=>$request->telephone,
+            'montant'=>$request->montant,
+            'montant_en_avance'=>$request->montant_en_avance,
+        ]);
+
+        return redirect()->route('fournisseurs.index')->with(['success'=>'fournisseur modifier']);
     }
 
     /**
@@ -65,5 +106,7 @@ class FournisseurController extends Controller
     public function destroy(Fournisseur $fournisseur)
     {
         //
+        $fournisseur->delete();
+        return redirect()->route('fournisseurs.index')->with(['success'=>'fournisseur supprimer']);
     }
 }

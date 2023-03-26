@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Ouvrier;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,8 +15,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $requests=Article::with('ouvrier')->get();
-        return view('dashboard',compact('requests'));
+        $requests=Article::with('ouvrier','service')->get();
+        return view('main.showArticles',compact('requests'));
     }
 
     /**
@@ -24,8 +25,9 @@ class ArticleController extends Controller
     public function create()
     {
         //
-      $requests=Ouvrier::all();
-        return view('main.createOuvrier')->with(['ouvriers'=>$requests]);
+      $ouvriers=Ouvrier::all();
+      $services=Service::all();
+        return view('main.createOuvrier')->with(['ouvriers'=>$ouvriers ,'services'=>$services]);
     }
 
     /**
@@ -39,6 +41,7 @@ class ArticleController extends Controller
             'description' => 'required',
             
             'ouvrier_id' => 'required|exists:ouvriers,id',
+            'service_id' => 'required|exists:services,id',
             
             
         ]);
@@ -49,10 +52,11 @@ class ArticleController extends Controller
         $article->designation=$request->input('designation');
         $article->description=$request->input('description');
         $article->ouvrier_id=$request->input('ouvrier_id');
+        $article->service_id=$request->input('service_id');
 
         $article->save();
 
-        return redirect()->route('dashboard')->with(['success'=>'article ajoute']);
+        return redirect()->route('articles.index')->with(['success'=>'article ajoute']);
     }
 
     /**
@@ -97,7 +101,7 @@ class ArticleController extends Controller
 
        
 
-        return redirect()->route('dashboard')->with(['success'=>'article modifie']);
+        return redirect()->route('articles.index')->with(['success'=>'article modifie']);
     }
 
     /**
@@ -108,6 +112,6 @@ class ArticleController extends Controller
         //
         
         $article->delete();
-        return redirect()->route('dashboard')->with(['sucess'=>'article supprime']);
+        return redirect()->route('articles.index')->with(['success'=>'article supprime']);
     }
 }

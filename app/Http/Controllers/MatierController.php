@@ -16,7 +16,7 @@ class MatierController extends Controller
     {
         //
         $requests=Matier::with('chantier','fournisseur')->get();
-        return view('dashboard',compact('requests'));
+        return view('main.showMatiers',compact('requests'));
     }
 
     /**
@@ -37,10 +37,33 @@ class MatierController extends Controller
     {
         //
         $request->validate([
-            ''
+            'type'=>'required',
+            'designation'=>'required',
+            'matiere_unite'=>'required',
+            'qte'=>'required',
+            'prix'=>'required',
+            'date_r'=>'required',
+            'nmbr_piece_utiliser'=>'required',
+            'chantier_id'=>'required|exists:chantiers,id',
+            'fournisseur_id'=>'required|exists:fournisseurs,id',
 
 
         ]);
+
+        $matier=new Matier();
+        $matier->type=$request->input('type');
+        $matier->designation=$request->input('designation');
+        $matier->matiere_unite=$request->input('matiere_unite');
+        $matier->qte=$request->input('qte');
+        $matier->prix=$request->input('prix');
+        $matier->date_r=$request->input('date_r');
+        $matier->nmbr_piece_utiliser=$request->input('nmbr_piece_utiliser');
+        $matier->chantier_id=$request->input('chantier_id');
+        $matier->fournisseur_id=$request->input('fournisseur_id');
+
+        $matier->save();
+
+        return redirect()->route('matiers.index')->with(['success'=>'matier ajouter']);
 
     }
 
@@ -50,7 +73,7 @@ class MatierController extends Controller
     public function show(Matier $matier)
     {
         //
-        return view('main.showMatiere')->with(['post'=>$matier]);
+        return view('main.showMatier')->with(['matier'=>$matier]);
     }
 
     /**
@@ -59,6 +82,7 @@ class MatierController extends Controller
     public function edit(Matier $matier)
     {
         //
+        return view('main.editMatier')->with(['matier'=>$matier]);
     }
 
     /**
@@ -67,6 +91,31 @@ class MatierController extends Controller
     public function update(Request $request, Matier $matier)
     {
         //
+        $request->validate([
+            'type'=>'required',
+            'designation'=>'required',
+            'matiere_unite'=>'required',
+            'qte'=>'required',
+            'prix'=>'required',
+            'date_r'=>'required',
+            'nmbr_piece_utiliser'=>'required',
+            'chantier_id'=>'required|exists:chantiers,id',
+            'fournisseur_id'=>'required|exists:fournisseurs,id',
+
+
+        ]);
+
+        $matier->update([
+            'type'=>$request->type,
+            'designation'=>$request->designation,
+            'matiere_unite'=>$request->matiere_unite,
+            'qte'=>$request->qte,
+            'prix'=>$request->prix,
+            'date_r'=>$request->date_r,
+            'nmbr_piece_utiliser'=>$request->nmbr_piece_utiliser,
+        ]);
+
+        return redirect()->route('matiers.index')->with(['success'=>'matier modifier']);
     }
 
     /**
@@ -75,5 +124,7 @@ class MatierController extends Controller
     public function destroy(Matier $matier)
     {
         //
+        $matier->delete();
+        return redirect()->route('matiers.index')->with(['success'=>'matier supprimer']);
     }
 }
