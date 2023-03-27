@@ -5,7 +5,7 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('storage/assets/img/breadcrumbs-bg.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Projets</h2>
