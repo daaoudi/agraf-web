@@ -8,6 +8,7 @@
 
 </div>
 
+<<<<<<< HEAD
 <!-- component
 <div class="flex flex-col">
   <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
@@ -44,6 +45,10 @@
     </div>
   </div>
 </div>
+=======
+<!-- component 
+
+>>>>>>> c132cdb87e158e20a98175ffbc17d18ba173a1d4
 -->
 <!--
 

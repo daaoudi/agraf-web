@@ -13,6 +13,8 @@ class ServiceController extends Controller
     public function index()
     {
         //
+        $services=Service::all();
+        return view('main.showServices')->with(['services'=>$services]);
     }
 
     /**
@@ -21,6 +23,7 @@ class ServiceController extends Controller
     public function create()
     {
         //
+        return view('main.createService');
     }
 
     /**
@@ -29,6 +32,28 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nom_service'=>'required',
+            'description'=>'required',
+            'image'=>'required|image|mimes:png,jpg,lpeg,jfif|max:2048',
+            'type_service'=>'required',
+        ]);
+
+        if($request->has('image')){
+            $file=$request->image;
+            $image_name=time(). '_'. $file->getClientOriginalName();
+            $file->move(public_path('storage/images'),$image_name);
+        }
+
+        $service=new Service();
+        $service->nom_service=$request->input('nom_service');
+        $service->description=$request->input('description');
+        $service->image=$image_name;
+        $service->type_service=$request->input('type_service');
+
+        $service->save();
+
+        return redirect()->route('services.index')->with(['success'=>'service ajouter']);
     }
 
     /**
@@ -37,6 +62,7 @@ class ServiceController extends Controller
     public function show(Service $service)
     {
         //
+        return view('main.showService')->with(['service'=>$service]);
     }
 
     /**
@@ -45,6 +71,7 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         //
+        return view('main.editService')->with(['service'=>$service]);
     }
 
     /**
@@ -53,6 +80,31 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         //
+        
+        $request->validate([
+            'nom_service'=>'required',
+            'description'=>'required',
+            //'image'=>'required|image|mimes:png,jpg,lpeg,jfif|max:2048',
+            'type_service'=>'required',
+        ]);
+        
+
+        if($request->has('image')){
+            $file=$request->image;
+            $image_name=time(). '_'. $file->getClientOriginalName();
+            $file->move(public_path('storage/images'),$image_name);
+            unlink(public_path('storage/images'). '/'. $service->image );
+            $service->image=$image_name;
+        }
+
+        $service->update([
+
+            'nom_service'=>$request->nom_service,
+            'description'=>$request->description,
+            'image'=>$service->image,
+            'type_service'=>$request->type_service,
+        ]);
+        return redirect()->route('services.index')->with(['success'=>'service modifier']);
     }
 
     /**
@@ -61,5 +113,7 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         //
+        $service->delete();
+        return redirect()->route('services.index')->with(['success'=>'service supprimer']);
     }
 }

@@ -15,7 +15,7 @@ class OuvrierController extends Controller
     {
         //
         $requests=Ouvrier::with('chantier')->get();
-        return view('dashboard',compact('requests'));
+        return view('main.showOuvriers',compact('requests'));
     }
 
     /**
@@ -61,7 +61,7 @@ class OuvrierController extends Controller
         $ouvrier->chantier_id = $request->input('chantier_id');
         $ouvrier->save();
 
-        return redirect()->route('dashboard')->with(['success'=>'ouvrier ajoute']);
+        return redirect()->route('ouvriers.index')->with(['success'=>'ouvrier ajoute']);
     
        
     }
@@ -116,7 +116,7 @@ class OuvrierController extends Controller
 
         
 
-        return redirect()->route('dashboard')->with(['success'=>'ouvrier modifie']);
+        return redirect()->route('ouvriers.index')->with(['success'=>'ouvrier modifie']);
     }
 
     /**
@@ -127,6 +127,6 @@ class OuvrierController extends Controller
         //
        
         $ouvrier->delete();
-        return redirect()->route('dashboard')->with(['success'=>'ouvrier supprime']);
+        return redirect()->route('ouvriers.index')->with(['success'=>'ouvrier supprime']);
     }
 }

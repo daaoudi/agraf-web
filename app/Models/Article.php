@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Models\Ouvrier;
+use App\Models\Service;
+
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -17,6 +18,7 @@ class Article extends Model
     protected $fillable=[
         "id",
         "designation",
+        "article_unite",
         "description",
         "ouvrier_id"
     ];
@@ -27,8 +29,10 @@ class Article extends Model
     {
         return $this->belongsTo(Ouvrier::class);
     }
-    public function unites()
+
+    public function service()
     {
-        return $this->hasMany(Unite::class);
+        return $this->belongsTo(Service::class);
     }
+  
 }

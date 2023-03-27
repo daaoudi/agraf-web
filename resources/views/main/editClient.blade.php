@@ -21,7 +21,7 @@ la modification  d'un client.
       @csrf
       @method('PUT')
       <h3 class="text-center text-dark">Formulaire de client: {{$client->nom}} </h3>
-      <p class="text-center">Remplir tout les s'il vous plait. </p>
+      
       <div class="row gy-3 ">
 
         <div class="col-md-12">

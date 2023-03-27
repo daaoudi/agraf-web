@@ -5,6 +5,18 @@ liste des clients
 @endsection
 
 @section('content')
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('storage/assets/img/services.jpg');">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+      <h2>Clients</h2>
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Clients</li>
+      </ol>
+
+    </div>
+  </div>
+  
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
     <div class="row">
         <div class="col-xl-12">

@@ -13,7 +13,7 @@
     </div>
 
   </div>
-    <div class="container-fluid  container-xxl d-flex align-items-center justify-content-between rounded-3  " style="background-color: rgb(218, 214, 214,0.8);">
+    <div class="container-fluid  container-xxl d-flex align-items-center justify-content-between rounded-3  " >
 
 
       <a href="/" class="logo d-flex align-items-center">
@@ -26,29 +26,29 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar ">
         <ul>
-          <li><a href="index.html" class="text-dark active">Acceuil</a></li>
-          <li><a href="about.html" class="text-dark">à propos</a></li>
-          <li><a href="services.html" class="text-dark">Services</a></li>
-          <li><a href="projects.html" class="text-dark">Projets</a></li>
+          <li><a href="#" class="text-dark active">Acceuil</a></li>
+          <li><a href="#" class="text-dark">à propos</a></li>
+          <li><a href="#" class="text-dark">Services</a></li>
+          <li><a href="#" class="text-dark">Projets</a></li>
          
-          <li class="dropdown"><a href="#" class="text-dark"><span>Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown" ><span class="text-dark">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li><a href="#" class="text-dark">Ajouter</a></li>
-              <li class="dropdown"><a href="#" class="text-dark"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              
+              <li class="dropdown" ><span class="text-dark">Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
                 <ul>
-                  <li><a href="#" class="text-dark">fournisseurs 1</a></li>
-                  <li><a href="#" class="text-dark">clients 2</a></li>
-                  <li><a href="#" class="text-dark">matieres 3</a></li>
-                  <li><a href="#" class="text-dark">chantiers 4</a></li>
-                  <li><a href="#" class="text-dark">ouvries 5</a></li>
+                  <li><a href="{{url('fournisseurs/create')}}" class="text-dark">fournisseurs </a></li>
+                  <li><a href="{{url('clients/create')}}" class="text-dark">clients </a></li>
+                  <li><a href="{{url('matiers/create')}}" class="text-dark">matieres </a></li>
+                  <li><a href="{{url('chantiers/create')}}" class="text-dark">chantiers </a></li>
+                  <li><a href="{{url('ouvriers/create')}}" class="text-dark">ouvries </a></li>
+                  <li><a href="{{url('services/create')}}" class="text-dark">services </a></li>
                 </ul>
               </li>
-              <li><a href="#">projets 2</a></li>
-              <li><a href="#">services 3</a></li>
-              <li><a href="#">blogs 4</a></li>
+             
+             
             </ul>
           </li>
-          <li><a href="contact.html" class="text-dark">Contact</a></li>
+          <li><a href="#" class="text-dark">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 

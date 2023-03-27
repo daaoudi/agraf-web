@@ -1,17 +1,17 @@
 @extends('layout.layouts')
 
 @section('title')
-{{$clients->nom .''. $clients->prenom}}
+{{$service->nom_service .'-'. $service->type_service}}
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('storage/assets/img/services.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('storage/assets/img/breadcrumbs-bg.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-      <h2>Clients</h2>
+      <h2>Services</h2>
       <ol>
         <li><a href="/">Home</a></li>
-        <li>Clients</li>
+        <li>Services</li>
       </ol>
 
     </div>
@@ -27,31 +27,31 @@
             
             <table class="table table-secondary table-striped">
                 <tr>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>montant</th>
-                    <th>email</th>
+                    <th>nom service</th>
+                    <th>description</th>
+                    <th>image</th>
+                    <th>type service</th>
+                   
                     <th>action</th>
                 </tr>
                 
                 <tr>
-                    <td>{{$clients->nom}}</td>
-                    <td>{{$clients->prenom}}</td>
-                    <td>{{$clients->telephone}}</td>
-                    <td>{{$clients->montant}}</td>
-                    <td>{{$clients->email}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$clients->id)}}"><span class="material-symbols-outlined">
+                    <td>{{$service->nom_service}}</td>
+                    <td>{{$service->description}}</td>
+                    <td><img src="{{asset('./storage/images/'.$service['image'])}}" style="aspect-ratio: 0.5;" alt="..."></td>
+                    <td>{{$service->type_service}}</td>
+                    
+                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('services.edit',$service->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
-                        <form action="{{route('clients.destroy',$clients->id)}}" style="display: inline-block;" method="post" id="{{$clients->id}}">
+                        <form action="{{route('services.destroy',$service->id)}}" style="display: inline-block;" method="post" id="{{$service->id}}">
                         @csrf
                         @method('DELETE')    
                         </form>
 
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
                         if(confirm('vous etez sure pour la suppression ?'))
-                        document.getElementById('{{$clients->id}}').submit();" type="submit"><span class="material-symbols-outlined">
+                        document.getElementById('{{$service->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
                         </td>
