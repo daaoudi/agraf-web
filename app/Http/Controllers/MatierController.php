@@ -15,8 +15,8 @@ class MatierController extends Controller
     public function index()
     {
         //
-        $requests=Matier::with('chantier','fournisseur')->get();
-        return view('main.showMatiers',compact('requests'));
+        $matiers=Matier::with('chantier','fournisseur')->get();
+        return view('main.showMatiers',compact('matiers'));
     }
 
     /**
@@ -99,8 +99,8 @@ class MatierController extends Controller
             'prix'=>'required',
             'date_r'=>'required',
             'nmbr_piece_utiliser'=>'required',
-            'chantier_id'=>'required|exists:chantiers,id',
-            'fournisseur_id'=>'required|exists:fournisseurs,id',
+           // 'chantier_id'=>'required|exists:chantiers,id',
+            //'fournisseur_id'=>'required|exists:fournisseurs,id',
 
 
         ]);

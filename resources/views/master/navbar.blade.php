@@ -4,8 +4,8 @@
 <header id="header" class="header   ">
 <div class="container-fluid   d-flex align-items-center justify-content-between  ">
     <div>
-      <p id="time" class="text-dark d-inline-block"></p>
-      <p id="date" class="text-dark d-inline-block""></p>
+      <p id="time" class="text-white d-inline-block"></p>
+      <p id="date" class="text-white d-inline-block""></p>
     </div>
     <div>
       <a href="/register" class="btn btn-outline-warning">Inscription</a>
@@ -18,20 +18,20 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="/storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-5" alt="">
-        <h1 class="text-dark">Agraf<span>.</span></h1>
+         <img src="/storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-1" style="box-shadow: 3px 5px 3px rgb(195, 245, 238);" alt="">
+        <h1 class="text-white">Agraf<span>.</span></h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar ">
         <ul>
-          <li><a href="#" class="text-dark active">Acceuil</a></li>
-          <li><a href="#" class="text-dark">à propos</a></li>
-          <li><a href="#" class="text-dark">Services</a></li>
-          <li><a href="#" class="text-dark">Projets</a></li>
+          <li><a href="#" class="text-white active">Acceuil</a></li>
+          <li><a href="#" class="text-white">à propos</a></li>
+          <li><a href="#" class="text-white">Services</a></li>
+          <li><a href="#" class="text-white">Projets</a></li>
          
-          <li class="dropdown" ><span class="text-dark">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
+          <li class="dropdown" ><span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
               
               <li class="dropdown" ><span class="text-dark">Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
@@ -48,7 +48,7 @@
              
             </ul>
           </li>
-          <li><a href="#" class="text-dark">Contact</a></li>
+          <li><a href="#" class="text-white">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 

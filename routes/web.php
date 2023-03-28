@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MatierController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ChantierController;
+use App\Http\Controllers\FournisseurController;
 
 
 
@@ -39,3 +41,5 @@ Route::middleware([
 Route::resource('clients',ClientController::class);
 Route::resource('chantiers',ChantierController::class);
 Route::resource('services',ServiceController::class);
+Route::resource('fournisseurs',FournisseurController::class);
+Route::resource('matiers',MatierController::class);
