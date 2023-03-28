@@ -8,13 +8,52 @@
 
 </div>
 
+<<<<<<< HEAD
+<!-- component
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="bg-white border-b">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                nom_client
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Designation
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Prix
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Ville
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Mode_Paiement
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+=======
 <!-- component 
 
+>>>>>>> c132cdb87e158e20a98175ffbc17d18ba173a1d4
 -->
 <!--
 
 <div class="grid grid-cols-4 md:grid-cols-3 text-white">
-   
+
     <div class="chat-notification  dark:bg-gray-600 dark:text-white">
         <div class="chat-notification-logo-wrapper">
           <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
@@ -57,9 +96,9 @@
           line-height: 1.5;
         }
       </style>
-    
 
-    
+
+
 
 </div>
 -->

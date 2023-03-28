@@ -33,13 +33,16 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('mainDashboard');
     })->name('dashboard');
 
-    
+
 });
 Route::resource('clients',ClientController::class);
 Route::resource('chantiers',ChantierController::class);
+<<<<<<< HEAD
+=======
 Route::resource('services',ServiceController::class);
 Route::resource('fournisseurs',FournisseurController::class);
 Route::resource('matiers',MatierController::class);
+>>>>>>> c132cdb87e158e20a98175ffbc17d18ba173a1d4
