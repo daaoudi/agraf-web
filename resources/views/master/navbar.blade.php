@@ -42,6 +42,7 @@
                   <li><a href="{{url('chantiers/create')}}" class="text-dark">chantiers </a></li>
                   <li><a href="{{url('ouvriers/create')}}" class="text-dark">ouvries </a></li>
                   <li><a href="{{url('services/create')}}" class="text-dark">services </a></li>
+                  <li><a href="{{url('articles/create')}}" class="text-dark">articles </a></li>
                 </ul>
               </li>
              

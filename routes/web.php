@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MatierController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\OuvrierController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ChantierController;
@@ -47,4 +48,5 @@ Route::resource('services',ServiceController::class);
 Route::resource('fournisseurs',FournisseurController::class);
 Route::resource('matiers',MatierController::class);
 Route::resource('ouvriers',OuvrierController::class);
+Route::resource('articles',ArticleController::class);
 

@@ -20,7 +20,8 @@ class Article extends Model
         "designation",
         "article_unite",
         "description",
-        "ouvrier_id"
+        "ouvrier_id",
+        'service_id',
     ];
 
     public $timestamps = false;

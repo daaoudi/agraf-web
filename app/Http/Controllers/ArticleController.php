@@ -27,7 +27,7 @@ class ArticleController extends Controller
         //
       $ouvriers=Ouvrier::all();
       $services=Service::all();
-        return view('main.createOuvrier')->with(['ouvriers'=>$ouvriers ,'services'=>$services]);
+        return view('main.createArticle')->with(['ouvriers'=>$ouvriers ,'services'=>$services]);
     }
 
     /**
@@ -39,7 +39,7 @@ class ArticleController extends Controller
         $request->validate([
             'designation' => 'required',
             'description' => 'required',
-            
+            'article_unite'=>"required",
             'ouvrier_id' => 'required|exists:ouvriers,id',
             'service_id' => 'required|exists:services,id',
             
@@ -51,6 +51,7 @@ class ArticleController extends Controller
         $article=new Article();
         $article->designation=$request->input('designation');
         $article->description=$request->input('description');
+        $article->article_unite=$request->input('article_unite');
         $article->ouvrier_id=$request->input('ouvrier_id');
         $article->service_id=$request->input('service_id');
 
