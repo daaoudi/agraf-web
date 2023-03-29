@@ -31,10 +31,10 @@
           <li><a href="#" class="text-white">Services</a></li>
           <li><a href="#" class="text-white">Projets</a></li>
          
-          <li class="dropdown" ><span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
+          <li class="dropdown" ><a href="#"> <span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               
-              <li class="dropdown" ><span class="text-dark">Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
+              <li class="dropdown" ><a href="#"> <span class="text-dark">Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="{{url('fournisseurs/create')}}" class="text-dark">fournisseurs </a></li>
                   <li><a href="{{url('clients/create')}}" class="text-dark">clients </a></li>
