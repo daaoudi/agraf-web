@@ -28,21 +28,25 @@ la modification d'un Article : {{$article->designation}}.
           </div>
       @endif
 
-    <form action="{{route('articles.update',$ouvrier->id)}}" enctype="multipart/form-data"  method="post" >
+    <form action="{{route('articles.update',$article->id)}}" enctype="multipart/form-data"  method="post" >
       @csrf
       @method('PUT')
-      <h3 class="text-center">Formulaire d'Article : {{$ouvrier->designation}}</h3>
+      <h3 class="text-center">Formulaire d'Article : {{$article->designation}}</h3>
       <p class="text-center">Modifier les Champs. </p>
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="designation" value="{{$ouvrier->designation}}" class="form-control" placeholder="Designation" required>
+          <input type="text" name="designation" value="{{$article->designation}}" class="form-control" placeholder="Designation" required>
         </div>
+
+        <div class="col-md-12">
+            <input type="text" name="article_unite" value="{{$article->article_unite}}" class="form-control" placeholder="article_unite" required>
+          </div>
 
         <div class="col-md-12">
             <div class="form-group">
                 <label for="Textarea1">Description d'article :</label>
-                <textarea name="description" class="form-control" id="Textarea1" rows="3">{{$ouvrier->description}}</textarea>
+                <textarea name="description" class="form-control" id="Textarea1" rows="3">{{$article->description}}</textarea>
               </div>
         </div>
 

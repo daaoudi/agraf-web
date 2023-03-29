@@ -43,7 +43,7 @@ liste des Articles
                     <td>{{$request->ouvrier->nom}}</td>
                     <td>{{$request->ouvrier->prenom}}</td>
                     <td>{{$request->designation}}</td>
-                    <td>{{$request->description}}</td>
+                    <td>{{Str::limit($request->description,25)}}</td>
                     <td>{{$request->article_unite}}</td>
                     
                     <td><button title="Modifier" class="btn btn-success"><a href="{{route('articles.edit',$request->id)}}"><span class="material-symbols-outlined">
