@@ -14,8 +14,8 @@ class OuvrierController extends Controller
     public function index()
     {
         //
-        $requests=Ouvrier::with('chantier')->get();
-        return view('main.showOuvriers',compact('requests'));
+        $ouvriers=Ouvrier::with('chantier')->get();
+        return view('main.showOuvriers',compact('ouvriers'));
     }
 
     /**
@@ -57,7 +57,7 @@ class OuvrierController extends Controller
         $ouvrier->telephone = $request->input('telephone');
         $ouvrier->cin = $request->input('cin');
         $ouvrier->type = $request->input('type');
-        $ouvrier->salaire_par_semaine = $request->input('salaire_par_paiement');
+        $ouvrier->salaire_par_semaine = $request->input('salaire_par_semaine');
         $ouvrier->chantier_id = $request->input('chantier_id');
         $ouvrier->save();
 
