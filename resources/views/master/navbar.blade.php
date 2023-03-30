@@ -13,8 +13,14 @@
         <a class="nav-link text-white" href="{{route('profile.show')}}">{{auth()->user()->name}}</a>
       </li>
       @else
-      <a href="/register" class="btn btn-outline-warning">Inscription</a>
-        <a href="/login" class="btn btn-outline-light">Connexion</a>
+      <a href="/register" title="inscription" class="btn btn-outline-warning">
+        <span class="material-symbols-outlined">
+          subscriptions
+          </span>
+      </a>
+        <a href="/login" title="connection" class="btn btn-outline-light"><span class="material-symbols-outlined">
+          account_circle
+          </span></a>
         @endif
     </div>
 
