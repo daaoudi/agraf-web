@@ -14,7 +14,7 @@
       </li>
       @else
       <a href="/register" class="btn btn-outline-warning">Inscription</a>
-        <a href="/login" class="btn btn-outline-danger">Connexion</a>
+        <a href="/login" class="btn btn-outline-light">Connexion</a>
         @endif
     </div>
 
@@ -25,7 +25,7 @@
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
          <img src="/storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-1" style="box-shadow: 3px 5px 3px rgb(195, 245, 238);" alt="">
-        <h1 class="text-white">Agraf<span>.</span></h1>
+        <h1 class="text-white">Agrtravis<span>.</span></h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -38,17 +38,17 @@
           <li><a href="#" class="text-white">Projets</a></li>
          
           <li class="dropdown" ><a href="#"> <span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
+            <ul class="bg-secondary" >
               
-              <li class="dropdown" ><a href="#"> <span class="text-dark">Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="{{url('fournisseurs/create')}}" class="text-dark">fournisseurs </a></li>
-                  <li><a href="{{url('clients/create')}}" class="text-dark">clients </a></li>
-                  <li><a href="{{url('matiers/create')}}" class="text-dark">matieres </a></li>
-                  <li><a href="{{url('chantiers/create')}}" class="text-dark">chantiers </a></li>
-                  <li><a href="{{url('ouvriers/create')}}" class="text-dark">ouvries </a></li>
-                  <li><a href="{{url('services/create')}}" class="text-dark">services </a></li>
-                  <li><a href="{{url('articles/create')}}" class="text-dark">articles </a></li>
+              <li class="dropdown " id="link" ><a href="#" > <span >Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul class="bg-secondary" >
+                  <li id="link"><a href="{{url('fournisseurs/create')}}"  >Fournisseurs </a></li>
+                  <li id="link"><a href="{{url('clients/create')}}" >Clients </a></li>
+                  <li id="link"><a href="{{url('matiers/create')}}" >Matieres </a></li>
+                  <li id="link" ><a href="{{url('chantiers/create')}}" >Projets </a></li>
+                  <li id="link"><a href="{{url('ouvriers/create')}}" >Ouvries </a></li>
+                  <li id="link"><a href="{{url('services/create')}}" >Services </a></li>
+                  <li id="link"><a href="{{url('articles/create')}}" >Articles </a></li>
                 </ul>
               </li>
              

@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-agraf
+Agrtravis
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@ agraf
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <h2 data-aos="fade-down">Bienvenue au <span>Agraf</span></h2>
+        <h2 data-aos="fade-down">Bienvenue au <span>Agrtravis</span></h2>
         <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <a data-aos="fade-up" data-aos-delay="100" href="#get-started" class="btn-get-started">Commencer</a>
       </div>
@@ -265,7 +265,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image007.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -276,7 +276,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image009.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -287,7 +287,7 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image015.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -304,7 +304,7 @@ agraf
 <div class="col-xl-12">
   <h2 class="text-center">Amenagement</h2>
 <div class="d-flex justify-content-evenly align-items-center flex-wrap">
-<div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="500">
+<div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image021.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -315,10 +315,10 @@ agraf
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image021.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+            <img src="/storage/assets/img/services/image024.png" style="width:280px; height:150px" loading="lazy" alt="..." >
           </div>
           <h3>Plattre</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -326,7 +326,7 @@ agraf
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image030.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -337,7 +337,7 @@ agraf
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image032.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -348,7 +348,7 @@ agraf
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image036.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -359,7 +359,7 @@ agraf
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
             <img src="/storage/assets/img/services/image040.png" style="width:280px; height:150px" loading="lazy" alt="..." >
@@ -373,7 +373,7 @@ agraf
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
         <div class="service-item position-relative">
           <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image044.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+            <img src="/storage/assets/img/services/image044.png" style="width:240px; height:160px" loading="lazy" alt="..." >
           </div>
           <h3>Entretien et réparation </h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
