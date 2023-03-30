@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-Agrtravis
+Agrtravis - Construction Et Amenagement 
 @endsection
 
 @section('content')
