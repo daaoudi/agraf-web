@@ -46,7 +46,10 @@ liste des Ouvriers
                     <td>{{$ouvrier->cin}}</td>
                     <td>{{$ouvrier->type}}</td>
                     <td>{{$ouvrier->salaire_par_semaine}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('ouvriers.edit',$ouvrier->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('ouvriers.edit',$ouvrier->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('ouvriers.destroy',$ouvrier->id)}}" style="display: inline-block;" method="post" id="{{$ouvrier->id}}">
@@ -61,7 +64,10 @@ liste des Ouvriers
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('ouvriers.show',$ouvrier->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                          @endif
+                          @endif
+                          </td>
                 </tr>
                 @endforeach
               </table>

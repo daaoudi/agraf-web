@@ -41,7 +41,10 @@
                     <td><img src="{{asset('./storage/images/'.$service['image'])}}" style="aspect-ratio: 0.5;" alt="..."></td>
                     <td>{{$service->type_service}}</td>
                     
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('services.edit',$service->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('services.edit',$service->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('services.destroy',$service->id)}}" style="display: inline-block;" method="post" id="{{$service->id}}">
@@ -54,6 +57,8 @@
                         document.getElementById('{{$service->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
                         </td>
                 </tr>
                

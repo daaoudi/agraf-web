@@ -42,7 +42,10 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
                     <td>{{$chantiers->prix}}</td>
                     <td>{{$chantiers->ville}}</td>
                     <td>{{$chantiers->mode_paiement}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('chantiers.edit',$chantiers->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('chantiers.edit',$chantiers->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('chantiers.destroy',$chantiers->id)}}" style="display: inline-block;" method="post" id="{{$chantiers->id}}">
@@ -55,6 +58,8 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
                         document.getElementById('{{$chantiers->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
                        </td>
                 </tr>
                

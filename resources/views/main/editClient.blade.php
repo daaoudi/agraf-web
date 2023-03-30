@@ -1,10 +1,21 @@
 @extends('layout.layouts')
 @section('title')
-la modification  d'un client.
+la modification  d'un client :{{$client->nom . ' ' . $client->prenom}}.
 @endsection
 
 @section('content')
-<div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+  <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+    <h2>Client</h2>
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li>Client</li>
+    </ol>
+
+  </div>
+</div>
+<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())

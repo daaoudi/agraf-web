@@ -46,7 +46,10 @@ liste des Articles
                     <td>{{Str::limit($request->description,25)}}</td>
                     <td>{{$request->article_unite}}</td>
                     
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('articles.edit',$request->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                        @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                        <button title="Modifier" class="btn btn-success"><a href="{{route('articles.edit',$request->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('articles.destroy',$request->id)}}" style="display: inline-block;" method="post" id="{{$request->id}}">
@@ -61,7 +64,10 @@ liste des Articles
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('articles.show',$request->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                        @endif
+                        @endif
+                        </td>
                 </tr>
                 @endforeach
               </table>

@@ -8,8 +8,14 @@
       <p id="date" class="text-white d-inline-block""></p>
     </div>
     <div>
+      @if(auth()->check())
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{route('profile.show')}}">{{auth()->user()->name}}</a>
+      </li>
+      @else
       <a href="/register" class="btn btn-outline-warning">Inscription</a>
         <a href="/login" class="btn btn-outline-danger">Connexion</a>
+        @endif
     </div>
 
   </div>

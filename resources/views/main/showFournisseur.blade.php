@@ -43,7 +43,10 @@
                     <td>{{$fournisseur->montant}}</td>
                     <td>{{$fournisseur->montant_en_avance}}</td>
                     <td>{{$fournisseur->email}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
@@ -56,6 +59,9 @@
                         document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
+
                         </td>
                 </tr>
                

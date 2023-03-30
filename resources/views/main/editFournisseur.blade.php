@@ -7,16 +7,16 @@ la modification  d'un Fournisseur : {{$fournisseur->nom .' '. $fournisseur->pren
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-      <h2>fournisseurs</h2>
+      <h2>fournisseur</h2>
       <ol>
         <li><a href="/">Home</a></li>
-        <li>fournisseurs</li>
+        <li>fournisseur</li>
       </ol>
 
     </div>
   </div>
   
-<div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())

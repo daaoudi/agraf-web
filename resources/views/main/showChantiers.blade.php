@@ -42,7 +42,10 @@ liste des chantiers
                     <td>{{$chantier->prix}}</td>
                     <td>{{$chantier->ville}}</td>
                     <td>{{$chantier->mode_paiement}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('chantiers.edit',$chantier->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('chantiers.edit',$chantier->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('chantiers.destroy',$chantier->id)}}" style="display: inline-block;" method="post" id="{{$chantier->id}}">
@@ -57,7 +60,10 @@ liste des chantiers
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('chantiers.show',$chantier->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                          @endif
+                          @endif
+                          </td>
                 </tr>
                 @endforeach
               </table>

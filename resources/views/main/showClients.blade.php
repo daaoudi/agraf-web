@@ -42,7 +42,10 @@ liste des clients
                     <td>{{$client->telephone}}</td>
                     <td>{{$client->montant}}</td>
                     <td>{{$client->email}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$client->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$client->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('clients.destroy',$client->id)}}" style="display: inline-block;" method="post" id="{{$client->id}}">
@@ -57,7 +60,10 @@ liste des clients
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('clients.show',$client->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                          @endif
+                          @endif
+                          </td>
                 </tr>
                 @endforeach
               </table>

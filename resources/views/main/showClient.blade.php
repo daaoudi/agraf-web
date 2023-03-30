@@ -41,7 +41,10 @@
                     <td>{{$clients->telephone}}</td>
                     <td>{{$clients->montant}}</td>
                     <td>{{$clients->email}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$clients->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$clients->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('clients.destroy',$clients->id)}}" style="display: inline-block;" method="post" id="{{$clients->id}}">
@@ -54,6 +57,9 @@
                         document.getElementById('{{$clients->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
+                        
                         </td>
                 </tr>
                

@@ -42,7 +42,10 @@
                     <td>{{$ouvrier->cin}}</td>
                     <td>{{$ouvrier->type}}</td>
                     <td>{{$ouvrier->salaire_par_semaine}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('ouvriers.edit',$ouvrier->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('ouvriers.edit',$ouvrier->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('ouvriers.destroy',$ouvrier->id)}}" style="display: inline-block;" method="post" id="{{$ouvrier->id}}">
@@ -55,6 +58,8 @@
                         document.getElementById('{{$ouvrier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
                         </td>
                 </tr>
                

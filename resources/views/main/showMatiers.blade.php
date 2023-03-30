@@ -50,7 +50,10 @@ liste des Matieres
                     <td>{{$matier->matiere_unite}}</td>
                     <td>{{$matier->date_r}}</td>
                     <td>{{$matier->nmbr_piece_utiliser}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('matiers.edit',$matier->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('matiers.edit',$matier->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('matiers.destroy',$matier->id)}}" style="display: inline-block;" method="post" id="{{$matier->id}}">
@@ -65,7 +68,10 @@ liste des Matieres
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('matiers.show',$matier->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                            @endif
+                            @endif
+                          </td>
                 </tr>
                 @endforeach
               </table>

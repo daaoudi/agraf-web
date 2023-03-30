@@ -48,7 +48,10 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
                     <td>{{$matier->matiere_unite}}</td>
                     <td>{{$matier->date_r}}</td>
                     <td>{{$matier->nmbr_piece_utiliser}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('matiers.edit',$matier->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('matiers.edit',$matier->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('matiers.destroy',$matier->id)}}" style="display: inline-block;" method="post" id="{{$matier->id}}">
@@ -61,6 +64,8 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
                         document.getElementById('{{$matier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
                        </td>
                 </tr>
              

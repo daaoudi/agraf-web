@@ -1,6 +1,6 @@
 @extends('layout.layouts')
 @section('title')
-la modification d'un Ouvrier {{$ouvrier->nom . ' ' . $ouvrier->prenom}}.
+la modification d'un Ouvrier : {{$ouvrier->nom . ' ' . $ouvrier->prenom}}.
 @endsection
 
 @section('content')

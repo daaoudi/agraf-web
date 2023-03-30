@@ -44,7 +44,10 @@ liste des Fournisseurs
                     <td>{{$fournisseur->montant}}</td>
                     <td>{{$fournisseur->montant_en_avance}}</td>
                     <td>{{$fournisseur->email}}</td>
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                      @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
@@ -59,7 +62,10 @@ liste des Fournisseurs
                         </span> </button>
                         <button title="View" class="btn btn-info"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
                             visibility
-                            </span></a></button></td>
+                            </span></a></button>
+                          @endif
+                          @endif
+                          </td>
                 </tr>
                 @endforeach
               </table>

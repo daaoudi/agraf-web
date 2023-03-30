@@ -38,7 +38,10 @@ l'Article: {{$article->designation}}
                     <td>{{Str::limit($article->description,25)}}</td>
                     <td>{{$article->article_unite}}</td>
                     
-                    <td><button title="Modifier" class="btn btn-success"><a href="{{route('articles.edit',$article->id)}}"><span class="material-symbols-outlined">
+                    <td>
+                        @if(auth()->check())
+                        @if(auth()->user()->is_admin)
+                        <button title="Modifier" class="btn btn-success"><a href="{{route('articles.edit',$article->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('articles.destroy',$article->id)}}" style="display: inline-block;" method="post" id="{{$article->id}}">
@@ -51,6 +54,8 @@ l'Article: {{$article->designation}}
                         document.getElementById('{{$article->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @endif
+                        @endif
                         </td>
                 </tr>
               
