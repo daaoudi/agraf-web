@@ -2,12 +2,14 @@
 
 <!-- ======= Header ======= -->
 <header id="header" class="header   ">
-<div class="container-fluid   d-flex align-items-center justify-content-between  ">
-    <div>
+<div class="container-fluid     ">
+  <div class="row d-flex align-items-center justify-content-between">
+    <div class="col-lg-auto">
       <p id="time" class="text-white d-inline-block"></p>
       <p id="date" class="text-white d-inline-block""></p>
     </div>
-    <div>
+  
+    <div class="col-lg-auto">
       @if(auth()->check())
       <li class="nav-item">
         <a class="nav-link text-white" href="{{route('profile.show')}}">{{auth()->user()->name}}</a>
@@ -23,6 +25,7 @@
           </span></a>
         @endif
     </div>
+  </div>
 
   </div>
     <div class="container-fluid  container-xxl d-flex align-items-center justify-content-between rounded-3  " >
