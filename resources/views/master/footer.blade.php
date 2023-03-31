@@ -7,7 +7,7 @@
 
       <div class="col-lg-4 col-md-6">
         <div class="footer-info">
-          <h3>Agraf</h3>
+          <h3>Agratravis</h3>
           <p>
             Adresse: <br>
             ##########<br><br>
@@ -34,14 +34,13 @@
         </ul>
       </div><!-- End footer links column-->
 
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Services</h4>
+      <div class="col-lg-2 col-md-3 footer-links py-3 px-3">
+        <h4>Notre Services</h4>
         <ul>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Product Management</a></li>
-          <li><a href="#">Marketing</a></li>
-          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Construction</a></li>
+          <li><a href="#">Amenagement</a></li>
+          
+         
         </ul>
       </div><!-- End footer links column-->
 
