@@ -37,13 +37,16 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('mainDashboard');
     })->name('dashboard');
+    Route::get('/dashboard2', function () {
+        return view('dashboard');
+    });
 
 
 });
+
+
 Route::resource('clients',ClientController::class);
 Route::resource('chantiers',ChantierController::class);
-
-
 Route::resource('services',ServiceController::class);
 Route::resource('fournisseurs',FournisseurController::class);
 Route::resource('matiers',MatierController::class);

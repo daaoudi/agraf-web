@@ -18,6 +18,7 @@ liste des chantiers
   </div>
 
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+    <div style="position:absolute;right:40px;"><a class="btn btn-warning" href="/chantiers/create">+ Ajouter un chantier</a></div>
     <div class="row">
         <div class="col-xl-12">
             @if (session()->has('success'))
@@ -26,7 +27,7 @@ liste des chantiers
             </div>
             @endif
             <h4>Nombre de chantiers: {{count($chantiers)}}</h4>
-            <table class="table table-secondary table-striped">
+            <table class="table table-secondary table-striped my-5">
                 <tr>
                     <th>nom_client</th>
                     <th>designation</th>
@@ -50,7 +51,7 @@ liste des chantiers
                         </span></a></button>
                         <form action="{{route('chantiers.destroy',$chantier->id)}}" style="display: inline-block;" method="post" id="{{$chantier->id}}">
                         @csrf
-                        @method('DELETE')    
+                        @method('DELETE')
                         </form>
 
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
