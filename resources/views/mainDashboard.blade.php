@@ -103,7 +103,7 @@
                             <a href="/chantiers" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
-                                    Chantiers
+                                    Projets
                                 </p>
                             </a>
                         </li>
@@ -113,6 +113,38 @@
                                 <i class="nav-icon far fa-user"></i>
                                 <p>
                                     Clients
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/services" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>
+                                    Services
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ouvriers" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>
+                                    Ouvriers
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/clients" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>
+                                    Fournisseurs
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/articles" class="nav-link">
+                                <i class="nav-icon far fa-user"></i>
+                                <p>
+                                    Articles
                                 </p>
                             </a>
                         </li>
@@ -152,9 +184,9 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3>{{$chantiersNbr}}</h3>
 
-                                    <p>New Orders</p>
+                                    <p>Chantiers</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -168,9 +200,9 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3>{{$ouvriersNbr}}</h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Ouvriers</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -184,9 +216,9 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>{{$fournisseursNbr}}</h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Fournisseurs</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
@@ -200,9 +232,9 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3>{{$clientNbr}}</h3>
 
-                                    <p>Unique Visitors</p>
+                                    <p>Clients</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
@@ -216,7 +248,29 @@
                     <!-- /.row -->
                     <!-- Main row -->
                     <div class="row">
-
+                        <div class="col-xl-12">
+                            @if (session()->has('success'))
+                            <div class="alert alert-success">
+                             {{session()->get('success')}}
+                            </div>
+                            @endif
+                            <table class="table table-secondary table-striped my-5">
+                                <tr>
+                                    <th>Chantier</th>
+                                    <th>Ouvriers</th>
+                                    <th>Article</th>
+                                    <th>Service</th>
+                                </tr>
+                                @foreach($data as $res)
+                                <tr>
+                                    <td>{{$res->des}}</td>
+                                    <td>{{$res->nom." ".$res->prenom}}</td>
+                                    <td>{{$res->designation}}</td>
+                                    <td>{{$res->nom_service}}</td>
+                                </tr>
+                                @endforeach
+                              </table>
+                        </div>
                     </div>
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->

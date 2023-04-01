@@ -70,8 +70,12 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        if (auth()->user()->is_admin) {
         return view('main.editService')->with(['service'=>$service]);
+        }
+        else{
+            abort(code:403);
+       }
     }
 
     /**

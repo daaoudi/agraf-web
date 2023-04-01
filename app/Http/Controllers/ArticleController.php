@@ -74,9 +74,14 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        if (auth()->user()->is_admin) {
+
         return view('main.editArticle')->with(['article'=>$article]);
-    }
+        }
+    else{
+            abort(code:403);
+       }
+     }
 
     /**
      * Update the specified resource in storage.

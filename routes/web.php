@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MatierController;
@@ -34,9 +35,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('mainDashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class,"index"]);
+
     Route::get('/dashboard2', function () {
         return view('dashboard');
     });
@@ -44,12 +44,16 @@ Route::middleware([
 
 });
 
+// Route::middlware('auth')->group(function(){
+    Route::resource('clients',ClientController::class);
+    Route::resource('chantiers',ChantierController::class);
+    Route::resource('services',ServiceController::class);
+    Route::resource('fournisseurs',FournisseurController::class);
+    Route::resource('matiers',MatierController::class);
+    Route::resource('ouvriers',OuvrierController::class);
+    Route::resource('articles',ArticleController::class);
+// }
 
-Route::resource('clients',ClientController::class);
-Route::resource('chantiers',ChantierController::class);
-Route::resource('services',ServiceController::class);
-Route::resource('fournisseurs',FournisseurController::class);
-Route::resource('matiers',MatierController::class);
-Route::resource('ouvriers',OuvrierController::class);
-Route::resource('articles',ArticleController::class);
+
+// );
 

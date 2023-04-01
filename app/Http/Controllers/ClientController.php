@@ -13,8 +13,8 @@ class ClientController extends Controller
     public function index()
     {
         //
-        $clients=Client::all();
-        return view('main.showClients')->with(['clients'=>$clients]);
+        $clients = Client::all();
+        return view('main.showClients')->with(['clients' => $clients]);
     }
 
     /**
@@ -23,7 +23,7 @@ class ClientController extends Controller
     public function create()
     {
         //
-       
+
         return view('main.createClient');
     }
 
@@ -33,27 +33,27 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
-         $request->validate([
+        $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
             'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
-            
-            
+
+
         ]);
 
-        $client=new Client();
-        $client->nom=$request->input('nom');
-        $client->prenom=$request->input('prenom');
-        $client->telephone=$request->input('telephone');
-        $client->montant=$request->input('montant');
-        $client->email=$request->input('email');
+        $client = new Client();
+        $client->nom = $request->input('nom');
+        $client->prenom = $request->input('prenom');
+        $client->telephone = $request->input('telephone');
+        $client->montant = $request->input('montant');
+        $client->email = $request->input('email');
         $client->save();
-        
-        return redirect()->route('clients.index')->with(['success'=>'client ajouter']);
+
+        return redirect()->route('clients.index')->with(['success' => 'client ajouter']);
         /*return redirect('/');*/
-        
+
     }
 
     /**
@@ -62,7 +62,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
-        return view('main.showClient')->with(['clients'=>$client]);
+        return view('main.showClient')->with(['clients' => $client]);
     }
 
     /**
@@ -70,8 +70,12 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
-        return view('main.editClient')->with(['client'=>$client]);
+        if (auth()->user()->is_admin) {
+            return view('main.editClient')->with(['client' => $client]);
+        }
+        else{
+             abort(code:403);
+        }
     }
 
     /**
@@ -86,18 +90,18 @@ class ClientController extends Controller
             'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
             'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
-            
-            
+
+
         ]);
-        
+
         $client->update([
-            'nom'=>$request->nom,
-            'prenom'=>$request->prenom,
-            'telephone'=>$request->telephone,
-            'montant'=>$request->montant,
-            'email'=>$request->email,
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'telephone' => $request->telephone,
+            'montant' => $request->montant,
+            'email' => $request->email,
         ]);
-        
+
         /*
         $client1=Client::findOrFail($client);
         $client1->nom=$request->get('nom');
@@ -106,11 +110,11 @@ class ClientController extends Controller
         $client1->montant=$request->get('montant');
         $client1->email=$request->get('email');
         $client1->update();
-*/
-        
+        */
 
-        return redirect()->route('clients.index')->with(['success'=>'client modifie']);
-        /* return redirect()->route('clients.index')->with(['success'=>'client modifie']);*/ 
+
+        return redirect()->route('clients.index')->with(['success' => 'client modifie']);
+        /* return redirect()->route('clients.index')->with(['success'=>'client modifie']);*/
     }
 
     /**
@@ -119,8 +123,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
-        
+
         $client->delete();
-        return redirect()->route('clients.index')->with(['success'=>'client supprime']);
+        return redirect()->route('clients.index')->with(['success' => 'client supprime']);
     }
 }

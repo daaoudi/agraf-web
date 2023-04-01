@@ -35,15 +35,15 @@ l'ajout d'un chantier.
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" placeholder="Designation" required>
+          <input type="text" name="designation" class="form-control" placeholder="Designation" value="{{old('designation')}} " required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prix" class="form-control" placeholder="Prix" required>
+          <input type="text" name="prix" class="form-control" value="{{old('prix')}}" placeholder="Prix" required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="ville" class="form-control" placeholder="Ville" required>
+          <input type="text" name="ville" class="form-control" value="{{old('ville')}}" placeholder="Ville" required>
         </div>
 
         

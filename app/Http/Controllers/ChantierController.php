@@ -87,8 +87,15 @@ class ChantierController extends Controller
      */
     public function edit(Chantier $chantier)
     {
-        //
+        if (auth()->user()->is_admin) {
+
         return view('main.editChantier')->with(['chantiers'=>$chantier]);
+
+        }
+
+        else{
+            abort(code:403);
+       }
     }
 
     /**

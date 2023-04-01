@@ -40,7 +40,7 @@ liste des services
                 <tr>
                     <td>{{$service->nom_service}}</td>
                     <td>{{$service->description}}</td>
-                    <td><img src="{{asset('./storage/images/'.$service['image'])}}" style="aspect-ratio: 0.5;" alt="..."></td>
+                    <td><img src="{{asset('./storage/images/'.$service['image'])}}" style="aspect-ratio: 1/1;width:120px;height:120px;  " alt="..."></td>
                     <td>{{$service->type_service}}</td>
                     
                     <td>

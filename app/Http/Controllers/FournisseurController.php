@@ -68,8 +68,13 @@ class FournisseurController extends Controller
      */
     public function edit(Fournisseur $fournisseur)
     {
-        //
+        if (auth()->user()->is_admin) {
+
         return view('main.editFournisseur')->with(['fournisseur'=>$fournisseur]);
+        }
+        else{
+            abort(code:403);
+       }
     }
 
     /**

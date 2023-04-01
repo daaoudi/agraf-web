@@ -10,7 +10,7 @@ liste des chantiers
 
       <h2>Projets</h2>
       <ol>
-        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Home</a></li>
         <li>Projets</li>
       </ol>
 

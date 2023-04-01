@@ -41,8 +41,6 @@ class OuvrierController extends Controller
             'cin' => 'required',
             'type' => 'required',
             'salaire_par_semaine' => 'required',
-            
-            
             'chantier_id' => 'required|exists:chantiers,id',
             
             
@@ -80,8 +78,13 @@ class OuvrierController extends Controller
      */
     public function edit(Ouvrier $ouvrier)
     {
-        //
+        if (auth()->user()->is_admin) {
+
         return view('main.editOuvrier')->with(['ouvrier'=>$ouvrier]);
+        }
+        else{
+            abort(code:403);
+       }
     }
 
     /**

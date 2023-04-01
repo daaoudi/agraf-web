@@ -81,8 +81,13 @@ class MatierController extends Controller
      */
     public function edit(Matier $matier)
     {
-        //
+        if (auth()->user()->is_admin) {
+
         return view('main.editMatier')->with(['matier'=>$matier]);
+        }
+        else{
+            abort(code:403);
+       }
     }
 
     /**
