@@ -9,7 +9,7 @@ l'ajout d'un client.
 
     <h2>Clients</h2>
     <ol>
-      <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Home</a></li>
       <li>Clients</li>
     </ol>
 
@@ -35,31 +35,31 @@ l'ajout d'un client.
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="nom" class="form-control" placeholder="Nom" required>
+          <input type="text" name="nom" class="form-control" placeholder="Nom" value="{{old('nom')}}" required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prenom" class="form-control" placeholder="Prenom" required>
+          <input type="text" name="prenom" class="form-control" placeholder="Prenom" value="{{old('prenom')}}" required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="telephone" class="form-control" placeholder="Telephone" required>
+          <input type="text" name="telephone" class="form-control" placeholder="Telephone"value="{{old('telephone')}}" required>
         </div>
 
         <div class="col-md-12 ">
-          <input type="text" class="form-control" name="montant" placeholder="Montant" required>
+          <input type="text" class="form-control" name="montant" placeholder="Montant" value="{{old('montant')}}" required>
         </div>
 
         <div class="col-md-12">
-          <input type="email" class="form-control" name="email" placeholder="Email" required>
+          <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}" required>
         </div>
 
-        
+
 
         <div class="col-md-12 text-center">
-          
-        
-         
+
+
+
           <button class="btn btn-warning" type="submit">Valider</button>
         </div>
 

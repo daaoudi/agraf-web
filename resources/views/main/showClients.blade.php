@@ -10,14 +10,16 @@ liste des clients
 
       <h2>Clients</h2>
       <ol>
-        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Home</a></li>
         <li>Clients</li>
       </ol>
 
     </div>
   </div>
-  
+
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+    <div style="position:absolute;right:40px;"><a class="btn btn-warning" href="/clients/create">+ Ajouter un client</a></div>
+
     <div class="row">
         <div class="col-xl-12">
             @if (session()->has('success'))
@@ -26,7 +28,7 @@ liste des clients
             </div>
             @endif
             <h4>Nombre de clients: {{count($clients)}}</h4>
-            <table class="table table-secondary table-striped">
+            <table class="table table-secondary table-striped my-5">
                 <tr>
                     <th>nom</th>
                     <th>prenom</th>
@@ -50,7 +52,7 @@ liste des clients
                         </span></a></button>
                         <form action="{{route('clients.destroy',$client->id)}}" style="display: inline-block;" method="post" id="{{$client->id}}">
                         @csrf
-                        @method('DELETE')    
+                        @method('DELETE')
                         </form>
 
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
@@ -61,6 +63,8 @@ liste des clients
                         <button title="View" class="btn btn-info"> <a href="{{route('clients.show',$client->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                           <span style="color:red;"> You dont have access</span>
                           @endif
                           @endif
                           </td>

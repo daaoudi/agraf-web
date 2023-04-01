@@ -16,7 +16,7 @@ liste des Fournisseurs
 
     </div>
   </div>
-  
+
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
     <div class="row">
         <div class="col-xl-12">
@@ -52,7 +52,7 @@ liste des Fournisseurs
                         </span></a></button>
                         <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
                         @csrf
-                        @method('DELETE')    
+                        @method('DELETE')
                         </form>
 
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
@@ -63,6 +63,8 @@ liste des Fournisseurs
                         <button title="View" class="btn btn-info"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                            <span style="color:red;"> You dont have access</span>
                           @endif
                           @endif
                           </td>
