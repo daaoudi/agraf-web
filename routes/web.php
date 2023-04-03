@@ -37,7 +37,7 @@ Route::middleware([
 
     Route::get('/dashboard',[DashboardController::class,"index"]);
 
-    Route::get('/dashboard2', function () {
+    Route::get('/dashboard_old', function () {
         return view('dashboard');
     });
 
