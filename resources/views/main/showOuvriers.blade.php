@@ -11,6 +11,7 @@ liste des Ouvriers
       <h2>Ouvriers</h2>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li>Ouvriers</li>
       </ol>
 

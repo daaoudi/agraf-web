@@ -11,6 +11,7 @@ liste des Articles
       <h2>Articles</h2>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li>Articles</li>
       </ol>
 

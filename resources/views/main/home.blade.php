@@ -14,7 +14,7 @@ Agrtravis - Construction Et Amenagement
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
         <h2 data-aos="fade-down">Bienvenue au <span>Agrtravis</span></h2>
-        <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p data-aos="fade-up">pour une meilleure construction et aménagement agrtravis est la meilleure solution dans le domaine.</p>
         <a data-aos="fade-up" data-aos-delay="100" href="#get-started" class="btn-get-started">Commencer</a>
       </div>
     </div>

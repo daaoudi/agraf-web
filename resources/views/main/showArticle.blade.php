@@ -11,6 +11,7 @@ l'Article: {{$article->designation}}
       <h2>Article</h2>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li>Article</li>
       </ol>
 

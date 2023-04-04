@@ -11,6 +11,7 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
       <h2>Matiere</h2>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li>Matiere</li>
       </ol>
 

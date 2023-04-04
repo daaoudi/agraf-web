@@ -11,6 +11,7 @@
       <h2>fournisseurs</h2>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li>fournisseurs</li>
       </ol>
 
