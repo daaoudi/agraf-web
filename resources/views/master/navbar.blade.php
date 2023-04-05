@@ -45,7 +45,7 @@
           <li><a href="#" class="text-white">à propos</a></li>
           <li><a href="#" class="text-white">Services</a></li>
           <li><a href="#" class="text-white">Projets</a></li>
-         
+         @if(auth()->check())
           <li class="dropdown" ><a href="#"> <span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul class="bg-secondary" >
               
@@ -64,6 +64,7 @@
              
             </ul>
           </li>
+          @endif
           <li><a href="#" class="text-white">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->

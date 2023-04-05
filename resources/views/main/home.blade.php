@@ -254,10 +254,10 @@ Agrtravis - Construction Et Amenagement
 <div class="col-xl-12">
   <h2 class="text-center">Construction</h2>
   <div class="d-flex justify-content-evenly align-items-center flex-wrap">
-    <div class="col-lg-4 col-md-6 fade-in mx-3 my-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item  position-relative">
-          <div class="rounded-3  mx-auto">
-            <img src="/storage/assets/img/services/image003.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+    <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item  position-relative rounded-3">
+          <div class="  mx-auto">
+            <img src="/storage/assets/img/services/image003.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Terrassement</h3>
           <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
@@ -265,10 +265,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image007.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image007.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>les Fondations</h3>
           <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -276,10 +276,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image009.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative rounded-3">
+          <div class="mx-auto">
+            <img src="/storage/assets/img/services/image009.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Dallages et Poteaux</h3>
           <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
@@ -287,10 +287,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image015.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image015.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Mur De Cloture et Cage d'escalier et Picsine </h3>
           <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
@@ -304,10 +304,10 @@ Agrtravis - Construction Et Amenagement
 <div class="col-xl-12">
   <h2 class="text-center">Amenagement</h2>
 <div class="d-flex justify-content-evenly align-items-center flex-wrap">
-<div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image021.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+<div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative rounded-3">
+          <div class="mx-auto">
+            <img src="/storage/assets/img/services/image021.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Carllage Et Marbre </h3>
           <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
@@ -315,10 +315,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image024.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image024.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Plattre</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -326,10 +326,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image030.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image030.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Peinture</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -337,10 +337,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image032.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image032.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Menuiserie bois</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -348,10 +348,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image036.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image036.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Menuiserie alluminuim</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -359,10 +359,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image040.png" style="width:280px; height:150px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image040.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Sanitaire</h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
@@ -370,10 +370,10 @@ Agrtravis - Construction Et Amenagement
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3"" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-item position-relative">
-          <div class="rounded-3 mx-auto">
-            <img src="/storage/assets/img/services/image044.png" style="width:240px; height:160px" loading="lazy" alt="..." >
+      <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative rounded-3">
+          <div class=" mx-auto">
+            <img src="/storage/assets/img/services/image044.png" style="width:240px; height:160px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
           </div>
           <h3>Entretien et réparation </h3>
           <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
