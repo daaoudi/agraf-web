@@ -60,6 +60,8 @@
                         document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @else
+                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                         @endif
                         @endif
 

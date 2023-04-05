@@ -59,6 +59,8 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
                         document.getElementById('{{$chantiers->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
+                        @else
+                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                         @endif
                         @endif
                        </td>

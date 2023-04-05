@@ -66,6 +66,8 @@ liste des Articles
                         <button title="View" class="btn btn-info"> <a href="{{route('articles.show',$request->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                         @endif
                         @endif
                         </td>

@@ -63,6 +63,8 @@ liste des services
                         <button title="View" class="btn btn-info"> <a href="{{route('services.show',$service->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                           @endif
                           @endif
                           </td>

@@ -70,6 +70,8 @@ liste des Matieres
                         <button title="View" class="btn btn-info"> <a href="{{route('matiers.show',$matier->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                             @endif
                             @endif
                           </td>

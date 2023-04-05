@@ -63,6 +63,8 @@ liste des chantiers
                         <button title="View" class="btn btn-info"> <a href="{{route('chantiers.show',$chantier->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
+                            @else
+                            <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                           @endif
                           @endif
                           </td>

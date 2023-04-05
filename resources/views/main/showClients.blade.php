@@ -65,7 +65,7 @@ liste des clients
                             visibility
                             </span></a></button>
                             @else
-                           <span style="color:red;"> You dont have access</span>
+                           <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                           @endif
                           @endif
                           </td>

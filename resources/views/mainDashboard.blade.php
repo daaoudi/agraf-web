@@ -12,7 +12,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -66,7 +66,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="/storage/assets/img/agraf.png" alt="AGRAF Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AGRAF</span>
+                <span class="brand-text font-weight-light">AGRTRAVIS</span>
             </a>
 
             <!-- Sidebar -->
@@ -109,6 +109,15 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="/matiers" class="nav-link">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Matieres
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="/clients" class="nav-link">
                                 <i class="nav-icon far fa-user"></i>
                                 <p>
@@ -133,7 +142,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/clients" class="nav-link">
+                            <a href="/fournisseurs" class="nav-link">
                                 <i class="nav-icon far fa-user"></i>
                                 <p>
                                     Fournisseurs
@@ -166,7 +175,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
                                 <li class="breadcrumb-item active">Dashboard v1</li>
                             </ol>
                         </div><!-- /.col -->
@@ -279,7 +288,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="/">Agraf</a>.</strong>
+            <strong>Copyright &copy; 2014-2021 <a href="/">Agrtravis</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
