@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MatierController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\OuvrierController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ChantierController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FournisseurController;
 
 
@@ -36,14 +37,20 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard',[DashboardController::class,"index"]);
+    
+});
+Route::get('/logout',[LoginController::class,"logout"]);
+Route::get('/user/{profile}',[LoginController::class, 'userProfile'])->name('user.profile');
 
-    Route::get('/dashboard_old', function () {
-        return view('dashboard');
-    });
-
-
+/*
+Route::get('/dashboard_old', function () {
+    return view('welcome');
 });
 
+Route::group(['middleware' => ['authenticate', 'roles']], function (){
+    Route::get('/dashboard_old', function(){return view('dashboard');})->name('dashboard_old');
+});
+*/
 // Route::middlware('auth')->group(function(){
     Route::resource('clients',ClientController::class);
     Route::resource('chantiers',ChantierController::class);
