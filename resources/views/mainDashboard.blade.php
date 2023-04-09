@@ -77,7 +77,7 @@
                         <img src={{ Auth::user()->profile_photo_url }}  class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info">
-                        <a href="{{ route('user.profile', ["profile" => Auth::user()->id]) }}"> {{ Auth::user()->name }} </a>
+                        <a href="{{ route('profile.show') }}" > {{ Auth::user()->name }} </a>
 
                         {{-- 
                         <a href="/user/profile" class="d-block"> {{ Auth::user()->name }}
