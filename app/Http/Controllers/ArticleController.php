@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Chantier;
 use App\Models\Ouvrier;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $requests=Article::with('ouvrier','service')->get();
+        $requests=Article::with('ouvrier','service','chantier')->get();
         return view('main.showArticles',compact('requests'));
     }
 
@@ -27,7 +28,8 @@ class ArticleController extends Controller
         //
       $ouvriers=Ouvrier::all();
       $services=Service::all();
-        return view('main.createArticle')->with(['ouvriers'=>$ouvriers ,'services'=>$services]);
+      $chantiers=Chantier::all();
+        return view('main.createArticle')->with(['ouvriers'=>$ouvriers ,'services'=>$services,'chantiers'=>$chantiers]);
     }
 
     /**
@@ -42,18 +44,17 @@ class ArticleController extends Controller
             'article_unite'=>"required",
             'ouvrier_id' => 'required|exists:ouvriers,id',
             'service_id' => 'required|exists:services,id',
+            'chantier_id' => 'required|exists:chantiers,id',
             
             
         ]);
-
-       
-
         $article=new Article();
         $article->designation=$request->input('designation');
         $article->description=$request->input('description');
         $article->article_unite=$request->input('article_unite');
         $article->ouvrier_id=$request->input('ouvrier_id');
         $article->service_id=$request->input('service_id');
+        $article->chantier_id=$request->input('chantier_id');
 
         $article->save();
 
@@ -93,9 +94,7 @@ class ArticleController extends Controller
             'designation' => 'required',
             'description' => 'required',
             
-            //'ouvrier_id' => 'required|exists:ouvriers,id',
-            
-            
+            //'ouvrier_id' => 'required|exists:ouvriers,id', 
         ]);
 
         $article->update([

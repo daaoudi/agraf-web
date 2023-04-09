@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email');
+            
             $table->string('telephone');
             $table->double('montant');
             $table->double('montant_en_avance');

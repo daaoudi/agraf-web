@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Matier;
+
 use App\Models\Chantier;
 use App\Models\Fournisseur;
-use App\Models\Matier;
 use Illuminate\Http\Request;
 
 class MatierController extends Controller
@@ -15,7 +17,7 @@ class MatierController extends Controller
     public function index()
     {
         //
-        $matiers=Matier::with('chantier','fournisseur')->get();
+        $matiers=Matier::with('chantier','fournisseur','article')->get();
         return view('main.showMatiers',compact('matiers'));
     }
 
@@ -27,7 +29,8 @@ class MatierController extends Controller
         //
         $chantiers=Chantier::all();
         $fournisseurs=Fournisseur::all();
-        return view('main.createMatier')->with(['chantiers'=>$chantiers,'fournisseurs'=>$fournisseurs]);
+        $articles=Article::all();
+        return view('main.createMatier')->with(['chantiers'=>$chantiers,'fournisseurs'=>$fournisseurs,'articles'=>$articles]);
     }
 
     /**
@@ -45,6 +48,7 @@ class MatierController extends Controller
             'date_r'=>'required',
             'nmbr_piece_utiliser'=>'required',
             'chantier_id'=>'required|exists:chantiers,id',
+            'article_id'=>'required|exists:articles,id',
             'fournisseur_id'=>'required|exists:fournisseurs,id',
 
 
@@ -59,6 +63,7 @@ class MatierController extends Controller
         $matier->date_r=$request->input('date_r');
         $matier->nmbr_piece_utiliser=$request->input('nmbr_piece_utiliser');
         $matier->chantier_id=$request->input('chantier_id');
+        $matier->article_id=$request->input('article_id');
         $matier->fournisseur_id=$request->input('fournisseur_id');
 
         $matier->save();

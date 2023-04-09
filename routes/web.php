@@ -35,15 +35,17 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    return redirect('/dashboard');
+    return redirect('/Dashboard');
     
 });
 
-Route::get('/dashboard',[DashboardController::class,"index"]);
+Route::get('/Dashboard',[DashboardController::class,"index"]);
 
 Route::get('/logout',[LoginController::class,"logout"]);
 
-
+Route::get('/dashboard',function(){
+    return view('dashboard');
+});
 /*
 Route::get('/user/{profile}',[LoginController::class, 'userProfile'])->name('user.profile');
 Route::get('/dashboard_old', function () {

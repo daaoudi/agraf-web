@@ -44,8 +44,12 @@ class Chantier extends Model
         return $this->hasMany(Ouvrier::class);
     }
 
-    public function client()
-{
-    return $this->belongsTo(Client::class);
-}
+        public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }

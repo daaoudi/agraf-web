@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Article;
+use App\Models\Chantier;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Fournisseur;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Chantier;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Matier extends Model
 {
@@ -23,6 +25,7 @@ class Matier extends Model
         "matiere_unite",
         "chantier_id",
         "fournisseur_id",
+        "article_id",
         "date_r",
         "nmbr_piece_utiliser"
 
@@ -38,6 +41,9 @@ class Matier extends Model
     public function fournisseur()
     {
         return $this->belongsTo(Fournisseur::class);
+    }
+    public function article(){
+        return $this->belongsTo(Article::class);
     }
 
   

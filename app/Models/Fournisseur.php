@@ -20,7 +20,7 @@ class Fournisseur extends Model
         "telephone",
         "montant",
         "montant_en_avance",
-        "email"
+        
     ];
 
     public $timestamps=false;

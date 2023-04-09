@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Matier;
 use App\Models\Ouvrier;
+
 use App\Models\Service;
 
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -34,6 +35,14 @@ class Article extends Model
     public function service()
     {
         return $this->belongsTo(Service::class);
+    }
+    
+    public function matiers(){
+        return $this->hasMany(Matier::class);
+    }
+
+    public function chantier(){
+        return $this->belongsTo(Chantier::class);
     }
   
 }

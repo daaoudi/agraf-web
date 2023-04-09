@@ -22,6 +22,8 @@ class Ouvrier extends Model
         "nom",
         "prenom",
         "telephone",
+        "date_debut",
+        "date_fin",
         "cin",
         "type",
         "salaire_par_semaine",

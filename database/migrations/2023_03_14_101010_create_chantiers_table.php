@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double('prix');
             $table->string('ville');
             $table->string('mode_paiement');
+            $table->string('etat_avancement');
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
 

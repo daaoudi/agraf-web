@@ -40,6 +40,8 @@ class OuvrierController extends Controller
             'telephone' => 'required',
             'cin' => 'required',
             'type' => 'required',
+            'date_debut'=>'required',
+            'date_fin'=>'required',
             'salaire_par_semaine' => 'required',
             'chantier_id' => 'required|exists:chantiers,id',
             
@@ -54,6 +56,8 @@ class OuvrierController extends Controller
         $ouvrier->prenom = $request->input('prenom');
         $ouvrier->telephone = $request->input('telephone');
         $ouvrier->cin = $request->input('cin');
+        $ouvrier->date_debut = $request->input('date_debut');
+        $ouvrier->date_fin = $request->input('date_fin');
         $ouvrier->type = $request->input('type');
         $ouvrier->salaire_par_semaine = $request->input('salaire_par_semaine');
         $ouvrier->chantier_id = $request->input('chantier_id');
@@ -99,6 +103,8 @@ class OuvrierController extends Controller
             'telephone' => 'required|max:10',
             'cin' => 'required',
             'type' => 'required',
+            'date_debut'=>'required',
+            'date_fin'=>'required',
             'salaire_par_semaine' => 'required',
             
             
@@ -111,6 +117,8 @@ class OuvrierController extends Controller
             'prenom'=>$request->prenom,
             'telephone'=>$request->telephone,
             'cin'=>$request->cin,
+            'date_debut'=>$request->date_debut,
+            'date_fin'=>$request->date_fin,
             'type'=>$request->type,
             'salaire_par_semaine'=>$request->salaire_par_semaine,
 
