@@ -41,6 +41,9 @@ l'ajout d'un Article.
         <div class="col-md-12">
           <input type="text" name="article_unite" class="form-control" placeholder="article_unite" required>
         </div>
+        <div class="col-md-12">
+          <input type="text" name="per_de_travail" class="form-control" placeholder="Percentage de Travail " required>
+        </div>
 
         <div class="col-md-12">
             <div class="form-group">
@@ -48,6 +51,7 @@ l'ajout d'un Article.
                 <textarea name="description" class="form-control" id="Textarea1" rows="3"></textarea>
               </div>
         </div>
+        
 
         
 
@@ -70,6 +74,14 @@ l'ajout d'un Article.
                 @endforeach
               </select>
         </div>
+        <div class="col-md-12">
+          <select name="chantier_id" class="form-select"  required>
+              <option selected>Choisir le nom de la Projet</option>
+             @foreach($chantiers as $chantier)
+              <option value="{{$chantier->id}}">{{$chantier->nom_service}}</option>
+              @endforeach
+            </select>
+      </div>
 
         
 

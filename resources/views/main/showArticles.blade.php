@@ -32,8 +32,10 @@ liste des Articles
                     <th>nom_service</th>
                     <th>nom_ouvrier</th>
                     <th>prenom_ouvrier</th>
+                    <th>Etat_Avancement</th>
                     <th>designation</th>
                     <th>description</th>
+                    <th>Percentage_Travail</th>
                     <th>article_unite</th>
                     
                     <th>action</th>
@@ -43,8 +45,10 @@ liste des Articles
                     <td>{{$request->service->nom_service}}</td>
                     <td>{{$request->ouvrier->nom}}</td>
                     <td>{{$request->ouvrier->prenom}}</td>
+                    <td>{{$request->chantier->etat_avancement}}</td>
                     <td>{{$request->designation}}</td>
-                    <td>{{Str::limit($request->description,25)}}</td>
+                    <td>{{Str::limit($request->description,50)}}</td>
+                    <td>{{$request->per_de_travail}}</td>
                     <td>{{$request->article_unite}}</td>
                     
                     <td>

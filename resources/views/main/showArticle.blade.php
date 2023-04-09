@@ -36,7 +36,7 @@ l'Article: {{$article->designation}}
                 <tr>
                     
                     <td>{{$article->designation}}</td>
-                    <td>{{Str::limit($article->description,25)}}</td>
+                    <td>{{$article->description}}</td>
                     <td>{{$article->article_unite}}</td>
                     
                     <td>

@@ -41,6 +41,9 @@ l'ajout d'un chantier.
         <div class="col-md-12">
           <input type="text" name="prix" class="form-control" value="{{old('prix')}}" placeholder="Prix" required>
         </div>
+        <div class="col-md-12">
+          <input type="text" name="etat_avancement" class="form-control" value="{{old('etat_avancement')}}" placeholder="Etat Avancement" required>
+        </div>
 
         <div class="col-md-12">
           <input type="text" name="ville" class="form-control" value="{{old('ville')}}" placeholder="Ville" required>

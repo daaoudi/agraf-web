@@ -31,6 +31,7 @@ liste des Matieres
                 <tr>
                     <th>nom_Fournisseur</th>
                     <th>nom_Projet</th>
+                    <th>nom_Article</th>
                     <th>designation</th>
                     <th>prix</th>
                     <th>type</th>
@@ -44,6 +45,7 @@ liste des Matieres
                 <tr>
                     <td>{{$matier->fournisseur->nom}}</td>
                     <td>{{$matier->chantier->designation}}</td>
+                    <td>{{$matier->article->designation}}</td>
                     <td>{{$matier->designation}}</td>
                     <td>{{$matier->prix}}</td>
                     <td>{{$matier->type}}</td>

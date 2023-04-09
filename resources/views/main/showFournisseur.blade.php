@@ -33,7 +33,7 @@
                     <th>telephone</th>
                     <th>montant</th>
                     <th>montant_en_avance</th>
-                    <th>email</th>
+                   
                     <th>action</th>
                 </tr>
                 
@@ -43,7 +43,7 @@
                     <td>{{$fournisseur->telephone}}</td>
                     <td>{{$fournisseur->montant}}</td>
                     <td>{{$fournisseur->montant_en_avance}}</td>
-                    <td>{{$fournisseur->email}}</td>
+                    
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

@@ -54,9 +54,7 @@ l'ajout d'un Fournisseur.
             <input type="text" class="form-control" name="montant_en_avance" placeholder="montant_en_avance" required>
           </div>
 
-        <div class="col-md-12">
-          <input type="email" class="form-control" name="email" placeholder="Email" required>
-        </div>
+       
 
         
 

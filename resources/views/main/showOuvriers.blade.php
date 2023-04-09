@@ -35,6 +35,8 @@ liste des Ouvriers
                     <th>telephone</th>
                     <th>cin</th>
                     <th>type</th>
+                    <th>Date_Debut</th>
+                    <th>Date_Fin</th>
                     <th>salaire_par_semaine</th>
                     <th>action</th>
                 </tr>
@@ -46,6 +48,8 @@ liste des Ouvriers
                     <td>{{$ouvrier->telephone}}</td>
                     <td>{{$ouvrier->cin}}</td>
                     <td>{{$ouvrier->type}}</td>
+                    <td>{{$ouvrier->date_debut}}</td>
+                    <td>{{$ouvrier->date_fin}}</td>
                     <td>{{$ouvrier->salaire_par_semaine}}</td>
                     <td>
                       @if(auth()->check())

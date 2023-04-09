@@ -53,6 +53,12 @@ l'ajout d'un Ouvrier.
           <div class="col-md-12">
             <input type="text" name="type" class="form-control" placeholder="Type_Ouvrier" required>
           </div>
+          <div class="col-md-12">
+            <input type="date" name="date_debut" class="form-control" placeholder="Date_Debut" required>
+          </div>
+          <div class="col-md-12">
+            <input type="date" name="date_fin" class="form-control" placeholder="Date_Fin" required>
+          </div>
 
           <div class="col-md-12">
             <input type="number" name="salaire_par_semaine" class="form-control" placeholder="salaire_par_semaine" required>

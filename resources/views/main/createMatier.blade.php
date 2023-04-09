@@ -81,6 +81,14 @@ l'ajout d'un Matier.
                 @endforeach
               </select>
         </div>
+        <div class="col-md-12">
+          <select name="article_id" class="form-select"  required>
+              <option selected>Choisir le nom d'Article</option>
+             @foreach($articles as $article)
+              <option value="{{$article->id}}">{{$article->nom}}</option>
+              @endforeach
+            </select>
+      </div>
 
         
 
