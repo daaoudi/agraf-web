@@ -33,7 +33,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="/storage/assets/img/agraf.png" width="40px" height="130px" class="rounded-1" style="box-shadow: 3px 5px 3px rgb(195, 245, 238);" alt="">
+         <img src="/storage/assets/img/agraf.png" width="40px" height="160px" class="rounded-1" style="" alt="">
         <h1 class="text-white">Agrtravis<span>.</span></h1>
       </a>
 
