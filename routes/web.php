@@ -36,10 +36,10 @@ Route::middleware([
     'verified'
 ])->group(function () {
     return redirect('/dashboard');
-    
+
 });
 
-Route::get('/dashboard',[DashboardController::class,"index"]);
+Route::get('/dashboard',[DashboardController::class,"index"])->name('dashboard');
 
 Route::get('/logout',[LoginController::class,"logout"]);
 

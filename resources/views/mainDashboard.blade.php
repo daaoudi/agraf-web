@@ -77,9 +77,9 @@
                         <img src={{ Auth::user()->profile_photo_url }}  class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info">
-                        <a href="{{ route('profile.show') }}" > {{ Auth::user()->name }} </a>
+                        <a href="/user/profile" > {{ Auth::user()->name }} </a>
 
-                        {{-- 
+                        {{--
                         <a href="/user/profile" class="d-block"> {{ Auth::user()->name }}
                         </a>
                         --}}
@@ -296,7 +296,7 @@
         <footer class="main-footer">
             <strong>Copyright &copy; 2023 <a href="/">Agrtravis</a>.</strong>
             All rights reserved.
-           
+
         </footer>
 
         <!-- Control Sidebar -->
