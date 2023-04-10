@@ -56,7 +56,7 @@
                         </form>
 
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
-                        if(confirm('vous etez sure pour la suppression ?'))
+                        if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
