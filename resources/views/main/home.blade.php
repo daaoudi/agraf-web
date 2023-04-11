@@ -44,202 +44,7 @@ Agrtravis - Construction Et Amenagement
 <main id="main">
 
 
-<!--
 
-  <section id="constructions" class="constructions">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-header">
-        <h2>Constructions</h2>
-        <p></p>
-      </div>
-
-      <div class="row gy-4">
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/etude.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">L'étude de sol.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Leterrassement.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Le terrassement.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Lexcavation.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">L'excavation.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Lesfondations.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Les fondations.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Lassainissement.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class=" col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">L’assainissement.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class=" col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Lesoubassement.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Le soubassement.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/LePlancher.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Le Plancher.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/Lélévation.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">L'élévation.</h4>
-                  <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem placeat deleniti adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam. Dolor eos et.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="500">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/constructions-2.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">La charpente</h4>
-                  <p>Sunt deserunt maiores voluptatem autem est rerum perferendis rerum blanditiis. Est laboriosam qui iste numquam laboriosam voluptatem architecto. Est laudantium sunt at quas aut hic. Eum dignissimos.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="500">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/constructions-3.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">La toiture</h4>
-                  <p>Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim molestiae facilis numquam quae quaerat ipsam omnis. Neque debitis ipsum at architecto officia laboriosam odit. Ut sunt temporibus nulla culpa.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 fade-in" data-aos="fade-up" data-aos-delay="600">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url('/storage/assets/img/constructions-4.jpg'); aspect-ratio:auto; filter: contrast(1);"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Les menuiseries extérieures</h4>
-                  <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos doloremque architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid ea dolores libero nobis.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
- 
--->
 
 <!-- ======= Services Section ======= -->
 <section id="services" class="services section-bg">
@@ -247,7 +52,7 @@ Agrtravis - Construction Et Amenagement
 
     <div class="section-header">
       <h2>Services</h2>
-      <p>Voluptatem quibusdam ut ullam perferendis repellat non ut consequuntur est eveniet deleniti fignissimos eos quam</p>
+      <p>Présentation des Services de l'entreprise Agrtravis</p>
     </div>
 
     <div class="row gy-4">
@@ -409,6 +214,10 @@ Agrtravis - Construction Et Amenagement
             <h4><a href="" class="stretched-link">Adresse</a></h4>
             <p>AVENUE ABDELKRIM EL KHATTABI IMMEUBLE BEN MOUSSA EL GOUACHE ETAGE 2 </p>
           </div>
+          <div class="ms-3">
+            <h4><a href="" class="stretched-link">N° de taxe professionnelle</a></h4>
+            <p>13602493</p>
+          </div>
         </div><!-- End Icon Box -->
 
         <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="200">
@@ -418,6 +227,10 @@ Agrtravis - Construction Et Amenagement
           <div class="ms-3">
             <h4><a href="" class="stretched-link">Téléphone</a></h4>
             <p>0661577372</p>
+          </div>
+          <div class="ms-5">
+            <h4><a href="" class="stretched-link">ICE</a></h4>
+            <p>3006598000087</p>
           </div>
         </div><!-- End Icon Box -->
 
@@ -429,6 +242,10 @@ Agrtravis - Construction Et Amenagement
             <h4><a href="" class="stretched-link">Effectif de l’entreprise</a></h4>
             <p>12</p>
           </div>
+          <div class="ms-5">
+            <h4><a href="" class="stretched-link">N° Identification fiscal</a></h4>
+            <p>51809307</p>
+          </div>
         </div><!-- End Icon Box -->
 
         <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="400">
@@ -438,6 +255,10 @@ Agrtravis - Construction Et Amenagement
           <div class="ms-3">
             <h4><a href="" class="stretched-link">Ville</a></h4>
             <p>Fes</p>
+          </div>
+          <div class="ms-5">
+            <h4><a href="" class="stretched-link">N° D'affiliation à la CNSS</a></h4>
+            <p>4055301</p>
           </div>
         </div><!-- End Icon Box -->
 
