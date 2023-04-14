@@ -57,6 +57,7 @@ class ChantierController extends Controller
             'prix' => 'required',
             'ville' => 'required',
             'mode_paiement' => 'required',
+            'etat_avancement'=>'required',
             'client_id' => 'required|exists:clients,id',
             
             
@@ -67,6 +68,7 @@ class ChantierController extends Controller
         $chantier->prix=$request->input('prix');
         $chantier->ville=$request->input('ville');
         $chantier->mode_paiement=$request->input('mode_paiement');
+        $chantier->etat_avancement=$request->input('etat_avancement');
         $chantier->client_id=$request->input('client_id');
         $chantier->save();
 
@@ -109,6 +111,7 @@ class ChantierController extends Controller
             'prix' => 'required',
             'ville' => 'required',
             'mode_paiement' => 'required',
+            'etat_avancement'=>'required',
             //'client_id' => 'required|exists:clients,id',
             
             
@@ -119,6 +122,7 @@ class ChantierController extends Controller
                 'prix'=>$request->prix,
                 'ville'=>$request->ville,
                 'mode_paiement'=>$request->mode_paiement,
+                'etat_avancement'=>$request->etat_avancement,
                 //'client_id'=>$request->client_id,
             ]);
        

@@ -34,6 +34,7 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
                     <th>prix</th>
                     <th>ville</th>
                     <th>mode_paiement</th>
+                    <th>etat_avancement</th>
                     <th>action</th>
                 </tr>
                
@@ -43,6 +44,8 @@ le client : {{$chantiers->client->nom}} - projet: {{$chantiers->designation}}
                     <td>{{$chantiers->prix}}</td>
                     <td>{{$chantiers->ville}}</td>
                     <td>{{$chantiers->mode_paiement}}</td>
+                    <td>{{$chantiers->etat_avancement}}</td>
+
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

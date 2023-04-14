@@ -60,7 +60,7 @@ Route::group(['middleware' => ['authenticate', 'roles']], function (){
 */
 // Route::middlware('auth')->group(function(){
     Route::resource('clients',ClientController::class);
-    Route::resource('chantiers',ChantierController::class)->middleware('midch');
+    Route::resource('chantiers',ChantierController::class);
     Route::resource('services',ServiceController::class);
     Route::resource('fournisseurs',FournisseurController::class);
     Route::resource('matiers',MatierController::class);

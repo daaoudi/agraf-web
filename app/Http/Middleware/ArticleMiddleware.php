@@ -2,14 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Chantier;
-use App\Models\Client;
-use App\Models\Matier;
+use App\Models\Article;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ChantierMiddleware
+class ArticleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,19 +16,14 @@ class ChantierMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $clients=Client::all();
-        $chantiers=Chantier::all();
-       
-        if(count($clients)==0){
-            return redirect('/clients/create');
+        $articles=Article::all();
+        if(count($articles)==0){
+            return redirect('/articles/create');
         }
-        elseif(count($chantiers)==0){
-            return redirect('/chantiers/create');
-        }
-       
         else{
-            return $next($request);
+             return $next($request);
         }
-        
+       
+
     }
 }

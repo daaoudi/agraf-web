@@ -2,14 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Chantier;
-use App\Models\Client;
-use App\Models\Matier;
+use App\Models\Fournisseur;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ChantierMiddleware
+class FournisseurMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,16 +16,10 @@ class ChantierMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $clients=Client::all();
-        $chantiers=Chantier::all();
-       
-        if(count($clients)==0){
-            return redirect('/clients/create');
+        $fournisseurs=Fournisseur::all();
+        if(count($fournisseurs)==0){
+            return redirect('/fournisseurs/create');
         }
-        elseif(count($chantiers)==0){
-            return redirect('/chantiers/create');
-        }
-       
         else{
             return $next($request);
         }

@@ -30,7 +30,23 @@ class Kernel extends HttpKernel
      * @var array<string, array<int, class-string|string>>
      */
     protected $middlewareGroups = [
+        /*
+        'matmid'=>[
+           
+            \App\Http\Middleware\ArticleMiddleware::class,
+            \App\Http\Middleware\FournisseurMiddleware::class,
+            \App\Http\Middleware\ChantierMiddleware::class,
+        ],
+        
+        'artmid'=>[\App\Http\Middleware\OuvrierMiddleware::class,
+        \App\Http\Middleware\ServiceMiddleware::class,
+        \App\Http\Middleware\ChantierMiddleware::class,],
+
+       */
+
         'web' => [
+            
+            
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -54,7 +70,8 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
-        'midch'=> \App\Http\Middleware\ChantierMiddleware::class,
+      
+        //'midch'=> \App\Http\Middleware\ChantierMiddleware::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

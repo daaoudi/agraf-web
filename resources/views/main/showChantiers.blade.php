@@ -35,6 +35,7 @@ liste des chantiers
                     <th>prix</th>
                     <th>ville</th>
                     <th>mode_paiement</th>
+                    <th>etat_avancement</th>
                     <th>action</th>
                 </tr>
                 @foreach($chantiers as $chantier)
@@ -44,6 +45,7 @@ liste des chantiers
                     <td>{{$chantier->prix}}</td>
                     <td>{{$chantier->ville}}</td>
                     <td>{{$chantier->mode_paiement}}</td>
+                    <td>{{$chantier->etat_avancement}}</td>
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

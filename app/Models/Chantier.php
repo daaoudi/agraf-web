@@ -25,6 +25,7 @@ class Chantier extends Model
         "client_id",
         "prix",
         "ville",
+        "etat_avancement",
         "mode_paiement",
     ];
 

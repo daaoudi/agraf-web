@@ -31,7 +31,7 @@ l'ajout d'un chantier.
     <form action="{{route('chantiers.store')}}" enctype="multipart/form-data"  method="post" >
       @csrf
       <h3 class="text-center">Formulaire de chantier :</h3>
-      <p class="text-center">Remplir tout les s'il vous plait. </p>
+      <p class="text-center">Remplir tout les champs s'il vous plait. </p>
       <div class="row gy-3 ">
 
         <div class="col-md-12">
