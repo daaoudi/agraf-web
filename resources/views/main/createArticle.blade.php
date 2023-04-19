@@ -41,9 +41,7 @@ l'ajout d'un Article.
         <div class="col-md-12">
           <input type="text" name="article_unite" class="form-control" placeholder="article_unite" required>
         </div>
-        <div class="col-md-12">
-          <input type="text" name="per_de_travail" class="form-control" placeholder="Percentage de Travail " required>
-        </div>
+        
 
         <div class="col-md-12">
             <div class="form-group">

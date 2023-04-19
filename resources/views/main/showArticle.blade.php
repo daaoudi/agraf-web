@@ -29,7 +29,7 @@ l'Article: {{$article->designation}}
                     <th>designation</th>
                     <th>description</th>
                     <th>article_unite</th>
-                    <th>Percentage_Travail</th>
+                
                     
                     <th>action</th>
                 </tr>
@@ -39,7 +39,7 @@ l'Article: {{$article->designation}}
                     <td>{{$article->designation}}</td>
                     <td>{{$article->description}}</td>
                     <td>{{$article->article_unite}}</td>
-                    <td>{{$article->per_de_travail}}</td>
+                  
                     
                     <td>
                         @if(auth()->check())

@@ -206,11 +206,12 @@ Agrtravis - Construction Et Amenagement
         <h3>Agrtravis - Construction Et Amenagement </h3>
         <p>Agratravis Entreprise de Construction Et Amenagement En Forme Juridique <b>SARL</b> crée en Febrayer 2022 <br> a Capitale <b>500 000 DH</b> </p>
 
-        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="100">
-          <span class="material-symbols-outlined">
+        <div class="icon-box d-flex justify-content-between align-items-center position-relative px-3 fade-in" data-aos="fade-up" data-aos-delay="100">
+          
+          <div class="ms-1">
+            <span class="material-symbols-outlined">
             home
             </span>
-          <div class="ms-3">
             <h4><a href="" class="stretched-link">Adresse</a></h4>
             <p>AVENUE ABDELKRIM EL KHATTABI IMMEUBLE BEN MOUSSA EL GOUACHE ETAGE 2 </p>
           </div>
@@ -220,43 +221,46 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="200">
-          <span class="material-symbols-outlined">
-            call
-            </span>
-          <div class="ms-3">
+        <div class="icon-box d-flex justify-content-between align-items-center position-relative  px-3 fade-in" data-aos="fade-up" data-aos-delay="200">
+         
+          <div class="ms-1">
+            <span class="material-symbols-outlined">
+              call
+              </span>
             <h4><a href="" class="stretched-link">Téléphone</a></h4>
             <p>0661577372</p>
           </div>
-          <div class="ms-5">
+          <div class="ms-3 " >
             <h4><a href="" class="stretched-link">ICE</a></h4>
             <p>3006598000087</p>
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="300">
-          <span class="material-symbols-outlined">
+        <div class="icon-box d-flex justify-content-between align-items-center position-relative  px-3 fade-in" data-aos="fade-up" data-aos-delay="300">
+          
+          <div class="ms-1">
+            <span class="material-symbols-outlined">
             group
             </span>
-          <div class="ms-3">
             <h4><a href="" class="stretched-link">Effectif de l’entreprise</a></h4>
             <p>12</p>
           </div>
-          <div class="ms-5">
+          <div class="ms-3">
             <h4><a href="" class="stretched-link">N° Identification fiscal</a></h4>
             <p>51809307</p>
           </div>
         </div><!-- End Icon Box -->
 
-        <div class="icon-box d-flex position-relative fade-in" data-aos="fade-up" data-aos-delay="400">
-          <span class="material-symbols-outlined">
+        <div class="icon-box d-flex justify-content-between align-items-center position-relative  px-3 fade-in" data-aos="fade-up" data-aos-delay="400">
+          
+          <div class="ms-1">
+            <span class="material-symbols-outlined">
             location_on
             </span>
-          <div class="ms-3">
             <h4><a href="" class="stretched-link">Ville</a></h4>
             <p>Fes</p>
           </div>
-          <div class="ms-5">
+          <div  class="ms-3">
             <h4><a href="" class="stretched-link">N° D'affiliation à la CNSS</a></h4>
             <p>4055301</p>
           </div>
@@ -274,18 +278,18 @@ Agrtravis - Construction Et Amenagement
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Our Projects</h2>
-      <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto accusamus fugit aut qui distinctio</p>
+      <h2>Nos Projets</h2>
+      <p>Les Projets qui nous avons fait :</p>
     </div>
 
     <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
       <ul class="portfolio-flters fade-in" data-aos="fade-up" data-aos-delay="100">
-        <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-remodeling">Remodeling</li>
+        <li data-filter="*" class="filter-active">Tous</li>
+       
         <li data-filter=".filter-construction">Construction</li>
-        <li data-filter=".filter-repairs">Repairs</li>
-        <li data-filter=".filter-design">Design</li>
+        
+        <li data-filter=".filter-design">Aménagement</li>
       </ul><!-- End Projects Filters -->
 
       <div class="row gy-4 portfolio-container fade-in" data-aos="fade-up" data-aos-delay="100">
@@ -297,7 +301,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Remodeling 1</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/remodeling-1.jpg" title="Remodeling 1" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -309,7 +313,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction 1</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/construction-1.jpg" title="Construction 1" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -321,7 +325,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Repairs 1</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/repairs-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -333,7 +337,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Design 1</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/design-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -345,7 +349,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Remodeling 2</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/remodeling-2.jpg" title="Remodeling 2" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -357,7 +361,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction 2</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/construction-2.jpg" title="Construction 2" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -369,7 +373,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Repairs 2</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/repairs-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -381,7 +385,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Design 2</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/design-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -393,7 +397,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Remodeling 3</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/remodeling-3.jpg" title="Remodeling 3" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -405,7 +409,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction 3</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/construction-3.jpg" title="Construction 3" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -417,7 +421,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Repairs 3</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/repairs-3.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -429,7 +433,7 @@ Agrtravis - Construction Et Amenagement
               <h4>Design 3</h4>
               <p>Lorem ipsum, dolor sit amet consectetur</p>
               <a href="/storage/assets/img/projects/design-3.jpg" title="Repairs 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -476,7 +480,7 @@ Agrtravis - Construction Et Amenagement
             <div class="testimonial-item">
               <img src="/storage/assets/img/testimonials/anonym.jpg" class="testimonial-img" alt="">
               <h3>#######</h3>
-              <h4>Designer</h4>
+              <h4>#######</h4>
               <div class="stars">
                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
@@ -494,7 +498,7 @@ Agrtravis - Construction Et Amenagement
             <div class="testimonial-item">
               <img src="/storage/assets/img/testimonials/anonym.jpg" class="testimonial-img" alt="">
               <h3>########</h3>
-              <h4>Store Owner</h4>
+              <h4>########</h4>
               <div class="stars">
                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
@@ -512,7 +516,7 @@ Agrtravis - Construction Et Amenagement
             <div class="testimonial-item">
               <img src="/storage/assets/img/testimonials/anonym.jpg" class="testimonial-img" alt="">
               <h3>#######</h3>
-              <h4>Freelancer</h4>
+              <h4>#######</h4>
               <div class="stars">
                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>

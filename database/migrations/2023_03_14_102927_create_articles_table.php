@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('designation');
             $table->string('article_unite');
             $table->text('description');
-            $table->string('per_de_travail');
+           
             $table->unsignedBigInteger('ouvrier_id');
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('chantier_id');

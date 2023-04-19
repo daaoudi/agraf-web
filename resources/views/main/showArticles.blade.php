@@ -35,7 +35,7 @@ liste des Articles
                     <th>Etat_Avancement</th>
                     <th>designation</th>
                     <th>description</th>
-                    <th>Percentage_Travail</th>
+                  
                     <th>article_unite</th>
                     
                     <th>action</th>
@@ -48,7 +48,7 @@ liste des Articles
                     <td>{{$request->chantier->etat_avancement}}</td>
                     <td>{{$request->designation}}</td>
                     <td>{{Str::limit($request->description,50)}}</td>
-                    <td>{{$request->per_de_travail}}</td>
+                 
                     <td>{{$request->article_unite}}</td>
                     
                     <td>

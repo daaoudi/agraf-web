@@ -93,6 +93,7 @@ class ArticleController extends Controller
         $request->validate([
             'designation' => 'required',
             'description' => 'required',
+            'article_unite'=>'required',
             
             //'ouvrier_id' => 'required|exists:ouvriers,id', 
         ]);
@@ -100,6 +101,7 @@ class ArticleController extends Controller
         $article->update([
             'designation'=>$request->designation,
             'description'=>$request->description,
+            'article_unite'=>$request->article_unite,
         ]);
 
       
