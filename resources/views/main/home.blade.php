@@ -504,7 +504,7 @@ Agrtravis - Construction Et Amenagement
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                Enim nisi quem export duis laboum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
