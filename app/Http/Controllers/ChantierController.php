@@ -9,58 +9,34 @@ use Illuminate\Support\Facades\DB;
 
 class ChantierController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $chantiers=Chantier::with('client')->get();
-        
+
         return view('main.showChantiers',compact('chantiers'));
 
-
-
-
-        /*$chantiers=DB::table('clients')->join('chantiers',' clients.id','=','chantiers.client_id')
-        ->select('chantiers.*','clients.*')
-        ->get();*/
-        //dd($chantiers);
-        //$chantiers=Chantier::with('client')->get();
-        //$chantiers=Chantier::all();
-        //return view('dashboard')->with(['chantiers'=>$chantiers]);
-        //return view('dashboard',['chantiers'=>$chantiers]);
-        //return view('dashboard',compact('chantiers')); 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //
 
         $requests=Client::all();
-       
+
         return view('main.createChantier')->with(['clients'=>$requests]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-       
-
-        $request->validate([
+  $request->validate([
             'designation' => 'required',
             'prix' => 'required',
             'ville' => 'required',
             'mode_paiement' => 'required',
             'etat_avancement'=>'required',
             'client_id' => 'required|exists:clients,id',
-            
-            
         ]);
 
         $chantier=new Chantier();
@@ -72,21 +48,17 @@ class ChantierController extends Controller
         $chantier->client_id=$request->input('client_id');
         $chantier->save();
 
-        return redirect()->route('chantiers.index')->with(['success'=>'chantier ajoute']);
+        return redirect()->route('chantiers.index')->with(['success'=>'chantier ajouter avec sucées']);
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Chantier $chantier)
     {
         //
         return view('main.showChantier')->with(['chantiers'=>$chantier]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Chantier $chantier)
     {
         if (auth()->user()->is_admin) {
@@ -100,9 +72,6 @@ class ChantierController extends Controller
        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Chantier $chantier)
     {
         //
@@ -113,8 +82,8 @@ class ChantierController extends Controller
             'mode_paiement' => 'required',
             'etat_avancement'=>'required',
             //'client_id' => 'required|exists:clients,id',
-            
-            
+
+
         ]);
 
             $chantier->update([
@@ -125,9 +94,9 @@ class ChantierController extends Controller
                 'etat_avancement'=>$request->etat_avancement,
                 //'client_id'=>$request->client_id,
             ]);
-       
 
-        
+
+
 
         return redirect()->route('chantiers.index')->with(['success'=>'chantier modifie']);
     }
@@ -138,7 +107,7 @@ class ChantierController extends Controller
     public function destroy(Chantier $chantier)
     {
         //
-        
+
         $chantier->delete();
         return redirect()->route('chantiers.index')->with(['success'=>'chantier supprime']);
     }
