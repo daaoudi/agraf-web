@@ -301,7 +301,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction</h4>
               <p>Terrassement</p>
               <a href="/storage/assets/img/services/image001.png" title="Terrassement" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -313,7 +312,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction</h4>
               <p>les Fondations</p>
               <a href="/storage/assets/img/services/image005.png" title="les Fondations" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -325,7 +323,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction</h4>
               <p>Dallages et Poteaux</p>
               <a href="/storage/assets/img/services/image007.png" title="Dallages et Poteaux" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -337,7 +334,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Construction</h4>
               <p>Mur De Cloture et Cage d'escalier et Picsine</p>
               <a href="/storage/assets/img/services/image016.png" title="Mur De Cloture et Cage d'escalier et Picsine" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -349,7 +345,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Carllage Et Marbre</p>
               <a href="/storage/assets/img/services/image021.png" title="Carllage Et Marbre" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -361,7 +356,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Plattre</p>
               <a href="/storage/assets/img/services/image024.png" title="Plattre" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -373,7 +367,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Peinture</p>
               <a href="/storage/assets/img/services/image028.png" title="Peinture" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -385,7 +378,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Menuiserie bois</p>
               <a href="/storage/assets/img/services/image032.png" title="Menuiserie bois" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -397,7 +389,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Menuiserie alluminuim</p>
               <a href="/storage/assets/img/services/image036.png" title="Menuiserie alluminuim" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -409,7 +400,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Sanitaire</p>
               <a href="/storage/assets/img/services/image040.png" title="Sanitaire" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -421,7 +411,6 @@ Agrtravis - Construction Et Amenagement
               <h4>Aménagement</h4>
               <p>Entretien et réparation</p>
               <a href="/storage/assets/img/services/image044.png" title="Entretien et réparation" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
@@ -440,8 +429,8 @@ Agrtravis - Construction Et Amenagement
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Testimonials</h2>
-      <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
+      <h2>Effectif de l'entreprise</h2>
+      <p>Informations court sur les tout employés d'entreprise</p>
     </div>
 
     <div class="slides-2 swiper">
@@ -458,8 +447,7 @@ Agrtravis - Construction Et Amenagement
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bi bi-quote quote-icon-right"></i>
+####################                <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
           </div>
@@ -476,8 +464,7 @@ Agrtravis - Construction Et Amenagement
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bi bi-quote quote-icon-right"></i>
+####################                <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
           </div>
@@ -494,8 +481,7 @@ Agrtravis - Construction Et Amenagement
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                Enim nisi quem export duis laboum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                <i class="bi bi-quote quote-icon-right"></i>
+#####################                <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
           </div>
@@ -512,8 +498,9 @@ Agrtravis - Construction Et Amenagement
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bi bi-quote quote-icon-right"></i>
+
+$$$$$$$$$$$$$$$$$$$$$$$$$                
+<i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
           </div>
