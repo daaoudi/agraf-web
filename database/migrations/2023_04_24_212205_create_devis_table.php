@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('devis', function (Blueprint $table) {
             $table->id();
+            $table->string('designation_devis');
+            $table->double('prix_art');
+            $table->string('per_travail');
+            $table->double('totale_art');
             $table->timestamps();
         });
     }

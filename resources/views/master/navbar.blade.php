@@ -41,10 +41,10 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar ">
         <ul>
-          <li><a href="#" class="text-white active">Acceuil</a></li>
+          <li><a href="/" class="text-white active">Acceuil</a></li>
           <li><a href="#" class="text-white">à propos</a></li>
-          <li><a href="#" class="text-white">Services</a></li>
-          <li><a href="#" class="text-white">Projets</a></li>
+          <li><a href="#services" class="text-white">Services</a></li>
+          <li><a href="#projets" class="text-white">Projets</a></li>
          @if(auth()->check())
           <li class="dropdown" ><a href="#"> <span class="text-white">Formulaire</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul class="bg-secondary" >

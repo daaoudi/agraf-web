@@ -274,7 +274,7 @@ Agrtravis - Construction Et Amenagement
 
 
 <!-- ======= Our Projects Section ======= -->
-<section id="projects" class="projects">
+<section id="projets" class="projects">
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
