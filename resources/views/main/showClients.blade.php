@@ -19,7 +19,6 @@ liste des clients
   </div>
 
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
-    <div style="position:absolute;right:40px;"><a class="btn btn-warning" href="/clients/create">+ Ajouter un client</a></div>
 
     <div class="row">
         <div class="col-xl-12">
