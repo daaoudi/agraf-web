@@ -294,13 +294,13 @@ Agrtravis - Construction Et Amenagement
 
       <div class="row gy-4 portfolio-container fade-in" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
           <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/remodeling-1.jpg" class="img-fluid" alt="">
+            <img src="/storage/assets/img/services/image001.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Remodeling 1</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/remodeling-1.jpg" title="Remodeling 1" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <h4>Construction</h4>
+              <p>Terrassement</p>
+              <a href="/storage/assets/img/services/image001.png" title="Terrassement" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
@@ -308,47 +308,11 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
           <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/construction-1.jpg" class="img-fluid" alt="">
+            <img src="/storage/assets/img/services/image005.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Construction 1</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/construction-1.jpg" title="Construction 1" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/repairs-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Repairs 1</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/repairs-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/design-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Design 1</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/design-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/remodeling-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Remodeling 2</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/remodeling-2.jpg" title="Remodeling 2" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <h4>Construction</h4>
+              <p>les Fondations</p>
+              <a href="/storage/assets/img/services/image005.png" title="les Fondations" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
@@ -356,47 +320,11 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
           <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/construction-2.jpg" class="img-fluid" alt="">
+            <img src="/storage/assets/img/services/image007.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Construction 2</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/construction-2.jpg" title="Construction 2" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/repairs-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Repairs 2</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/repairs-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/design-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Design 2</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/design-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/remodeling-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Remodeling 3</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/remodeling-3.jpg" title="Remodeling 3" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <h4>Construction</h4>
+              <p>Dallages et Poteaux</p>
+              <a href="/storage/assets/img/services/image007.png" title="Dallages et Poteaux" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
@@ -404,23 +332,11 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
           <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/construction-3.jpg" class="img-fluid" alt="">
+            <img src="/storage/assets/img/services/image016.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Construction 3</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/construction-3.jpg" title="Construction 3" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div><!-- End Projects Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-          <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/repairs-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Repairs 3</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/repairs-3.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <h4>Construction</h4>
+              <p>Mur De Cloture et Cage d'escalier et Picsine</p>
+              <a href="/storage/assets/img/services/image016.png" title="Mur De Cloture et Cage d'escalier et Picsine" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
@@ -428,15 +344,89 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design">
           <div class="portfolio-content h-100">
-            <img src="/storage/assets/img/projects/design-3.jpg" class="img-fluid" alt="">
+            <img src="/storage/assets/img/services/image021.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Design 3</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur</p>
-              <a href="/storage/assets/img/projects/design-3.jpg" title="Repairs 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <h4>Aménagement</h4>
+              <p>Carllage Et Marbre</p>
+              <a href="/storage/assets/img/services/image021.png" title="Carllage Et Marbre" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div>
         </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image024.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Plattre</p>
+              <a href="/storage/assets/img/services/image024.png" title="Plattre" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image028.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Peinture</p>
+              <a href="/storage/assets/img/services/image028.png" title="Peinture" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image032.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Menuiserie bois</p>
+              <a href="/storage/assets/img/services/image032.png" title="Menuiserie bois" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image036.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Menuiserie alluminuim</p>
+              <a href="/storage/assets/img/services/image036.png" title="Menuiserie alluminuim" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image040.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Sanitaire</p>
+              <a href="/storage/assets/img/services/image040.png" title="Sanitaire" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <img src="/storage/assets/img/services/image044.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aménagement</h4>
+              <p>Entretien et réparation</p>
+              <a href="/storage/assets/img/services/image044.png" title="Entretien et réparation" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Projects Item -->
+
+      
 
       </div><!-- End Projects Container -->
 
