@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="/adminlte_assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="https://kit.fontawesome.com/a4f3b4fa28.js" crossorigin="anonymous"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="/adminlte_assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="/adminlte_assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
@@ -35,11 +36,6 @@
 
 
 
-
-
-
-
-./wrapper -->
 
 <!-- jQuery -->
 <script src="/adminlte_assets/plugins/jquery/jquery.min.js"></script>

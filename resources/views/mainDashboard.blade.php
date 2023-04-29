@@ -107,7 +107,7 @@
                         data-accordion="false">
                         <li class="nav-item">
                             <a href="/chantiers" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <img src="storage/icons/projets.png" width="45px" />
                                 <p>
                                     Projets
                                 </p>
@@ -116,16 +116,15 @@
 
                         <li class="nav-item">
                             <a href="/matiers" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
-                                <p>
-                                    Matieres
+                                <img src="storage/icons/matier.png" width="45px" />
+                                Matieres
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="/clients" class="nav-link">
-                                <i class="nav-icon far fa-user"></i>
+                                <img src="storage/icons/client.png" width="45px" />
                                 <p>
                                     Clients
                                 </p>
@@ -133,7 +132,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/services" class="nav-link">
-                                <i class="nav-icon far fa-user"></i>
+                                <img src="storage/icons/services.png" width="45px" />
                                 <p>
                                     Services
                                 </p>
@@ -141,7 +140,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/ouvriers" class="nav-link">
-                                <i class="nav-icon far fa-user"></i>
+                                <img src="storage/icons/ouvriers.png" width="45px" />
                                 <p>
                                     Ouvriers
                                 </p>
@@ -149,7 +148,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/fournisseurs" class="nav-link">
-                                <i class="nav-icon far fa-user"></i>
+                                <img src="storage/icons/fournisseur.png" width="45px" />
                                 <p>
                                     Fournisseurs
                                 </p>
@@ -157,7 +156,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/articles" class="nav-link">
-                                <i class="nav-icon far fa-user"></i>
+                                <img src="storage/icons/article.png" width="45px" />
                                 <p>
                                     Articles
                                 </p>
