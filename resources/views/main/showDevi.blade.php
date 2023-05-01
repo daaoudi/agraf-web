@@ -37,7 +37,8 @@
                     <th>Actions</th>
                 </tr>
                 
-                <tr>
+
+              <tr>
                     <td>{{$devi->designation_ouvrages}}</td>
                     <td>{{$devi->qte}}</td>
                     <td>{{$devi->unite}}</td>
@@ -47,7 +48,7 @@
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('devis.edit',$devi->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" style="color:whitesmoke;" class="btn btn-warning"><a href="{{route('devis.edit',$devi->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('devis.destroy',$devi->id)}}" style="display: inline-block;" method="post" id="{{$devi->id}}">

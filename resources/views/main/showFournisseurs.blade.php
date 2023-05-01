@@ -15,6 +15,11 @@ liste des Fournisseurs
         <li>Fournisseurs</li>
       </ol>
 
+      <a href={{route('fournisseurs.create')}} class="btn btn-warning">
+        + Ajouter un fournisseur
+      </a>
+
+
     </div>
   </div>
 
@@ -70,7 +75,7 @@ liste des Fournisseurs
                       document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                       delete
                       </span> </button>
-                      <button title="View" class="btn btn-info"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
+                      <button title="View" class="btn view"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
                           visibility
                           </span></a></button>
                           @else

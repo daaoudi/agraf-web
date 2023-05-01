@@ -47,25 +47,23 @@ l'ajout d'un Devi.
         <br><hr><br>
 
         <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" placeholder="designtaion" required>
+          <input type="text" name="nom_devi" class="form-control" placeholder="Nom de devi" required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="qte" class="form-control" placeholder="qte" required>
+          <input type="date" name="date_devi" class="form-control" placeholder="Date de devi" required>
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="unite" class="form-control" placeholder="unite" required>
+          <input type="text" name="numero_devi" class="form-control" placeholder="Numéro de devis" required>
         </div>
 
-        <div class="col-md-12 ">
-          <input type="text" class="form-control" name="prix_unitaire" placeholder="prix_unitaire" required>
+        <div class="col-md-12">
+          <input type="text" name="numero_devi" class="form-control" placeholder="Totale TTC" required>
         </div>
+
 
         <div class="col-md-12 text-center">
-          
-        
-         
           <button class="btn btn-warning" type="submit">Valider</button>
         </div>
 

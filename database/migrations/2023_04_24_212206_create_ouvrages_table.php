@@ -7,17 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migations.
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('devis', function (Blueprint $table) {
+        Schema::create('ouvrages', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_devi');
-            $table->date('date_devi');
-            $table->string('numero_devi');
-            $table->string('document');
-            $table->string('totale')->nullable();
+            $table->string('designation_ouvrage');
+            $table->string('qte');
+            $table->unsignedBigInteger('devi_id');
+            $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devis');
+        Schema::dropIfExists('ouvrages');
     }
 };

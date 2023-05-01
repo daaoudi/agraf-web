@@ -27,30 +27,18 @@ class DeviController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'designation' => 'required',
-            'qte' => 'required',
-            'unite' => 'required',
-            'prix_unitaire' => 'required',
+            'nom_devi' => 'required',
+            'date_devi' => 'required',
+            'numero_devi' => 'required',
+            'totale' => 'required',
         ]);
 
-        //parsing double inputs
-        $parsed_prix_unitaire = floatval($request->input('prix_unitaire'));
-        $parsed_qte = floatval($request->input('qte'));
-
-        // Format the parsed value to keep two decimal places
-        $prix_unitaire = number_format($parsed_prix_unitaire, 2);
-        $qte = number_format($parsed_qte, 2);
 
         $devi = new Devi();
-        $devi->designation_ouvrages = $request->input('designation');
-        $devi->qte = $qte;
-        $devi->unite = $request->input('unite');
-        $devi->prix_unitaire = $prix_unitaire;
-
-        //auto generatted fields
-        $devi->taux_avancement = 0;
-        $devi->totale_HT = $prix_unitaire * $qte;
-
+        $devi->nom_devi = $request->input('nom_devi');
+        $devi->date_devi = $request->input('date_devi');
+        $devi->numero_devi = $request->input('numero_devi');
+        $devi->totale = $request->input('totale');
 
         //Document treatments
         if ($request->hasFile('doc')) {
@@ -102,6 +90,7 @@ class DeviController extends Controller
             'qte' => 'required',
             'unite' => 'required',
             'prix_unitaire' => 'required',
+            'totale' => 'required',
         ]);
 
         //parsing double inputs
@@ -117,8 +106,7 @@ class DeviController extends Controller
             'qte' => $request->qte,
             'unite' => $request->unite,
             'prix_unitaire' => $request->prix_unitaire,
-            'taux_avancement' =>0,
-            'totale_HT' =>  $prix_unitaire * $qte
+            'taux_avancement' =>0
         ]);
 
         return redirect()->route('devis.index')->with(['success' => 'devi modifié']);

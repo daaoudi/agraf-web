@@ -2,20 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Ouvrage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Devi extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
-        "designation_ouvrages",
-        "qte",
-        "unite",
-        "prix_unitaire",
-        "taux_avancement",
+    protected $fillable = [
+        "id",
+        "nom_devi",
+        "date_devi",
+        "devi_numero",
+        "totale",
         "document",
-        "totale_HT"
     ];
+
+    public function ouvrages(): HasMany
+    {
+        return $this->hasMany(Ouvrage::class);
+    }
 }

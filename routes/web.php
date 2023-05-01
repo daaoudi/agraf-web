@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviController;
+use App\Http\Controllers\OuvrageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientController;
@@ -68,6 +69,7 @@ Route::group(['middleware' => ['authenticate', 'roles']], function (){
     Route::resource('ouvriers',OuvrierController::class);
     Route::resource('articles',ArticleController::class);
     Route::resource('devis',DeviController::class);
+    Route::resource('ouvrages',OuvrageController::class);
 // }
 
 

@@ -104,7 +104,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item my-3">
-                            <a href="/devis" class="nav-link">
+                            <a href={{route("devis.index")}} class="nav-link">
                                 <img src="storage/icons/devi.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Devis
@@ -112,7 +112,15 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href="/chantiers" class="nav-link">
+                            <a href={{route("ouvrages.index")}} class="nav-link">
+                                <img src="storage/icons/ouvrage.png" class="mx-3" class="mx-3" width="45px" />
+                                <p>
+                                    Ouvrages
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item my-3">
+                            <a href={{route("chantiers.index")}} class="nav-link">
                                 <img src="storage/icons/projets.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Projets
@@ -121,7 +129,7 @@
                         </li>
 
                         <li class="nav-item my-3">
-                            <a href="/matiers" class="nav-link">
+                            <a href={{route('matiers.index')}} class="nav-link">
                                 <img src="storage/icons/matier.png" class="mx-3" width="45px" />
                                 Matieres
                                 </p>
@@ -129,7 +137,7 @@
                         </li>
 
                         <li class="nav-item my-3">
-                            <a href="/clients" class="nav-link">
+                            <a href={{route('clients.index')}} class="nav-link">
                                 <img src="storage/icons/client.png" class="mx-3" width="45px" />
                                 <p>
                                     Clients
@@ -137,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href="/services" class="nav-link">
+                            <a href={{route('services.index')}} class="nav-link">
                                 <img src="storage/icons/services.png" class="mx-3" width="45px" />
                                 <p>
                                     Services
@@ -145,7 +153,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href="/ouvriers" class="nav-link">
+                            <a href={{route('ouvriers.index')}} class="nav-link">
                                 <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
                                 <p>
                                     Ouvriers
@@ -153,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href="/fournisseurs" class="nav-link">
+                            <a href={{route('fournisseurs.index')}} class="nav-link">
                                 <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
                                     Fournisseurs
@@ -161,7 +169,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href="/articles" class="nav-link">
+                            <a href={{route('articles.index')}} class="nav-link">
                                 <img src="storage/icons/article.png" class="mx-3" width="45px" />
                                 <p>
                                     Articles

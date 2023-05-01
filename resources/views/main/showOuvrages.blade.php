@@ -1,23 +1,22 @@
 @extends('layout.layouts')
 
 @section('title')
-liste des services
+liste des ouvrages
 @endsection
 
 @section('content')
-
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/breadcrumbs-bg.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-      <h2>Services</h2>
+      <h2>ouvrages</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>Services</li>
+        <li>ouvragees</li>
       </ol>
 
-      <a href={{route('services.create')}} class="btn btn-warning">
-        + Ajouter un service
+      <a href={{route('ouvrages.create')}} class="btn btn-warning">
+        + Ajouter un ouvrage
       </a>
 
 
@@ -37,60 +36,58 @@ liste des services
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de services: {{count($services)}}</h4>        </div>
+            <h4>Nombre d'ouvrages: {{count($ouvrages)}}</h4>        </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
-              <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Type de service</th>
-                <th>Actions</th>
+                <tr>
+                  <th>Devi</th>
+                  <th>Designation</th>
+                  <th>Prix Unitaire</th>
+                  <th>Qte</th>
+                  <th>Unité</th>
               </tr>
               </thead>
               <tbody>
-                @foreach($services as $service)
+                @foreach($ouvrages as $ouvrage)
                 <tr>
-                    <td>{{$service->nom_service}}</td>
-                    <td>{{$service->description}}</td>
-                    <td><img src="{{asset('./storage/images/'.$service->image)}}" width="150px" /></td>
-                    <td>{{$service->type_service}}</td>
-                   
+                    <td>{{$ouvrage->designation_ouvrage}}</td>
+                    <td>{{$ouvrage->prix_unitaire}}</td>
+                    <td>{{$ouvrage->qte}}</td>
+                    <td>{{$ouvrage->unite}}</td>
+                    <td>{{$ouvrage->devis->nom_devi}}</td>
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('services.edit',$service->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('ouvrages.edit',$ouvrage->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
-                        <form action="{{route('services.destroy',$service->id)}}" style="display: inline-block;" method="post" id="{{$service->id}}">
+                        <form action="{{route('ouvrages.destroy',$ouvrage->id)}}" style="display: inline-block;" method="post" id="{{$ouvrage->id}}">
                         @csrf
-                        @method('DELETE')
+                        @method('DELETE')    
                         </form>
-  
+
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$service->id}}').submit();" type="submit"><span class="material-symbols-outlined">
+                        document.getElementById('{{$ouvrage->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn view"> <a href="{{route('services.show',$service->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn view"> <a href="{{route('ouvrages.show',$ouvrage->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else
                         <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                          @endif
-                          @endif
+                            @endif
+                            @endif
                           </td>
                 </tr>
                 @endforeach
             </table>
           </div>
-          <!-- /.card-body -->
-        </div>
-  
-  </div>
-  
+          </div>
+          </div>
+
 
 
 

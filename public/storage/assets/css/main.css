@@ -2488,13 +2488,25 @@ section {
   color: #feb900;
 }
 
+.view{
+  background-color: transparent;
+  outline: none;
+  border:0px;
+  color: #272727;
+}
+/* 
+.ajouter{
+  position:absolute;
+  right:40px;
+  top:40px;
+} */
 
 .blog .sidebar .tags ul a {
-  color: #838893;
+  color: #fff;
   font-size: 14px;
   padding: 6px 14px;
   margin: 0 6px 8px 0;
-  border: 1px solid rgba(131, 136, 147, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.7);
   display: inline-block;
   transition: 0.3s;
 }

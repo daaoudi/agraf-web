@@ -15,6 +15,11 @@
         <li>Clients</li>
       </ol>
 
+      <a href={{route('clients.create')}} class="btn btn-warning">
+        + Ajouter un client
+      </a>
+
+
     </div>
   </div>
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">

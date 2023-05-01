@@ -16,8 +16,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $requests=Article::with('ouvrier','service','chantier')->get();
-        return view('main.showArticles',compact('requests'));
+        $articles=Article::with('ouvrier','service','chantier')->get();
+        return view('main.showArticles',compact('articles'));
     }
 
     /**

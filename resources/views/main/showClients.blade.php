@@ -5,7 +5,7 @@ liste des clients
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/clients.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Clients</h2>
@@ -15,32 +15,42 @@ liste des clients
         <li>Clients</li>
       </ol>
 
+
+      <a href={{route('clients.create')}} class="btn btn-warning">
+        + Ajouter un client
+      </a>
+
+
     </div>
   </div>
-
-<div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
-
-    <div class="row">
-      <button class="go-back" onclick="history.back();">
-        <span class="material-symbols-outlined">
-        arrow_back
-        </span></button>
-        <div class="col-xl-12">
+  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+    <button class="go-back" onclick="history.back();">
+      <span class="material-symbols-outlined">
+      arrow_back
+      </span></button>
+      
+      <div class="card">
+          <div class="card-header">
             @if (session()->has('success'))
             <div class="alert alert-success">
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de clients: {{count($clients)}}</h4>
-            <table class="table table-secondary table-striped my-5">
+            <h4>Nombre de clients: {{count($clients)}}</h4>        </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
                 <tr>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>montant</th>
-                    <th>email</th>
-                    <th>action</th>
-                </tr>
+                  <th>nom</th>
+                  <th>prenom</th>
+                  <th>telephone</th>
+                  <th>montant</th>
+                  <th>email</th>
+                  <th>action</th>
+              </tr>
+              </thead>
+              <tbody>
                 @foreach($clients as $client)
                 <tr>
                     <td>{{$client->nom}}</td>
@@ -51,7 +61,8 @@ liste des clients
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('clients.edit',$client->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-warning"><a href="{{route('clients.edit',$client->id)}}">
+                        <span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('clients.destroy',$client->id)}}" style="display: inline-block;" method="post" id="{{$client->id}}">
@@ -64,7 +75,8 @@ liste des clients
                         document.getElementById('{{$client->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn btn-info"> <a href="{{route('clients.show',$client->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn go-back"> <a href="{{route('clients.show',$client->id)}}"> 
+                          <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else
@@ -74,11 +86,10 @@ liste des clients
                           </td>
                 </tr>
                 @endforeach
-              </table>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
-    </div>
-</div>
-
 
 
 

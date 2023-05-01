@@ -15,6 +15,11 @@ liste des Ouvriers
         <li>Ouvriers</li>
       </ol>
 
+      <a href={{route('ouvriers.create')}} class="btn btn-warning">
+        + Ajouter un ouvrier
+      </a>
+
+
     </div>
   </div>
   
@@ -77,7 +82,7 @@ liste des Ouvriers
                         document.getElementById('{{$ouvrier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn btn-info"> <a href="{{route('ouvriers.show',$ouvrier->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn view"> <a href="{{route('ouvriers.show',$ouvrier->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else

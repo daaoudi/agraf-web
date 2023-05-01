@@ -15,33 +15,47 @@ liste des chantiers
         <li>Projets</li>
       </ol>
 
+      <a href={{route('chantiers.create')}} class="btn btn-warning">
+        + Ajouter un chantier
+      </a>
+
+
     </div>
   </div>
 
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div style="position:absolute;right:40px;"><a class="btn btn-warning" href="/chantiers/create">+ Ajouter un chantier</a></div>
+  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
       </span></button>
-    <div class="row">
-        <div class="col-xl-12">
+      
+      <div class="card">
+          <div class="card-header">
             @if (session()->has('success'))
             <div class="alert alert-success">
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de chantiers: {{count($chantiers)}}</h4>
-            <table class="table table-secondary table-striped my-5">
+            <h4>Nombre de projets: {{count($chantiers)}}</h4>        </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
                 <tr>
-                    <th>nom_client</th>
-                    <th>designation</th>
-                    <th>prix</th>
-                    <th>ville</th>
-                    <th>mode_paiement</th>
-                    <th>etat_avancement</th>
-                    <th>action</th>
-                </tr>
+                  <th>Nom de Fournisseur</th>
+                  <th>Nom de Projet</th>
+                  <th>Nom d'Article</th>
+                  <th>designation</th>
+                  <th>prix</th>
+                  <th>type</th>
+                  <th>qte</th>
+                  <th>chantiere_unite</th>
+                  <th>date de déciption</th>
+                  <th>Nombre de piéce utilisé</th>
+                  <th>action</th>
+              </tr>
+              </thead>
+              <tbody>
                 @foreach($chantiers as $chantier)
                 <tr>
                     <td>{{$chantier->client->nom}}</td>
@@ -66,7 +80,7 @@ liste des chantiers
                         document.getElementById('{{$chantier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn btn-info"> <a href="{{route('chantiers.show',$chantier->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn go-back"> <a href="{{route('chantiers.show',$chantier->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else
@@ -76,10 +90,10 @@ liste des chantiers
                           </td>
                 </tr>
                 @endforeach
-              </table>
-        </div>
-    </div>
-</div>
+            </table>
+          </div>
+          </div>
+          </div>
 
 
 
