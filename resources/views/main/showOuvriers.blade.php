@@ -18,28 +18,38 @@ liste des Ouvriers
     </div>
   </div>
   
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div class="row">
-        <div class="col-xl-12">
+  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+    <button class="go-back" onclick="history.back();">
+      <span class="material-symbols-outlined">
+      arrow_back
+      </span></button>
+      
+      <div class="card">
+          <div class="card-header">
             @if (session()->has('success'))
             <div class="alert alert-success">
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de Ouvriers: {{count($ouvriers)}}</h4>
-            <table class="table table-secondary table-striped">
+            <h4>Nombre d'ouvriers: {{count($ouvriers)}}</h4>        </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
                 <tr>
-                    <th>nom_projet</th>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>cin</th>
-                    <th>type</th>
-                    <th>Date_Debut</th>
-                    <th>Date_Fin</th>
-                    <th>salaire_par_semaine</th>
-                    <th>action</th>
-                </tr>
+                  <th>nom_projet</th>
+                  <th>nom</th>
+                  <th>prenom</th>
+                  <th>telephone</th>
+                  <th>cin</th>
+                  <th>type</th>
+                  <th>Date_Debut</th>
+                  <th>Date_Fin</th>
+                  <th>salaire_par_semaine</th>
+                  <th>action</th>
+              </tr>
+                </thead>
+              <tbody>
                 @foreach($ouvriers as $ouvrier)
                 <tr>
                     <td>{{$ouvrier->chantier->designation}}</td>
@@ -77,11 +87,11 @@ liste des Ouvriers
                           </td>
                 </tr>
                 @endforeach
-              </table>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
-    </div>
-</div>
-
+  
 
 
 

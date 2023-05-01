@@ -492,11 +492,13 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(187, 184, 184, 0.8);
+    background: #272727;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
   }
+
+  
 
   .navbar a,
   .navbar a:focus {
@@ -1913,7 +1915,7 @@ section {
 
 .hero .carousel-item::before {
   content: "";
-  background-color: rgba(104, 104, 100, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   inset: 0;
 }
@@ -2470,6 +2472,22 @@ section {
 .blog .sidebar .tags ul li {
   display: inline-block;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.go-back{
+  background-color: transparent;
+  outline: none;
+  border:0px;
+  color: #feb900;
+}
+
 
 .blog .sidebar .tags ul a {
   color: #838893;

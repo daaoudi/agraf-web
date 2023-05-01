@@ -7,16 +7,19 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migations.
      */
     public function up(): void
     {
         Schema::create('devis', function (Blueprint $table) {
             $table->id();
-            $table->string('designation_devis');
-            $table->double('prix_art');
-            $table->string('per_travail');
-            $table->double('totale_art');
+            $table->string('designation_ouvrages');
+            $table->double('qte');
+            $table->string('unite');
+            $table->double('prix_unitaire');
+            $table->string('taux_avancement')->nullable();
+            $table->string('document')->nullable();
+            $table->double('totale_HT');
             $table->timestamps();
         });
     }

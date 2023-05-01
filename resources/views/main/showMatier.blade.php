@@ -19,6 +19,10 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
   </div>
 
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+  <button class="go-back" onclick="history.back();">
+    <span class="material-symbols-outlined">
+    arrow_back
+    </span></button>
     <div class="row">
         <div class="col-xl-12">
             @if (session()->has('success'))

@@ -2,6 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\OuvrierMiddleware;
+use App\Http\Middleware\ServiceMiddleware;
+use App\Http\Middleware\ChantierMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -38,11 +41,12 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\ChantierMiddleware::class,
         ],
         
-        'artmid'=>[\App\Http\Middleware\OuvrierMiddleware::class,
-        \App\Http\Middleware\ServiceMiddleware::class,
-        \App\Http\Middleware\ChantierMiddleware::class,],
-
-       */
+        
+        'artmid'=>[OuvrierMiddleware::class,
+        ServiceMiddleware::class,
+        ChantierMiddleware::class,],
+*/
+       
 
         'web' => [
             

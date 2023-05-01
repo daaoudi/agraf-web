@@ -12,7 +12,8 @@ class DeviController extends Controller
      */
     public function index()
     {
-        //
+        $devis = Devi::all();
+        return view('main.showDevis', compact('devis'));
     }
 
     /**
@@ -20,15 +21,53 @@ class DeviController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.createDevis');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'designation' => 'required',
+            'qte' => 'required',
+            'unite' => 'required',
+            'prix_unitaire' => 'required',
+        ]);
+
+        //parsing double inputs
+        $parsed_prix_unitaire = floatval($request->input('prix_unitaire'));
+        $parsed_qte = floatval($request->input('qte'));
+
+        // Format the parsed value to keep two decimal places
+        $prix_unitaire = number_format($parsed_prix_unitaire, 2);
+        $qte = number_format($parsed_qte, 2);
+
+        $devi = new Devi();
+        $devi->designation_ouvrages = $request->input('designation');
+        $devi->qte = $qte;
+        $devi->unite = $request->input('unite');
+        $devi->prix_unitaire = $prix_unitaire;
+
+        //auto generatted fields
+        $devi->taux_avancement = 0;
+        $devi->totale_HT = $prix_unitaire * $qte;
+
+
+        //Document treatments
+        if ($request->hasFile('doc')) {
+            $Docfile = $request->file('doc');
+            $Docextension = $Docfile->getClientOriginalExtension();
+            $Docfilename = time() . "." . $Docextension;
+            $Docfile->move('uploads/devis_docs', $Docfilename);
+            $devi->document = $Docfilename;
+        } else {
+            // return $request;
+            $devi->document = "";
+        }
+
+
+        $devi->save();
+
+        return redirect()->route('devis.index')->with(['success' => 'Devi ajouté avec success']);
     }
 
     /**
@@ -36,7 +75,7 @@ class DeviController extends Controller
      */
     public function show(Devi $devi)
     {
-        //
+        return view('main.showDevi', compact('devi'));
     }
 
     /**
@@ -44,7 +83,13 @@ class DeviController extends Controller
      */
     public function edit(Devi $devi)
     {
-        //
+        if (auth()->user()->is_admin) {
+
+            return view('main.editDevi',compact('devi'));
+            }
+            else{
+                abort(code:403);
+           }
     }
 
     /**
@@ -52,7 +97,31 @@ class DeviController extends Controller
      */
     public function update(Request $request, Devi $devi)
     {
-        //
+        $request->validate([
+            'designation' => 'required',
+            'qte' => 'required',
+            'unite' => 'required',
+            'prix_unitaire' => 'required',
+        ]);
+
+        //parsing double inputs
+        $parsed_prix_unitaire = floatval($request->input('prix_unitaire'));
+        $parsed_qte = floatval($request->input('qte'));
+
+        // Format the parsed value to keep two decimal places
+        $prix_unitaire = number_format($parsed_prix_unitaire, 2);
+        $qte = number_format($parsed_qte, 2);
+
+        $devi->update([
+            'designation_ouvrages' => $request->designation,
+            'qte' => $request->qte,
+            'unite' => $request->unite,
+            'prix_unitaire' => $request->prix_unitaire,
+            'taux_avancement' =>0,
+            'totale_HT' =>  $prix_unitaire * $qte
+        ]);
+
+        return redirect()->route('devis.index')->with(['success' => 'devi modifié']);
     }
 
     /**
@@ -61,5 +130,7 @@ class DeviController extends Controller
     public function destroy(Devi $devi)
     {
         //
+        $devi->delete();
+        return redirect()->route('devis.index')->with(['success' => 'devis supprimé en success']);
     }
 }

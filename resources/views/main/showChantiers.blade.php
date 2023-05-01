@@ -20,6 +20,10 @@ liste des chantiers
 
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
     <div style="position:absolute;right:40px;"><a class="btn btn-warning" href="/chantiers/create">+ Ajouter un chantier</a></div>
+    <button class="go-back" onclick="history.back();">
+      <span class="material-symbols-outlined">
+      arrow_back
+      </span></button>
     <div class="row">
         <div class="col-xl-12">
             @if (session()->has('success'))

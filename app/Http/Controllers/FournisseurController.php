@@ -36,7 +36,6 @@ class FournisseurController extends Controller
         $request->validate([
             'nom'=>'required',
             'prenom'=>'required',
-            'email'=>'required|email',
             'telephone'=>'required|max:10',
             'montant'=>'required',
             'montant_en_avance'=>'required',
@@ -44,7 +43,6 @@ class FournisseurController extends Controller
         $fournisseur=new Fournisseur();
         $fournisseur->nom=$request->input('nom');
         $fournisseur->prenom=$request->input('prenom');
-        $fournisseur->email=$request->input('email');
         $fournisseur->telephone=$request->input('telephone');
         $fournisseur->montant=$request->input('montant');
         $fournisseur->montant_en_avance=$request->input('montant_en_avance');
@@ -87,7 +85,6 @@ class FournisseurController extends Controller
         $request->validate([
             'nom'=>'required',
             'prenom'=>'required',
-            'email'=>'required|email',
             'telephone'=>'required|max:10',
             'montant'=>'required',
             'montant_en_avance'=>'required',
@@ -96,7 +93,6 @@ class FournisseurController extends Controller
         $fournisseur->update([
             'nom'=>$request->nom,
             'prenom'=>$request->prenom,
-            'email'=>$request->email,
             'telephone'=>$request->telephone,
             'montant'=>$request->montant,
             'montant_en_avance'=>$request->montant_en_avance,

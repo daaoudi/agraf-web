@@ -5,18 +5,24 @@ la modification d'un Matier : {{$matier->designation}}.
 
 @section('content')
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+ 
   <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
     <h2>Matiere</h2>
     <ol>
       <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
       <li>Matiere</li>
     </ol>
 
   </div>
 </div>
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div class="row d-flex justify-content-center align-items-center">
+  <button class="go-back" onclick="history.back();">
+    <span class="material-symbols-outlined">
+    arrow_back
+    </span></button>
+  <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())
           <div class="alert alert-danger">

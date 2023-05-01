@@ -19,14 +19,12 @@ class ChantierMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $clients=Client::all();
-        $chantiers=Chantier::all();
+       
        
         if(count($clients)==0){
             return redirect('/clients/create');
         }
-        elseif(count($chantiers)==0){
-            return redirect('/chantiers/create');
-        }
+        
        
         else{
             return $next($request);

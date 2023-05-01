@@ -10,13 +10,18 @@ l'ajout d'un Matier.
     <h2>Matieres</h2>
     <ol>
       <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
       <li>Matieres</li>
     </ol>
 
   </div>
 </div>
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div class="row d-flex justify-content-center align-items-center">
+  <button class="go-back" onclick="history.back();">
+    <span class="material-symbols-outlined">
+    arrow_back
+    </span></button> 
+  <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())
           <div class="alert alert-danger">

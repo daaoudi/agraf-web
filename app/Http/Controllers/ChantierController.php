@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Chantier;
+use App\Models\Devi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,10 +23,10 @@ class ChantierController extends Controller
     public function create()
     {
         //
-
+$devis=Devi::all();
         $requests=Client::all();
 
-        return view('main.createChantier')->with(['clients'=>$requests]);
+        return view('main.createChantier')->with(['clients'=>$requests,'devis'=>$devis]);
     }
 
     public function store(Request $request)
@@ -37,6 +38,7 @@ class ChantierController extends Controller
             'mode_paiement' => 'required',
             'etat_avancement'=>'required',
             'client_id' => 'required|exists:clients,id',
+            'devis_id'=>'required|exists:devis,id'
         ]);
 
         $chantier=new Chantier();
@@ -46,6 +48,7 @@ class ChantierController extends Controller
         $chantier->mode_paiement=$request->input('mode_paiement');
         $chantier->etat_avancement=$request->input('etat_avancement');
         $chantier->client_id=$request->input('client_id');
+        $chantier->devis_id=$request->input('devis_id');
         $chantier->save();
 
         return redirect()->route('chantiers.index')->with(['success'=>'chantier ajouter avec sucées']);

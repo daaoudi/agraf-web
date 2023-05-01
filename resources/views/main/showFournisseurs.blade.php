@@ -19,61 +19,72 @@ liste des Fournisseurs
   </div>
 
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
-    <div class="row">
-        <div class="col-xl-12">
+  <button class="go-back" onclick="history.back();">
+    <span class="material-symbols-outlined">
+    arrow_back
+    </span></button>
+    
+    <div class="card">
+        <div class="card-header">
             @if (session()->has('success'))
             <div class="alert alert-success">
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de fournisseurs: {{count($fournisseurs)}}</h4>
-            <table class="table table-secondary table-striped">
-                <tr>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>montant</th>
-                    <th>montant_en_avance</th>
-                   
-                    <th>action</th>
-                </tr>
-                @foreach($fournisseurs as $fournisseur)
-                <tr>
-                    <td>{{$fournisseur->nom}}</td>
-                    <td>{{$fournisseur->prenom}}</td>
-                    <td>{{$fournisseur->telephone}}</td>
-                    <td>{{$fournisseur->montant}}</td>
-                    <td>{{$fournisseur->montant_en_avance}}</td>
-                   
-                    <td>
-                      @if(auth()->check())
-                        @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
-                        edit
-                        </span></a></button>
-                        <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
-                        @csrf
-                        @method('DELETE')
-                        </form>
+            <h4>Nombre de fournisseurs: {{count($fournisseurs)}}</h4>        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>nom</th>
+              <th>prenom</th>
+              <th>telephone</th>
+              <th>montant</th>
+              <th>montant_en_avance</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+              @foreach($fournisseurs as $fournisseur)
+              <tr>
+                  <td>{{$fournisseur->nom}}</td>
+                  <td>{{$fournisseur->prenom}}</td>
+                  <td>{{$fournisseur->telephone}}</td>
+                  <td>{{$fournisseur->montant}}</td>
+                  <td>{{$fournisseur->montant_en_avance}}</td>
+                 
+                  <td>
+                    @if(auth()->check())
+                      @if(auth()->user()->is_admin)
+                    <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
+                      edit
+                      </span></a></button>
+                      <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
+                      @csrf
+                      @method('DELETE')
+                      </form>
 
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
-                        if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
-                        delete
-                        </span> </button>
-                        <button title="View" class="btn btn-info"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
-                            visibility
-                            </span></a></button>
-                            @else
-                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                          @endif
-                          @endif
-                          </td>
-                </tr>
-                @endforeach
-              </table>
+                      <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                      if(confirm('vous êtes sure pour la suppression ?'))
+                      document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
+                      delete
+                      </span> </button>
+                      <button title="View" class="btn btn-info"> <a href="{{route('fournisseurs.show',$fournisseur->id)}}"> <span class="material-symbols-outlined">
+                          visibility
+                          </span></a></button>
+                          @else
+                      <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
+                        @endif
+                        @endif
+                        </td>
+              </tr>
+              @endforeach
+          </table>
         </div>
-    </div>
+        <!-- /.card-body -->
+      </div>
+
 </div>
 
 

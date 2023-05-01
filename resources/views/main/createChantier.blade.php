@@ -10,13 +10,18 @@ l'ajout d'un chantier.
     <h2>Chantiers</h2>
     <ol>
       <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
       <li>Chantiers</li>
     </ol>
 
   </div>
 </div>
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div class="row d-flex justify-content-center align-items-center">
+  <button class="go-back" onclick="history.back();">
+    <span class="material-symbols-outlined">
+    arrow_back
+    </span></button>
+  <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())
           <div class="alert alert-danger">
@@ -69,7 +74,14 @@ l'ajout d'un chantier.
                 @endforeach
               </select>
         </div>
-
+        <div class="col-md-12">
+          <select name="devi_id" class="form-select"  required>
+              <option selected>Choisir le nom de client</option>
+             @foreach($deviss as $devi)
+              <option value="{{$devi->id}}">{{$client->nom}}</option>
+              @endforeach
+            </select>
+      </div>
         
 
         <div class="col-md-12 text-center">

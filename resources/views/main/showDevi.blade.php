@@ -1,27 +1,23 @@
 @extends('layout.layouts')
 
-@section('title')
-{{$fournisseur->nom .' '. $fournisseur->prenom}}
-@endsection
-
 @section('content')
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-      <h2>fournisseurs</h2>
+      <h2>Devis</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>fournisseurs</li>
+        <li>Devis</li>
       </ol>
 
     </div>
   </div>
 <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-  <button class="go-back" onclick="history.back();">
-    <span class="material-symbols-outlined">
-    arrow_back
-    </span></button>
+    <button class="go-back" onclick="history.back();">
+        <span class="material-symbols-outlined">
+        arrow_back
+        </span></button>
     <div class="row">
         <div class="col-xl-12">
             @if (session()->has('success'))
@@ -32,43 +28,45 @@
             
             <table class="table table-secondary table-striped">
                 <tr>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>montant</th>
-                    <th>montant_en_avance</th>
-                   
-                    <th>action</th>
+                    <th>Designation</th>
+                    <th>Qte</th>
+                    <th>Unité</th>
+                    <th>Prix HT</th>
+                    <th>Taux d'avancement</th>
+                    <th>Total HT</th>
+                    <th>Actions</th>
                 </tr>
                 
                 <tr>
-                    <td>{{$fournisseur->nom}}</td>
-                    <td>{{$fournisseur->prenom}}</td>
-                    <td>{{$fournisseur->telephone}}</td>
-                    <td>{{$fournisseur->montant}}</td>
-                    <td>{{$fournisseur->montant_en_avance}}</td>
-                    
+                    <td>{{$devi->designation_ouvrages}}</td>
+                    <td>{{$devi->qte}}</td>
+                    <td>{{$devi->unite}}</td>
+                    <td>{{$devi->prix_unitaire}}</td>
+                    <td>{{$devi->taux_avancement}}%</td>
+                    <td>{{$devi->totale_HT}}DH</td>
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-success"><a href="{{route('devis.edit',$devi->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
-                        <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
+                        <form action="{{route('devis.destroy',$devi->id)}}" style="display: inline-block;" method="post" id="{{$devi->id}}">
                         @csrf
                         @method('DELETE')    
                         </form>
 
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                        <button title="Supprimer" class="btn btn-danger" 
+                        onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
+                        document.getElementById('{{$devi->id}}').submit();" type="submit">
+                        <span class="material-symbols-outlined">
                         delete
                         </span> </button>
                         @else
                         <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
                         @endif
                         @endif
-
+                        
                         </td>
                 </tr>
                

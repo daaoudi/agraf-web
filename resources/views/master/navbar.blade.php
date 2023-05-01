@@ -20,7 +20,8 @@
           subscriptions
           </span>
       </a>
-        <a href="/login" title="connection" class="btn btn-outline-light"><span class="material-symbols-outlined">
+        <a href="/login" title="connection" class="btn btn-outline-light">
+          <span class="material-symbols-outlined">
           account_circle
           </span></a>
         @endif
@@ -51,6 +52,7 @@
               
               <li class="dropdown " id="link" ><a href="#" > <span >Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul class="bg-secondary" >
+                  <li id="link"><a href="{{url('devis/create')}}" >Devis</a></li>
                   <li id="link"><a href="{{url('fournisseurs/create')}}"  >Fournisseurs </a></li>
                   <li id="link"><a href="{{url('clients/create')}}" >Clients </a></li>
                   <li id="link"><a href="{{url('matiers/create')}}" >Matieres </a></li>

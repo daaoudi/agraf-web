@@ -19,31 +19,40 @@ liste des services
     </div>
   </div>
 
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <div class="row">
-        <div class="col-xl-12">
+  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+    <button class="go-back" onclick="history.back();">
+      <span class="material-symbols-outlined">
+      arrow_back
+      </span></button>
+      
+      <div class="card">
+          <div class="card-header">
             @if (session()->has('success'))
             <div class="alert alert-success">
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de la services: {{count($services)}}</h4>
-            <table class="table table-secondary table-striped">
-                <tr>
-                    <th>Nom de la Service</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Type de la Service</th>
-                    
-                    <th>action</th>
-                </tr>
+            <h4>Nombre de services: {{count($services)}}</h4>        </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Type de service</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
                 @foreach($services as $service)
                 <tr>
                     <td>{{$service->nom_service}}</td>
                     <td>{{$service->description}}</td>
-                    <td><img src="{{asset('./storage/images/'.$service['image'])}}" style="aspect-ratio: 1/1;width:120px;height:120px;  " alt="..."></td>
+                    <td><img src="{{asset('./storage/images/'.$service->image)}}" width="150px" /></td>
                     <td>{{$service->type_service}}</td>
-                    
+                   
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
@@ -52,9 +61,9 @@ liste des services
                         </span></a></button>
                         <form action="{{route('services.destroy',$service->id)}}" style="display: inline-block;" method="post" id="{{$service->id}}">
                         @csrf
-                        @method('DELETE')    
+                        @method('DELETE')
                         </form>
-
+  
                         <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{$service->id}}').submit();" type="submit"><span class="material-symbols-outlined">
@@ -70,11 +79,13 @@ liste des services
                           </td>
                 </tr>
                 @endforeach
-              </table>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
-    </div>
-</div>
-
+  
+  </div>
+  
 
 
 

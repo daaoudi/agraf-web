@@ -8,13 +8,13 @@
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item my-3">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item my-3 d-none d-sm-inline-block">
                     <a href="/" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item my-3 d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
@@ -22,7 +22,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                <li class="nav-item my-3">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
                     </a>
@@ -45,12 +45,12 @@
                 </li>
 
 
-                <li class="nav-item">
+                <li class="nav-item my-3">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item my-3">
                     <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
                         role="button">
                         <i class="fas fa-th-large"></i>
@@ -74,16 +74,14 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src={{ Auth::user()->profile_photo_url }}  class="img-circle elevation-2" alt={{ Auth::user()->name }}>
+                        <img src={{ Auth::user()->profile_photo_url?Auth::user()->profile_photo_url:"/storage/assets/img/users/default.jpg" }}  class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
-                    <div class="info">
-                        <a href="/user/profile" > {{ Auth::user()->name }} </a>
-
-                        {{--
-                        <a href="/user/profile" class="d-block"> {{ Auth::user()->name }}
-                        </a>
-                        --}}
-                        <a href="{{url('/logout')}}" class="d-block"> deconnexion
+                    <div class="info d-flex">
+                        <a href="/user/profile ml-5" > {{ Auth::user()->name }} </a>
+                        <a href="{{url('/logout')}}" class="d-block"> 
+                            <span class="material-symbols-outlined">
+                            logout
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -105,58 +103,66 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
+                            <a href="/devis" class="nav-link">
+                                <img src="storage/icons/devi.png" class="mx-3" class="mx-3" width="45px" />
+                                <p>
+                                    Devis
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item my-3">
                             <a href="/chantiers" class="nav-link">
-                                <img src="storage/icons/projets.png" width="45px" />
+                                <img src="storage/icons/projets.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Projets
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/matiers" class="nav-link">
-                                <img src="storage/icons/matier.png" width="45px" />
+                                <img src="storage/icons/matier.png" class="mx-3" width="45px" />
                                 Matieres
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/clients" class="nav-link">
-                                <img src="storage/icons/client.png" width="45px" />
+                                <img src="storage/icons/client.png" class="mx-3" width="45px" />
                                 <p>
                                     Clients
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/services" class="nav-link">
-                                <img src="storage/icons/services.png" width="45px" />
+                                <img src="storage/icons/services.png" class="mx-3" width="45px" />
                                 <p>
                                     Services
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/ouvriers" class="nav-link">
-                                <img src="storage/icons/ouvriers.png" width="45px" />
+                                <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
                                 <p>
                                     Ouvriers
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/fournisseurs" class="nav-link">
-                                <img src="storage/icons/fournisseur.png" width="45px" />
+                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
                                     Fournisseurs
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-3">
                             <a href="/articles" class="nav-link">
-                                <img src="storage/icons/article.png" width="45px" />
+                                <img src="storage/icons/article.png" class="mx-3" width="45px" />
                                 <p>
                                     Articles
                                 </p>

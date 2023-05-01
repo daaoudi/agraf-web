@@ -21,6 +21,10 @@ liste des clients
 <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
 
     <div class="row">
+      <button class="go-back" onclick="history.back();">
+        <span class="material-symbols-outlined">
+        arrow_back
+        </span></button>
         <div class="col-xl-12">
             @if (session()->has('success'))
             <div class="alert alert-success">
