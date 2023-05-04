@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('unite');
             $table->double('prix');
             $table->double('qte');
-            $table->double('totale')->nullable();
+           
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

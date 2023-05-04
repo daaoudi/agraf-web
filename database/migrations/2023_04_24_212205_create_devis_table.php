@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('date_devi');
             $table->string('numero_devi');
             $table->string('document');
-            
+            $table->double('totale')->nullable();
             $table->timestamps();
         });
     }
