@@ -78,7 +78,7 @@
                             class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info d-flex">
-                        <a href="/user/profile mx-2"> {{ Auth::user()->name }} </a>
+                        <a href="/user/profile"> {{ Auth::user()->name }} </a>
                         <a href="{{ url('/logout') }}" class="d-block ml-3">
                             <span class="material-symbols-outlined">
                                 logout
@@ -285,7 +285,7 @@
                         <tbody>
                             @foreach ($ouvrages as $key => $values)
                                 <tr>
-                                    <td>{{ $key }}</td>
+                                    <td style="text-align:center;align-items:center;">{{ $key }}</td>
                                     <td>
                                         @foreach ($values as $vals)
                                             <div class="card mb-3">
@@ -308,7 +308,9 @@
                                                     </p>
                                                     <p class="card-text"><b>Prix:</b> {{ $vals['prix'] }}</p>
                                                     <p class="card-text"><b>Quantité:</b> {{ $vals['qte']." ".$vals['unite']}}</p>
-                                                    <p class="card-text"><b>Total:</b> {{ $vals['qte'] * $vals['prix'] }} DH</p>
+                                                    <p class="card-text"><b>Totale:</b> {{ $vals['qte'] * $vals['prix'] }} DH</p>
+                                                    <p class="card-text"><b>Totale TTC:</b> {{ $vals['totale']}} DH</p>
+                                                    <p class="card-text"><b>Taux d'avancement:</b> {{ number_format((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100, 2) }}%</p>
                                                 </div>
                                             </div>
                                         @endforeach

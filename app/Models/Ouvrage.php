@@ -13,7 +13,7 @@ class Ouvrage extends Model
     protected $fillable=[
         "id",
         "designation_ouvrage",
-        "prix_unitaire",
+        "prix",
         "qte",
         "etat",
         "unite",

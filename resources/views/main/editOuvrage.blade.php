@@ -50,7 +50,7 @@ la modification d'un Matier :
         </div>
 
         <div class="col-md-12">
-          <input type="number" name="qte" class="form-control" value="{{$ouvrage->qte}}" placeholder="quantité" required>
+          <input type="text" name="qte" class="form-control" value="{{$ouvrage->qte}}" placeholder="quantité" required>
         </div>
 
         <div class="col-md-12">
