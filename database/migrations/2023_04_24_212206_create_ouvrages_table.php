@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('ouvrages', function (Blueprint $table) {
             $table->id();
             $table->string('designation_ouvrage');
-            $table->string('qte');
+            $table->string('unite');
+            $table->double('prix');
+            $table->double('qte');
+           
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
