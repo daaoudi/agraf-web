@@ -76,9 +76,9 @@ l'ajout d'un chantier.
         </div>
         <div class="col-md-12">
           <select name="devi_id" class="form-select"  required>
-              <option selected>Choisir le nom de client</option>
-             @foreach($deviss as $devi)
-              <option value="{{$devi->id}}">{{$client->nom}}</option>
+              <option selected>Choisir le devi</option>
+             @foreach($devis as $devi)
+              <option value="{{$devi->id}}">{{$devi->nom_devi}}</option>
               @endforeach
             </select>
       </div>
