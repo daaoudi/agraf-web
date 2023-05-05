@@ -17,7 +17,7 @@ class Ouvrage extends Model
         "prix_unitaire",
         "qte",
        
-        "totale",
+      
         "unite",
         "devi_id"
     ];
