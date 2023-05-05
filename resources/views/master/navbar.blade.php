@@ -60,6 +60,7 @@
                   <li id="link"><a href="{{url('ouvriers/create')}}" >Ouvries </a></li>
                   <li id="link"><a href="{{url('services/create')}}" >Services </a></li>
                   <li id="link"><a href="{{url('articles/create')}}" >Articles </a></li>
+                  <li id="link"><a href="{{url('ouvrages/create')}}" >Ouvrages </a></li>
                 </ul>
               </li>
              
