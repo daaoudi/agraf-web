@@ -74,7 +74,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src={{ Auth::user()->profile_photo_url ? Auth::user()->profile_photo_url : '/storage/assets/img/users/default.jpg' }}
+                        <img src={{ Auth::user()->profile_photo_path ? Auth::user()->profile_photo_path : '/storage/assets/img/users/default.jpg' }}
                             class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info d-flex">
