@@ -15,28 +15,38 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $chantiers = Chantier::all();
-        $chantiersNbr = count($chantiers);
-
-        $ouvriers = Ouvrier::all();
-        $ouvriersNbr = count($ouvriers);
-
-        
-        $client = Client::all();
-        $clientNbr = count($client);
-        
-        $fournisseurs = Fournisseur::all();
-        $fournisseursNbr = count($fournisseurs);
-
+        $chantiersNbr = Chantier::count();
+        $ouvriersNbr = Ouvrier::count();
+        $clientNbr = Client::count();
+        $fournisseursNbr = Fournisseur::count();
 
 
         $data = DB::table('chantiers')
         ->join('ouvriers', "chantiers.id", "=", "ouvriers.chantier_id")
         ->join('articles', "articles.ouvrier_id", "=", "ouvriers.id")
-        ->join('services', "articles.service_id","=","services.id")->select("chantiers.designation AS des","chantiers.*","services.*","articles.*","ouvriers.*")
+        ->join('services', "articles.service_id","=","services.id")
+        ->select("chantiers.designation AS des","chantiers.*","services.*","articles.*","ouvriers.*")
         ->get();
+
+        $etat_global = DB::table("ouvrages")
+        ->join('devis','ouvrages.devi_id','=','devis.id')
+        ->get();
+
+        $ouvrages = DB::table('ouvrages')
+        ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')
+        ->get()
+        ->mapToGroups(function ($item) {
+            return [$item->nom_devi => $item->designation_ouvrage];
+        });
+
+        // foreach($ouvrages as $o)
+        // {
+        //     dd($o);
+        // };
+        // dd($ouvrages);
+
         
-        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr'));
+        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr','etat_global','ouvrages'));
 
     }
 }

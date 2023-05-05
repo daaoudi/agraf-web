@@ -60,19 +60,15 @@
                                 placeholder="unité" required>
                         </div>
                         <div class="col-md-12">
-                            <select name="devis_id" id="">
+                            <select name="devi_id" id="">
                                 <option selected disabled>Choisir le nom de devi</option>
                                 @foreach ($devis as $devi)
-                                    <option value="{{$devi->id}}">{{$devi->nom_devi}}</option>
+                                    <option value="{{$devi->id}}" @if($devi->id === old('devi_id')) selected @endif>{{$devi->nom_devi}}</option>
                                 @endforeach
                             </select>
                         </div>
 
-
                         <div class="col-md-12 text-center">
-
-
-
                             <button class="btn btn-warning" type="submit">Valider</button>
                         </div>
 

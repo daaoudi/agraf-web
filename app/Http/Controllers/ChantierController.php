@@ -36,9 +36,8 @@ $devis=Devi::all();
             'prix' => 'required',
             'ville' => 'required',
             'mode_paiement' => 'required',
-            'etat_avancement'=>'required',
             'client_id' => 'required|exists:clients,id',
-            'devis_id'=>'required|exists:devis,id'
+            'devi_id'=>'required|exists:devis,id'
         ]);
 
         $chantier=new Chantier();
@@ -46,9 +45,8 @@ $devis=Devi::all();
         $chantier->prix=$request->input('prix');
         $chantier->ville=$request->input('ville');
         $chantier->mode_paiement=$request->input('mode_paiement');
-        $chantier->etat_avancement=$request->input('etat_avancement');
         $chantier->client_id=$request->input('client_id');
-        $chantier->devis_id=$request->input('devis_id');
+        $chantier->devi_id=$request->input('devi_id');
         $chantier->save();
 
         return redirect()->route('chantiers.index')->with(['success'=>'chantier ajouter avec sucées']);
@@ -57,7 +55,6 @@ $devis=Devi::all();
 
     public function show(Chantier $chantier)
     {
-        //
         return view('main.showChantier')->with(['chantiers'=>$chantier]);
     }
 
@@ -65,28 +62,20 @@ $devis=Devi::all();
     public function edit(Chantier $chantier)
     {
         if (auth()->user()->is_admin) {
-
         return view('main.editChantier')->with(['chantiers'=>$chantier]);
-
         }
-
         else{
             abort(code:403);
-       }
+            }
     }
 
     public function update(Request $request, Chantier $chantier)
     {
-        //
         $request->validate([
             'designation' => 'required',
             'prix' => 'required',
             'ville' => 'required',
-            'mode_paiement' => 'required',
-            'etat_avancement'=>'required',
-            //'client_id' => 'required|exists:clients,id',
-
-
+            'mode_paiement' => 'required'
         ]);
 
             $chantier->update([
@@ -94,8 +83,6 @@ $devis=Devi::all();
                 'prix'=>$request->prix,
                 'ville'=>$request->ville,
                 'mode_paiement'=>$request->mode_paiement,
-                'etat_avancement'=>$request->etat_avancement,
-                //'client_id'=>$request->client_id,
             ]);
 
 
@@ -104,13 +91,9 @@ $devis=Devi::all();
         return redirect()->route('chantiers.index')->with(['success'=>'chantier modifie']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Chantier $chantier)
     {
-        //
-
         $chantier->delete();
         return redirect()->route('chantiers.index')->with(['success'=>'chantier supprime']);
     }

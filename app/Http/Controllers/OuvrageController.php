@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use App\Models\Devi;
 use App\Models\Ouvrage;
-use App\Http\Requests\StoreOuvrageRequest;
-use App\Http\Requests\UpdateOuvrageRequest;
+
 
 class OuvrageController extends Controller
 {
@@ -14,7 +15,7 @@ class OuvrageController extends Controller
      */
     public function index()
     {
-        $ouvrages= Ouvrage::all();
+        $ouvrages= Ouvrage::with("devi")->get();
         return view('main.showOuvrages',compact('ouvrages'));
 
     }
@@ -33,7 +34,7 @@ class OuvrageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOuvrageRequest $request)
+    public function store(Request $request)
     {
         
         $request->validate([
@@ -44,7 +45,7 @@ class OuvrageController extends Controller
             'devi_id' => 'required',
         ]);
 
-                //parsing double inputs
+                //parsing double
                 $parsed_prix_unitaire = floatval($request->input('prix_unitaire'));
                 $parsed_qte = floatval($request->input('qte'));
                 // Format the parsed value to keep two decimal places
@@ -52,41 +53,33 @@ class OuvrageController extends Controller
                 $qte = number_format($parsed_qte, 2);
         
                 $ouvrage = new Ouvrage();
-                $ouvrage->designation_ouvrages = $request->input('designation');
+                $ouvrage->designation_ouvrage = $request->input('designation');
                 $ouvrage->qte = $qte;
                 $ouvrage->unite = $request->input('unite');
-                $ouvrage->prix_unitaire = $prix_unitaire;
+                $ouvrage->prix = $prix_unitaire;
                 $ouvrage->devi_id = $request->input('devi_id');
-        
-                //auto generatted fields
-                $ouvrage->taux_avancement = 0;
-
                 $ouvrage->save();
 
-                return redirect()->route('ouvrages.index')->with(['success'=>'devi ajouté avec succées']);
+                return redirect()->route('ouvrages.index')->with(['success'=>'Ouvrage ajouté avec succées']);
         
     }
 
-    /**
-     * Display the specified resource.
-     */
+
+    
     public function show(Ouvrage $ouvrage)
     {
-        //
-    }
+        return view('main.showOuvrage')->with(['ouvrage'=>$ouvrage]);
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Ouvrage $ouvrage)
     {
-        //
+        $devis= Devi::all();
+        return view('main.editOuvrage',compact('ouvrage','devis'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateOuvrageRequest $request, Ouvrage $ouvrage)
+    
+    public function update(Request $request, Ouvrage $ouvrage)
     {
         $request->validate([
             'designation' => 'required',
@@ -101,8 +94,8 @@ class OuvrageController extends Controller
             'designation_ouvrages' => $request->designation,
             'qte' => $request->qte,
             'unite' => $request->unite,
-            'prix_unitaire' => $request->prix_unitaire,
-            'taux_avancement' =>0
+            'prix' => $request->prix_unitaire,
+            'etat' =>$request->etat
         ]);
         return redirect()->route('ouvrages.index')->with(['success' => 'devi modifié']);
 

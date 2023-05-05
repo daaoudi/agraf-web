@@ -15,18 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('designation_ouvrage');
             $table->string('unite');
+            $table->string('etat')->default("pas encore");
             $table->double('prix');
             $table->double('qte');
-           
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('ouvrages');

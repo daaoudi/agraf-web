@@ -36,7 +36,7 @@ l'ajout d'un services.
 
       <form action="{{route('services.store')}}" enctype="multipart/form-data" method="post">
         @csrf
-          <div class="col-md-12">
+          <div class="col-md-12 mb-5">
       <label for="service" class="form-label">Nom Service :</label>
       <input type="text" class="form-control" name="nom_service" id="service" placeholder="Nom de la Service" required>
       </div>
@@ -44,11 +44,11 @@ l'ajout d'un services.
       <label for="description1" class="form-label">description de la Service :</label>
       <textarea class="form-control" name="description" id="description1" placeholder="description de la Service" required rows="3"></textarea>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 my-5">
       <label for="img" class="form-label">Image de la Service</label>
       <input class="form-control" name="image" type="file" id="img">
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 mb-5">
         <select name="type_service" class="form-select" >
         <option selected>Choisir le Type de la Service</option>
         <option value="Terrassement">Terrassement</option>

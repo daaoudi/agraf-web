@@ -81,7 +81,7 @@ l'ajout d'un Article.
           <select name="chantier_id" class="form-select"  required>
               <option selected>Choisir le nom de la Projet</option>
              @foreach($chantiers as $chantier)
-              <option value="{{$chantier->id}}">{{$chantier->nom_service}}</option>
+              <option value="{{$chantier->id}}">{{$chantier->designation}}</option>
               @endforeach
             </select>
       </div>

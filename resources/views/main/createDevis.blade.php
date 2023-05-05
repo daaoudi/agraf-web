@@ -59,7 +59,7 @@ l'ajout d'un Devi.
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="numero_devi" class="form-control" placeholder="Totale TTC" required>
+          <input type="text" name="totale" class="form-control" placeholder="Totale TTC" required>
         </div>
 
 
