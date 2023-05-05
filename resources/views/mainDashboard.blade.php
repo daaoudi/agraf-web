@@ -280,6 +280,7 @@
                             <tr>
                                 <th>Devi(s)</th>
                                 <th>Ouvrages(s)</th>
+                                <th>Taux d'avancement de projet</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -287,13 +288,15 @@
                                 <tr>
                                     <td style="text-align:center;align-items:center;">{{ $key }}</td>
                                     <td>
+                                        @php $taux_global=0; @endphp
                                         @foreach ($values as $vals)
                                             <div class="card mb-3">
                                                 <div class="card-header">
                                                     <h5 class="card-title">{{ $vals['designation_ouvrage'] }}</h5>
                                                 </div>
                                                 <div class="card-body">
-                                                    <p class="card-text"><b>Etat:</b> 
+                                                    <p class="card-text"><b>Etat:</b>
+                                                        @php $avance=0;$taux_global_actuelle=0; @endphp 
                                                         @if ($vals['etat'] === "pas encore")
                                                         <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
                                                     @endif
@@ -303,6 +306,7 @@
                                                     @endif
                                                     
                                                     @if ($vals['etat'] === "complété")
+                                                        @php $avance=1;  @endphp
                                                         <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
                                                     @endif    
                                                     </p>
@@ -310,52 +314,28 @@
                                                     <p class="card-text"><b>Quantité:</b> {{ $vals['qte']." ".$vals['unite']}}</p>
                                                     <p class="card-text"><b>Totale:</b> {{ $vals['qte'] * $vals['prix'] }} DH</p>
                                                     <p class="card-text"><b>Totale TTC:</b> {{ $vals['totale']}} DH</p>
-                                                    <p class="card-text"><b>Taux d'avancement:</b> {{ number_format((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100, 2) }}%</p>
+                                                    <p class="card-text"><b>Taux d'avancement:</b> 
+                                                        {{
+
+                                                             $taux_global_actuelle= number_format(((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100)*$avance, 2)
+                                                             
+                                                        }}%</p>
                                                 </div>
                                             </div>
+                                            @php $taux_global = $taux_global + $taux_global_actuelle; @endphp
                                         @endforeach
                                     </td>
+                                    <td style="text-align: center;">
+                                       <h3> {{$taux_global }} %</h3>
+                                    </td>
                                 </tr>
+
                             @endforeach
                         </tbody>
                     </table>
                     
                     <hr>
-                    <!-- Main row -->
-                    <div class="row">
-                        <div class="col-xl-12">
-                            @if (session()->has('success'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                </div>
-                            @endif
-                            <h1 class="mt-5">Détail de projet</h1>
 
-                            @if (count($etat_global) !== 0)
-                                <table class="table table-secondary table-striped my-5">
-                                    <tr>
-                                        <th>Devi</th>
-                                        <th>Ouvrages</th>
-                                        <th>Taux d'avancement</th>
-                                        <th>Totale TTC</th>
-                                    </tr>
-                                    @foreach ($etat_global as $res)
-                                        <tr>
-                                            <td>{{ $res->nom_devi }}</td>
-                                            <td>{{$res->designation_ouvrage	}}</td>
-                                            <td>{{ number_format((($res->prix * $res->qte) / $res->totale) * 100, 2) }}%</td>
-                                            <td>{{ $res->totale }}DH</td>
-                                        </tr>
-                                    @endforeach
-                                </table>
-                            @else
-                                <div class="alert alert-danger mt-5">Pour pouvoir voir le tableau de statistique, vous devez
-                                    remplir tous les champs
-                                    autres tables nécessaires (Devis, Ouvrages)</div>
-                            @endif
-                        </div>
-                    </div>
-                    <!-- /.row (main row) -->
                     <hr>
                     <!-- Main row -->
                     <div class="row">
