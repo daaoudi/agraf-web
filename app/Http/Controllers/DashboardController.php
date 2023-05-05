@@ -32,12 +32,21 @@ class DashboardController extends Controller
         ->join('devis','ouvrages.devi_id','=','devis.id')
         ->get();
 
-        $ouvrages = DB::table('ouvrages')
-        ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')
-        ->get()
-        ->mapToGroups(function ($item) {
-            return [$item->nom_devi => $item->designation_ouvrage];
-        });
+$ouvrages = DB::table('ouvrages')
+    ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')
+    ->select('devis.totale', 'devis.nom_devi', 'ouvrages.designation_ouvrage', 'ouvrages.etat', 'ouvrages.prix', 'ouvrages.qte')
+    ->get()
+    ->mapToGroups(function ($item) {
+        return [
+            $item->nom_devi => [
+                'designation_ouvrage' => $item->designation_ouvrage,
+                'etat' => $item->etat,
+                'prix' => $item->prix,
+                'qte' => $item->qte,
+                'totale' => $item->totale,
+            ]
+        ];
+    });
 
         // foreach($ouvrages as $o)
         // {

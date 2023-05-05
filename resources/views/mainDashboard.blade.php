@@ -78,8 +78,8 @@
                             class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info d-flex">
-                        <a href="/user/profile ml-5"> {{ Auth::user()->name }} </a>
-                        <a href="{{ url('/logout') }}" class="d-block">
+                        <a href="/user/profile mx-2"> {{ Auth::user()->name }} </a>
+                        <a href="{{ url('/logout') }}" class="d-block ml-3">
                             <span class="material-symbols-outlined">
                                 logout
                             </span>
@@ -275,11 +275,11 @@
                     <!-- /.row -->
 
                     <hr>
-                    <table>
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Key</th>
-                                <th>Values</th>
+                                <th>Devi(s)</th>
+                                <th>Ouvrages(s)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -287,16 +287,25 @@
                                 <tr>
                                     <td>{{ $key }}</td>
                                     <td>
-                                        <ul>
-                                            @foreach ($values as $value)
-                                                <li>{{ $value }}</li>
-                                            @endforeach
-                                        </ul>
+                                        @foreach ($values as $vals)
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="card-title">{{ $vals['designation_ouvrage'] }}</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">Etat: {{ $vals['etat'] }}</p>
+                                                    <p class="card-text">Prix: {{ $vals['prix'] }}</p>
+                                                    <p class="card-text">Quantité: {{ $vals['qte'] }}</p>
+                                                    <p class="card-text">Total: {{ $vals['totale'] }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    
                     <hr>
                     <!-- Main row -->
                     <div class="row">
@@ -319,7 +328,7 @@
                                     @foreach ($etat_global as $res)
                                         <tr>
                                             <td>{{ $res->nom_devi }}</td>
-                                            <td>Ouvrages</td>
+                                            <td>{{$res->designation_ouvrage	}}</td>
                                             <td>{{ number_format((($res->prix * $res->qte) / $res->totale) * 100, 2) }}%</td>
                                             <td>{{ $res->totale }}DH</td>
                                         </tr>
