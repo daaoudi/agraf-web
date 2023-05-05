@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
 $ouvrages = DB::table('ouvrages')
     ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')
-    ->select('devis.totale', 'devis.nom_devi', 'ouvrages.designation_ouvrage', 'ouvrages.etat', 'ouvrages.prix', 'ouvrages.qte')
+    ->select('devis.totale', 'devis.nom_devi', 'ouvrages.designation_ouvrage', 'ouvrages.etat', 'ouvrages.prix', 'ouvrages.qte','ouvrages.unite')
     ->get()
     ->mapToGroups(function ($item) {
         return [
@@ -44,6 +44,7 @@ $ouvrages = DB::table('ouvrages')
                 'prix' => $item->prix,
                 'qte' => $item->qte,
                 'totale' => $item->totale,
+                'unite' => $item->unite,
             ]
         ];
     });

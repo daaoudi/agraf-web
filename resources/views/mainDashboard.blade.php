@@ -290,13 +290,25 @@
                                         @foreach ($values as $vals)
                                             <div class="card mb-3">
                                                 <div class="card-header">
-                                                    <h6 class="card-title">{{ $vals['designation_ouvrage'] }}</h6>
+                                                    <h5 class="card-title">{{ $vals['designation_ouvrage'] }}</h5>
                                                 </div>
                                                 <div class="card-body">
-                                                    <p class="card-text">Etat: {{ $vals['etat'] }}</p>
-                                                    <p class="card-text">Prix: {{ $vals['prix'] }}</p>
-                                                    <p class="card-text">Quantité: {{ $vals['qte'] }}</p>
-                                                    <p class="card-text">Total: {{ $vals['totale'] }}</p>
+                                                    <p class="card-text"><b>Etat:</b> 
+                                                        @if ($vals['etat'] === "pas encore")
+                                                        <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                    @endif
+                                                    
+                                                    @if ($vals['etat'] === "en cours")
+                                                        <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                    @endif
+                                                    
+                                                    @if ($vals['etat'] === "complété")
+                                                        <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                    @endif    
+                                                    </p>
+                                                    <p class="card-text"><b>Prix:</b> {{ $vals['prix'] }}</p>
+                                                    <p class="card-text"><b>Quantité:</b> {{ $vals['qte']." ".$vals['unite']}}</p>
+                                                    <p class="card-text"><b>Total:</b> {{ $vals['qte'] * $vals['prix'] }} DH</p>
                                                 </div>
                                             </div>
                                         @endforeach
