@@ -5,7 +5,7 @@ liste des clients
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/clients.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Clients</h2>

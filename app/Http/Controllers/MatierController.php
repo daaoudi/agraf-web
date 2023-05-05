@@ -68,7 +68,7 @@ class MatierController extends Controller
 
         $matier->save();
 
-        return redirect()->route('matiers.index')->with(['success'=>'matier ajouter']);
+        return redirect()->route('matiers.index')->with(['success'=>'matier ajouté']);
 
     }
 

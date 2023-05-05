@@ -46,7 +46,7 @@ la modification d'un Matier :
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prix_unitaire" class="form-control" value="{{$ouvrage->prix_unitaire}}" placeholder="Type Matier" required>
+          <input type="text" name="prix_unitaire" class="form-control" value="{{$ouvrage->prix}}" placeholder="Type Matier" required>
         </div>
 
         <div class="col-md-12">
@@ -54,13 +54,28 @@ la modification d'un Matier :
         </div>
 
         <div class="col-md-12">
-            <input type="number" name="unite" class="form-control" value="{{$ouvrage->unite}}" placeholder="unité" required>
+            <input type="text" name="unite" class="form-control" value="{{$ouvrage->unite}}" placeholder="unité" required>
           </div>
-
           <div class="col-md-12">
-            <input type="datetime-local" name="date_r" class="form-control" required>
-          </div>   
-
+            <select name="devi_id" id="">
+              <option disabled>Choisir le nom de devi</option>
+              @foreach ($devis as $devi)
+                  <option value="{{$devi->id}}" @if($devi->id === $ouvrage->devi_id) selected @endif>{{$devi->nom_devi}}</option>
+              @endforeach
+          </select>
+        </div>
+          <div class="col-md-12 my-5">
+            <label for="etat">
+              Etat :
+            </label>
+            <br>
+            <select name="etat">
+              <option disabled>Choisir l'etat</option>
+                  <option value="pas encore">Pas en core</option>
+                  <option value="en cours">en cours</option>
+                  <option value="complété">complété</option>
+          </select>
+        </div>
         
 
         <div class="col-md-12 text-center">

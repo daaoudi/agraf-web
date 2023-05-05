@@ -43,20 +43,39 @@ liste des ouvrages
               <thead>
                 <tr>
                   <th>Devi</th>
-                  <th>Designation</th>
-                  <th>Prix Unitaire</th>
-                  <th>Qte</th>
+                  <th>Designation d'ouvrage</th>
+                  <th>prix</th>
+                  <th>Quantité</th>
+                  <th>Totale HT</th>
                   <th>Unité</th>
+                  <th>Etat</th>
+                  <th>Actions</th>
               </tr>
               </thead>
               <tbody>
                 @foreach($ouvrages as $ouvrage)
                 <tr>
+                    <td>{{$ouvrage->devi->nom_devi}}</td>
                     <td>{{$ouvrage->designation_ouvrage}}</td>
-                    <td>{{$ouvrage->prix_unitaire}}</td>
+                    <td>{{$ouvrage->prix}}</td>
                     <td>{{$ouvrage->qte}}</td>
+                    <td>{{(floatVal($ouvrage->qte) * floatVal($ouvrage->prix))}}DH</td>
                     <td>{{$ouvrage->unite}}</td>
-                    <td>{{$ouvrage->devis->nom_devi}}</td>
+                    <td>
+                      @if ($ouvrage->etat == "pas encore")
+                      <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{$ouvrage->etat}}</span>
+                  @endif
+                  
+                  @if ($ouvrage->etat == "en cours")
+                      <span class="mt-2" style="color: yellow; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{$ouvrage->etat}}</span>
+                  @endif
+                  
+                  @if ($ouvrage->etat == "complété")
+                      <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{$ouvrage->etat}}</span>
+                  @endif
+
+
+                    </td>
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

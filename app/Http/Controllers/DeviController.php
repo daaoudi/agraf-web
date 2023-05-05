@@ -86,27 +86,28 @@ class DeviController extends Controller
     public function update(Request $request, Devi $devi)
     {
         $request->validate([
-            'designation' => 'required',
-            'qte' => 'required',
-            'unite' => 'required',
-            'prix_unitaire' => 'required',
+            'nom_devi' => 'required',
+            'date_devi' => 'required',
+            'numero_devi' => 'required',
             'totale' => 'required',
         ]);
 
-        //parsing double inputs
-        $parsed_prix_unitaire = floatval($request->input('prix_unitaire'));
-        $parsed_qte = floatval($request->input('qte'));
-
-        // Format the parsed value to keep two decimal places
-        $prix_unitaire = number_format($parsed_prix_unitaire, 2);
-        $qte = number_format($parsed_qte, 2);
-
+        //Document treatments
+        if ($request->hasFile('doc')) {
+            $Docfile = $request->file('doc');
+            $Docextension = $Docfile->getClientOriginalExtension();
+            $Docfilename = time() . "." . $Docextension;
+            $Docfile->move('uploads/devis_docs', $Docfilename);
+            unlink(public_path('uploads/devis_docs').'/'. $devi->image );
+            $devi->document = $Docfilename;
+            
+        } 
         $devi->update([
-            'designation_ouvrages' => $request->designation,
-            'qte' => $request->qte,
-            'unite' => $request->unite,
-            'prix_unitaire' => $request->prix_unitaire,
-            'taux_avancement' =>0
+            'nom_devi' => $request->input('nom_devi'),
+            'date_devi' => $request->input('date_devi'),
+            'numero_devi' => $request->input('numero_devi'),
+            'totale' => $request->input('totale'),
+            'document' => $devi->document
         ]);
 
         return redirect()->route('devis.index')->with(['success' => 'devi modifié']);

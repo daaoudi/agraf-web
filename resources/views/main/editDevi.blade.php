@@ -48,26 +48,25 @@
                 
                         <br><hr><br>
                 
+
                         <div class="col-md-12">
-                          <input type="text" name="designation" value="{{$devi->designation_ouvrages}}" class="form-control" placeholder="designtaion" required>
-                        </div>
-                
-                        <div class="col-md-12">
-                          <input type="text" name="qte" value="{{$devi->qte}}" class="form-control" placeholder="qte" required>
-                        </div>
-                
-                        <div class="col-md-12">
-                          <input type="text" name="unite" value="{{$devi->unite}}" class="form-control" placeholder="unite" required>
-                        </div>
-                
-                        <div class="col-md-12 ">
-                          <input type="text" class="form-control" value="{{$devi->prix_unitaire}}" name="prix_unitaire" placeholder="prix_unitaire" required>
-                        </div>
+                            <input type="text" name="nom_devi" class="form-control" value="{{$devi->nom_devi}}" required>
+                          </div>
+                  
+                          <div class="col-md-12">
+                            <input type="date" name="date_devi" class="form-control" value={{$devi->date_devi}} required>
+                          </div>
+                  
+                          <div class="col-md-12">
+                            <input type="text" name="numero_devi" class="form-control" value="{{$devi->numero_devi}}" required>
+                          </div>
+                  
+                          <div class="col-md-12">
+                            <input type="text" name="totale" class="form-control" value={{$devi->totale}} required>
+                          </div>
+                  
                 
                         <div class="col-md-12 text-center">
-                          
-                        
-                         
                           <button class="btn btn-warning" type="submit">Valider</button>
                         </div>
                 

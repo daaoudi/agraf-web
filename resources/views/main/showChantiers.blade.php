@@ -36,22 +36,18 @@ liste des chantiers
              {{session()->get('success')}}
             </div>
             @endif
-            <h4>Nombre de projets: {{count($chantiers)}}</h4>        </div>
+            <h4>Nombre de projets: {{count($chantiers)}}</h4>
+          </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Nom de Fournisseur</th>
+                  <th>Nom de Client</th>
                   <th>Nom de Projet</th>
-                  <th>Nom d'Article</th>
-                  <th>designation</th>
                   <th>prix</th>
-                  <th>type</th>
-                  <th>qte</th>
-                  <th>chantiere_unite</th>
-                  <th>date de déciption</th>
-                  <th>Nombre de piéce utilisé</th>
+                  <th>ville</th>
+                  <th>mode de paiement</th>
                   <th>action</th>
               </tr>
               </thead>
@@ -63,7 +59,6 @@ liste des chantiers
                     <td>{{$chantier->prix}}</td>
                     <td>{{$chantier->ville}}</td>
                     <td>{{$chantier->mode_paiement}}</td>
-                    <td>{{$chantier->etat_avancement}}</td>
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

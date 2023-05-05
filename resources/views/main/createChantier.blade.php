@@ -11,7 +11,7 @@ l'ajout d'un chantier.
     <ol>
       <li><a href="/">Home</a></li>
       <li><a href="/dashboard">Dashboard</a></li>
-      <li>Chantiers</li>
+      <li>Projets</li>
     </ol>
 
   </div>
@@ -35,38 +35,33 @@ l'ajout d'un chantier.
 
     <form action="{{route('chantiers.store')}}" enctype="multipart/form-data"  method="post" >
       @csrf
-      <h3 class="text-center">Formulaire de chantier :</h3>
+      <h3 class="text-center">Formulaire de Projet :</h3>
       <p class="text-center">Remplir tout les champs s'il vous plait. </p>
-      <div class="row gy-3 ">
-
-        <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" placeholder="Designation" value="{{old('designation')}} " required>
+      <div class="row gy-3">
+        <div class="col-md-12 mb-2"></div>
+          <input type="text" name="designation" class="form-control"  value="{{old('designation')}}" placeholder="Designation" required>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
           <input type="text" name="prix" class="form-control" value="{{old('prix')}}" placeholder="Prix" required>
         </div>
-        <div class="col-md-12">
-          <input type="text" name="etat_avancement" class="form-control" value="{{old('etat_avancement')}}" placeholder="Etat Avancement" required>
-        </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
           <input type="text" name="ville" class="form-control" value="{{old('ville')}}" placeholder="Ville" required>
         </div>
 
         
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
             <select name="mode_paiement" class="form-select"  required>
                 <option selected>Choisir Type de Paiment</option>
-               
                 <option value="Cheque">Cheque</option>
                 <option value="Espece">Espece</option>
                 <option value="Virement">Virement</option>
               </select>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
             <select name="client_id" class="form-select"  required>
                 <option selected>Choisir le nom de client</option>
                @foreach($clients as $client)
@@ -74,17 +69,17 @@ l'ajout d'un chantier.
                 @endforeach
               </select>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
           <select name="devi_id" class="form-select"  required>
-              <option selected>Choisir le nom de client</option>
-             @foreach($deviss as $devi)
-              <option value="{{$devi->id}}">{{$client->nom}}</option>
+              <option selected>Choisir le devi</option>
+             @foreach($devis as $devi)
+              <option value="{{$devi->id}}">{{$devi->nom_devi}}</option>
               @endforeach
             </select>
       </div>
         
 
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 mb-2 text-center">
           
         
          

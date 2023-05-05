@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Devi;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Ouvrage extends Model
@@ -16,13 +15,12 @@ class Ouvrage extends Model
         "designation_ouvrage",
         "prix_unitaire",
         "qte",
-       
-      
+        "etat",
         "unite",
         "devi_id"
     ];
 
-    public function devi(): BelongsTo
+    public function devi()
     {
         return $this->belongsTo(Devi::class);
     }

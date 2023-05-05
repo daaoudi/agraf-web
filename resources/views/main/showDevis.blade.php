@@ -35,6 +35,7 @@
                         <th>Nom</th>
                         <th>Date de devi</th>
                         <th>Numero de devi </th>
+                        <th>Totale TTC </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -44,6 +45,7 @@
                             <td>{{ $devi->nom_devi }}</td>
                             <td>{{ $devi->date_devi }}</td>
                             <td>{{ $devi->numero_devi }}</td>
+                            <td>{{ $devi->totale }} DH</td>
                             <td>
                                 @if (auth()->check())
                                     @if (auth()->user()->is_admin)

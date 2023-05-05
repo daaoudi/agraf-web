@@ -74,13 +74,14 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src={{ Auth::user()->profile_photo_url?Auth::user()->profile_photo_url:"/storage/assets/img/users/default.jpg" }}  class="img-circle elevation-2" alt={{ Auth::user()->name }}>
+                        <img src={{ Auth::user()->profile_photo_url ? Auth::user()->profile_photo_url : '/storage/assets/img/users/default.jpg' }}
+                            class="img-circle elevation-2" alt={{ Auth::user()->name }}>
                     </div>
                     <div class="info d-flex">
-                        <a href="/user/profile ml-5" > {{ Auth::user()->name }} </a>
-                        <a href="{{url('/logout')}}" class="d-block"> 
+                        <a href="/user/profile ml-5"> {{ Auth::user()->name }} </a>
+                        <a href="{{ url('/logout') }}" class="d-block">
                             <span class="material-symbols-outlined">
-                            logout
+                                logout
                             </span>
                         </a>
                     </div>
@@ -104,7 +105,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item my-3">
-                            <a href={{route("devis.index")}} class="nav-link">
+                            <a href={{ route('devis.index') }} class="nav-link">
                                 <img src="storage/icons/devi.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Devis
@@ -112,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route("ouvrages.index")}} class="nav-link">
+                            <a href={{ route('ouvrages.index') }} class="nav-link">
                                 <img src="storage/icons/ouvrage.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Ouvrages
@@ -120,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route("chantiers.index")}} class="nav-link">
+                            <a href={{ route('chantiers.index') }} class="nav-link">
                                 <img src="storage/icons/projets.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
                                     Projets
@@ -129,7 +130,7 @@
                         </li>
 
                         <li class="nav-item my-3">
-                            <a href={{route('matiers.index')}} class="nav-link">
+                            <a href={{ route('matiers.index') }} class="nav-link">
                                 <img src="storage/icons/matier.png" class="mx-3" width="45px" />
                                 Matieres
                                 </p>
@@ -137,7 +138,7 @@
                         </li>
 
                         <li class="nav-item my-3">
-                            <a href={{route('clients.index')}} class="nav-link">
+                            <a href={{ route('clients.index') }} class="nav-link">
                                 <img src="storage/icons/client.png" class="mx-3" width="45px" />
                                 <p>
                                     Clients
@@ -145,7 +146,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route('services.index')}} class="nav-link">
+                            <a href={{ route('services.index') }} class="nav-link">
                                 <img src="storage/icons/services.png" class="mx-3" width="45px" />
                                 <p>
                                     Services
@@ -153,7 +154,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route('ouvriers.index')}} class="nav-link">
+                            <a href={{ route('ouvriers.index') }} class="nav-link">
                                 <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
                                 <p>
                                     Ouvriers
@@ -161,7 +162,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route('fournisseurs.index')}} class="nav-link">
+                            <a href={{ route('fournisseurs.index') }} class="nav-link">
                                 <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
                                     Fournisseurs
@@ -169,7 +170,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{route('articles.index')}} class="nav-link">
+                            <a href={{ route('articles.index') }} class="nav-link">
                                 <img src="storage/icons/article.png" class="mx-3" width="45px" />
                                 <p>
                                     Articles
@@ -195,7 +196,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -212,9 +213,8 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>{{$chantiersNbr}}</h3>
-
-                                    <p>Chantiers</p>
+                                    <h3>{{ $chantiersNbr }}</h3>
+                                    <p>Projets</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -228,7 +228,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>{{$ouvriersNbr}}</h3>
+                                    <h3>{{ $ouvriersNbr }}</h3>
 
                                     <p>Ouvriers</p>
                                 </div>
@@ -244,7 +244,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>{{$fournisseursNbr}}</h3>
+                                    <h3>{{ $fournisseursNbr }}</h3>
 
                                     <p>Fournisseurs</p>
                                 </div>
@@ -260,8 +260,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>{{$clientNbr}}</h3>
-
+                                    <h3>{{ $clientNbr }}</h3>
                                     <p>Clients</p>
                                 </div>
                                 <div class="icon">
@@ -274,30 +273,99 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
+
+                    <hr>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($ouvrages as $key => $values)
+                                <tr>
+                                    <td>{{ $key }}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach ($values as $value)
+                                                <li>{{ $value }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <hr>
                     <!-- Main row -->
                     <div class="row">
                         <div class="col-xl-12">
                             @if (session()->has('success'))
-                            <div class="alert alert-success">
-                             {{session()->get('success')}}
-                            </div>
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
                             @endif
-                            <table class="table table-secondary table-striped my-5">
-                                <tr>
-                                    <th>Chantier</th>
-                                    <th>Ouvriers</th>
-                                    <th>Article</th>
-                                    <th>Service</th>
-                                </tr>
-                                @foreach($data as $res)
-                                <tr>
-                                    <td>{{$res->des}}</td>
-                                    <td>{{$res->nom." ".$res->prenom}}</td>
-                                    <td>{{$res->designation}}</td>
-                                    <td>{{$res->nom_service}}</td>
-                                </tr>
-                                @endforeach
-                              </table>
+                            <h1 class="mt-5">Détail de projet</h1>
+
+                            @if (count($etat_global) !== 0)
+                                <table class="table table-secondary table-striped my-5">
+                                    <tr>
+                                        <th>Devi</th>
+                                        <th>Ouvrages</th>
+                                        <th>Taux d'avancement</th>
+                                        <th>Totale TTC</th>
+                                    </tr>
+                                    @foreach ($etat_global as $res)
+                                        <tr>
+                                            <td>{{ $res->nom_devi }}</td>
+                                            <td>Ouvrages</td>
+                                            <td>{{ number_format((($res->prix * $res->qte) / $res->totale) * 100, 2) }}%</td>
+                                            <td>{{ $res->totale }}DH</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            @else
+                                <div class="alert alert-danger mt-5">Pour pouvoir voir le tableau de statistique, vous devez
+                                    remplir tous les champs
+                                    autres tables nécessaires (Devis, Ouvrages)</div>
+                            @endif
+                        </div>
+                    </div>
+                    <!-- /.row (main row) -->
+                    <hr>
+                    <!-- Main row -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            @if (session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            @endif
+
+                            <h1 class="mt-5">Table Globale</h1>
+                            @if (count($data) !== 0)
+                                <table class="table table-secondary table-striped my-5">
+                                    <tr>
+                                        <th>Projets</th>
+                                        <th>Ouvriers</th>
+                                        <th>Article</th>
+                                        <th>Service</th>
+                                    </tr>
+                                    @foreach ($data as $res)
+                                        <tr>
+                                            <td>{{ $res->des }}</td>
+                                            <td>{{ $res->nom . ' ' . $res->prenom }}</td>
+                                            <td>{{ $res->designation }}</td>
+                                            <td>{{ $res->nom_service }}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            @else
+                                <div class="alert alert-danger mt-5">Pour pouvoir voir le tableau global, vous devez
+                                    remplir tous les champs
+                                    autres tables nécessaires (Chantier, Ouvriers, Article,Service)</div>
+                            @endif
                         </div>
                     </div>
                     <!-- /.row (main row) -->
