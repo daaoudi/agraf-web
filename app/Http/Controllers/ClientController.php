@@ -38,7 +38,6 @@ class ClientController extends Controller
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
-            'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
 
 
         ]);
@@ -89,7 +88,6 @@ class ClientController extends Controller
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
             'montant' => 'required',
-            'email' => 'required|required|regex:/(.+)@(.+)\.(.+)/i',
 
 
         ]);

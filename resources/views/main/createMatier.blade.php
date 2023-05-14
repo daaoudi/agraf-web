@@ -48,11 +48,11 @@ l'ajout d'un Matier.
         </div>
 
         <div class="col-md-12">
-          <input type="number" name="prix" class="form-control" placeholder="prix" required>
+          <input type="text" name="prix" class="form-control" placeholder="prix" required>
         </div>
 
         <div class="col-md-12">
-            <input type="number" name="qte" class="form-control" placeholder="qte" required>
+            <input type="text" name="qte" class="form-control" placeholder="qte" required>
           </div>
 
           <div class="col-md-12">
@@ -62,11 +62,6 @@ l'ajout d'un Matier.
           <div class="col-md-12">
             <input type="datetime-local" name="date_r" class="form-control"  required>
           </div>
-
-          <div class="col-md-12">
-            <input type="number" name="nmbr_piece_utiliser" class="form-control" placeholder="nmbr_piece_utiliser" required>
-          </div>
-
         
 
         <div class="col-md-12">

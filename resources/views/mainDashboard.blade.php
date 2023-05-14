@@ -292,28 +292,24 @@
                                         @foreach ($values as $vals)
                                             <div class="card mb-3">
                                                 <div class="card-header">
-                                                    <h5 class="card-title">{{ $vals['designation_ouvrage'] }}</h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text"><b>Etat:</b>
+                                                    {{-- <h5 class="card-title mr-2">{{ $vals['designation_ouvrage'] }}</h5> --}}
+                                                    <a href={{route('ouvrages.show',$vals['id'])}}><span class="card-text">
                                                         @php $avance=0;$taux_global_actuelle=0; @endphp 
                                                         @if ($vals['etat'] === "pas encore")
-                                                        <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                        <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
                                                     @endif
                                                     
                                                     @if ($vals['etat'] === "en cours")
-                                                        <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                        <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
                                                     @endif
                                                     
                                                     @if ($vals['etat'] === "complété")
                                                         @php $avance=1;  @endphp
-                                                        <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['etat'] }}</span>
+                                                        <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
                                                     @endif    
-                                                    </p>
-                                                    <p class="card-text"><b>Prix:</b> {{ $vals['prix'] }}</p>
-                                                    <p class="card-text"><b>Quantité:</b> {{ $vals['qte']." ".$vals['unite']}}</p>
-                                                    <p class="card-text"><b>Totale:</b> {{ $vals['qte'] * $vals['prix'] }} DH</p>
-                                                    <p class="card-text"><b>Totale TTC:</b> {{ $vals['totale']}} DH</p>
+                                                    </span></a>
+                                                </div>
+                                                <div class="card-body" style="display:none">
                                                     <p class="card-text"><b>Taux d'avancement:</b> 
                                                         {{
 

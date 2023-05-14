@@ -50,11 +50,11 @@ la modification d'un Matier : {{$matier->designation}}.
         </div>
 
         <div class="col-md-12">
-          <input type="number" name="prix" class="form-control" value="{{$matier->prix}}" placeholder="prix" required>
+          <input type="text" name="prix" class="form-control" value="{{$matier->prix}}" placeholder="prix" required>
         </div>
 
         <div class="col-md-12">
-            <input type="number" name="qte" class="form-control" value="{{$matier->qte}}" placeholder="qte" required>
+            <input type="text" name="qte" class="form-control" value="{{$matier->qte}}" placeholder="qte" required>
           </div>
 
           <div class="col-md-12">
@@ -64,11 +64,6 @@ la modification d'un Matier : {{$matier->designation}}.
           <div class="col-md-12">
             <input type="datetime-local" name="date_r" class="form-control" value="{{$matier->date_r}}" required>
           </div>
-
-          <div class="col-md-12">
-            <input type="number" name="nmbr_piece_utiliser" value="{{$matier->nmbr_piece_utiliser}}" class="form-control" placeholder="nmbr_piece_utiliser" required>
-          </div>
-
         
 
         

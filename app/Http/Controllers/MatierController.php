@@ -46,7 +46,6 @@ class MatierController extends Controller
             'qte'=>'required',
             'prix'=>'required',
             'date_r'=>'required',
-            'nmbr_piece_utiliser'=>'required',
             'chantier_id'=>'required|exists:chantiers,id',
             'article_id'=>'required|exists:articles,id',
             'fournisseur_id'=>'required|exists:fournisseurs,id',
@@ -108,7 +107,6 @@ class MatierController extends Controller
             'qte'=>'required',
             'prix'=>'required',
             'date_r'=>'required',
-            'nmbr_piece_utiliser'=>'required',
            // 'chantier_id'=>'required|exists:chantiers,id',
             //'fournisseur_id'=>'required|exists:fournisseurs,id',
 

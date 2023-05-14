@@ -56,7 +56,7 @@ l'ajout d'un client.
         </div>
 
         <div class="col-md-12">
-          <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}" required>
+          <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
         </div>
 
 

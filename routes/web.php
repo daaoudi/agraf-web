@@ -26,12 +26,14 @@ use App\Http\Controllers\FournisseurController;
 |
 */
 
+
+//Landing Page
 Route::get('/', function () {
     return view('main.home');
 });
 
 
-
+//Authentification
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -40,38 +42,17 @@ Route::middleware([
     return redirect('/dashboard');
 
 });
-
 Route::get('/dashboard',[DashboardController::class,"index"])->name('dashboard');
-
 Route::get('/logout',[LoginController::class,"logout"]);
 
 
-/*
-Route::get('/dashboard',function(){
-    return view('dashboard');
-});
-
-Route::get('/user/{profile}',[LoginController::class, 'userProfile'])->name('user.profile');
-Route::get('/dashboard_old', function () {
-    return view('welcome');
-});
-
-Route::group(['middleware' => ['authenticate', 'roles']], function (){
-    Route::get('/dashboard_old', function(){return view('dashboard');})->name('dashboard_old');
-});
-*/
-// Route::middlware('auth')->group(function(){
-    Route::resource('clients',ClientController::class);
-    Route::resource('chantiers',ChantierController::class);
-    Route::resource('services',ServiceController::class);
-    Route::resource('fournisseurs',FournisseurController::class);
-    Route::resource('matiers',MatierController::class);
-    Route::resource('ouvriers',OuvrierController::class);
-    Route::resource('articles',ArticleController::class);
-    Route::resource('devis',DeviController::class);
-    Route::resource('ouvrages',OuvrageController::class);
-// }
-
-
-// );
-
+//Les resources d'application
+Route::resource('clients',ClientController::class);
+Route::resource('chantiers',ChantierController::class);
+Route::resource('services',ServiceController::class);
+Route::resource('fournisseurs',FournisseurController::class);
+Route::resource('matiers',MatierController::class);
+Route::resource('ouvriers',OuvrierController::class);
+Route::resource('articles',ArticleController::class);
+Route::resource('devis',DeviController::class);
+Route::resource('ouvrages',OuvrageController::class);

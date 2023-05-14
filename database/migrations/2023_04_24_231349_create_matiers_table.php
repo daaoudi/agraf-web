@@ -19,7 +19,6 @@ return new class extends Migration
             $table->double('qte');
             $table->double('prix');
             $table->dateTime('date_r');
-            $table->double('nmbr_piece_utiliser');
             $table->unsignedBigInteger('chantier_id');
             $table->unsignedBigInteger('article_id');
             $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');

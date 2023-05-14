@@ -27,8 +27,6 @@ class Matier extends Model
         "fournisseur_id",
         "article_id",
         "date_r",
-        "nmbr_piece_utiliser"
-
     ];
 
     public $timestamps = false;
