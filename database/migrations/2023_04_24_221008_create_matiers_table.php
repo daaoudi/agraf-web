@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('poste_ouvriers', function (Blueprint $table) {
+        Schema::create('matiers', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('type');
+            $table->string('designation');
+            $table->string('matiere_unite');
+            $table->double('qte');
+            $table->double('prix');
+            $table->dateTime('date_r');
+
             $table->timestamps();
         });
     }
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('poste_ouvriers');
+        Schema::dropIfExists('matiers');
     }
 };

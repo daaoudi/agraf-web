@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Devi;
+use App\Models\Client;
 use App\Models\Reglement;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreReglementRequest;
 use App\Http\Requests\UpdateReglementRequest;
 
@@ -14,6 +17,8 @@ class ReglementController extends Controller
     public function index()
     {
         //
+        $reglements=Reglement::with('devi','client')->get();
+        return view('main.showReglements',compact('reglements'));
     }
 
     /**
@@ -22,14 +27,31 @@ class ReglementController extends Controller
     public function create()
     {
         //
+        $devis=Devi::all();
+        $clients=Client::all();
+        return view('main.createReglement',compact('devis','clients'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReglementRequest $request)
+    public function store(Request $request)
     {
         //
+        $request->validate([
+            'montant'=>'required|numeric',
+            'devi_id'=>'required|exists:devis,id',
+            'client_id'=>'required|exists:clients,id',
+            'mode_paiement'=>'required',
+        ]);
+
+        $reglement=new Reglement();
+        $reglement->montant=$request->montant;
+        $reglement->devi_id=$request->devi_id;
+        $reglement->client_id=$request->client_id;
+        $reglement->mode_paiement=$request->mode_paiement;
+        $reglement->save();
+        return redirect()->route('reglements.index')->with(['success'=>'reglement ajouter']);
     }
 
     /**
@@ -37,7 +59,7 @@ class ReglementController extends Controller
      */
     public function show(Reglement $reglement)
     {
-        //
+        return view('main.showReglement',compact('reglement'));
     }
 
     /**
@@ -45,15 +67,25 @@ class ReglementController extends Controller
      */
     public function edit(Reglement $reglement)
     {
-        //
+        $devis=Devi::all();
+        $clients=Client::all();
+        return view('main.editReglement',compact('reglement','devis','clients'));
+    
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateReglementRequest $request, Reglement $reglement)
+    public function update(Request $request, Reglement $reglement)
     {
-        //
+        $request->validate([
+            'montant'=>'required|numeric',
+            'devi_id'=>'required|exists:devis,id',
+            'client_id'=>'required|exists:clients,id',
+            'mode_paiement'=>'required',
+        ]);
+        $reglement->update($request->all());
+        return redirect()->route('reglements.index')->with(['success'=>'reglement modifier']);
     }
 
     /**
@@ -62,5 +94,7 @@ class ReglementController extends Controller
     public function destroy(Reglement $reglement)
     {
         //
+        $reglement->delete();
+        return redirect()->route('reglements.index')->with(['success'=>'reglement supprimer']);
     }
 }

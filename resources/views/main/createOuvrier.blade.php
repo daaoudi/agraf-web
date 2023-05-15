@@ -55,24 +55,6 @@ l'ajout d'un Ouvrier.
             <input type="text" name="cin" class="form-control" placeholder="CIN" required>
           </div>
 
-          <div class="col-md-12">
-            <input type="text" name="type" class="form-control" placeholder="Type_Ouvrier" required>
-          </div>
-          <div class="col-md-12 mt-5">
-            <label for="date_debut">Date de début</label>
-            <input type="date" name="date_debut" class="form-control" placeholder="Date_Debut" required>
-          </div>
-          <div class="col-md-12 mb-5">
-            <label for="date_fin">Date de Fin</label>
-            <input type="date" name="date_fin" class="form-control" placeholder="Date_Fin" required>
-          </div>
-
-          <div class="col-md-12">
-            <input type="number" name="salaire_par_semaine" class="form-control" placeholder="salaire par semaine" required>
-          </div>
-
-        
-
        
 
         <div class="col-md-12">

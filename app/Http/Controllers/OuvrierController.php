@@ -11,11 +11,12 @@ class OuvrierController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Ouvrier $ouvrier)
     {
         //
-        $ouvriers=Ouvrier::with('chantier')->get();
-        return view('main.showOuvriers',compact('ouvriers'));
+        $ouvriers=Ouvrier::all();
+        $ouvrier=Ouvrier::find($ouvrier)->posteOuvriers;
+        return view('main.showOuvriers',compact('ouvriers','ouvrier'));
     }
 
     /**
@@ -24,8 +25,8 @@ class OuvrierController extends Controller
     public function create()
     {
         //
-       $requests=Chantier::all();
-        return view('main.createOuvrier')->with(['chantiers'=>$requests]);
+      
+        return view('main.createOuvrier');
     }
 
     /**
@@ -38,14 +39,7 @@ class OuvrierController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required',
-            'cin' => 'required',
-            'type' => 'required',
-            'date_debut'=>'required',
-            'date_fin'=>'required',
-            'salaire_par_semaine' => 'required',
-            'chantier_id' => 'required|exists:chantiers,id',
-            
-            
+            'cin' => 'required'           
         ]);
 
 
@@ -56,11 +50,6 @@ class OuvrierController extends Controller
         $ouvrier->prenom = $request->input('prenom');
         $ouvrier->telephone = $request->input('telephone');
         $ouvrier->cin = $request->input('cin');
-        $ouvrier->date_debut = $request->input('date_debut');
-        $ouvrier->date_fin = $request->input('date_fin');
-        $ouvrier->type = $request->input('type');
-        $ouvrier->salaire_par_semaine = $request->input('salaire_par_semaine');
-        $ouvrier->chantier_id = $request->input('chantier_id');
         $ouvrier->save();
 
         return redirect()->route('ouvriers.index')->with(['success'=>'ouvrier ajoute']);
@@ -101,27 +90,15 @@ class OuvrierController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|max:10',
-            'cin' => 'required',
-            'type' => 'required',
-            'date_debut'=>'required',
-            'date_fin'=>'required',
-            'salaire_par_semaine' => 'required',
-            
-            
-           // 'chantier_id' => 'required|exists:chantiers,id',
-            
-            
+            'cin' => 'required'
         ]);
+
+
         $ouvrier->update([
             'nom'=>$request->nom,
             'prenom'=>$request->prenom,
             'telephone'=>$request->telephone,
             'cin'=>$request->cin,
-            'date_debut'=>$request->date_debut,
-            'date_fin'=>$request->date_fin,
-            'type'=>$request->type,
-            'salaire_par_semaine'=>$request->salaire_par_semaine,
-
         ]);
 
 
@@ -135,8 +112,6 @@ class OuvrierController extends Controller
      */
     public function destroy(Ouvrier $ouvrier)
     {
-        //
-       
         $ouvrier->delete();
         return redirect()->route('ouvriers.index')->with(['success'=>'ouvrier supprime']);
     }

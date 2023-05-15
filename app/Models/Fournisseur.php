@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Charge;
+use App\Models\Matier;
+
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
-use App\Models\Matier;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Fournisseur extends Model
 {
@@ -18,16 +19,16 @@ class Fournisseur extends Model
         "nom",
         "prenom",
         "telephone",
-        "montant",
-        "montant_en_avance",
+        
+        
         
     ];
 
     public $timestamps=false;
 
 
-    public function matiers()
+    public function charges()
     {
-        return $this->hasMany(Matier::class);
+        return $this->hasMany(Charge::class);
     }
 }

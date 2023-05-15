@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Article;
+use App\Models\Chantier;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\PosteOuvrier;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Chantier;
-use App\Models\Article;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 
@@ -38,9 +39,9 @@ class Ouvrier extends Model
     return $this->belongsTo(Chantier::class);
 }
 
-public function articles()
+public function posteOuvriers()
 {
-    return $this->hasMany(Article::class);
+    return $this->hasMany(PosteOuvrier::class);
 }
 
 

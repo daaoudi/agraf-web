@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string("numero_cheque")->nullable();
             $table->string("mode_paiement");
             $table->double("montant");
+            $table->double("banque")->nullable();
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('chantier_id');
-            $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');
-         
+            $table->unsignedBigInteger('devi_id');
+            $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

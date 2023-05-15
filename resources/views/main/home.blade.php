@@ -62,10 +62,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="100">
         <div class="service-item  position-relative rounded-3">
           <div class="  mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image003.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image003.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Terrassement</h3>
-          <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+          <p>Préparation du sol pour la construction, nivellement du terrain, excavation et déblaiement des terres.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div><!-- End Service Item -->
@@ -73,10 +73,12 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image007.png" style="width:280px; height:150px;box-shadow: 3px 3px rgba(254,185,0) -1em 0 .4em rgb(254,185,0);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image007.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>les Fondations</h3>
-          <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+          <p>
+            Installation des fondations pour les bâtiments, en utilisant des méthodes telles que les pieux de fondation, les semelles filantes ou les fondations en béton armé.
+          </p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div><!-- End Service Item -->
@@ -84,10 +86,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative rounded-3">
           <div class="mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image009.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image009.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Dallages et Poteaux</h3>
-          <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+          <p>Installation de dalles de béton pour les surfaces de sol, ainsi que des poteaux pour les structures verticales.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div><!-- End Service Item -->
@@ -95,10 +97,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image015.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image015.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Mur De Cloture et Cage d'escalier et Picsine </h3>
-          <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+          <p>Construction de murs de clôture en béton ou en pierre, ainsi que des cages d'escalier et des piscines en béton.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -112,10 +114,12 @@ Agrtravis - Construction Et Amenagement
 <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative rounded-3">
           <div class="mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image021.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image021.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Carllage Et Marbre </h3>
-          <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+          <p>
+            Pose de carreaux et de marbre sur les sols et les murs, en utilisant une variété de motifs et de couleurs pour ajouter du style à votre maison.
+          </p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div><!-- End Service Item -->
@@ -123,10 +127,12 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image024.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image024.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Plattre</h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p>
+            Installation de cloisons intérieures et de faux plafonds en plâtre pour créer des espaces de vie séparés et donner un aspect élégant à votre maison.
+          </p>
           <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -134,10 +140,12 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image030.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image030.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Peinture</h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p>
+            Application de peinture pour donner de la couleur et de la personnalité à votre maison, ainsi que la protection contre les éléments.
+          </p>
           <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -145,10 +153,11 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image032.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image032.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Menuiserie bois</h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p>
+            Fabrication et installation de menuiseries en bois, y compris les portes, les fenêtres, les escaliers et les armoires, pour ajouter de la chaleur et de la beauté naturelle à votre maison.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -156,10 +165,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image036.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image036.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Menuiserie alluminuim</h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p>Fabrication et installation de menuiseries en aluminium, y compris les portes, les fenêtres et les façades, pour offrir une durabilité et une esthétique moderne à votre maison.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -167,10 +176,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image040.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image040.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Sanitaire</h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p> Installation de systèmes de plomberie pour assurer l'approvisionnement en eau et l'évacuation des eaux usées, ainsi que l'installation de salles de bains et de cuisines.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -178,10 +187,10 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-4 col-md-6 fade-in mx-3 my-3 " data-aos="fade-up" data-aos-delay="600">
         <div class="service-item position-relative rounded-3">
           <div class=" mx-auto">
-            <img loading="lazy" src="/storage/assets/img/services/image044.png" style="width:240px; height:160px;box-shadow: 3px 3px rgb(57, 229, 241), -1em 0 .4em rgb(225, 235, 136);" loading="lazy" alt="..." >
+            <img loading="lazy" src="/storage/assets/img/services/image044.png" style="width:240px; height:160px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" loading="lazy" alt="..." >
           </div>
           <h3>Entretien et réparation </h3>
-          <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+          <p>Maintenance et réparation des bâtiments, y compris les travaux de plomberie, d'électricité et de toiture, pour assurer la sécurité et la longévité de votre maison.</p>
           <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -292,11 +301,11 @@ Agrtravis - Construction Et Amenagement
         <li data-filter=".filter-design">Aménagement</li>
       </ul><!-- End Projects Filters -->
 
-      <div class="row gy-4 portfolio-container fade-in" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 portfolio-container fade-in" style="position: relative" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image001.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image001.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Terrassement</p>
@@ -305,9 +314,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image005.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image005.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>les Fondations</p>
@@ -316,9 +325,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image007.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image007.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Dallages et Poteaux</p>
@@ -327,9 +336,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image016.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image016.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Mur De Cloture et Cage d'escalier et Picsine</p>
@@ -338,9 +347,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image021.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image021.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Carllage Et Marbre</p>
@@ -349,9 +358,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image024.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image024.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Plattre</p>
@@ -360,9 +369,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image028.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image028.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Peinture</p>
@@ -371,9 +380,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image032.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image032.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Menuiserie bois</p>
@@ -382,9 +391,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image036.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image036.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Menuiserie alluminuim</p>
@@ -393,9 +402,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image040.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image040.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Sanitaire</p>
@@ -404,9 +413,9 @@ Agrtravis - Construction Et Amenagement
           </div>
         </div><!-- End Projects Item -->
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design" >
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image044.png" class="img-fluid" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image044.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Entretien et réparation</p>

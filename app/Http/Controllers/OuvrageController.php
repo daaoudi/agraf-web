@@ -38,11 +38,12 @@ class OuvrageController extends Controller
     {
         
         $request->validate([
-            'designation' => 'required',
+            'designation_ouvrage' => 'required',
             'qte' => 'required',
             'unite' => 'required',
             'prix_unitaire' => 'required',
-            'devi_id' => 'required',
+            'devi_id' => 'required|exists:devis,id',
+            'poste_ouvrier_id'=>'required|exists:poste_ouvriers,id'
         ]);
 
                 //parsing double
@@ -58,6 +59,7 @@ class OuvrageController extends Controller
                 $ouvrage->unite = $request->input('unite');
                 $ouvrage->prix = $prix_unitaire;
                 $ouvrage->devi_id = $request->input('devi_id');
+                $ouvrage->poste_ouvrier_id = $request->input('poste_ouvrier_id');
                 $ouvrage->save();
 
                 return redirect()->route('ouvrages.index')->with(['success'=>'Ouvrage ajouté avec succées']);
@@ -82,11 +84,12 @@ class OuvrageController extends Controller
     public function update(Request $request, Ouvrage $ouvrage)
     {
         $request->validate([
-            'designation' => 'required',
+            'designation_ouvrage' => 'required',
             'qte' => 'required',
             'unite' => 'required',
             'prix_unitaire' => 'required',
-            'devi_id' => 'required',
+            'devi_id' => 'required|exists:devis,id',
+            'poste_ouvrier_id'=>'required|exists:poste_ouvriers,id'
         ]);
         
 
@@ -95,7 +98,9 @@ class OuvrageController extends Controller
             'qte' => $request->qte,
             'unite' => $request->unite,
             'prix' => $request->prix_unitaire,
-            'etat' =>$request->etat
+            'etat' =>$request->etat,
+            'devi_id'=>$request->devi_id,
+            'poste_ouvrier_id'=>$request->poste_ouvrier_id,
         ]);
         return redirect()->route('ouvrages.index')->with(['success' => 'devi modifié']);
 
@@ -107,5 +112,8 @@ class OuvrageController extends Controller
     public function destroy(Ouvrage $ouvrage)
     {
         //
+        $ouvrage->delete();
+        return redirect()->route('ouvrages.index')->with(['success' => 'devi supprimer']);
+
     }
 }

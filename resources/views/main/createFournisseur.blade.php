@@ -51,15 +51,6 @@ l'ajout d'un Fournisseur.
           <input type="text" name="telephone" class="form-control" placeholder="Telephone" required>
         </div>
 
-        <div class="col-md-12 ">
-          <input type="text" class="form-control" name="montant" placeholder="Montant" required>
-        </div>
-
-        <div class="col-md-12 ">
-            <input type="text" class="form-control" name="montant_en_avance" placeholder="montant_en_avance" required>
-          </div>
-
-       
 
         
 

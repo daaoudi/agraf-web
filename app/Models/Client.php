@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Chantier;
+use App\Models\Reglement;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Chantier;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Client extends Model
 {
@@ -23,9 +24,10 @@ class Client extends Model
 
     public $timestamps = false;
 
-    public function chantiers()
+  
+    public function reglement()
     {
-        return $this->hasMany(Chantier::class);
+        return $this->hasOne(Reglement::class);
     }
 
 }

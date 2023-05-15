@@ -17,13 +17,6 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('telephone');
             $table->string('cin');
-            $table->date('date_debut');
-            $table->date('date_fin');
-            $table->string('type');
-            $table->double('salaire_par_semaine');
-            $table->unsignedBigInteger('chantier_id');
-            $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');
-
             $table->timestamps();
         });
     }

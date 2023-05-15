@@ -53,13 +53,6 @@ la modification  d'un Fournisseur : {{$fournisseur->nom .' '. $fournisseur->pren
           <input type="text" name="telephone" value="{{$fournisseur->telephone}}" class="form-control" placeholder="Telephone" required>
         </div>
 
-        <div class="col-md-12 ">
-          <input type="text" class="form-control" value="{{$fournisseur->montant}}" name="montant" placeholder="Montant" required>
-        </div>
-
-        <div class="col-md-12 ">
-            <input type="text" class="form-control" value="{{$fournisseur->montant}}" name="montant_en_avance" placeholder="Montant_en_avance" required>
-          </div>
 
         <div class="col-md-12">
           <input type="email" class="form-control" value="{{$fournisseur->email}}" name="email" placeholder="Email" required>

@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Charge;
+
 use App\Models\Article;
 use App\Models\Chantier;
 
 use App\Models\Fournisseur;
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,26 +24,15 @@ class Matier extends Model
         "prix",
         "designation",
         "matiere_unite",
-        "chantier_id",
-        "fournisseur_id",
-        "article_id",
         "date_r",
     ];
 
     public $timestamps = false;
 
-    public function chantier()
-    {
-        return $this->belongsTo(Chantier::class);
-    }
 
-    public function fournisseur()
-    {
-        return $this->belongsTo(Fournisseur::class);
-    }
-    public function article(){
-        return $this->belongsTo(Article::class);
-    }
 
-  
+    public function charge()
+    {
+        return $this->hasOne(Charge::class);
+    }  
 }

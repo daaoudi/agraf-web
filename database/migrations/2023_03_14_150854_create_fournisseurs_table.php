@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             
             $table->string('telephone');
-            $table->double('montant');
-            $table->double('montant_en_avance');
+           
             $table->timestamps();
         });
     }

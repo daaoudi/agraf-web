@@ -11,18 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('poste_ouvriers', function (Blueprint $table) {
             $table->id();
-            $table->string('designation');
-            $table->string('article_unite');
-            $table->text('description');
-           
+            $table->double("salaire");
+            $table->date("date_debut");
+            $table->date("date_fin");
+            $table->string("poste_ouvrier");
             $table->unsignedBigInteger('ouvrier_id');
-            $table->unsignedBigInteger('service_id');
-            $table->unsignedBigInteger('chantier_id');
             $table->foreign('ouvrier_id')->references('id')->on('ouvriers')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('devi_id');
+            $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
+            
+            $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('chantier_id')->references('id')->on('chantiers')->onDelete('cascade')->onUpdate('cascade');
+            
+            $table->unsignedBigInteger('ouvrage_id');
+            $table->foreign('ouvrage_id')->references('id')->on('ouvrages')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->timestamps();
         });
     }
@@ -32,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('poste_ouvriers');
     }
 };

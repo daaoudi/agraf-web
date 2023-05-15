@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Charge;
 use App\Models\Matier;
 
 use App\Models\Chantier;
@@ -17,7 +18,7 @@ class MatierController extends Controller
     public function index()
     {
         //
-        $matiers=Matier::with('chantier','fournisseur','article')->get();
+        $matiers=Matier::with('charge')->get();
         return view('main.showMatiers',compact('matiers'));
     }
 
@@ -27,10 +28,9 @@ class MatierController extends Controller
     public function create()
     {
         //
-        $chantiers=Chantier::all();
-        $fournisseurs=Fournisseur::all();
-        $articles=Article::all();
-        return view('main.createMatier')->with(['chantiers'=>$chantiers,'fournisseurs'=>$fournisseurs,'articles'=>$articles]);
+        
+        $charges=Charge::all();
+        return view('main.createMatier')->with(['charges'=>$charges]);
     }
 
     /**
@@ -46,11 +46,7 @@ class MatierController extends Controller
             'qte'=>'required',
             'prix'=>'required',
             'date_r'=>'required',
-            'chantier_id'=>'required|exists:chantiers,id',
-            'article_id'=>'required|exists:articles,id',
-            'fournisseur_id'=>'required|exists:fournisseurs,id',
-
-
+            'charge_id'=>'required|exists:charges,id'
         ]);
 
         $matier=new Matier();
@@ -60,10 +56,8 @@ class MatierController extends Controller
         $matier->qte=$request->input('qte');
         $matier->prix=$request->input('prix');
         $matier->date_r=$request->input('date_r');
-        $matier->nmbr_piece_utiliser=$request->input('nmbr_piece_utiliser');
-        $matier->chantier_id=$request->input('chantier_id');
-        $matier->article_id=$request->input('article_id');
-        $matier->fournisseur_id=$request->input('fournisseur_id');
+        
+       
 
         $matier->save();
 
@@ -107,10 +101,7 @@ class MatierController extends Controller
             'qte'=>'required',
             'prix'=>'required',
             'date_r'=>'required',
-           // 'chantier_id'=>'required|exists:chantiers,id',
-            //'fournisseur_id'=>'required|exists:fournisseurs,id',
-
-
+           
         ]);
 
         $matier->update([
@@ -120,7 +111,6 @@ class MatierController extends Controller
             'qte'=>$request->qte,
             'prix'=>$request->prix,
             'date_r'=>$request->date_r,
-            'nmbr_piece_utiliser'=>$request->nmbr_piece_utiliser,
         ]);
 
         return redirect()->route('matiers.index')->with(['success'=>'matier modifier']);

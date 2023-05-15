@@ -15,22 +15,25 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $chantiersNbr = Chantier::count();
+        $chantiersNbr = 2;
         $ouvriersNbr = Ouvrier::count();
         $clientNbr = Client::count();
         $fournisseursNbr = Fournisseur::count();
 
 
-        $data = DB::table('chantiers')
-        ->join('ouvriers', "chantiers.id", "=", "ouvriers.chantier_id")
-        ->join('articles', "articles.ouvrier_id", "=", "ouvriers.id")
-        ->join('services', "articles.service_id","=","services.id")
-        ->select("chantiers.designation AS des","chantiers.*","services.*","articles.*","ouvriers.*")
-        ->get();
+        $data = [];
+        // $data = DB::table('chantiers')
+        // ->join('ouvriers', "chantiers.id", "=", "ouvriers.chantier_id")
+        // ->join('ouvrages', "ouvrages.ouvrier_id", "=", "ouvriers.id")
+        // ->join('services', "ouvrages.service_id","=","services.id")
+        // ->select("chantiers.designation AS des","chantiers.*","services.*","ouvrages.*","ouvriers.*")
+        // ->get();
 
-        $etat_global = DB::table("ouvrages")
-        ->join('devis','ouvrages.devi_id','=','devis.id')
-        ->get();
+        // $etat_global = DB::table("ouvrages")
+        // ->join('devis','ouvrages.devi_id','=','devis.id')
+        // ->get();
+
+        $etat_global = null;
 
 $ouvrages = DB::table('ouvrages')
     ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')

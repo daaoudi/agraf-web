@@ -37,15 +37,12 @@ class FournisseurController extends Controller
             'nom'=>'required',
             'prenom'=>'required',
             'telephone'=>'required|max:10',
-            'montant'=>'required',
-            'montant_en_avance'=>'required',
         ]);
         $fournisseur=new Fournisseur();
         $fournisseur->nom=$request->input('nom');
         $fournisseur->prenom=$request->input('prenom');
         $fournisseur->telephone=$request->input('telephone');
-        $fournisseur->montant=$request->input('montant');
-        $fournisseur->montant_en_avance=$request->input('montant_en_avance');
+
 
         $fournisseur->save();
 
@@ -86,16 +83,14 @@ class FournisseurController extends Controller
             'nom'=>'required',
             'prenom'=>'required',
             'telephone'=>'required|max:10',
-            'montant'=>'required',
-            'montant_en_avance'=>'required',
+
         ]);
 
         $fournisseur->update([
             'nom'=>$request->nom,
             'prenom'=>$request->prenom,
             'telephone'=>$request->telephone,
-            'montant'=>$request->montant,
-            'montant_en_avance'=>$request->montant_en_avance,
+
         ]);
 
         return redirect()->route('fournisseurs.index')->with(['success'=>'fournisseur modifier']);

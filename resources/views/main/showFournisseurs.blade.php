@@ -45,8 +45,6 @@ liste des Fournisseurs
               <th>nom</th>
               <th>prenom</th>
               <th>telephone</th>
-              <th>montant</th>
-              <th>montant_en_avance</th>
               <th>Actions</th>
             </tr>
             </thead>
@@ -56,8 +54,7 @@ liste des Fournisseurs
                   <td>{{$fournisseur->nom}}</td>
                   <td>{{$fournisseur->prenom}}</td>
                   <td>{{$fournisseur->telephone}}</td>
-                  <td>{{$fournisseur->montant}}</td>
-                  <td>{{$fournisseur->montant_en_avance}}</td>
+
                  
                   <td>
                     @if(auth()->check())

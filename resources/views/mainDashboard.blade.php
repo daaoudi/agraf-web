@@ -120,14 +120,6 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item my-3">
-                            <a href={{ route('chantiers.index') }} class="nav-link">
-                                <img src="storage/icons/projets.png" class="mx-3" class="mx-3" width="45px" />
-                                <p>
-                                    Projets
-                                </p>
-                            </a>
-                        </li>
 
                         <li class="nav-item my-3">
                             <a href={{ route('matiers.index') }} class="nav-link">
@@ -170,10 +162,26 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{ route('articles.index') }} class="nav-link">
-                                <img src="storage/icons/article.png" class="mx-3" width="45px" />
+                            <a href={{ route('fournisseurs.index') }} class="nav-link">
+                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
-                                    Articles
+                                    Charges
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item my-3">
+                            <a href={{ route('fournisseurs.index') }} class="nav-link">
+                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
+                                <p>
+                                    Réglements
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item my-3">
+                            <a href={{ route('fournisseurs.index') }} class="nav-link">
+                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
+                                <p>
+                                    Poste Ouvrier
                                 </p>
                             </a>
                         </li>
@@ -348,7 +356,7 @@
                                     <tr>
                                         <th>Projets</th>
                                         <th>Ouvriers</th>
-                                        <th>Article</th>
+                                        <th>Ouvrage</th>
                                         <th>Service</th>
                                     </tr>
                                     @foreach ($data as $res)

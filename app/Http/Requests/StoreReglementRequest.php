@@ -23,6 +23,7 @@ class StoreReglementRequest extends FormRequest
     {
         return [
             //
+            
         ];
     }
 }
