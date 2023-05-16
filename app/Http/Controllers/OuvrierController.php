@@ -16,7 +16,7 @@ class OuvrierController extends Controller
         //
         $ouvriers=Ouvrier::all();
         $ouvrier=Ouvrier::find($ouvrier)->posteOuvriers;
-        return view('main.showOuvriers',compact('ouvriers','ouvrier'));
+        return view('main.ouvriers.index',compact('ouvriers','ouvrier'));
     }
 
     /**
@@ -26,7 +26,7 @@ class OuvrierController extends Controller
     {
         //
       
-        return view('main.createOuvrier');
+        return view('main.ouvriers.createOuvrier');
     }
 
     /**
@@ -63,7 +63,7 @@ class OuvrierController extends Controller
     public function show(Ouvrier $ouvrier)
     {
         // 
-        return view('main.showOuvrier')->with(['ouvrier'=>$ouvrier]);
+        return view('main.ouvriers.showOuvrier')->with(['ouvrier'=>$ouvrier]);
     }
 
     /**
@@ -73,7 +73,7 @@ class OuvrierController extends Controller
     {
         if (auth()->user()->is_admin) {
 
-        return view('main.editOuvrier')->with(['ouvrier'=>$ouvrier]);
+        return view('main.ouvriers.editOuvrier')->with(['ouvrier'=>$ouvrier]);
         }
         else{
             abort(code:403);

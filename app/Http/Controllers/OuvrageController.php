@@ -16,7 +16,7 @@ class OuvrageController extends Controller
     public function index()
     {
         $ouvrages= Ouvrage::with("devi")->get();
-        return view('main.showOuvrages',compact('ouvrages'));
+        return view('main.ouvrages.index',compact('ouvrages'));
 
     }
 
@@ -26,7 +26,7 @@ class OuvrageController extends Controller
     public function create()
     {
         $devis= Devi::all();
-        return view('main.createOuvrage',compact('devis'));
+        return view('main.ouvrages.createOuvrage',compact('devis'));
 
         
     }
@@ -70,14 +70,14 @@ class OuvrageController extends Controller
     
     public function show(Ouvrage $ouvrage)
     {
-        return view('main.showOuvrage')->with(['ouvrage'=>$ouvrage]);
+        return view('main.ouvrages.showOuvrage')->with(['ouvrage'=>$ouvrage]);
         }
 
 
     public function edit(Ouvrage $ouvrage)
     {
         $devis= Devi::all();
-        return view('main.editOuvrage',compact('ouvrage','devis'));
+        return view('main.ouvrages.editOuvrage',compact('ouvrage','devis'));
     }
 
     

@@ -14,7 +14,7 @@ class ServiceController extends Controller
     {
         //
         $services=Service::all();
-        return view('main.showServices')->with(['services'=>$services]);
+        return view('main.services.index')->with(['services'=>$services]);
     }
 
     /**
@@ -23,7 +23,7 @@ class ServiceController extends Controller
     public function create()
     {
         //
-        return view('main.createService');
+        return view('main.services.createService');
     }
 
     /**
@@ -62,7 +62,7 @@ class ServiceController extends Controller
     public function show(Service $service)
     {
         //
-        return view('main.showService')->with(['service'=>$service]);
+        return view('main.services.showService')->with(['service'=>$service]);
     }
 
     /**
@@ -71,7 +71,7 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         if (auth()->user()->is_admin) {
-        return view('main.editService')->with(['service'=>$service]);
+        return view('main.services.editService')->with(['service'=>$service]);
         }
         else{
             abort(code:403);

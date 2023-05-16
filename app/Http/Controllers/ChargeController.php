@@ -18,7 +18,7 @@ class ChargeController extends Controller
     {
         //
         $charges=Charge::with('devi','fournisseur')->get();
-        return view('main.showCharges',compact('charges'));
+        return view('main.charges.index',compact('charges'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ChargeController extends Controller
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
 
-        return view('main.createCharge',compact('devis','fournisseurs'));
+        return view('main.charges.createCharge',compact('devis','fournisseurs'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ChargeController extends Controller
      */
     public function show(Charge $charge)
     {
-        return view('main.showCharge',compact('charge'));
+        return view('main.charges.showCharge',compact('charge'));
     }
 
     /**

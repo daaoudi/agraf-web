@@ -41,16 +41,19 @@
                     <div class="row gy-3 ">
 
                         <div class="col-md-12">
+                            <label for="designation">designation</label>
                             <input type="text" name="designation" class="form-control" value="{{ old('designation') }}"
                                 placeholder="Designation" required>
                         </div>
 
                         <div class="col-md-12">
+                            <label for="prix unitaire">prix unitaire</label>
                             <input type="text" name="prix_unitaire" class="form-control"
                                 value="{{ old('prix_unitaire') }}" placeholder="Prix Unitaire" required>
                         </div>
 
                         <div class="col-md-12">
+                        <label for="qte">quantité</label>
                             <input type="text" name="qte" class="form-control" value="{{ old('qte') }}"
                                 placeholder="quantité" required>
                         </div>
@@ -60,6 +63,7 @@
                                 placeholder="unité" required>
                         </div>
                         <div class="col-md-12">
+                            <label for="devi_id">devi</label>
                             <select name="devi_id" id="">
                                 <option selected disabled>Choisir le nom de devi</option>
                                 @foreach ($devis as $devi)

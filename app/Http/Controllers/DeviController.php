@@ -13,7 +13,7 @@ class DeviController extends Controller
     public function index()
     {
         $devis = Devi::all();
-        return view('main.showDevis', compact('devis'));
+        return view('main.devis.index', compact('devis'));
     }
 
     /**
@@ -21,7 +21,7 @@ class DeviController extends Controller
      */
     public function create()
     {
-        return view('main.createDevis');
+        return view('main.devis.createDevis');
     }
 
     public function store(Request $request)
@@ -63,7 +63,7 @@ class DeviController extends Controller
      */
     public function show(Devi $devi)
     {
-        return view('main.showDevi', compact('devi'));
+        return view('main.devis.showDevi', compact('devi'));
     }
 
     /**
@@ -73,7 +73,7 @@ class DeviController extends Controller
     {
         if (auth()->user()->is_admin) {
 
-            return view('main.editDevi',compact('devi'));
+            return view('main.devis.editDevi',compact('devi'));
             }
             else{
                 abort(code:403);

@@ -19,7 +19,7 @@ class MatierController extends Controller
     {
         //
         $matiers=Matier::with('charge')->get();
-        return view('main.showMatiers',compact('matiers'));
+        return view('main.matiers.index',compact('matiers'));
     }
 
     /**
@@ -30,7 +30,7 @@ class MatierController extends Controller
         //
         
         $charges=Charge::all();
-        return view('main.createMatier')->with(['charges'=>$charges]);
+        return view('main.matiers.createMatier')->with(['charges'=>$charges]);
     }
 
     /**
@@ -71,7 +71,7 @@ class MatierController extends Controller
     public function show(Matier $matier)
     {
         //
-        return view('main.showMatier')->with(['matier'=>$matier]);
+        return view('main.matiers.showMatier')->with(['matier'=>$matier]);
     }
 
     /**
@@ -81,7 +81,7 @@ class MatierController extends Controller
     {
         if (auth()->user()->is_admin) {
 
-        return view('main.editMatier')->with(['matier'=>$matier]);
+        return view('main.matiers.editMatier')->with(['matier'=>$matier]);
         }
         else{
             abort(code:403);

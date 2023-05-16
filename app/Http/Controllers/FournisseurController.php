@@ -14,7 +14,7 @@ class FournisseurController extends Controller
     {
         //
         $fournisseurs=Fournisseur::all();
-        return view('main.showFournisseurs')->with(['fournisseurs'=>$fournisseurs]);
+        return view('main.fournisseurs.showFournisseurs')->with(['fournisseurs'=>$fournisseurs]);
     }
 
     /**
@@ -24,7 +24,7 @@ class FournisseurController extends Controller
     {
         //
        
-        return view('main.createFournisseur');
+        return view('main.fournisseurs.createFournisseur');
     }
 
     /**
@@ -55,7 +55,7 @@ class FournisseurController extends Controller
     public function show(Fournisseur $fournisseur)
     {
         //
-        return view('main.showFournisseur')->with(['fournisseur'=>$fournisseur]);
+        return view('main.fournisseurs.showFournisseur')->with(['fournisseur'=>$fournisseur]);
     }
 
     /**
@@ -65,7 +65,7 @@ class FournisseurController extends Controller
     {
         if (auth()->user()->is_admin) {
 
-        return view('main.editFournisseur')->with(['fournisseur'=>$fournisseur]);
+        return view('main.fournisseurs.editFournisseur')->with(['fournisseur'=>$fournisseur]);
         }
         else{
             abort(code:403);

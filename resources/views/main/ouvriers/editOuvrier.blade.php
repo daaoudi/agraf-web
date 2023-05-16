@@ -57,10 +57,6 @@ la modification d'un Ouvrier : {{$ouvrier->nom . ' ' . $ouvrier->prenom}}.
           </div>
 
           <div class="col-md-12">
-            <input type="text" name="type" value="{{$ouvrier->type}}" class="form-control" placeholder="Type_Ouvrier" required>
-          </div>
-
-          <div class="col-md-12">
             <input type="number" value="{{$ouvrier->salaire_par_semaine}}" name="salaire_par_semaine" class="form-control" placeholder="salaire_par_semaine" required>
           </div>
 

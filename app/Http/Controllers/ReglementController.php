@@ -18,7 +18,7 @@ class ReglementController extends Controller
     {
         //
         $reglements=Reglement::with('devi','client')->get();
-        return view('main.showReglements',compact('reglements'));
+        return view('main.reglements.showReglements',compact('reglements'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ReglementController extends Controller
         //
         $devis=Devi::all();
         $clients=Client::all();
-        return view('main.createReglement',compact('devis','clients'));
+        return view('main.reglements.index',compact('devis','clients'));
     }
 
     /**
@@ -59,7 +59,7 @@ class ReglementController extends Controller
      */
     public function show(Reglement $reglement)
     {
-        return view('main.showReglement',compact('reglement'));
+        return view('main.reglements.showReglement',compact('reglement'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ReglementController extends Controller
     {
         $devis=Devi::all();
         $clients=Client::all();
-        return view('main.editReglement',compact('reglement','devis','clients'));
+        return view('main.reglements.editReglement',compact('reglement','devis','clients'));
     
     }
 

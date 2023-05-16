@@ -14,7 +14,7 @@ class ClientController extends Controller
     {
         //
         $clients = Client::all();
-        return view('main.showClients')->with(['clients' => $clients]);
+        return view('main.clients.index')->with(['clients' => $clients]);
     }
 
     /**
@@ -24,7 +24,7 @@ class ClientController extends Controller
     {
         //
 
-        return view('main.createClient');
+        return view('main.clients.createClient');
     }
 
     /**
@@ -61,7 +61,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
-        return view('main.showClient')->with(['clients' => $client]);
+        return view('main.clients.showClient')->with(['clients' => $client]);
     }
 
     /**
@@ -70,7 +70,7 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         if (auth()->user()->is_admin) {
-            return view('main.editClient')->with(['client' => $client]);
+            return view('main.clients.editClient')->with(['client' => $client]);
         }
         else{
              abort(code:403);
