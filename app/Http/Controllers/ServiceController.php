@@ -83,7 +83,6 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
         
         $request->validate([
             'nom_service'=>'required',
@@ -91,8 +90,6 @@ class ServiceController extends Controller
             //'image'=>'required|image|mimes:png,jpg,lpeg,jfif|max:2048',
             'type_service'=>'required',
         ]);
-        
-
         if($request->has('image')){
             $file=$request->image;
             $image_name=time(). '_'. $file->getClientOriginalName();
@@ -100,7 +97,6 @@ class ServiceController extends Controller
             unlink(public_path('storage/images'). '/'. $service->image );
             $service->image=$image_name;
         }
-
         $service->update([
 
             'nom_service'=>$request->nom_service,
