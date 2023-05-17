@@ -37,8 +37,6 @@ class ClientController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
-            'montant' => 'required',
-
 
         ]);
 
@@ -46,7 +44,6 @@ class ClientController extends Controller
         $client->nom = $request->input('nom');
         $client->prenom = $request->input('prenom');
         $client->telephone = $request->input('telephone');
-        $client->montant = $request->input('montant');
         $client->email = $request->input('email');
         $client->save();
 
@@ -87,7 +84,6 @@ class ClientController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
-            'montant' => 'required',
 
 
         ]);
@@ -96,8 +92,6 @@ class ClientController extends Controller
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'telephone' => $request->telephone,
-            'montant' => $request->montant,
-            'email' => $request->email,
         ]);
 
         /*

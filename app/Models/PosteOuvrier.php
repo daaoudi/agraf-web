@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Devi;
 use App\Models\Ouvrage;
 use App\Models\Ouvrier;
 use App\Models\Service;
-use App\Models\Chantier;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -22,6 +22,7 @@ class PosteOuvrier extends Model
         "ouvrier_id",
         "service_id",
         "ouvrage_id",
+        "type"
     ];
 
     public function devi()
@@ -34,9 +35,9 @@ class PosteOuvrier extends Model
         return $this->belongsTo(Ouvrier::class);
     }
     
-    public function services()
+    public function service()
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsTo(Service::class);
     }
     public function ouvrages()
     {

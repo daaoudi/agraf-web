@@ -2371,30 +2371,13 @@
 											"height": 13,
 											"text": "+devis_id",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGIILm1Nv6UEAI=",
-											"_parent": {
-												"$ref": "AAAAAAGH2Dvi7T6E3MU="
-											},
-											"model": {
-												"$ref": "AAAAAAGIILm1If6RVtw="
-											},
-											"font": "Arial;13;0",
-											"left": 1261,
-											"top": 810,
-											"width": 148.298828125,
-											"height": 13,
-											"text": "+poste_ouvrier_id",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1256,
 									"top": 715,
 									"width": 158.298828125,
-									"height": 113
+									"height": 98
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2407,7 +2390,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1256,
-									"top": 828,
+									"top": 813,
 									"width": 158.298828125,
 									"height": 10
 								},
@@ -6405,7 +6388,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGG36YTGqux1E8="
 									},
-									"name": "devi"
+									"name": "devi",
+									"type": ""
 								}
 							]
 						},
@@ -6423,7 +6407,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGG36eHobdC0Ps="
 									},
-									"name": "post ouvrier"
+									"name": "post ouvrier",
+									"type": ""
 								}
 							]
 						}
@@ -6539,7 +6524,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGG36hsE7x8+2I="
 									},
-									"name": "poste Ouvrier"
+									"name": "poste Ouvrier",
+									"type": ""
 								}
 							]
 						}
@@ -7721,14 +7707,6 @@
 							},
 							"name": "devis_id",
 							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGIILm1If6RVtw=",
-							"_parent": {
-								"$ref": "AAAAAAGH2DviwT58tBQ="
-							},
-							"name": "poste_ouvrier_id"
 						}
 					]
 				},
@@ -7812,7 +7790,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFwCkmegg92o="
 							},
-							"name": "devi_id"
+							"name": "devi_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8028,7 +8007,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFxTYMXfHLgw="
 							},
-							"name": "devi_id"
+							"name": "devi_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8036,7 +8016,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFxTYMXfHLgw="
 							},
-							"name": "montant_charges_matier"
+							"name": "montant_charges_matier",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8044,7 +8025,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFxTYMXfHLgw="
 							},
-							"name": "montant_credit"
+							"name": "montant_credit",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8052,7 +8034,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFxTYMXfHLgw="
 							},
-							"name": "matier_id"
+							"name": "matier_id",
+							"type": ""
 						}
 					]
 				},
@@ -8183,7 +8166,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGIFzuISYYyixE="
 							},
-							"name": "devi_id"
+							"name": "devi_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",

@@ -45,7 +45,6 @@ liste des clients
                   <th>nom</th>
                   <th>prenom</th>
                   <th>telephone</th>
-                  <th>montant</th>
                   <th>email</th>
                   <th>action</th>
               </tr>
@@ -56,8 +55,13 @@ liste des clients
                     <td>{{$client->nom}}</td>
                     <td>{{$client->prenom}}</td>
                     <td>{{$client->telephone}}</td>
-                    <td>{{$client->montant}}</td>
-                    <td>{{$client->email}}</td>
+                    <td>
+                      @if(empty($client->email))
+                      Aucune adresse e-mail
+                      @else
+                        {{ $client->email }}
+                      @endif
+                    </td>                    
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

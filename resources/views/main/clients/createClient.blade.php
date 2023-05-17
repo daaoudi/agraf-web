@@ -51,10 +51,6 @@ l'ajout d'un client.
           <input type="text" name="telephone" class="form-control" placeholder="Telephone"value="{{old('telephone')}}" required>
         </div>
 
-        <div class="col-md-12 ">
-          <input type="text" class="form-control" name="montant" placeholder="Montant" value="{{old('montant')}}" required>
-        </div>
-
         <div class="col-md-12">
           <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
         </div>

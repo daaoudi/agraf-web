@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Ouvrage;
+use App\Models\PosteOuvrier;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Service extends Model
 {
@@ -18,9 +20,9 @@ class Service extends Model
         
     ];
 
-    public function articles()
+    public function posteOuvriers()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(PosteOuvrier::class);
     }
     
     

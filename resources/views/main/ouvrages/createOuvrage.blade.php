@@ -41,8 +41,8 @@
                     <div class="row gy-3 ">
 
                         <div class="col-md-12">
-                            <label for="designation">designation</label>
-                            <input type="text" name="designation" class="form-control" value="{{ old('designation') }}"
+                            <label for="designation_ouvrage">designation d'ouvrage</label>
+                            <input type="text" name="designation_ouvrage" class="form-control" value="{{ old('designation_ouvrage') }}"
                                 placeholder="Designation" required>
                         </div>
 

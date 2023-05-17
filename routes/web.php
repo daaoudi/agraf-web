@@ -30,7 +30,7 @@ use App\Http\Controllers\FournisseurController;
 
 //Landing Page
 Route::get('/', function () {
-    return view('main.home');
+    return view('main');
 });
 
 

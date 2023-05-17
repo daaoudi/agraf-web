@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\Article;
-use App\Models\Chantier;
 
 use App\Models\PosteOuvrier;
 use Illuminate\Database\Eloquent\Model;
@@ -23,21 +22,13 @@ class Ouvrier extends Model
         "nom",
         "prenom",
         "telephone",
-        "date_debut",
-        "date_fin",
         "cin",
-        "type",
-        "salaire_par_semaine",
-        "chantier_id"
     ];
 
     public $timestamps=false;
 
 
-    public function chantier()
-{
-    return $this->belongsTo(Chantier::class);
-}
+
 
 public function posteOuvriers()
 {

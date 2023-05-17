@@ -43,7 +43,6 @@ class OuvrageController extends Controller
             'unite' => 'required',
             'prix_unitaire' => 'required',
             'devi_id' => 'required|exists:devis,id',
-            'poste_ouvrier_id'=>'required|exists:poste_ouvriers,id'
         ]);
 
                 //parsing double
@@ -54,12 +53,11 @@ class OuvrageController extends Controller
                 $qte = number_format($parsed_qte, 2);
         
                 $ouvrage = new Ouvrage();
-                $ouvrage->designation_ouvrage = $request->input('designation');
+                $ouvrage->designation_ouvrage = $request->input('designation_ouvrage');
                 $ouvrage->qte = $qte;
                 $ouvrage->unite = $request->input('unite');
                 $ouvrage->prix = $prix_unitaire;
                 $ouvrage->devi_id = $request->input('devi_id');
-                $ouvrage->poste_ouvrier_id = $request->input('poste_ouvrier_id');
                 $ouvrage->save();
 
                 return redirect()->route('ouvrages.index')->with(['success'=>'Ouvrage ajouté avec succées']);
@@ -89,18 +87,16 @@ class OuvrageController extends Controller
             'unite' => 'required',
             'prix_unitaire' => 'required',
             'devi_id' => 'required|exists:devis,id',
-            'poste_ouvrier_id'=>'required|exists:poste_ouvriers,id'
         ]);
         
 
         $ouvrage->update([
-            'designation_ouvrages' => $request->designation,
+            'designation_ouvrage' => $request->designation_ouvrage,
             'qte' => $request->qte,
             'unite' => $request->unite,
             'prix' => $request->prix_unitaire,
             'etat' =>$request->etat,
             'devi_id'=>$request->devi_id,
-            'poste_ouvrier_id'=>$request->poste_ouvrier_id,
         ]);
         return redirect()->route('ouvrages.index')->with(['success' => 'devi modifié']);
 

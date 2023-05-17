@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Devi;
+use App\Models\Ouvrage;
 use App\Models\Ouvrier;
 use App\Models\Service;
 use App\Models\PosteOuvrier;
 use Illuminate\Http\Request;
-use App\Http\Requests\StorePosteOuvrierRequest;
-use App\Http\Requests\UpdatePosteOuvrierRequest;
+
 
 class PosteOuvrierController extends Controller
 {
@@ -19,7 +19,7 @@ class PosteOuvrierController extends Controller
     {
         //
         $posteOuvriers=PosteOuvrier::with('devi','ouvrier','service')->get();
-        return view('main.showPosteOuvriers',compact('posteOuvriers'));
+        return view('main.poste_ouvriers.index',compact('posteOuvriers'));
     }
 
     /**
@@ -30,9 +30,10 @@ class PosteOuvrierController extends Controller
         //
         $devis=Devi::all();
         $ouvriers=Ouvrier::all();
+        $ouvrages=Ouvrage::all();
         $services=Service::all();
 
-        return view('main.createPosteOuvrier',compact('devis','ouvriers','services'));
+        return view('main.poste_ouvriers.createPosteOuvrier',compact('devis','ouvriers','services','ouvrages'));
     }
 
     /**
@@ -46,9 +47,10 @@ class PosteOuvrierController extends Controller
             'date_debut'=>'required',
             'date_fin'=>'required',
             'poste_ouvrier'=>'required',
-            'ouvrier_id'=>'required|exists:ouvriers,id',
-            'devi_id'=>'required|exists:devis,id',
-            'service_id'=>'required|exists:services,id',
+            'ouvrier_id'=>'required',
+            'ouvrage_id'=>'required',
+            'devi_id'=>'required',
+            'service_id'=>'required',
             'type'=>'required',
         ]);
 
@@ -58,11 +60,12 @@ class PosteOuvrierController extends Controller
         $posteOuvrier->date_fin=$request->input('date_fin');
         $posteOuvrier->poste_ouvrier=$request->input('poste_ouvrier');
         $posteOuvrier->ouvrier_id=$request->input('ouvrier_id');
+        $posteOuvrier->ouvrage_id=$request->input('ouvrage_id');
         $posteOuvrier->devi_id=$request->input('devi_id');
         $posteOuvrier->service_id=$request->input('service_id');
         $posteOuvrier->type=$request->input('type');
         $posteOuvrier->save();
-        return redirect()->route('posteOuvrier.index')->with(['success'=>'posteOuvrier ajouter']);
+        return redirect()->route('posteOuvriers.index')->with(['success'=>'posteOuvrier ajouter']);
 
 
     }

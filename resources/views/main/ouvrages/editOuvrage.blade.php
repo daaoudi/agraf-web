@@ -42,7 +42,8 @@ la modification d'un Matier :
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" value="{{$ouvrage->designation_ouvrage}}" placeholder="Designation" required>
+          <label for="designation_ouvrage">Designation d'ouvrage</label>
+          <input type="text" name="designation_ouvrage" class="form-control" value="{{$ouvrage->designation_ouvrage}}" placeholder="Designation" required>
         </div>
 
         <div class="col-md-12">

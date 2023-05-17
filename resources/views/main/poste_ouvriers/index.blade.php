@@ -15,7 +15,7 @@
                 <li>Poste Ouvriers</li>
             </ol>
 
-            <a href={{ route('ouvriers.create') }} class="btn btn-warning">
+            <a href={{ route('posteOuvriers.create') }} class="btn btn-warning">
                 + Ajouter un poste
             </a>
 
@@ -36,37 +36,26 @@
                         {{ session()->get('success') }}
                     </div>
                 @endif
-                <h4>Nombre d'ouvriers: {{ count($ouvriers) }}</h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>nom_projet</th>
-                            <th>nom</th>
-                            <th>prenom</th>
-                            <th>telephone</th>
-                            <th>cin</th>
                             <th>type</th>
                             <th>Date_Debut</th>
                             <th>Date_Fin</th>
-                            <th>salaire_par_semaine</th>
+                            <th>salaire</th>
                             <th>action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ouvriers as $ouvrier)
+                        @foreach ($posteOuvriers as $ouvrier)
                             <tr>
-                                <td>{{ $ouvrier->chantier->designation }}</td>
-                                <td>{{ $ouvrier->nom }}</td>
-                                <td>{{ $ouvrier->prenom }}</td>
-                                <td>{{ $ouvrier->telephone }}</td>
-                                <td>{{ $ouvrier->cin }}</td>
                                 <td>{{ $ouvrier->type }}</td>
                                 <td>{{ $ouvrier->date_debut }}</td>
                                 <td>{{ $ouvrier->date_fin }}</td>
-                                <td>{{ $ouvrier->salaire_par_semaine }}</td>
+                                <td>{{ $ouvrier->salaire }}</td>
                                 <td>
                                     @if (auth()->check())
                                         @if (auth()->user()->is_admin)

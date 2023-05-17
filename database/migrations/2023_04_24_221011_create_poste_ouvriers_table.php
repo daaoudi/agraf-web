@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date("date_debut");
             $table->date("date_fin");
             $table->string("poste_ouvrier");
+            $table->string("type");
             $table->unsignedBigInteger('ouvrier_id');
             $table->foreign('ouvrier_id')->references('id')->on('ouvriers')->onDelete('cascade')->onUpdate('cascade');
 

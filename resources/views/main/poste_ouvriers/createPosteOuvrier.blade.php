@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <label for="devi_id">Projet : </label>
                             <select name="devi_id" class="form-select" required>
-                                <option selected>Choisir l'ouvrier : </option>
+                                <option selected>Choisir le projet (devi) : </option>
                                 @foreach ($devis as $devi)
                                     <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
                                 @endforeach
@@ -54,7 +54,8 @@
                             <select name="ouvrier_id" class="form-select" required>
                                 <option selected>Choisir l'ouvrier : </option>
                                 @foreach ($ouvriers as $ouvrier)
-                                    <option value="{{ $ouvrier->id }}">{{ $ouvrier->nom . ' ' . $ouvrier->prenom }}</option>
+                                    <option value="{{ $ouvrier->id }}">{{ $ouvrier->nom . ' ' . $ouvrier->prenom }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -65,12 +66,22 @@
                             <select name="service_id" class="form-select" required>
                                 <option selected>Choisir le nom de Service</option>
                                 @foreach ($services as $service)
-                                    <option value="{{ $service->id }}">{{ $service->designation }}</option>
+                                    <option value="{{ $service->id }}">{{ $service->nom_service }}</option>
                                 @endforeach
                             </select>
                         </div>
 
-           
+                        <div class="col-md-12">
+                            <label for="ouvrage_id">Ouvrage : </label>
+                            <select name="ouvrage_id" class="form-select" required>
+                                <option selected>Choisir le nom d'ouvrage</option>
+                                @foreach ($ouvrages as $ouvrage)
+                                    <option value="{{ $ouvrage->id }}">{{ $ouvrage->designation_ouvrage }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
                         <div class="col-md-12">
                             <label for="poste ouvrier">Poste d'ouvrier : </label>
                             <input type="text" name="poste ouvrier" class="form-control" placeholder="poste ouvrier"

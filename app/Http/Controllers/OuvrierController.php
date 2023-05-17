@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ouvrier;
-use App\Models\Chantier;
 use Illuminate\Http\Request;
 
 class OuvrierController extends Controller
@@ -15,7 +14,7 @@ class OuvrierController extends Controller
     {
         //
         $ouvriers=Ouvrier::all();
-        $ouvrier=Ouvrier::find($ouvrier)->posteOuvriers;
+        // $ouvrier=Ouvrier::find($ouvrier)->posteOuvriers;
         return view('main.ouvriers.index',compact('ouvriers','ouvrier'));
     }
 

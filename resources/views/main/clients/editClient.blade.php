@@ -57,14 +57,9 @@
                                 placeholder="Telephone" required>
                         </div>
 
-                        <div class="col-md-12 ">
-                            <input type="text" class="form-control" value="{{ $client->montant }}" name="montant"
-                                placeholder="Montant" required>
-                        </div>
-
                         <div class="col-md-12">
                             <input type="email" class="form-control" value="{{ $client->email }}" name="email"
-                                placeholder="Email" required>
+                                placeholder="Email">
                         </div>
 
 

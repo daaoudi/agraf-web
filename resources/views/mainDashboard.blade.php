@@ -170,7 +170,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{ route('fournisseurs.index') }} class="nav-link">
+                            <a href={{ route('reglements.index') }} class="nav-link">
                                 <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
                                     Réglements
@@ -178,7 +178,7 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{ route('fournisseurs.index') }} class="nav-link">
+                            <a href={{ route('posteOuvriers.index') }} class="nav-link">
                                 <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
                                 <p>
                                     Poste Ouvrier
