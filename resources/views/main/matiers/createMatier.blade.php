@@ -36,59 +36,38 @@ l'ajout d'un Matier.
     <form action="{{route('matiers.store')}}" enctype="multipart/form-data"  method="post" >
       @csrf
       <h3 class="text-center">Formulaire de Matier :</h3>
-      <p class="text-center">Remplir tout les Champ s'il vous plait. </p>
+      <p class="text-center">Remplir  les Champ s'il vous plait. </p>
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" placeholder="Designation" required>
+          <input type="text" name="designation" class="form-control" placeholder="Designation" value="{{old('designation')}}" >
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="type" class="form-control" placeholder="Type Matier" required>
+          <input type="text" name="type" class="form-control" value="{{old('type')}}" placeholder="Type Matier" >
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prix" class="form-control" placeholder="prix" required>
+          <input type="text" name="prix" class="form-control" value="{{old('prix')}}" placeholder="prix" >
         </div>
 
         <div class="col-md-12">
-            <input type="text" name="qte" class="form-control" placeholder="qte" required>
+            <input type="text" name="qte" class="form-control" value="{{old('qte')}}" placeholder="qte" >
           </div>
 
           <div class="col-md-12">
-            <input type="text" name="matiere_unite" class="form-control" placeholder="matiere_unite" required>
+            <input type="text" name="matiere_unite" value="{{old('matiere_unite')}}" class="form-control" placeholder="matiere_unite" >
           </div>
 
           <div class="col-md-12">
-            <input type="datetime-local" name="date_r" class="form-control"  required>
+            <input type="date" name="date_r" value="{{old('date_r')}}" class="form-control"  >
           </div>
         
 
-        <div class="col-md-12">
-            <select name="chantier_id" class="form-select"  required>
-                <option selected>Choisir le Nom de Projet</option>
-               @foreach($chantiers as $chantier)
-                <option value="{{$chantier->id}}">{{$chantier->designation}}</option>
-                @endforeach
-              </select>
-        </div>
+        
 
-        <div class="col-md-12">
-            <select name="fournisseur_id" class="form-select"  required>
-                <option selected>Choisir le nom de Fournisseur</option>
-               @foreach($fournisseurs as $fournisseur)
-                <option value="{{$fournisseur->id}}">{{$fournisseur->nom}}</option>
-                @endforeach
-              </select>
-        </div>
-        <div class="col-md-12">
-          <select name="article_id" class="form-select"  required>
-              <option selected>Choisir le nom d'Article</option>
-             @foreach($articles as $article)
-              <option value="{{$article->id}}">{{$article->nom}}</option>
-              @endforeach
-            </select>
-      </div>
+     
+       
 
         
 

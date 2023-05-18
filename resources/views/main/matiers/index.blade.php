@@ -42,32 +42,28 @@ liste des Matieres
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>nom_Fournisseur</th>
-                  <th>nom_Projet</th>
-                  <th>nom_Article</th>
+                  
                   <th>designation</th>
                   <th>prix</th>
                   <th>type</th>
                   <th>qte</th>
                   <th>matiere_unite</th>
                   <th>date_recu</th>
-                  <th>nmbr_piece_utiliser</th>
+                
                   <th>action</th>
               </tr>
               </thead>
               <tbody>
                 @foreach($matiers as $matier)
                 <tr>
-                    <td>{{$matier->fournisseur->nom}}</td>
-                    <td>{{$matier->chantier->designation}}</td>
-                    <td>{{$matier->article->designation}}</td>
+                  
                     <td>{{$matier->designation}}</td>
                     <td>{{$matier->prix}}</td>
                     <td>{{$matier->type}}</td>
                     <td>{{$matier->qte}}</td>
                     <td>{{$matier->matiere_unite}}</td>
                     <td>{{$matier->date_r}}</td>
-                    <td>{{$matier->nmbr_piece_utiliser}}</td>
+                   
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)

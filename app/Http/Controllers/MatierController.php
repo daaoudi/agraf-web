@@ -46,7 +46,7 @@ class MatierController extends Controller
             'qte'=>'required',
             'prix'=>'required',
             'date_r'=>'required',
-            'charge_id'=>'required|exists:charges,id'
+            
         ]);
 
         $matier=new Matier();

@@ -14,7 +14,7 @@ class FournisseurController extends Controller
     {
         //
         $fournisseurs=Fournisseur::all();
-        return view('main.fournisseurs.showFournisseurs')->with(['fournisseurs'=>$fournisseurs]);
+        return view('main.fournisseurs.index')->with(['fournisseurs'=>$fournisseurs]);
     }
 
     /**

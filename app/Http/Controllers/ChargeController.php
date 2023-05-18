@@ -8,6 +8,7 @@ use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreChargeRequest;
 use App\Http\Requests\UpdateChargeRequest;
+use App\Models\Matier;
 
 class ChargeController extends Controller
 {
@@ -29,8 +30,9 @@ class ChargeController extends Controller
         //
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
+        $matiers=Matier::all();
 
-        return view('main.charges.createCharge',compact('devis','fournisseurs'));
+        return view('main.charges.createCharges',compact('devis','fournisseurs','matiers'));
     }
 
     /**
@@ -42,16 +44,25 @@ class ChargeController extends Controller
         $request->validate([
             "mod" => "required",
             "mp" => "required",
-            "devi_id" => "required",
-            "fournisseur_id" => "required",
-            "montant_charge_matier" => "required",
-            "montant_credit" => "required",
+            "devi_id" => "required|exists:devis,id",
+            "fournisseur_id" => "required|exists:fournisseurs,id",
+            "matier_id"=>"required|exists:matiers,id",
+            "montant_charges_matier" => "required",
+            //"montant_credit" => "required",
             "mode_paiement" => "required",
 
         ]);
-        
-        $charge = Charge::create($request->all());
-       // $charge->save();
+        //$charge=Charge::create($request->all());
+        $charge = new Charge();
+        $charge->mod=$request->input('mod');
+        $charge->mp=$request->input('mp');
+        $charge->devi_id=$request->input('devi_id');
+        $charge->fournisseur_id=$request->input('fournisseur_id');
+        $charge->matier_id=$request->input('matier_id');
+        $charge->montant_charges_matier=$request->input('montant_charges_matier');
+        $charge->montant_credit=$request->input('montant_credit');
+        $charge->mode_paiement=$request->input('mode_paiement');
+        $charge->save();
         return redirect()->route('charges.index')->with('success','Charge ajouté avec succès');
     }
 
@@ -70,7 +81,8 @@ class ChargeController extends Controller
     {
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
-        return view('main.showCharge',compact('devis','fournisseurs'));
+        $matiers=Matier::all();
+        return view('main.showCharge',compact('charge','devis','fournisseurs','matiers'));
         }
 
     /**
@@ -81,10 +93,11 @@ class ChargeController extends Controller
         $request->validate([
             "mod" => "required",
             "mp" => "required",
-            "devi_id" => "required",
-            "fournisseur_id" => "required",
+            "devi_id" => "required|exists:devis,id",
+            "fournisseur_id" => "required|exists:fournisseurs,id",
+            "matier_id"=>"required|exists:matiers,id",
             "montant_charge_matier" => "required",
-            "montant_credit" => "required",
+            //"montant_credit" => "required",
             "mode_paiement" => "required",
 
         ]);

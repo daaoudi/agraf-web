@@ -16,7 +16,7 @@ class Charge extends Model
         "mod",
         "mp",
         "mode_paiement",
-        "chantier_id",
+       "devi_id",
         "fournisseur_id",
         "matier_id",
         "montant_charges_matier",

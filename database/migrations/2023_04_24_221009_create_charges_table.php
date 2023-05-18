@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('charges', function (Blueprint $table) {
             $table->id();
-            $table->double('MOD');
-            $table->double('MP');
+            $table->double('mod');
+            $table->double('mp');
             $table->double('montant_charges_matier');
             $table->double('montant_credit')->default(0);
             $table->string('mode_paiement');
