@@ -18,7 +18,7 @@ class ReglementController extends Controller
     {
         //
         $reglements=Reglement::with('devi','client')->get();
-        return view('main.reglements.showReglements',compact('reglements'));
+        return view('main.reglement.index',compact('reglements'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ReglementController extends Controller
         //
         $devis=Devi::all();
         $clients=Client::all();
-        return view('main.reglements.index',compact('devis','clients'));
+        return view('main.reglement.createReglements',compact('devis','clients'));
     }
 
     /**
@@ -43,14 +43,20 @@ class ReglementController extends Controller
             'devi_id'=>'required|exists:devis,id',
             'client_id'=>'required|exists:clients,id',
             'mode_paiement'=>'required',
+            'date_reglement'=>'required'
         ]);
 
-        $reglement=new Reglement();
-        $reglement->montant=$request->montant;
-        $reglement->devi_id=$request->devi_id;
-        $reglement->client_id=$request->client_id;
-        $reglement->mode_paiement=$request->mode_paiement;
-        $reglement->save();
+         $reglement=new Reglement();
+        // $reglement->montant=$request->montant;
+        // $reglement->devi_id=$request->devi_id;
+        // $reglement->client_id=$request->client_id;
+        // $reglement->mode_paiement=$request->mode_paiement;
+        // $reglement->numero_cheque=$request->numero_cheque;
+        // $reglement->date_reglement=$request->date_reglement;
+        
+        // $reglement->save();
+        $reglement->create($request->all());
+
         return redirect()->route('reglements.index')->with(['success'=>'reglement ajouter']);
     }
 
@@ -69,7 +75,7 @@ class ReglementController extends Controller
     {
         $devis=Devi::all();
         $clients=Client::all();
-        return view('main.reglements.editReglement',compact('reglement','devis','clients'));
+        return view('main.reglement.editReglement',compact('reglement','devis','clients'));
     
     }
 
@@ -83,6 +89,7 @@ class ReglementController extends Controller
             'devi_id'=>'required|exists:devis,id',
             'client_id'=>'required|exists:clients,id',
             'mode_paiement'=>'required',
+            'date_reglement'=>'required'
         ]);
         $reglement->update($request->all());
         return redirect()->route('reglements.index')->with(['success'=>'reglement modifier']);

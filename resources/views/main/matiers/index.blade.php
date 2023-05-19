@@ -48,7 +48,6 @@ liste des Matieres
                   <th>type</th>
                   <th>qte</th>
                   <th>matiere_unite</th>
-                  <th>date_recu</th>
                 
                   <th>action</th>
               </tr>
@@ -62,7 +61,6 @@ liste des Matieres
                     <td>{{$matier->type}}</td>
                     <td>{{$matier->qte}}</td>
                     <td>{{$matier->matiere_unite}}</td>
-                    <td>{{$matier->date_r}}</td>
                    
                     <td>
                       @if(auth()->check())

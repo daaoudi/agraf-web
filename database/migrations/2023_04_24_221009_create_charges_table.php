@@ -18,6 +18,7 @@ return new class extends Migration
             $table->double('montant_charges_matier');
             $table->double('montant_credit')->default(0);
             $table->string('mode_paiement');
+            $table->date('date_charge');
 
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');

@@ -1,6 +1,9 @@
 @extends('layouts.adminLTE')
 
 @section('content')
+
+
+
     <div class="wrapper">
 
 
@@ -283,7 +286,47 @@
                     <!-- /.row -->
 
                     <hr>
-                    <table class="table table-striped">
+                    <h1>Table de revenue</h1>
+                    <button id="toggleButton" onclick="toggleTable1()">Afficher/Cacher</button>
+
+                    <div id="tableContainer" class="foldable-table">
+                        <table class="table table-striped table-bordered mb-5">
+                            <thead>
+                                <tr>
+                                    <th>Devi</th>
+                                    <th>Consommation MOD</th>
+                                    <th>Consommation MP</th>
+                                    <th>Cout Totale</th>
+                                    <th>Resultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($revenue as  $rev)
+                                @php
+                                $resultat=(floatVal($rev->montant))- ((floatVal($rev->mod)) + (floatVal($rev->mp)));
+                                if($resultat < 0){
+                                $color="red";
+                                }else{
+                                $color="green";}
+                                @endphp
+                                <tr>
+                                    <td>{{$rev->nom_devi}}</td>
+                                    <td>{{$rev->mod}} </td>
+                                    <td>{{$rev->mp}} </td>
+                                    <td>{{(floatVal($rev->mod)) + (floatVal($rev->mp))}} DH</td>
+                                    <td><h4 style="color:{{$color}}">{{$resultat}} DH</h4></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+
+                    <h1>Table d'avancement</h1>
+                    <button id="toggleButton" onclick="toggleTable2()">Afficher/Cacher</button>
+
+                    <div class="foldable-table" id="tableContainer2">
+                    <table class="table table-striped mt-5">
                         <thead>
                             <tr>
                                 <th>Devi(s)</th>
@@ -337,12 +380,12 @@
                             @endforeach
                         </tbody>
                     </table>
-                    
+                    </div>
                     <hr>
 
                     <hr>
                     <!-- Main row -->
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xl-12">
                             @if (session()->has('success'))
                                 <div class="alert alert-success">
@@ -374,7 +417,7 @@
                                     autres tables nécessaires (Chantier, Ouvriers, Article,Service)</div>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- /.row (main row) -->
                 </div><!-- /.container-fluid -->
             </section>
@@ -394,4 +437,42 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    
+    <script>
+        function toggleTable1() {
+            const tableContainer = document.getElementById('tableContainer');
+            tableContainer.style.display = (tableContainer.style.display === 'none') ? 'block' : 'none';
+        }
+        function toggleTable2() {
+            const tableContainer = document.getElementById('tableContainer2');
+            tableContainer.style.display = (tableContainer.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+    
+    
+    <style>
+       .foldable-table {
+            display: none;
+            transition: 0.5s all ease-in;
+        }
+        #toggleButton{
+            background-color: #fff;
+            color: #444;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            width: 150px;
+
+        }
+    </style>
+
 @endsection
+
+
+
+

@@ -24,7 +24,6 @@ class Matier extends Model
         "prix",
         "designation",
         "matiere_unite",
-        "date_r",
     ];
 
     public $timestamps = false;

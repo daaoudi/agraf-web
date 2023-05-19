@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string("numero_cheque")->nullable();
             $table->string("mode_paiement");
             $table->double("montant");
-            $table->double("banque")->nullable();
+            $table->string("banque")->nullable();
             $table->unsignedBigInteger('client_id');
+            $table->date('date_reglement');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');

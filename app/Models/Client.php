@@ -25,9 +25,9 @@ class Client extends Model
     public $timestamps = false;
 
   
-    public function reglement()
+    public function reglements()
     {
-        return $this->hasOne(Reglement::class);
+        return $this->hasMany(Reglement::class);
     }
 
 }

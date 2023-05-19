@@ -50,6 +50,7 @@ class ChargeController extends Controller
             "montant_charges_matier" => "required",
             //"montant_credit" => "required",
             "mode_paiement" => "required",
+            "date_charge" => "required",
 
         ]);
         //$charge=Charge::create($request->all());
@@ -62,13 +63,18 @@ class ChargeController extends Controller
         $charge->montant_charges_matier=$request->input('montant_charges_matier');
         $charge->montant_credit=$request->input('montant_credit');
         $charge->mode_paiement=$request->input('mode_paiement');
+        $charge->date_charge=$request->input('date_charge');
+
+        if($request->mode_paiement === "crédit"){
+            $charge->montant_credit =  $request->montant_charges_matier;
+        }
+
+
         $charge->save();
         return redirect()->route('charges.index')->with('success','Charge ajouté avec succès');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Charge $charge)
     {
         return view('main.charges.showCharge',compact('charge'));
@@ -82,7 +88,7 @@ class ChargeController extends Controller
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
         $matiers=Matier::all();
-        return view('main.showCharge',compact('charge','devis','fournisseurs','matiers'));
+        return view('main.charges.editCharge',compact('charge','devis','fournisseurs','matiers'));
         }
 
     /**
@@ -96,9 +102,11 @@ class ChargeController extends Controller
             "devi_id" => "required|exists:devis,id",
             "fournisseur_id" => "required|exists:fournisseurs,id",
             "matier_id"=>"required|exists:matiers,id",
-            "montant_charge_matier" => "required",
+            "montant_charges_matier" => "required",
             //"montant_credit" => "required",
             "mode_paiement" => "required",
+            "date_charge" => "required",
+
 
         ]);
         $charge->update($request->all());

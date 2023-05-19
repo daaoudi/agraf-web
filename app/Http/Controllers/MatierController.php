@@ -45,7 +45,6 @@ class MatierController extends Controller
             'matiere_unite'=>'required',
             'qte'=>'required',
             'prix'=>'required',
-            'date_r'=>'required',
             
         ]);
 
@@ -55,7 +54,6 @@ class MatierController extends Controller
         $matier->matiere_unite=$request->input('matiere_unite');
         $matier->qte=$request->input('qte');
         $matier->prix=$request->input('prix');
-        $matier->date_r=$request->input('date_r');
         
        
 
@@ -100,7 +98,6 @@ class MatierController extends Controller
             'matiere_unite'=>'required',
             'qte'=>'required',
             'prix'=>'required',
-            'date_r'=>'required',
            
         ]);
 
@@ -110,7 +107,6 @@ class MatierController extends Controller
             'matiere_unite'=>$request->matiere_unite,
             'qte'=>$request->qte,
             'prix'=>$request->prix,
-            'date_r'=>$request->date_r,
         ]);
 
         return redirect()->route('matiers.index')->with(['success'=>'matier modifier']);

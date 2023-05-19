@@ -60,21 +60,8 @@ la modification d'un Matier : {{$matier->designation}}.
           <div class="col-md-12">
             <input type="text" name="matiere_unite" class="form-control" value="{{$matier->matiere_unite}}" placeholder="matiere_unite" required>
           </div>
-
-          <div class="col-md-12">
-            <input type="datetime-local" name="date_r" class="form-control" value="{{$matier->date_r}}" required>
-          </div>
-        
-
-        
-
-        
-
         <div class="col-md-12 text-center">
-          
-        
-         
-          <button class="btn btn-warning" type="submit">Modifier</button>
+  <button class="btn btn-warning" type="submit">Modifier</button>
         </div>
 
       </div>

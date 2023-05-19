@@ -51,8 +51,10 @@ l'ajout des charges.
             <input type="text" name="montant_charges_matier" class="form-control" placeholder="montant_charges_matier" value="{{old('montant_charges_matier')}}" >
           </div>
   
+  
           <div class="col-md-12">
-              <input type="text" name="montant_credit" class="form-control" placeholder="montant_credit par defaut 0" value="{{old('montant_credit')}}" >
+            <label for="date_charge">Date charge</label>
+              <input type="date" id="date_charge" name="date_charge" class="form-control" value="{{old('date_charge')}}" >
             </div>
   
            

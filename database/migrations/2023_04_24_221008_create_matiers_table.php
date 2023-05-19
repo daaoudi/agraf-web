@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('matiere_unite');
             $table->double('qte');
             $table->double('prix');
-            $table->dateTime('date_r');
 
             $table->timestamps();
         });
