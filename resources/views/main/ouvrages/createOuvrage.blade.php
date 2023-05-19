@@ -40,11 +40,9 @@
                     <p class="text-center">Remplir tout les champs s'il vous plait. </p>
                     <div class="row gy-3 ">
 
-                        <div class="col-md-12">
-                            <label for="designation_ouvrage">designation d'ouvrage</label>
-                            <input type="text" name="designation_ouvrage" class="form-control" value="{{ old('designation_ouvrage') }}"
-                                placeholder="Designation" required>
-                        </div>
+                        @livewire('auto-fill-component')
+
+                        
 
                         <div class="col-md-12">
                             <label for="prix unitaire">prix unitaire</label>
@@ -64,7 +62,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="devi_id">devi</label>
-                            <select name="devi_id" id="">
+                            <select name="devi_id" id="" class="form-select">
                                 <option selected disabled>Choisir le nom de devi</option>
                                 @foreach ($devis as $devi)
                                     <option value="{{$devi->id}}" @if($devi->id === old('devi_id')) selected @endif>{{$devi->nom_devi}}</option>
@@ -82,15 +80,4 @@
 
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 @endsection

@@ -55,6 +55,11 @@ Modifier les charges
           <div class="col-md-12">
               <input type="text" name="montant_credit" value="{{$charge->montant_credit}}" class="form-control" placeholder="montant_credit" >
             </div>
+
+            
+          <div class="col-md-12">
+            <input type="date" name="date_charge" class="form-control" value="{{$charge->date_charge}}" >
+          </div>
   
            
   
@@ -94,8 +99,7 @@ Modifier les charges
                 </select>
           </div>
           <div class="col-md-12">
-            <select name="matier_id" class="form-select"  >
-                
+            <select name="matier_id" class="form-select"  >    
                @foreach($matiers as $matier)
                @if($matier->id==$charge->matier_id)
                 <option selected value="{{$matier->id}}">{{$matier->designation}}</option>
@@ -109,9 +113,6 @@ Modifier les charges
           
   
           <div class="col-md-12 text-center">
-            
-          
-           
             <button class="btn btn-warning" type="submit">Valider</button>
           </div>
   

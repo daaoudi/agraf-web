@@ -20,7 +20,8 @@ class Charge extends Model
         "fournisseur_id",
         "matier_id",
         "montant_charges_matier",
-        "montant_credit"
+        "montant_credit",
+        "date_charge"
     ];
 
     public function matier()

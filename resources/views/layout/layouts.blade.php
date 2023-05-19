@@ -51,8 +51,10 @@
       'GRAD' 0,
       'opsz' 48
     }
-    </style>
 
+
+    </style>
+ @yield('style')
 </head>
 <body onload="startTime()">
 
@@ -125,6 +127,11 @@
 <!-- Page specific script -->
   <!-- Template Main JS File -->
   <script src="/storage/assets/js/main.js"></script>
+
+
+
+
+
   <script>
     // Document.onload(alert('gagagag'))
     $(function () {
@@ -142,6 +149,13 @@
         "responsive": true,
       });
     });
+
+   
+
   </script>
+
+  @yield('script')
+  @livewireScripts
+
 </body>
 </html>

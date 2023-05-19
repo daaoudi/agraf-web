@@ -39,9 +39,8 @@ l'ajout d'un Matier.
       <p class="text-center">Remplir  les Champ s'il vous plait. </p>
       <div class="row gy-3 ">
 
-        <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" placeholder="Designation" value="{{old('designation')}}" >
-        </div>
+        @livewire('auto-fill-matiers')
+
 
         <div class="col-md-12">
           <input type="text" name="type" class="form-control" value="{{old('type')}}" placeholder="Type Matier" >
@@ -59,10 +58,6 @@ l'ajout d'un Matier.
             <input type="text" name="matiere_unite" value="{{old('matiere_unite')}}" class="form-control" placeholder="matiere_unite" >
           </div>
 
-          <div class="col-md-12">
-            <input type="date" name="date_r" value="{{old('date_r')}}" class="form-control"  >
-          </div>
-        
 
         
 

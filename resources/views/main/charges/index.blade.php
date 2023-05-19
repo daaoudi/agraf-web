@@ -50,6 +50,7 @@ liste des charges
                   <th>montant_charges_matier</th>
                   <th>montant_credit</th>
                   <th>mode_paiement</th>
+                  <th>Date </th>
                   <th>Actions</th>
               </tr>
               </thead>
@@ -61,9 +62,16 @@ liste des charges
                     <td>{{$charge->matier->designation}}</td>
                     <td>{{$charge->mod}}</td>
                     <td>{{$charge->mp}}</td>
-                    <td>{{$charge->montant_charges_matier}}DH</td>
+                    <td>
+                      @if ($charge->mode_paiement==="crédit")
+                         0DH
+                        @else
+                        {{$charge->montant_charges_matier}}
+                      @endif
+                     </td>
                     <td>{{$charge->montant_credit}}DH</td>
                     <td>{{$charge->mode_paiement}}</td>
+                    <td>{{$charge->date_charge}}</td>
                     
                     <td>
                       @if(auth()->check())

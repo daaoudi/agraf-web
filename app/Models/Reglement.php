@@ -16,8 +16,9 @@ class Reglement extends Model
         "montant",
         "banque",
         "client_id",
-        "projet_id",
-        "mode_paiement"
+        "devi_id",
+        "mode_paiement",
+        "date_reglement"
     ];
 
     public function devi(){

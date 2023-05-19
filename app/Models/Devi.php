@@ -35,9 +35,9 @@ class Devi extends Model
         return $this->hasMany(PosteOuvrier::class);
     }
 
-    public function reglement(): HasOne
+    public function reglements()
     {
-        return $this->hasOne(Reglement::class);
+        return $this->hasMany(Reglement::class);
     }
     public function charges(): HasMany
     {

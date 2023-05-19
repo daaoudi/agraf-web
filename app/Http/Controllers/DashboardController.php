@@ -19,21 +19,9 @@ class DashboardController extends Controller
         $ouvriersNbr = Ouvrier::count();
         $clientNbr = Client::count();
         $fournisseursNbr = Fournisseur::count();
-
-
         $data = [];
-        // $data = DB::table('chantiers')
-        // ->join('ouvriers', "chantiers.id", "=", "ouvriers.chantier_id")
-        // ->join('ouvrages', "ouvrages.ouvrier_id", "=", "ouvriers.id")
-        // ->join('services', "ouvrages.service_id","=","services.id")
-        // ->select("chantiers.designation AS des","chantiers.*","services.*","ouvrages.*","ouvriers.*")
-        // ->get();
-
-        // $etat_global = DB::table("ouvrages")
-        // ->join('devis','ouvrages.devi_id','=','devis.id')
-        // ->get();
-
         $etat_global = null;
+
 
 $ouvrages = DB::table('ouvrages')
     ->join('devis', 'ouvrages.devi_id', '=', 'devis.id')
@@ -53,14 +41,19 @@ $ouvrages = DB::table('ouvrages')
         ];
     });
 
-        // foreach($ouvrages as $o)
-        // {
-        //     dd($o);
-        // };
-        // dd($ouvrages);
+
+    $revenue = DB::table('devis')
+    ->join('reglements','devis.id','=','reglements.devi_id')
+    ->join('charges','devis.id','=','charges.devi_id')
+    ->select('devis.nom_devi','charges.mod','charges.mp','reglements.montant')
+    ->get();
+
+   // dd($revenue);
+
+
 
         
-        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr','etat_global','ouvrages'));
+        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr','etat_global','ouvrages','revenue'));
 
     }
 }

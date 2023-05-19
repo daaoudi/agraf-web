@@ -84,7 +84,7 @@ liste des charges
                             @endif
                           </td>
                 </tr>
-                @endforeach
+          
             </table>
           </div>
           </div>
