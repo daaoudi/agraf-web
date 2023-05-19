@@ -133,7 +133,7 @@ Agrtravis - Construction Et Amenagement
           <p>
             Installation de cloisons intérieures et de faux plafonds en plâtre pour créer des espaces de vie séparés et donner un aspect élégant à votre maison.
           </p>
-          <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+          <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
 
@@ -146,7 +146,7 @@ Agrtravis - Construction Et Amenagement
           <p>
             Application de peinture pour donner de la couleur et de la personnalité à votre maison, ainsi que la protection contre les éléments.
           </p>
-          <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+          <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
 
