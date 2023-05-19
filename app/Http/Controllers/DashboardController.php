@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chantier;
+use App\Models\Devi;
 use App\Models\Client;
-use App\Models\Fournisseur;
 use App\Models\Ouvrier;
 use App\Models\Service;
+use App\Models\Chantier;
+use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,7 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $chantiersNbr = 2;
+        $chantiersNbr = Devi::count();
         $ouvriersNbr = Ouvrier::count();
         $clientNbr = Client::count();
         $fournisseursNbr = Fournisseur::count();
@@ -49,11 +50,20 @@ $ouvrages = DB::table('ouvrages')
     ->get();
 
    // dd($revenue);
+   $credit = DB::table('fournisseurs')
+   ->join('charges', 'fournisseurs.id', '=', 'charges.fournisseur_id')
+   ->select(DB::raw('SUM(charges.montant_credit) as credit_sum'), 'fournisseurs.nom', 'fournisseurs.prenom')
+   ->groupBy('fournisseurs.nom', 'fournisseurs.prenom')
+   ->get();
+
+
+
+//    dd($credit);
 
 
 
         
-        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr','etat_global','ouvrages','revenue'));
+        return view('mainDashboard',compact('data','chantiersNbr','ouvriersNbr','clientNbr','fournisseursNbr','etat_global','ouvrages','revenue','credit'));
 
     }
 }

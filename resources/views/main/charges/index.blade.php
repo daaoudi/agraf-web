@@ -64,12 +64,16 @@ liste des charges
                     <td>{{$charge->mp}}</td>
                     <td>
                       @if ($charge->mode_paiement==="crédit")
-                         0DH
+                        <span style="color:green;">0 DH</span> 
                         @else
-                        {{$charge->montant_charges_matier}}
+                        <span style="color:green;">
+                        {{$charge->montant_charges_matier}} DH
+                        </span>
+                       
                       @endif
                      </td>
-                    <td>{{$charge->montant_credit}}DH</td>
+                    <td>@php $color=""; if($charge->montant_credit > 0){$color="red";}@endphp
+                      <span style="color:{{$color}}">{{$charge->montant_credit}}DH</span></td>
                     <td>{{$charge->mode_paiement}}</td>
                     <td>{{$charge->date_charge}}</td>
                     

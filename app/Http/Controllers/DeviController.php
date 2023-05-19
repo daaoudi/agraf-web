@@ -98,7 +98,7 @@ class DeviController extends Controller
             $Docextension = $Docfile->getClientOriginalExtension();
             $Docfilename = time() . "." . $Docextension;
             $Docfile->move('uploads/devis_docs', $Docfilename);
-            unlink(public_path('uploads/devis_docs').'/'. $devi->image );
+            unlink(public_path('uploads/devis_docs').'/'. $devi->document );
             $devi->document = $Docfilename;
             
         } 

@@ -69,7 +69,7 @@
             <a href="/" class="brand-link">
                 <img src="/storage/assets/img/agraf.png" alt="AGRAF Logo" class="brand-image rounded-1 elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AGRTRAVIS</span>
+                <span class="brand-text font-weight-light">Agrtravis</span>
             </a>
 
             <!-- Sidebar -->
@@ -150,9 +150,17 @@
                         </li>
                         <li class="nav-item my-3">
                             <a href={{ route('ouvriers.index') }} class="nav-link">
-                                <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
+                                <img src="storage/icons/poste_ouvrier.png" class="mx-3" width="45px" />
                                 <p>
                                     Ouvriers
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item my-3">
+                            <a href={{ route('posteOuvriers.index') }} class="nav-link">
+                                <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
+                                <p>
+                                   Poste Ouvriers
                                 </p>
                             </a>
                         </li>
@@ -165,8 +173,8 @@
                             </a>
                         </li>
                         <li class="nav-item my-3">
-                            <a href={{ route('fournisseurs.index') }} class="nav-link">
-                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
+                            <a href={{ route('charges.index') }} class="nav-link">
+                                <img src="storage/icons/charges.png" class="mx-3" width="45px" />
                                 <p>
                                     Charges
                                 </p>
@@ -174,20 +182,13 @@
                         </li>
                         <li class="nav-item my-3">
                             <a href={{ route('reglements.index') }} class="nav-link">
-                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
+                                <img src="storage/icons/reglements.png" class="mx-3" width="45px" />
                                 <p>
                                     Réglements
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item my-3">
-                            <a href={{ route('posteOuvriers.index') }} class="nav-link">
-                                <img src="storage/icons/fournisseur.png" class="mx-3" width="45px" />
-                                <p>
-                                    Poste Ouvrier
-                                </p>
-                            </a>
-                        </li>
+    
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -230,7 +231,7 @@
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{url('/devis')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -246,7 +247,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{url('/ouvriers')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -262,7 +263,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{url('/fournisseurs')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -277,7 +278,7 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{url('/clients')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -287,10 +288,10 @@
 
                     <hr>
                     <h1>Table de revenue</h1>
-                    <button id="toggleButton" onclick="toggleTable1()">Afficher/Cacher</button>
+                    <button id="toggleButton"  onclick="toggleTable1()">Afficher/Cacher</button>
 
                     <div id="tableContainer" class="foldable-table">
-                        <table class="table table-striped table-bordered mb-5">
+                        <table class="table table-striped table-bordered table-responsive mb-5">
                             <thead>
                                 <tr>
                                     <th>Devi</th>
@@ -326,7 +327,7 @@
                     <button id="toggleButton" onclick="toggleTable2()">Afficher/Cacher</button>
 
                     <div class="foldable-table" id="tableContainer2">
-                    <table class="table table-striped mt-5">
+                    <table class="table table-striped table-bordered table-responsive mt-5">
                         <thead>
                             <tr>
                                 <th>Devi(s)</th>
@@ -381,8 +382,31 @@
                         </tbody>
                     </table>
                     </div>
-                    <hr>
 
+
+                    <hr>
+                    <h1>Table de crédit par Fournisseur</h1>
+                    <button id="toggleButton" onclick="toggleTable3()">Afficher/Cacher</button>          
+    <div id='tableContainer3' class="foldable-table">
+        <table class="table table-striped table-bordered table-responsive mt-5">
+            <thead>
+                <tr>
+                    <th>Fournisseur</th>
+                    
+                    <th>Crédit Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($credit as $row)
+                    <tr>
+                        <td>{{ $row->nom . ' '. $row->prenom }}</td>
+                       
+                        <td>{{ $row->credit_sum }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>    
+</div>
                     <hr>
                     <!-- Main row -->
                     {{-- <div class="row">
@@ -442,11 +466,15 @@
     <script>
         function toggleTable1() {
             const tableContainer = document.getElementById('tableContainer');
-            tableContainer.style.display = (tableContainer.style.display === 'none') ? 'block' : 'none';
+            tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
         }
         function toggleTable2() {
             const tableContainer = document.getElementById('tableContainer2');
-            tableContainer.style.display = (tableContainer.style.display === 'none') ? 'block' : 'none';
+            tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
+        }
+        function toggleTable3() {
+            const tableContainer = document.getElementById('tableContainer3');
+            tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
         }
     </script>
     
@@ -454,7 +482,7 @@
     <style>
        .foldable-table {
             display: none;
-            transition: 0.5s all ease-in;
+           
         }
         #toggleButton{
             background-color: #fff;
