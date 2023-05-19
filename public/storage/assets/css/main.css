@@ -973,7 +973,7 @@ section {
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(26, 25, 25, 0.6);
   padding: 15px;
 }
 
