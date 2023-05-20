@@ -39,9 +39,9 @@ class PosteOuvrier extends Model
     {
         return $this->belongsTo(Service::class);
     }
-    public function ouvrages()
+    public function ouvrage()
     {
-        return $this->hasMany(Ouvrage::class);
+        return $this->belongsTo(Ouvrage::class);
     }
 
 }

@@ -37,45 +37,46 @@
                 <form action="{{ route('ouvrages.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <h3 class="text-center">Formulaire d'ouvrage :</h3>
-                    <p class="text-center">Remplir tout les champs s'il vous plait. </p>
+                    <p class="text-center">Remplir tous les champs s'il vous plaît. </p>
                     <div class="row gy-3 ">
-
+                
                         @livewire('auto-fill-component')
-
-                        
-
+                
                         <div class="col-md-12">
-                            <label for="prix unitaire">prix unitaire</label>
-                            <input type="text" name="prix_unitaire" class="form-control"
-                                value="{{ old('prix_unitaire') }}" placeholder="Prix Unitaire" required>
+                            <label for="prix_unitaire">Prix unitaire:</label>
+                            <input type="text" name="prix_unitaire" class="form-control" value="{{ old('prix_unitaire') }}"
+                                placeholder="Prix Unitaire" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                        <label for="qte">quantité</label>
-                            <input type="text" name="qte" class="form-control" value="{{ old('qte') }}"
-                                placeholder="quantité" required>
+                            <label for="qte">Quantité:</label>
+                            <input type="text" name="qte" class="form-control" value="{{ old('qte') }}" placeholder="Quantité"
+                                required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <input type="text" name="unite" class="form-control" value="{{ old('unite') }}"
-                                placeholder="unité" required>
+                            <label for="unite">Unité:</label>
+                            <input type="text" name="unite" class="form-control" value="{{ old('unite') }}" placeholder="Unité"
+                                required>
                         </div>
+                
                         <div class="col-md-12">
-                            <label for="devi_id">devi</label>
-                            <select name="devi_id" id="" class="form-select">
-                                <option selected disabled>Choisir le nom de devi</option>
+                            <label for="devi_id">Devi:</label>
+                            <select name="devi_id" id="devi_id" class="form-select">
+                                <option selected disabled>Choisir le nom de devis</option>
                                 @foreach ($devis as $devi)
-                                    <option value="{{$devi->id}}" @if($devi->id === old('devi_id')) selected @endif>{{$devi->nom_devi}}</option>
+                                    <option value="{{ $devi->id }}" @if($devi->id === old('devi_id')) selected @endif>{{ $devi->nom_devi }}</option>
                                 @endforeach
                             </select>
                         </div>
-
+                
                         <div class="col-md-12 text-center">
                             <button class="btn btn-warning" type="submit">Valider</button>
                         </div>
-
+                
                     </div>
                 </form>
+                
             </div><!-- End Quote Form -->
 
         </div>

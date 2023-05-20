@@ -18,74 +18,66 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
     </div>
   </div>
 
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-  <button class="go-back" onclick="history.back();">
-    <span class="material-symbols-outlined">
-    arrow_back
-    </span></button>
-    <div class="row">
-        <div class="col-xl-12">
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <button class="go-back" onclick="history.back();">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+          </div>
+          <div class="card-body">
             @if (session()->has('success'))
             <div class="alert alert-success">
-             {{session()->get('success')}}
+              {{ session()->get('success') }}
             </div>
             @endif
-            
-            <table class="table table-secondary table-striped">
-                <tr>
-                    
-                    <th>designation</th>
-                    <th>prix</th>
-                    <th>type</th>
-                    <th>qte</th>
-                    <th>matiere_unite</th>
-                    <th>date_recu</th>
-                    <th>nmbr_piece_utiliser</th>
-                    <th>action</th>
-                </tr>
-              
-                <tr>
-                    
-                    <td>{{$matier->designation}}</td>
-                    <td>{{$matier->prix}}</td>
-                    <td>{{$matier->type}}</td>
-                    <td>{{$matier->qte}}</td>
-                    <td>{{$matier->matiere_unite}}</td>
-                    <td>{{$matier->date_r}}</td>
-                    <td>{{$matier->nmbr_piece_utiliser}}</td>
-                    <td>
-                      @if(auth()->check())
-                        @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('matiers.edit',$matier->id)}}"><span class="material-symbols-outlined">
-                        edit
-                        </span></a></button>
-                        <form action="{{route('matiers.destroy',$matier->id)}}" style="display: inline-block;" method="post" id="{{$matier->id}}">
-                        @csrf
-                        @method('DELETE')    
-                        </form>
-
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
-                        if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$matier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
-                        delete
-                        </span> </button>
-                        @else
-                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                        @endif
-                        @endif
-                       </td>
-                </tr>
-             
-              </table>
+  
+            <div class="card-content">
+              <div class="mb-3">
+                <strong>Designation:</strong> {{$matier->designation}}
+              </div>
+              <div class="mb-3">
+                <strong>Prix:</strong> {{$matier->prix}}
+              </div>
+              <div class="mb-3">
+                <strong>Type:</strong> {{$matier->type}}
+              </div>
+              <div class="mb-3">
+                <strong>Quantité:</strong> {{$matier->qte}}
+              </div>
+              <div class="mb-3">
+                <strong>Matière Unite:</strong> {{$matier->matiere_unite}}
+              </div>
+            </div>
+            <div class="text-right mt-4">
+              @if(auth()->check())
+              @if(auth()->user()->is_admin)
+              <button title="Modifier" class="btn btn-success">
+                <a href="{{route('matiers.edit',$matier->id)}}">
+                  <span class="material-symbols-outlined">edit</span>
+                </a>
+              </button>
+              <form action="{{route('matiers.destroy',$matier->id)}}" method="post" id="{{$matier->id}}" class="d-inline-block">
+                @csrf
+                @method('DELETE')
+                <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                      if(confirm('Êtes-vous sûr de vouloir supprimer ?'))
+                        document.getElementById('{{$matier->id}}').submit();" type="submit">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </form>
+              @else
+              <span style="color:red;">Vous n'avez pas accès à ces actions !</span>
+              @endif
+              @endif
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
-
-
-
-
+  </div>
 
 
 @endsection

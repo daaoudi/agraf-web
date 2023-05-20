@@ -17,60 +17,76 @@
 
     </div>
   </div>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <button class="go-back" onclick="history.back();">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+          </div>
+          <div class="card-body">
+            @if (session()->has('success'))
+            <div class="alert alert-success">
+              {{ session()->get('success') }}
+            </div>
+            @endif
   
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-   
-  <button class="go-back" onclick="history.back();">
-    <span class="material-symbols-outlined">
-    arrow_back
-    </span></button><div class="row">
-      
-        <div class="col-xl-12">
-            
-            
-            <table class="table table-secondary table-striped">
-                <tr>
-                   
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>cin</th>
-                    <th>action</th>
-                </tr>
-               
-                <tr>
-                   
-                    <td>{{$ouvrier->nom}}</td>
-                    <td>{{$ouvrier->prenom}}</td>
-                    <td>{{$ouvrier->telephone}}</td>
-                    <td>{{$ouvrier->cin}}</td>
-                    <td>
-                      @if(auth()->check())
-                        @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('ouvriers.edit',$ouvrier->id)}}"><span class="material-symbols-outlined">
-                        edit
-                        </span></a></button>
-                        <form action="{{route('ouvriers.destroy',$ouvrier->id)}}" style="display: inline-block;" method="post" id="{{$ouvrier->id}}">
-                        @csrf
-                        @method('DELETE')    
-                        </form>
-
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
-                        if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$ouvrier->id}}').submit();" type="submit"><span class="material-symbols-outlined">
-                        delete
-                        </span> </button>
-                        @else
-                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                        @endif
-                        @endif
-                        </td>
-                </tr>
-               
-              </table>
+            <div class="card-content">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="card-item">
+                    <span class="card-label"><strong>Nom:</strong></span>
+                    <span class="card-value">{{ $ouvrier->nom }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item">
+                    <span class="card-label"><strong>Prénom:</strong></span>
+                    <span class="card-value">{{ $ouvrier->prenom }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item">
+                    <span class="card-label"><strong>Téléphone:</strong></span>
+                    <span class="card-value">{{ $ouvrier->telephone }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item">
+                    <span class="card-label"><strong>CIN:</strong></span>
+                    <span class="card-value">{{ $ouvrier->cin }}</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="card-actions mt-4">
+                    @if (auth()->check() && auth()->user()->is_admin)
+                    <button class="btn btn-success">
+                      <a href="{{ route('ouvriers.edit', $ouvrier->id) }}"><span class="material-symbols-outlined">edit</span></a>
+                    </button>
+                    <form action="{{ route('ouvriers.destroy', $ouvrier->id) }}" style="display: inline-block;" method="post" id="{{ $ouvrier->id }}">
+                      @csrf
+                      @method('DELETE')
+                    </form>
+                    <button class="btn btn-danger" onclick="event.preventDefault();
+                      if (confirm('Êtes-vous sûr de vouloir supprimer ?'))
+                        document.getElementById('{{ $ouvrier->id }}').submit();" type="submit">
+                      <span class="material-symbols-outlined">delete</span>
+                    </button>
+                    @else
+                    <span class="text-danger">Vous n'avez pas accès à ces actions !</span>
+                    @endif
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
 
 
 

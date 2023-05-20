@@ -17,66 +17,51 @@
 
     </div>
   </div>
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-  <button class="go-back" onclick="history.back();">
-    <span class="material-symbols-outlined">
-    arrow_back
-    </span></button>
-    <div class="row">
-        <div class="col-xl-12">
-            @if (session()->has('success'))
-            <div class="alert alert-success">
-             {{session()->get('success')}}
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-secondary text-white">
+            <h5 class="card-title mb-0">Fournisseur Details</h5>
+          </div>
+          <div class="card-body">
+            <div class="card-item">
+              <span class="card-label"><strong>Nom:</strong></span>
+              <span class="card-value">{{ $fournisseur->nom }}</span>
             </div>
+            <div class="card-item">
+              <span class="card-label"><strong>Prénom:</strong></span>
+              <span class="card-value">{{ $fournisseur->prenom }}</span>
+            </div>
+            <div class="card-item">
+              <span class="card-label"><strong>Téléphone:</strong></span>
+              <span class="card-value">{{ $fournisseur->telephone }}</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            @if (auth()->check() && auth()->user()->is_admin)
+            <a href="{{ route('fournisseurs.edit', $fournisseur->id) }}" class="btn btn-primary btn-sm mr-2">
+              <span class="material-symbols-outlined">edit</span> Modifier
+            </a>
+            <form action="{{ route('fournisseurs.destroy', $fournisseur->id) }}" style="display: inline-block;" method="post" id="{{ $fournisseur->id }}">
+              @csrf
+              @method('DELETE')
+              <button title="Supprimer" class="btn btn-danger btn-sm" onclick="event.preventDefault();
+                if (confirm('Êtes-vous sûr de vouloir supprimer ?'))
+                  document.getElementById('{{ $fournisseur->id }}').submit();"
+                type="submit">
+                <span class="material-symbols-outlined">delete</span> Supprimer
+              </button>
+            </form>
+            @else
+            <span class="text-danger">Vous n'avez pas accès à ces actions !</span>
             @endif
-            
-            <table class="table table-secondary table-striped">
-                <tr>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>telephone</th>
-                    <th>montant</th>
-                    <th>montant_en_avance</th>
-                   
-                    <th>action</th>
-                </tr>
-                
-                <tr>
-                    <td>{{$fournisseur->nom}}</td>
-                    <td>{{$fournisseur->prenom}}</td>
-                    <td>{{$fournisseur->telephone}}</td>
-                    <td>{{$fournisseur->montant}}</td>
-                    <td>{{$fournisseur->montant_en_avance}}</td>
-                    
-                    <td>
-                      @if(auth()->check())
-                        @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('fournisseurs.edit',$fournisseur->id)}}"><span class="material-symbols-outlined">
-                        edit
-                        </span></a></button>
-                        <form action="{{route('fournisseurs.destroy',$fournisseur->id)}}" style="display: inline-block;" method="post" id="{{$fournisseur->id}}">
-                        @csrf
-                        @method('DELETE')    
-                        </form>
-
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
-                        if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$fournisseur->id}}').submit();" type="submit"><span class="material-symbols-outlined">
-                        delete
-                        </span> </button>
-                        @else
-                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                        @endif
-                        @endif
-
-                        </td>
-                </tr>
-               
-              </table>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
+  </div>
+  
 
 
 

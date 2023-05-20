@@ -34,38 +34,45 @@ la modification d'un Matier : {{$matier->designation}}.
           </div>
       @endif
 
-    <form action="{{route('matiers.update',$matier->id)}}" enctype="multipart/form-data"  method="post" >
+      <form action="{{ route('matiers.update', $matier->id) }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PUT')
-      <h3 class="text-center">Formulaire de Matier : {{$matier->designation}}</h3>
-    
-      <div class="row gy-3 ">
-
-        <div class="col-md-12">
-          <input type="text" name="designation" class="form-control" value="{{$matier->designation}}" placeholder="Designation" required>
-        </div>
-
-        <div class="col-md-12">
-          <input type="text" name="type" class="form-control" value="{{$matier->type}}" placeholder="Type Matier" required>
-        </div>
-
-        <div class="col-md-12">
-          <input type="text" name="prix" class="form-control" value="{{$matier->prix}}" placeholder="prix" required>
-        </div>
-
-        <div class="col-md-12">
-            <input type="text" name="qte" class="form-control" value="{{$matier->qte}}" placeholder="qte" required>
-          </div>
-
+        <h3 class="text-center">Formulaire de Matière : {{ $matier->designation }}</h3>
+      
+        <div class="row gy-3">
+      
           <div class="col-md-12">
-            <input type="text" name="matiere_unite" class="form-control" value="{{$matier->matiere_unite}}" placeholder="matiere_unite" required>
+            <label for="designation">Désignation:</label>
+            <input type="text" name="designation" class="form-control" value="{{ $matier->designation }}" id="designation" placeholder="Désignation" required>
           </div>
-        <div class="col-md-12 text-center">
-  <button class="btn btn-warning" type="submit">Modifier</button>
+      
+          <div class="col-md-12">
+            <label for="type">Type de Matière:</label>
+            <input type="text" name="type" class="form-control" value="{{ $matier->type }}" id="type" placeholder="Type de Matière" required>
+          </div>
+      
+          <div class="col-md-12">
+            <label for="prix">Prix:</label>
+            <input type="text" name="prix" class="form-control" value="{{ $matier->prix }}" id="prix" placeholder="Prix" required>
+          </div>
+      
+          <div class="col-md-12">
+            <label for="qte">Quantité:</label>
+            <input type="text" name="qte" class="form-control" value="{{ $matier->qte }}" id="qte" placeholder="Quantité" required>
+          </div>
+      
+          <div class="col-md-12">
+            <label for="matiere_unite">Unité de Matière:</label>
+            <input type="text" name="matiere_unite" class="form-control" value="{{ $matier->matiere_unite }}" id="matiere_unite" placeholder="Unité de Matière" required>
+          </div>
+      
+          <div class="col-md-12 text-center">
+            <button class="btn btn-warning" type="submit">Modifier</button>
+          </div>
+      
         </div>
-
-      </div>
-    </form>
+      </form>
+      
   </div><!-- End Quote Form -->
 
     </div>

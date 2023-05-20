@@ -42,7 +42,7 @@ liste des charges
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Devi</th>
+                  <th>Projet</th>
                   <th>fournisseur</th>
                   <th>matier</th>
                   <th>MOD</th>
@@ -60,8 +60,8 @@ liste des charges
                     <td>{{$charge->devi->nom_devi}}</td>
                     <td>{{$charge->fournisseur->nom .' ' . $charge->fournisseur->prenom}} </td>
                     <td>{{$charge->matier->designation}}</td>
-                    <td>{{$charge->mod}}</td>
-                    <td>{{$charge->mp}}</td>
+                    <td>{{$charge->mod}} DH</td>
+                    <td>{{$charge->mp}} DH</td>
                     <td>
                       @if ($charge->mode_paiement==="crédit")
                         <span style="color:green;">0 DH</span> 

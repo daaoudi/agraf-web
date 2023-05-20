@@ -46,14 +46,14 @@ $ouvrages = DB::table('ouvrages')
     $revenue = DB::table('devis')
     ->join('reglements','devis.id','=','reglements.devi_id')
     ->join('charges','devis.id','=','charges.devi_id')
-    ->select('devis.nom_devi','charges.mod','charges.mp','reglements.montant')
+    ->select('devis.nom_devi','devis.id','charges.mod','charges.mp','reglements.montant')
     ->get();
 
    // dd($revenue);
    $credit = DB::table('fournisseurs')
    ->join('charges', 'fournisseurs.id', '=', 'charges.fournisseur_id')
-   ->select(DB::raw('SUM(charges.montant_credit) as credit_sum'), 'fournisseurs.nom', 'fournisseurs.prenom')
-   ->groupBy('fournisseurs.nom', 'fournisseurs.prenom')
+   ->select(DB::raw('SUM(charges.montant_credit) as credit_sum'), 'fournisseurs.nom', 'fournisseurs.prenom','fournisseurs.id')
+   ->groupBy('fournisseurs.nom', 'fournisseurs.prenom','fournisseurs.id')
    ->get();
 
 

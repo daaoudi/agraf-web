@@ -19,7 +19,6 @@ class Ouvrage extends Model
         "qte",
         "etat",
         "unite",
-        "poste_ouvrier_id",
         "devi_id"
     ];
 
@@ -29,6 +28,6 @@ class Ouvrage extends Model
     }
     public function poste_ouvrier()
     {
-        return $this->belongsTo(PosteOuvrier::class);
+        return $this->hasMany(PosteOuvrier::class);
     }
 }

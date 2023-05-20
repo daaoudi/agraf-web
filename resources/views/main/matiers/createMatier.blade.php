@@ -33,48 +33,41 @@ l'ajout d'un Matier.
           </div>
       @endif
 
-    <form action="{{route('matiers.store')}}" enctype="multipart/form-data"  method="post" >
-      @csrf
-      <h3 class="text-center">Formulaire de Matier :</h3>
-      <p class="text-center">Remplir  les Champ s'il vous plait. </p>
-      <div class="row gy-3 ">
-
-        @livewire('auto-fill-matiers')
-
-
-        <div class="col-md-12">
-          <input type="text" name="type" class="form-control" value="{{old('type')}}" placeholder="Type Matier" >
-        </div>
-
-        <div class="col-md-12">
-          <input type="text" name="prix" class="form-control" value="{{old('prix')}}" placeholder="prix" >
-        </div>
-
-        <div class="col-md-12">
-            <input type="text" name="qte" class="form-control" value="{{old('qte')}}" placeholder="qte" >
-          </div>
-
+      <form action="{{ route('matiers.store') }}" enctype="multipart/form-data" method="post">
+        @csrf
+        <h3 class="text-center">Formulaire de Matière :</h3>
+        <p class="text-center">Veuillez remplir tous les champs, s'il vous plaît.</p>
+        <div class="row gy-3">
+      
+          @livewire('auto-fill-matiers')
+      
           <div class="col-md-12">
-            <input type="text" name="matiere_unite" value="{{old('matiere_unite')}}" class="form-control" placeholder="matiere_unite" >
+            <label for="type">Type de Matière:</label>
+            <input type="text" name="type" class="form-control" value="{{ old('type') }}" id="type" placeholder="Type de Matière">
           </div>
-
-
-        
-
-     
-       
-
-        
-
-        <div class="col-md-12 text-center">
-          
-        
-         
-          <button class="btn btn-warning" type="submit">Valider</button>
+      
+          <div class="col-md-12">
+            <label for="prix">Prix:</label>
+            <input type="text" name="prix" class="form-control" value="{{ old('prix') }}" id="prix" placeholder="Prix">
+          </div>
+      
+          <div class="col-md-12">
+            <label for="qte">Quantité:</label>
+            <input type="text" name="qte" class="form-control" value="{{ old('qte') }}" id="qte" placeholder="Quantité">
+          </div>
+      
+          <div class="col-md-12">
+            <label for="matiere_unite">Unité de Matière:</label>
+            <input type="text" name="matiere_unite" class="form-control" value="{{ old('matiere_unite') }}" id="matiere_unite" placeholder="Unité de Matière">
+          </div>
+      
+          <div class="col-md-12 text-center">
+            <button class="btn btn-warning" type="submit">Valider</button>
+          </div>
+      
         </div>
-
-      </div>
-    </form>
+      </form>
+      
   </div><!-- End Quote Form -->
 
     </div>

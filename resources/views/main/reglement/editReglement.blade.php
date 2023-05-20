@@ -33,85 +33,78 @@ Edit de reglement.
             </div>
         @endif
   
-      <form action="{{route('reglements.update',$reglement->id)}}" enctype="multipart/form-data"  method="post" >
-        @csrf
-        @method('PUT')
-        <h3 class="text-center">Formulaire des reglements :</h3>
-        <p class="text-center">Modifier  les Champ s'il vous plait. </p>
-        <div class="row gy-3 ">
-  
-          <div class="col-md-12">
-            <input type="text" name="numero_cheque" value="{{$reglement->numero_cheque}} " class="form-control" placeholder="numero_cheque" >
+        <form action="{{ route('reglements.update', $reglement->id) }}" enctype="multipart/form-data" method="post">
+          @csrf
+          @method('PUT')
+          <h3 class="text-center">Formulaire des règlements :</h3>
+          <p class="text-center">Modifier tous les champs s'il vous plaît.</p>
+          <div class="row gy-3 ">
+      
+              <div class="col-md-12">
+                  <label for="numero_cheque">Numéro de chèque:</label>
+                  <input type="text" name="numero_cheque" value="{{ $reglement->numero_cheque }}" class="form-control"
+                      placeholder="Numéro de chèque">
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="montant">Montant:</label>
+                  <input type="text" name="montant" value="{{ $reglement->montant }}" class="form-control" placeholder="Montant">
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="banque">Banque:</label>
+                  <input type="text" name="banque" value="{{ $reglement->banque }}" class="form-control" placeholder="Banque">
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="date_reglement">Date de règlement:</label>
+                  <input type="date" name="date_reglement" value="{{ $reglement->date_reglement }}" id="date_reglement"
+                      class="form-control">
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="mode_paiement">Mode de paiement:</label>
+                  <select name="mode_paiement" class="form-select">
+                      <option selected disabled>Choisir le mode de paiement</option>
+                      <option value="cheque" @if($reglement->mode_paiement === 'cheque') selected @endif>Chèque</option>
+                      <option value="crédit" @if($reglement->mode_paiement === 'crédit') selected @endif>Crédit</option>
+                      <option value="espece" @if($reglement->mode_paiement === 'espece') selected @endif>Espèce</option>
+                  </select>
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="devi_id">Devis:</label>
+                  <select name="devi_id" class="form-select">
+                      @foreach ($devis as $devi)
+                          @if ($devi->id == $reglement->devi_id)
+                              <option value="{{ $devi->id }}" selected>{{ $devi->nom_devi }}</option>
+                          @else
+                              <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
+                          @endif
+                      @endforeach
+                  </select>
+              </div>
+      
+              <div class="col-md-12">
+                  <label for="client_id">Client:</label>
+                  <select name="client_id" class="form-select">
+                      @foreach ($clients as $client)
+                          @if ($client->id == $reglement->client_id)
+                              <option value="{{ $client->id }}" selected>{{ $client->nom }}</option>
+                          @else
+                              <option value="{{ $client->id }}">{{ $client->nom }}</option>
+                          @endif
+                      @endforeach
+                  </select>
+              </div>
+      
+              <div class="col-md-12 text-center">
+                  <button class="btn btn-warning" type="submit">Modifier</button>
+              </div>
+      
           </div>
-  
-          <div class="col-md-12">
-            <input type="text" name="montant" value="{{$reglement->montant}} " class="form-control" placeholder="montant"  >
-          </div>
-  
-          <div class="col-md-12">
-            <input type="text" name="banque" value="{{$reglement->banque}} " class="form-control" placeholder="banque"  >
-          </div>
-  
-          <div class="col-md-12">
-            <label for="date_reglement">date réglement</label>
-            <input type="date" name="date_reglement" value="{{$reglement->date_reglement}} " id="date_reglement" class="form-control"   >
-          </div>
-  
-  
-           
-  
-            <div class="col-md-12">
-                <select name="mode_paiement" class="form-select"  >
-                    <option value="{{$reglement->mode_paiement}}" selected>{{$reglement->mode_paiement}}</option>
-                    <option value="cheque">cheque</option>
-                    <option value="crédit">crédit</option>
-                    <option value="espece">espece</option>
-                </select>
-            </div>
-          
-  
-          <div class="col-md-12">
-              <select name="devi_id" class="form-select"  >
-                @foreach($devis as $devi)
-                @if ($devi->id==$reglement->devi_id)
-                     <option value="{{$devi->id}}" selected>{{$devi->nom_devi}}</option>
-                     @else
-                       <option value="{{$devi->id}}">{{$devi->nom_devi}}</option> 
-                @endif
-                 
-                
-                  
-                  @endforeach
-                </select>
-          </div>
-  
-         
-          <div class="col-md-12">
-            <select name="client_id" class="form-select"  >
-                @foreach($clients as $client)
-                @if ($client->id==$reglement->client_id)
-                <option value="{{$client->id}}" selected>{{$client->nom}}</option>
-                @else 
-                  <option value="{{$client->id}}">{{$client->nom}}</option>
-                @endif
-           
-             
-              
-                @endforeach
-              </select>
-        </div>
-  
-          
-  
-          <div class="col-md-12 text-center">
-            
-          
-           
-            <button class="btn btn-warning" type="submit">Modifier</button>
-          </div>
-  
-        </div>
       </form>
+      
     </div><!-- End Quote Form -->
   
       </div>

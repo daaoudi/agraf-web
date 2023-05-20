@@ -1,6 +1,6 @@
 @extends('layout.layouts')
 @section('title')
-    l'ajout d'un Ouvrier.
+    l'ajout d'un poste Ouvrier.
 @endsection
 
 @section('content')
@@ -36,82 +36,82 @@
                 <form action="{{ route('posteOuvriers.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <h3 class="text-center">Formulaire de Poste Ouvrier :</h3>
-                    <p class="text-center">Remplir tout les Champs s'il vous plait. </p>
+                    <p class="text-center">Remplir tous les champs s'il vous plaît.</p>
                     <div class="row gy-3 ">
-
+                
                         <div class="col-md-12">
-                            <label for="devi_id">Projet : </label>
+                            <label for="devi_id">Projet :</label>
                             <select name="devi_id" class="form-select" required>
-                                <option selected>Choisir le projet (devi) : </option>
+                                <option selected disabled>Choisir le projet (devi) :</option>
                                 @foreach ($devis as $devi)
                                     <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
                                 @endforeach
                             </select>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <label for="ouvrier_id">ouvrier : </label>
+                            <label for="ouvrier_id">Ouvrier :</label>
                             <select name="ouvrier_id" class="form-select" required>
-                                <option selected>Choisir l'ouvrier : </option>
+                                <option selected disabled>Choisir l'ouvrier :</option>
                                 @foreach ($ouvriers as $ouvrier)
-                                    <option value="{{ $ouvrier->id }}">{{ $ouvrier->nom . ' ' . $ouvrier->prenom }}
-                                    </option>
+                                    <option value="{{ $ouvrier->id }}">{{ $ouvrier->nom . ' ' . $ouvrier->prenom }}</option>
                                 @endforeach
                             </select>
                         </div>
-
-
+                
+                
                         <div class="col-md-12">
-                            <label for="service_id">Service : </label>
+                            <label for="service_id">Service :</label>
                             <select name="service_id" class="form-select" required>
-                                <option selected>Choisir le nom de Service</option>
+                                <option selected disabled>Choisir le nom du Service</option>
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id }}">{{ $service->nom_service }}</option>
                                 @endforeach
                             </select>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <label for="ouvrage_id">Ouvrage : </label>
+                            <label for="ouvrage_id">Ouvrage :</label>
                             <select name="ouvrage_id" class="form-select" required>
-                                <option selected>Choisir le nom d'ouvrage</option>
+                                <option selected disabled>Choisir le nom de l'ouvrage</option>
                                 @foreach ($ouvrages as $ouvrage)
                                     <option value="{{ $ouvrage->id }}">{{ $ouvrage->designation_ouvrage }}</option>
                                 @endforeach
                             </select>
                         </div>
-
-
+                
+                
                         <div class="col-md-12">
-                            <label for="poste ouvrier">Poste d'ouvrier : </label>
-                            <input type="text" name="poste ouvrier" class="form-control" placeholder="poste ouvrier"
-                                required>
+                            <label for="poste_ouvrier">Poste d'ouvrier :</label>
+                            <input type="text" name="poste_ouvrier" class="form-control" placeholder="Poste d'ouvrier" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <input type="text" name="type" class="form-control" placeholder="type" required>
+                            <label for="type">Type :</label>
+                            <input type="text" name="type" class="form-control" placeholder="Type" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <label for="salaire">salaire</label>
-                            <input type="text" name="salaire" class="form-control" placeholder="salaire" required>
+                            <label for="salaire">Salaire :</label>
+                            <input type="text" name="salaire" class="form-control" placeholder="Salaire" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <label for="date_debut">Date de début : </label>
-                            <input type="date" name="date_debut" class="form-control" placeholder="date_debut" required>
+                            <label for="date_debut">Date de début :</label>
+                            <input type="date" name="date_debut" class="form-control" placeholder="Date de début" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <label for="date_fin">Date de Fin : </label>
-                            <input type="date" name="date_fin" class="form-control" placeholder="date_fin" required>
+                            <label for="date_fin">Date de Fin :</label>
+                            <input type="date" name="date_fin" class="form-control" placeholder="Date de fin" required>
                         </div>
-
+                
                         <div class="col-md-12 text-center">
                             <button class="btn btn-warning" type="submit">Valider</button>
                         </div>
                     </div>
                 </form>
+                
             </div><!-- End Quote Form -->
 
         </div>

@@ -39,40 +39,35 @@
                     @csrf
                     @method('PUT')
                     <h3 class="text-center text-dark">Formulaire de client: {{ $client->nom }} </h3>
-
-                    <div class="row gy-3 ">
-
-                        <div class="col-md-12">
-                            <input type="text" name="nom" value="{{ $client->nom }}" class="form-control"
-                                placeholder="Nom" required>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input type="text" name="prenom" value="{{ $client->prenom }}" class="form-control"
-                                placeholder="Prenom" required>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input type="text" name="telephone" value="{{ $client->telephone }}" class="form-control"
-                                placeholder="Telephone" required>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input type="email" class="form-control" value="{{ $client->email }}" name="email"
-                                placeholder="Email">
-                        </div>
-
-
-
-                        <div class="col-md-12 text-center">
-
-
-
-                            <button class="btn btn-warning" type="submit">Modifier</button>
-                        </div>
-
+                    <div class="row gy-3">
+                  
+                      <div class="col-md-12">
+                        <label for="nom">Nom:</label>
+                        <input type="text" name="nom" value="{{ $client->nom }}" id="nom" class="form-control" placeholder="Nom" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" name="prenom" value="{{ $client->prenom }}" id="prenom" class="form-control" placeholder="Prénom" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="telephone">Téléphone:</label>
+                        <input type="text" name="telephone" value="{{ $client->telephone }}" id="telephone" class="form-control" placeholder="Téléphone" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" value="{{ $client->email }}" id="email" class="form-control" placeholder="Email">
+                      </div>
+                  
+                      <div class="col-md-12 text-center">
+                        <button class="btn btn-warning" type="submit">Modifier</button>
+                      </div>
+                  
                     </div>
-                </form>
+                  </form>
+                  
 
             </div>
 

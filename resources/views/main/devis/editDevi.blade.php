@@ -34,44 +34,48 @@
                 <form action="{{ route('devis.update', $devi->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
-                    <h3 class="text-center text-dark">Formulaire de devi: </h3>
+                    <h3 class="text-center text-dark">Formulaire de devis:</h3>
                     <button class="go-back" onclick="history.back();">
-                        <span class="material-symbols-outlined">
-                        arrow_back
-                        </span></button>
-                    <div class="row gy-3 ">
-
-                        <div class="col-md-12">
-                            <p>Devi (facultative) : </p>
-                          <input type="file" name="doc" class="form-control">
-                        </div>
-                
-                        <br><hr><br>
-                
-
-                        <div class="col-md-12">
-                            <input type="text" name="nom_devi" class="form-control" value="{{$devi->nom_devi}}" required>
-                          </div>
+                      <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <div class="row gy-3">
                   
-                          <div class="col-md-12">
-                            <input type="date" name="date_devi" class="form-control" value={{$devi->date_devi}} required>
-                          </div>
-                  
-                          <div class="col-md-12">
-                            <input type="text" name="numero_devi" class="form-control" value="{{$devi->numero_devi}}" required>
-                          </div>
-                  
-                          <div class="col-md-12">
-                            <input type="text" name="totale" class="form-control" value={{$devi->totale}} required>
-                          </div>
-                  
-                
-                        <div class="col-md-12 text-center">
-                          <button class="btn btn-warning" type="submit">Valider</button>
-                        </div>
-                
+                      <div class="col-md-12">
+                        <label for="doc">Devis (facultatif):</label>
+                        <input type="file" name="doc" id="doc" class="form-control">
                       </div>
-                </form>
+                  
+                      <br>
+                      <hr>
+                      <br>
+                  
+                      <div class="col-md-12">
+                        <label for="nom_devi">Nom de devis:</label>
+                        <input type="text" name="nom_devi" id="nom_devi" class="form-control" value="{{ $devi->nom_devi }}" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="date_devi">Date de devis:</label>
+                        <input type="date" name="date_devi" id="date_devi" class="form-control" value="{{ $devi->date_devi }}" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="numero_devi">Numéro de devis:</label>
+                        <input type="text" name="numero_devi" id="numero_devi" class="form-control" value="{{ $devi->numero_devi }}" required>
+                      </div>
+                  
+                      <div class="col-md-12">
+                        <label for="totale">Totale TTC:</label>
+                        <input type="text" name="totale" id="totale" class="form-control" value="{{ $devi->totale }}" required>
+                      </div>
+                  
+                      <div class="col-md-12 text-center">
+                        <button class="btn btn-warning" type="submit">Valider</button>
+                      </div>
+                  
+                    </div>
+                  </form>
+                  
 
             </div>
 

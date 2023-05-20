@@ -13,68 +13,74 @@
 
     </div>
   </div>
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-    <button class="go-back" onclick="history.back();">
-        <span class="material-symbols-outlined">
-        arrow_back
-        </span></button>
-    <div class="row">
-        <div class="col-xl-12">
-            @if (session()->has('success'))
-            <div class="alert alert-success">
-             {{session()->get('success')}}
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-content">
+              <button class="go-back" onclick="history.back();">
+                <span class="material-symbols-outlined">arrow_back</span>
+              </button>
+              @if (session()->has('success'))
+              <div class="alert alert-success">
+                {{ session()->get('success') }}
+              </div>
+              @endif
+  
+              <div class="row mt-4">
+                <div class="col-md-12">
+                  <div class="card-item">
+                    <span class="card-label"><strong>Nom de devi:</strong></span>
+                    <span class="card-value">{{ $devi->nom_devi }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item mt-3">
+                    <span class="card-label"><strong>Numero de devi:</strong></span>
+                    <span class="card-value">{{ $devi->numero_devi }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item mt-3">
+                    <span class="card-label"><strong>Date de devi:</strong></span>
+                    <span class="card-value">{{ $devi->date_devi }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-item mt-3">
+                    <span class="card-label"><strong>Totle TTC :</strong></span>
+                    <span class="card-value">{{ $devi->totale }}</span>
+                  </div>
+                </div>  
+                <div class="col-md-12">
+                  <div class="card-actions mt-4">
+                    @if (auth()->check() && auth()->user()->is_admin)
+                    <button class="btn btn-success">
+                      <a href="{{ route('devis.edit', $devi->id) }}"><span class="material-symbols-outlined">edit</span></a>
+                    </button>
+                    <form action="{{ route('devis.destroy', $devi->id) }}" style="display: inline-block;" method="post" id="{{ $devi->id }}">
+                      @csrf
+                      @method('DELETE')
+                    </form>
+                    <button class="btn btn-danger" onclick="event.preventDefault();
+                      if (confirm('Êtes-vous sûr de vouloir supprimer ?'))
+                        document.getElementById('{{ $devi->id }}').submit();" type="submit">
+                      <span class="material-symbols-outlined">delete</span>
+                    </button>
+                    @else
+                    <span class="text-danger">Vous n'avez pas accès à ces actions !</span>
+                    @endif
+                  </div>
+                </div>
+              </div>
             </div>
-            @endif
-            
-            <table class="table table-secondary table-striped">
-                <tr>
-                    <th>Designation</th>
-                    <th>Qte</th>
-                    <th>Unité</th>
-                    <th>Prix HT</th>
-                    <th>Taux d'avancement</th>
-                    <th>Total HT</th>
-                    <th>Actions</th>
-                </tr>
-                
-
-              <tr>
-                    <td>{{$devi->designation_ouvrages}}</td>
-                    <td>{{$devi->qte}}</td>
-                    <td>{{$devi->unite}}</td>
-                    <td>{{$devi->prix_unitaire}}</td>
-                    <td>{{$devi->taux_avancement}}%</td>
-                    <td>{{$devi->totale_HT}}DH</td>
-                    <td>
-                      @if(auth()->check())
-                        @if(auth()->user()->is_admin)
-                      <button title="Modifier" style="color:whitesmoke;" class="btn btn-warning"><a href="{{route('devis.edit',$devi->id)}}"><span class="material-symbols-outlined">
-                        edit
-                        </span></a></button>
-                        <form action="{{route('devis.destroy',$devi->id)}}" style="display: inline-block;" method="post" id="{{$devi->id}}">
-                        @csrf
-                        @method('DELETE')    
-                        </form>
-
-                        <button title="Supprimer" class="btn btn-danger" 
-                        onclick="event.preventDefault();
-                        if(confirm('vous êtes sure pour la suppression ?'))
-                        document.getElementById('{{$devi->id}}').submit();" type="submit">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span> </button>
-                        @else
-                        <span style="color:red;"> vous n'êtes pas l'accès pour les actions !</span>
-                        @endif
-                        @endif
-                        
-                        </td>
-                </tr>
-               
-              </table>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
 
 
 

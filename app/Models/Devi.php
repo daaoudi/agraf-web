@@ -18,7 +18,6 @@ class Devi extends Model
     protected $fillable = [
         "id",
         "nom_devi",
-        "ville",
         "date_devi",
         "devi_numero",
        "totale",

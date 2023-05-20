@@ -36,6 +36,7 @@
                         <th>Date de devi</th>
                         <th>Numero de devi </th>
                         <th>Totale TTC </th>
+                        <th>PDF</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -46,17 +47,24 @@
                             <td>{{ $devi->date_devi }}</td>
                             <td>{{ $devi->numero_devi }}</td>
                             <td>{{ $devi->totale }} DH</td>
-                            <td>
+                            <td style="text-align: center;">
+                                @if(!empty($devi->document))
+                                <img src="storage/icons/download.png" class="mx-3" width="25px" />
+                                <a style="color:tomato;" href="{{ asset('/uploads/devis_docs/' . $devi->document) }}" download>Download Document</a>
+                                @else
+                                    il n'a pas de document
+                                @endif
+                            </td>
+                                                        <td>
                                 @if (auth()->check())
                                     @if (auth()->user()->is_admin)
                                         <button title="Modifier" class="btn btn-warning"><a
                                                 href="{{ route('devis.edit', $devi->id) }}"><span
-                                                    class="material-symbols-outlined"
-                                                    style="color:whitesmoke;" >
+                                                    class="material-symbols-outlined" style="color:whitesmoke;">
                                                     edit
                                                 </span></a></button>
-                                        <form action="{{ route('devis.destroy', $devi->id) }}" style="display: inline-block;"
-                                            method="post" id="{{ $devi->id }}">
+                                        <form action="{{ route('devis.destroy', $devi->id) }}"
+                                            style="display: inline-block;" method="post" id="{{ $devi->id }}">
                                             @csrf
                                             @method('DELETE')
                                         </form>

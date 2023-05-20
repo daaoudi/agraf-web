@@ -75,7 +75,7 @@ class PosteOuvrierController extends Controller
      */
     public function show(PosteOuvrier $posteOuvrier)
     {
-        return view('main.showPosteOuvrier',compact('posteOuvrier'));
+        return view('main.poste_ouvriers.showPosteOuvrier',compact('posteOuvrier'));
     }
 
     /**
@@ -86,7 +86,8 @@ class PosteOuvrierController extends Controller
         $devis=Devi::all();
         $ouvriers=Ouvrier::all();
         $services=Service::all();
-        return view('main.showPosteOuvrier',compact('posteOuvrier','devis','ouvriers','services'));
+        $ouvrages = Ouvrage::all();
+        return view('main.poste_ouvriers.editPostOuvrier',compact('posteOuvrier','devis','ouvriers','services','ouvrages'));
     }
 
     /**
@@ -113,7 +114,7 @@ class PosteOuvrierController extends Controller
         $posteOuvrier->service_id=$request->input('service_id');
         $posteOuvrier->type=$request->input('type');
         $posteOuvrier->update();
-        return redirect()->route('posteOuvrier.index')->with(['success'=>'posteOuvrier modifier']);
+        return redirect()->route('posteOuvriers.index')->with(['success'=>'posteOuvrier modifier']);
     }
 
     /**
@@ -123,6 +124,6 @@ class PosteOuvrierController extends Controller
     {
         //
         $posteOuvrier->delete();
-        return redirect()->route('posteOuvrier.index')->with(['success'=>'posteOuvrier supprimer']);
+        return redirect()->route('posteOuvriers.index')->with(['success'=>'posteOuvrier supprimer']);
     }
 }

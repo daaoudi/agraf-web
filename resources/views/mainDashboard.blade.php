@@ -228,9 +228,7 @@
                                     <h3>{{ $chantiersNbr }}</h3>
                                     <p>Projets</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
+                
                                 <a href="{{url('/devis')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -244,9 +242,7 @@
 
                                     <p>Ouvriers</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
+                     
                                 <a href="{{url('/ouvriers')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -260,9 +256,7 @@
 
                                     <p>Fournisseurs</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
+                
                                 <a href="{{url('/fournisseurs')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -275,9 +269,7 @@
                                     <h3>{{ $clientNbr }}</h3>
                                     <p>Clients</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
+                 
                                 <a href="{{url('/clients')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -311,7 +303,7 @@
                                 $color="green";}
                                 @endphp
                                 <tr>
-                                    <td>{{$rev->nom_devi}}</td>
+                                    <td><a href="{{ route('devis.show', $rev->id) }}">{{$rev->nom_devi}}</a></td>
                                     <td>{{$rev->mod}} </td>
                                     <td>{{$rev->mp}} </td>
                                     <td>{{(floatVal($rev->mod)) + (floatVal($rev->mp))}} DH</td>
@@ -387,21 +379,20 @@
                     <hr>
                     <h1>Table de crédit par Fournisseur</h1>
                     <button id="toggleButton" onclick="toggleTable3()">Afficher/Cacher</button>          
-    <div id='tableContainer3' class="foldable-table">
-        <table class="table table-striped table-bordered table-responsive mt-5">
+    <div id='tableContainer3' class="foldable-table table-responsive">
+        <table class="table table-striped table-bordered mt-5">
             <thead>
                 <tr>
                     <th>Fournisseur</th>
-                    
                     <th>Crédit Total</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($credit as $row)
                     <tr>
-                        <td>{{ $row->nom . ' '. $row->prenom }}</td>
+                        <td><a href="{{ route('fournisseurs.show', $row->id) }}">{{ $row->nom . ' '. $row->prenom }}</a></td>
                        
-                        <td>{{ $row->credit_sum }}</td>
+                        <td>{{ $row->credit_sum }} DH</td>
                     </tr>
                 @endforeach
             </tbody>

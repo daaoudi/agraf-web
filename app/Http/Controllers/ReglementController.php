@@ -65,7 +65,7 @@ class ReglementController extends Controller
      */
     public function show(Reglement $reglement)
     {
-        return view('main.reglements.showReglement',compact('reglement'));
+        return view('main.reglement.showReglement',compact('reglement'));
     }
 
     /**

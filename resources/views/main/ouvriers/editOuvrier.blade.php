@@ -33,35 +33,38 @@ la modification d'un Ouvrier : {{$ouvrier->nom . ' ' . $ouvrier->prenom}}.
           </div>
       @endif
 
-    <form action="{{route('ouvriers.update',$ouvrier->id)}}" enctype="multipart/form-data"  method="post" >
-      @csrf
-      @method('PUT')
-      <h3 class="text-center">Formulaire de l'Ouvrier : {{$ouvrier->nom . ' ' . $ouvrier->prenom}}</h3>
-      <p class="text-center">Modifier les Champs . </p>
-      <div class="row gy-3 ">
-
-        <div class="col-md-12">
-          <input type="text" name="nom" value="{{$ouvrier->nom}}" class="form-control" placeholder="Nom" required>
+      <form action="{{ route('ouvriers.update', $ouvrier->id) }}" enctype="multipart/form-data" method="post">
+        @csrf
+        @method('PUT')
+        <h3 class="text-center">Formulaire de l'Ouvrier : {{$ouvrier->nom . ' ' . $ouvrier->prenom}}</h3>
+        <p class="text-center">Modifier les champs.</p>
+        <div class="row gy-3">
+            <div class="col-md-12">
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" value="{{ $ouvrier->nom }}" class="form-control" placeholder="Nom" required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" value="{{ $ouvrier->prenom }}" class="form-control" placeholder="Prénom" required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="telephone">Téléphone :</label>
+                <input type="text" name="telephone" value="{{ $ouvrier->telephone }}" class="form-control" placeholder="Téléphone" required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="cin">CIN :</label>
+                <input type="text" name="cin" value="{{ $ouvrier->cin }}" class="form-control" placeholder="CIN" required>
+            </div>
+    
+            <div class="col-md-12 text-center">
+                <button class="btn btn-warning" type="submit">Modifier</button>
+            </div>
         </div>
-
-        <div class="col-md-12">
-          <input type="text" name="prenom" value="{{$ouvrier->prenom}}" class="form-control" placeholder="Prenom" required>
-        </div>
-
-        <div class="col-md-12">
-          <input type="text" name="telephone" value="{{$ouvrier->telephone}}" class="form-control" placeholder="Telephone" required>
-        </div>
-
-        <div class="col-md-12">
-            <input type="text" name="cin" value="{{$ouvrier->cin}}" class="form-control" placeholder="CIN" required>
-          </div>
-
-        <div class="col-md-12 text-center">   
-          <button class="btn btn-warning" type="submit">Modifier</button>
-        </div>
-
-      </div>
     </form>
+    
   </div>
 
     </div>

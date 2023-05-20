@@ -68,6 +68,10 @@ class ChargeController extends Controller
         if($request->mode_paiement === "crédit"){
             $charge->montant_credit =  $request->montant_charges_matier;
         }
+        else{
+            $charge->montant_credit =  0;
+  
+        }
 
 
         $charge->save();
@@ -109,6 +113,13 @@ class ChargeController extends Controller
 
 
         ]);
+        if($request->mode_paiement === "crédit"){
+            $charge->montant_credit =  $request->montant_charges_matier;
+        }
+        else{
+            $charge->montant_credit =  0;
+  
+        }
         $charge->update($request->all());
         return redirect()->route('charges.index')->with('success','Charge modifié avec succès');
     

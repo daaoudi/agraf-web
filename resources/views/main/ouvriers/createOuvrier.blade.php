@@ -36,31 +36,34 @@
                 <form action="{{ route('ouvriers.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <h3 class="text-center">Formulaire de Ouvrier :</h3>
-                    <p class="text-center">Remplir tout les Champs s'il vous plait. </p>
+                    <p class="text-center">Remplir tous les champs s'il vous plaît.</p>
                     <div class="row gy-3 ">
-
                         <div class="col-md-12">
+                            <label for="nom">Nom :</label>
                             <input type="text" name="nom" class="form-control" placeholder="Nom" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <input type="text" name="prenom" class="form-control" placeholder="Prenom" required>
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" class="form-control" placeholder="Prénom" required>
                         </div>
-
+                
                         <div class="col-md-12">
-                            <input type="text" name="telephone" class="form-control" placeholder="Telephone" required>
+                            <label for="telephone">Téléphone :</label>
+                            <input type="text" name="telephone" class="form-control" placeholder="Téléphone" required>
                         </div>
-
+                
                         <div class="col-md-12">
+                            <label for="cin">CIN :</label>
                             <input type="text" name="cin" class="form-control" placeholder="CIN" required>
                         </div>
-
+                
                         <div class="col-md-12 text-center">
                             <button class="btn btn-warning" type="submit">Valider</button>
                         </div>
-
                     </div>
                 </form>
+                
             </div><!-- End Quote Form -->
 
         </div>

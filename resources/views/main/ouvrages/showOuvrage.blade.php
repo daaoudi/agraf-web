@@ -18,72 +18,59 @@
     </div>
   </div>
   
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
-   
-  <button class="go-back" onclick="history.back();">
-    <span class="material-symbols-outlined">
-    arrow_back
-    </span></button><div class="row">
-      
-        <div class="col-xl-12">
-            
-            
-            <div class="card text-dark bg-white mx-auto" style="max-width: 600px;">
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="card">
                 <div class="card-header bg-secondary text-white">
-                  <h5 class="card-title mb-0">Ouvrage Details</h5>
+                    <h5 class="card-title mb-0">Ouvrage Details</h5>
                 </div>
                 <div class="card-body">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <strong>Devi:</strong> {{$ouvrage->devi->nom_devi}}
-                    </li>
-                    <li class="list-group-item">
-                      <strong>Designation d'ouvrage:</strong> {{$ouvrage->designation_ouvrage}}
-                    </li>
-                    <li class="list-group-item">
-                      <strong>Prix:</strong> {{$ouvrage->prix}}
-                    </li>
-                    <li class="list-group-item">
-                      <strong>Quantité:</strong> {{$ouvrage->qte}}
-                    </li>
-                    <li class="list-group-item">
-                      <strong>Unité:</strong> {{$ouvrage->unite}}
-                    </li>
-                  </ul>
+                    <div class="card-item">
+                        <span class="card-label"><strong>Devi:</strong></span>
+                        <span class="card-value">{{$ouvrage->devi->nom_devi}}</span>
+                    </div>
+                    <div class="card-item">
+                        <span class="card-label"><strong>Designation d'ouvrage:</strong></span>
+                        <span class="card-value">{{$ouvrage->designation_ouvrage}}</span>
+                    </div>
+                    <div class="card-item">
+                        <span class="card-label"><strong>Prix:</strong></span>
+                        <span class="card-value">{{$ouvrage->prix}}</span>
+                    </div>
+                    <div class="card-item">
+                        <span class="card-label"><strong>Quantité:</strong></span>
+                        <span class="card-value">{{$ouvrage->qte}}</span>
+                    </div>
+                    <div class="card-item">
+                        <span class="card-label"><strong>Unité:</strong></span>
+                        <span class="card-value">{{$ouvrage->unite}}</span>
+                    </div>
                 </div>
                 @if(auth()->check() && auth()->user()->is_admin)
-                  <div class="card-footer bg-secondary">
-                    <button class="btn btn-success" title="Modifier">
-                      <a href="{{route('ouvrages.edit',$ouvrage->id)}}" class="text-white">
-                        <span class="material-symbols-outlined">edit</span>
-                      </a>
-                    </button>
+                <div class="card-footer bg-secondary">
+                    <a href="{{route('ouvrages.edit',$ouvrage->id)}}" class="btn btn-success mr-2">
+                        <span class="material-symbols-outlined">edit</span> Modifier
+                    </a>
                     <form action="{{route('ouvrages.destroy',$ouvrage->id)}}" style="display: inline-block;" method="post" id="{{$ouvrage->id}}">
-                      @csrf
-                      @method('DELETE')
+                        @csrf
+                        @method('DELETE')
+                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                            if(confirm('Vous êtes sûr de vouloir supprimer ?'))
+                                document.getElementById('{{$ouvrage->id}}').submit();">
+                            <span class="material-symbols-outlined">delete</span> Supprimer
+                        </button>
                     </form>
-                    <button class="btn btn-danger" title="Supprimer" onclick="event.preventDefault();
-                    if(confirm('Vous êtes sûr de vouloir supprimer ?'))
-                      document.getElementById('{{$ouvrage->id}}').submit();">
-                      <span class="material-symbols-outlined">delete</span>
-                    </button>
-                  </div>
+                </div>
                 @elseif(auth()->check())
-                  <div class="card-footer">
-                    <span class="text-danger">Vous n'avez pas l'accès pour effectuer des actions !</span>
-                  </div>
+                <div class="card-footer">
+                    <span class="text-danger">Vous n'avez pas accès à ces actions !</span>
+                </div>
                 @endif
-              </div>
-              
+            </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-
+  </div>
 
 
 @endsection

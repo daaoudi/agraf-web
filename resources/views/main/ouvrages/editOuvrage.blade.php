@@ -34,60 +34,65 @@ la modification d'un Matier :
           </div>
       @endif
 
-    <form action="{{route('ouvrages.update',$ouvrage->id)}}" enctype="multipart/form-data"  method="post" >
+      <form action="{{ route('ouvrages.update', $ouvrage->id) }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PUT')
-      <h3 class="text-center">Formulaire de Matier : {{$ouvrage->designation}}</h3>
+        <h3 class="text-center">Formulaire d'ouvrage : {{ $ouvrage->designation }}</h3>
     
-      <div class="row gy-3 ">
-
-        <div class="col-md-12">
-          <label for="designation_ouvrage">Designation d'ouvrage</label>
-          <input type="text" name="designation_ouvrage" class="form-control" value="{{$ouvrage->designation_ouvrage}}" placeholder="Designation" required>
+        <div class="row gy-3 ">
+    
+            <div class="col-md-12">
+                <label for="designation_ouvrage">Designation d'ouvrage:</label>
+                <input type="text" name="designation_ouvrage" class="form-control"
+                    value="{{ $ouvrage->designation_ouvrage }}" placeholder="Designation" required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="prix_unitaire">Prix unitaire:</label>
+                <input type="text" name="prix_unitaire" class="form-control" value="{{ $ouvrage->prix }}"
+                    placeholder="Prix Unitaire" required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="qte">Quantité:</label>
+                <input type="text" name="qte" class="form-control" value="{{ $ouvrage->qte }}" placeholder="Quantité"
+                    required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="unite">Unité:</label>
+                <input type="text" name="unite" class="form-control" value="{{ $ouvrage->unite }}" placeholder="Unité"
+                    required>
+            </div>
+    
+            <div class="col-md-12">
+                <label for="devi_id">Devi:</label>
+                <select name="devi_id" id="devi_id" class="form-select">
+                    <option disabled>Choisir le nom de devis</option>
+                    @foreach ($devis as $devi)
+                        <option value="{{ $devi->id }}" @if($devi->id === $ouvrage->devi_id) selected @endif>{{ $devi->nom_devi }}</option>
+                    @endforeach
+                </select>
+            </div>
+    
+            <div class="col-md-12 my-5">
+                <label for="etat">Etat:</label>
+                <br>
+                <select name="etat" class="form-select">
+                    <option disabled>Choisir l'etat</option>
+                    <option value="pas encore" @if($ouvrage->etat === 'pas encore') selected @endif>Pas encore</option>
+                    <option value="en cours" @if($ouvrage->etat === 'en cours') selected @endif>En cours</option>
+                    <option value="complété" @if($ouvrage->etat === 'complété') selected @endif>Complété</option>
+                </select>
+            </div>
+    
+            <div class="col-md-12 text-center">
+                <button class="btn btn-warning" type="submit">Modifier</button>
+            </div>
+    
         </div>
-
-        <div class="col-md-12">
-          <input type="text" name="prix_unitaire" class="form-control" value="{{$ouvrage->prix}}" placeholder="Type Matier" required>
-        </div>
-
-        <div class="col-md-12">
-          <input type="text" name="qte" class="form-control" value="{{$ouvrage->qte}}" placeholder="quantité" required>
-        </div>
-
-        <div class="col-md-12">
-            <input type="text" name="unite" class="form-control" value="{{$ouvrage->unite}}" placeholder="unité" required>
-          </div>
-          <div class="col-md-12">
-            <select name="devi_id" id="">
-              <option disabled>Choisir le nom de devi</option>
-              @foreach ($devis as $devi)
-                  <option value="{{$devi->id}}" @if($devi->id === $ouvrage->devi_id) selected @endif>{{$devi->nom_devi}}</option>
-              @endforeach
-          </select>
-        </div>
-          <div class="col-md-12 my-5">
-            <label for="etat">
-              Etat :
-            </label>
-            <br>
-            <select name="etat">
-              <option disabled>Choisir l'etat</option>
-                  <option value="pas encore">Pas en core</option>
-                  <option value="en cours">en cours</option>
-                  <option value="complété">complété</option>
-          </select>
-        </div>
-        
-
-        <div class="col-md-12 text-center">
-          
-        
-         
-          <button class="btn btn-warning" type="submit">Modifier</button>
-        </div>
-
-      </div>
     </form>
+    
   </div><!-- End Quote Form -->
 
     </div>

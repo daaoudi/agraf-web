@@ -42,6 +42,9 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>Ouvrier</th>
+                            <th>Projet</th>
+                            <th>Service</th>
                             <th>type</th>
                             <th>Date_Debut</th>
                             <th>Date_Fin</th>
@@ -52,19 +55,22 @@
                     <tbody>
                         @foreach ($posteOuvriers as $ouvrier)
                             <tr>
+                                <td>{{ $ouvrier->ouvrier->nom .' '. $ouvrier->ouvrier->prenom}}</td>
+                                <td>{{ $ouvrier->devi->nom_devi}}</td>
+                                <td>{{ $ouvrier->service->description}}</td>
                                 <td>{{ $ouvrier->type }}</td>
                                 <td>{{ $ouvrier->date_debut }}</td>
                                 <td>{{ $ouvrier->date_fin }}</td>
-                                <td>{{ $ouvrier->salaire }}</td>
+                                <td>{{ $ouvrier->salaire }} DH</td>
                                 <td>
                                     @if (auth()->check())
                                         @if (auth()->user()->is_admin)
                                             <button title="Modifier" class="btn btn-success"><a
-                                                    href="{{ route('ouvriers.edit', $ouvrier->id) }}"><span
+                                                    href="{{ route('posteOuvriers.edit', $ouvrier->id) }}"><span
                                                         class="material-symbols-outlined">
                                                         edit
                                                     </span></a></button>
-                                            <form action="{{ route('ouvriers.destroy', $ouvrier->id) }}"
+                                            <form action="{{ route('posteOuvriers.destroy', $ouvrier->id) }}"
                                                 style="display: inline-block;" method="post" id="{{ $ouvrier->id }}">
                                                 @csrf
                                                 @method('DELETE')
@@ -78,7 +84,7 @@
                                                     delete
                                                 </span> </button>
                                             <button title="View" class="btn view"> <a
-                                                    href="{{ route('ouvriers.show', $ouvrier->id) }}"> <span
+                                                    href="{{ route('posteOuvriers.show', $ouvrier->id) }}"> <span
                                                         class="material-symbols-outlined">
                                                         visibility
                                                     </span></a></button>
