@@ -282,8 +282,8 @@
                     <h1>Table de revenue</h1>
                     <button id="toggleButton"  onclick="toggleTable1()">Afficher/Cacher</button>
 
-                    <div id="tableContainer" class="foldable-table">
-                        <table class="table table-striped table-bordered table-responsive mb-5">
+                    <div id="tableContainer" class="foldable-table table-responsive ">
+                        <table class="table table-striped table-bordered mb-5">
                             <thead>
                                 <tr>
                                     <th>Devi</th>
@@ -318,8 +318,8 @@
                     <h1>Table d'avancement</h1>
                     <button id="toggleButton" onclick="toggleTable2()">Afficher/Cacher</button>
 
-                    <div class="foldable-table" id="tableContainer2">
-                    <table class="table table-striped table-bordered table-responsive mt-5">
+                    <div class="foldable-table table-responsive" id="tableContainer2">
+                    <table class="table table-striped table-bordered mt-5">
                         <thead>
                             <tr>
                                 <th>Devi(s)</th>
