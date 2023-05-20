@@ -52,7 +52,7 @@
                                 <img src="storage/icons/download.png" class="mx-3" width="25px" />
                                 <a style="color:tomato;" href="{{ asset('/uploads/devis_docs/' . $devi->document) }}" download>Download Document</a>
                                 @else
-                                    il n'a pas de document
+                                   <small><i>il n'a pas de document</i></small>
                                 @endif
                             </td>
                                                         <td>
