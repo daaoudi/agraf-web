@@ -34,6 +34,8 @@ Route::get('/', function () {
 });
 
 
+
+
 //Authentification
 Route::middleware([
     'auth:sanctum',
@@ -55,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('matiers',MatierController::class);
     Route::resource('ouvriers',OuvrierController::class);
     Route::resource('devis',DeviController::class);
+    Route::get('/get-articles', [OuvrageController::class,'getArticles'])->name('get-articles');
     Route::resource('ouvrages',OuvrageController::class);
     Route::resource('posteOuvriers',PosteOuvrierController::class);
     Route::resource('reglements',ReglementController::class);

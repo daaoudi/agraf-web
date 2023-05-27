@@ -1,9 +1,6 @@
 @extends('layouts.adminLTE')
 
 @section('content')
-
-
-
     <div class="wrapper">
 
 
@@ -160,7 +157,7 @@
                             <a href={{ route('posteOuvriers.index') }} class="nav-link">
                                 <img src="storage/icons/ouvriers.png" class="mx-3" width="45px" />
                                 <p>
-                                   Poste Ouvriers
+                                    Poste Ouvriers
                                 </p>
                             </a>
                         </li>
@@ -188,7 +185,7 @@
                                 </p>
                             </a>
                         </li>
-    
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -228,8 +225,8 @@
                                     <h3>{{ $chantiersNbr }}</h3>
                                     <p>Projets</p>
                                 </div>
-                
-                                <a href="{{url('/devis')}}" class="small-box-footer">More info <i
+
+                                <a href="{{ url('/devis') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -242,8 +239,8 @@
 
                                     <p>Ouvriers</p>
                                 </div>
-                     
-                                <a href="{{url('/ouvriers')}}" class="small-box-footer">More info <i
+
+                                <a href="{{ url('/ouvriers') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -256,8 +253,8 @@
 
                                     <p>Fournisseurs</p>
                                 </div>
-                
-                                <a href="{{url('/fournisseurs')}}" class="small-box-footer">More info <i
+
+                                <a href="{{ url('/fournisseurs') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -269,8 +266,8 @@
                                     <h3>{{ $clientNbr }}</h3>
                                     <p>Clients</p>
                                 </div>
-                 
-                                <a href="{{url('/clients')}}" class="small-box-footer">More info <i
+
+                                <a href="{{ url('/clients') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -280,7 +277,7 @@
 
                     <hr>
                     <h1>Table de resultats</h1>
-                    <button id="toggleButton"  onclick="toggleTable1()">Afficher/Cacher</button>
+                    <button id="toggleButton" onclick="toggleTable1()">Afficher/Cacher</button>
 
                     <div id="tableContainer" class="foldable-table table-responsive ">
                         <table class="table table-striped table-bordered mb-5">
@@ -294,21 +291,50 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($revenue as  $rev)
                                 @php
-                                $resultat=(floatVal($rev->montant))- ((floatVal($rev->mod)) + (floatVal($rev->mp)));
-                                if($resultat < 0){
-                                $color="red";
-                                }else{
-                                $color="green";}
+                                 $mod = 0;
+                                 $mp = 0;
                                 @endphp
-                                <tr>
-                                    <td><a href="{{ route('devis.show', $rev->id) }}">{{$rev->nom_devi}}</a></td>
-                                    <td>{{$rev->mod}} </td>
-                                    <td>{{$rev->mp}} </td>
-                                    <td>{{(floatVal($rev->mod)) + (floatVal($rev->mp))}} DH</td>
-                                    <td><h4 style="color:{{$color}}">{{$resultat}} DH</h4></td>
-                                </tr>
+                                @foreach ($revenue as $rev)
+                                    @php
+                                        $resultat = floatVal($rev->montant) - (floatVal($mod) + floatVal($mp));
+                                        if ($resultat < 0) {
+                                            $color = 'red';
+                                        } else {
+                                            $color = 'green';
+                                        }
+                                    @endphp
+                                    <tr>
+                                        <td><a href="{{ route('devis.show', $rev->id) }}">{{ $rev->nom_devi }}</a></td>
+                                        <td>
+                                            @php
+                                                
+                                                $from_date = $rev->date_debut;
+                                                $to_date = $rev->date_fin;
+                                                
+                                                $first_datetime = new DateTime($from_date);
+                                                
+                                                $last_datetime = new DateTime($to_date);
+                                                
+                                                $interval = $first_datetime->diff($last_datetime);
+                                                
+                                                $final_days = $interval->format('%a'); //and then print do whatever you like with $final_days
+                                                
+                                                $mod = $mod + $rev->salaire * $final_days;
+                                            @endphp
+                                        {{$mod}} DH
+                                        </td>
+                                        <td>
+                                        @php
+                                         $mp = $mp + (floatVal($rev->prix) * floatVal($rev->qte))
+                                        @endphp
+                                        {{$mp}} DH
+                                        </td>
+                                        <td>{{ floatVal($mod) + floatVal($mp) }} DH</td>
+                                        <td>
+                                            <h4 style="color:{{ $color }}">{{ $resultat }} DH</h4>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -319,85 +345,90 @@
                     <button id="toggleButton" onclick="toggleTable2()">Afficher/Cacher</button>
 
                     <div class="foldable-table table-responsive" id="tableContainer2">
-                    <table class="table table-striped table-bordered mt-5">
-                        <thead>
-                            <tr>
-                                <th>Devi(s)</th>
-                                <th>Ouvrages(s)</th>
-                                <th>Taux d'avancement de projet</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($ouvrages as $key => $values)
+                        <table class="table table-striped table-bordered mt-5">
+                            <thead>
                                 <tr>
-                                    <td style="text-align:center;align-items:center;">{{ $key }}</td>
-                                    <td>
-                                        @php $taux_global=0; @endphp
-                                        @foreach ($values as $vals)
-                                            <div class="card mb-3">
-                                                <div class="card-header">
-                                                    {{-- <h5 class="card-title mr-2">{{ $vals['designation_ouvrage'] }}</h5> --}}
-                                                    <a href={{route('ouvrages.show',$vals['id'])}}><span class="card-text">
-                                                        @php $avance=0;$taux_global_actuelle=0; @endphp 
-                                                        @if ($vals['etat'] === "pas encore")
-                                                        <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                    @endif
-                                                    
-                                                    @if ($vals['etat'] === "en cours")
-                                                        <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                    @endif
-                                                    
-                                                    @if ($vals['etat'] === "complété")
-                                                        @php $avance=1;  @endphp
-                                                        <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                    @endif    
-                                                    </span></a>
-                                                </div>
-                                                <div class="card-body" style="display:none">
-                                                    <p class="card-text"><b>Taux d'avancement:</b> 
-                                                        {{
-
-                                                             $taux_global_actuelle= number_format(((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100)*$avance, 2)
-                                                             
-                                                        }}%</p>
-                                                </div>
-                                            </div>
-                                            @php $taux_global = $taux_global + $taux_global_actuelle; @endphp
-                                        @endforeach
-                                    </td>
-                                    <td style="text-align: center;">
-                                       <h3> {{$taux_global }} %</h3>
-                                    </td>
+                                    <th>Devi(s)</th>
+                                    <th>Ouvrages(s)</th>
+                                    <th>Taux d'avancement de projet</th>
                                 </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($ouvrages as $key => $values)
+                                    <tr>
+                                        <td style="text-align:center;align-items:center;">{{ $key }}</td>
+                                        <td>
+                                            @php $taux_global=0; @endphp
+                                            @foreach ($values as $vals)
+                                                <div class="card mb-3">
+                                                    <div class="card-header">
+                                                        {{-- <h5 class="card-title mr-2">{{ $vals['designation_ouvrage'] }}</h5> --}}
+                                                        <a href={{ route('ouvrages.show', $vals['id']) }}><span
+                                                                class="card-text">
+                                                                @php
+                                                                    $avance = 0;
+                                                                    $taux_global_actuelle = 0;
+                                                                @endphp
+                                                                @if ($vals['etat'] === 'pas encore')
+                                                                    <span class="mt-2"
+                                                                        style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                                @endif
 
-                            @endforeach
-                        </tbody>
-                    </table>
+                                                                @if ($vals['etat'] === 'en cours')
+                                                                    <span class="mt-2"
+                                                                        style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                                @endif
+
+                                                                @if ($vals['etat'] === 'complété')
+                                                                    @php $avance=1;  @endphp
+                                                                    <span class="mt-2"
+                                                                        style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                                @endif
+                                                            </span></a>
+                                                    </div>
+                                                    <div class="card-body" style="display:none">
+                                                        <p class="card-text"><b>Taux d'avancement:</b>
+                                                            {{ $taux_global_actuelle = number_format((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100 * $avance, 2) }}%
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                @php $taux_global = $taux_global + $taux_global_actuelle; @endphp
+                                            @endforeach
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <h3> {{ $taux_global }} %</h3>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
 
 
                     <hr>
                     <h1>Table de crédit par Fournisseur</h1>
-                    <button id="toggleButton" onclick="toggleTable3()">Afficher/Cacher</button>          
-    <div id='tableContainer3' class="foldable-table table-responsive">
-        <table class="table table-striped table-bordered mt-5">
-            <thead>
-                <tr>
-                    <th>Fournisseur</th>
-                    <th>Crédit Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($credit as $row)
-                    <tr>
-                        <td><a href="{{ route('fournisseurs.show', $row->id) }}">{{ $row->nom . ' '. $row->prenom }}</a></td>
-                       
-                        <td>{{ $row->credit_sum }} DH</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>    
-</div>
+                    <button id="toggleButton" onclick="toggleTable3()">Afficher/Cacher</button>
+                    <div id='tableContainer3' class="foldable-table table-responsive">
+                        <table class="table table-striped table-bordered mt-5">
+                            <thead>
+                                <tr>
+                                    <th>Fournisseur</th>
+                                    <th>Crédit Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($credit as $row)
+                                    <tr>
+                                        <td><a
+                                                href="{{ route('fournisseurs.show', $row->id) }}">{{ $row->nom . ' ' . $row->prenom }}</a>
+                                        </td>
+
+                                        <td>{{ $row->credit_sum }} DH</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                     <hr>
                     <!-- Main row -->
                     {{-- <div class="row">
@@ -453,29 +484,32 @@
     </div>
     <!-- ./wrapper -->
 
-    
+
     <script>
         function toggleTable1() {
             const tableContainer = document.getElementById('tableContainer');
             tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
         }
+
         function toggleTable2() {
             const tableContainer = document.getElementById('tableContainer2');
             tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
         }
+
         function toggleTable3() {
             const tableContainer = document.getElementById('tableContainer3');
             tableContainer.style.display = (tableContainer.style.display == 'none') ? 'block' : 'none';
         }
     </script>
-    
-    
+
+
     <style>
-       .foldable-table {
+        .foldable-table {
             display: none;
-           
+
         }
-        #toggleButton{
+
+        #toggleButton {
             background-color: #fff;
             color: #444;
             border: 1px solid #ccc;
@@ -489,9 +523,4 @@
 
         }
     </style>
-
 @endsection
-
-
-
-

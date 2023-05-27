@@ -61,11 +61,7 @@ l'ajout d'un Devi.
             <label for="numero_devi">Numéro de devis :</label>
             <input type="text" name="numero_devi" id="numero_devi" class="form-control" placeholder="Numéro de devis" required>
           </div>
-      
-          <div class="col-md-12">
-            <label for="totale">Totale TTC :</label>
-            <input type="text" name="totale" id="totale" class="form-control" placeholder="Totale TTC" required>
-          </div>
+
       
           <div class="col-md-12 text-center">
             <button class="btn btn-warning" type="submit">Valider</button>

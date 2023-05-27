@@ -65,11 +65,7 @@
                                 <td>{{ $ouvrier->date_fin }}</td>
                                 <td>{{ $ouvrier->salaire }} DH</td>
                                 <td>@php
-                                    
-                                    // $date1=$ouvrier->date_debut;
-                                    // $date2=$ouvrier->date_fin;
-                                    // $resultDays=$date2->diffInDays($date1);
-                                    //  ($ouvrier->salaire * $resultDays)
+    
 
                                      $from_date = $ouvrier->date_debut;
 
