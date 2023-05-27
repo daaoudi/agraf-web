@@ -23,7 +23,7 @@ liste des Reglements
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -68,7 +68,7 @@ liste des Reglements
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success btn-sm"><a href="{{route('reglements.edit',$reglement->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-primary btn-sm"><a href="{{route('reglements.edit',$reglement->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('reglements.destroy',$reglement->id)}}" style="display: inline-block;" method="post" id="{{$reglement->id}}">
@@ -81,7 +81,7 @@ liste des Reglements
                         document.getElementById('{{$reglement->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn btn-info btn-sm"> <a href="{{route('reglements.show',$reglement->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn btn-secondary btn-sm"> <a href="{{route('reglements.show',$reglement->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else

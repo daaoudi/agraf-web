@@ -23,7 +23,7 @@ liste des clients
 
     </div>
   </div>
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -32,7 +32,7 @@ liste des clients
       <div class="card">
           <div class="card-header">
             @if (session()->has('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success text-center">
              {{session()->get('success')}}
             </div>
             @endif
@@ -65,7 +65,7 @@ liste des clients
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-warning"><a href="{{route('clients.edit',$client->id)}}">
+                      <button title="Modifier" class="btn btn-primary btn-sm"><a href="{{route('clients.edit',$client->id)}}">
                         <span class="material-symbols-outlined">
                         edit
                         </span></a></button>
@@ -74,12 +74,12 @@ liste des clients
                         @method('DELETE')
                         </form>
 
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                        <button title="Supprimer" class="btn btn-danger btn-sm" onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{$client->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn go-back"> <a href="{{route('clients.show',$client->id)}}"> 
+                        <button title="View" class="btn btn-secondary btn-sm go-back"> <a href="{{route('clients.show',$client->id)}}"> 
                           <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>

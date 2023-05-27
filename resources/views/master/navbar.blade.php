@@ -33,8 +33,8 @@
 
 
       <a href="/" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="/agraf.png" width="40px" height="160px" class="rounded-1" style="" alt="">
+       
+         <img src="/agraf.png"  class="rounded-3" style="filter: contrast(150%);-webkit-filter: contrast(150%); min-width:60px;min-height:80px; " alt="Agrtravis">
         <h1 class="text-white">Agrtravis<span>.</span></h1>
       </a>
 
@@ -61,6 +61,12 @@
                   <li id="link"><a href="{{url('services/create')}}" >Services </a></li>
                   <li id="link"><a href="{{url('articles/create')}}" >Articles </a></li>
                   <li id="link"><a href="{{url('ouvrages/create')}}" >Ouvrages </a></li>
+                  <li id="link"><a href="{{url('posteOuvriers/create')}}" >PosteOuvriers </a></li>
+                  <li id="link"><a href="{{url('chargements/create')}}" >Chargements </a></li>
+                  <li id="link"><a href="{{url('reglements/create')}}" >Reglements </a></li>
+
+
+
                 </ul>
               </li>
              

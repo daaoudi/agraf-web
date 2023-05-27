@@ -22,11 +22,23 @@
 
         </div>
     </div>
-
-    <div class="card">
+    <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
+<button class="go-back" onclick="history.back();">
+        <span class="material-symbols-outlined">
+        arrow_back
+        </span></button>
+    <div class="card mt-3">
         <div class="card-header">
             <h3 class="card-title">Liste des Devis</h3>
+            @if (session()->has('success'))
+            <div class="alert alert-success text-center">
+             {{session()->get('success')}}
+            </div>
+            @endif
+           
         </div>
+        <h4>Nombre de fournisseurs: {{count($devis)}}</h4>        </div>
+
         <!-- /.card-header -->
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -58,7 +70,7 @@
                                                         <td>
                                 @if (auth()->check())
                                     @if (auth()->user()->is_admin)
-                                        <button title="Modifier" class="btn btn-warning"><a
+                                        <button title="Modifier" class="btn btn-primary btn-sm"><a
                                                 href="{{ route('devis.edit', $devi->id) }}"><span
                                                     class="material-symbols-outlined" style="color:whitesmoke;">
                                                     edit
@@ -69,14 +81,14 @@
                                             @method('DELETE')
                                         </form>
 
-                                        <button title="Supprimer" class="btn btn-danger"
+                                        <button title="Supprimer" class="btn btn-danger btn-sm"
                                             onclick="event.preventDefault();
                   if(confirm('vous êtes sure pour la suppression ?'))
                   document.getElementById('{{ $devi->id }}').submit();"
                                             type="submit"><span class="material-symbols-outlined">
                                                 delete
                                             </span> </button>
-                                        <button title="View" class="btn view"> <a
+                                        <button title="View" class="btn btn-secondary btn-sm view"> <a
                                                 href="{{ route('devis.show', $devi->id) }}"> <span
                                                     class="material-symbols-outlined">
                                                     visibility
@@ -93,4 +105,6 @@
         </div>
         <!-- /.card-body -->
     </div>
+    </div>
+    
 @endsection
