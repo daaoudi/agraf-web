@@ -57,6 +57,7 @@ class ChargeController extends Controller
         $charge->devi_id=$request->input('devi_id');
         $charge->prix=$request->input('prix');
         $charge->qte=$request->input('qte');
+        $charge->unite=$request->input('unite');
         $charge->designation=$request->input('designation');
         $charge->fournisseur_id=$request->input('fournisseur_id');
         $charge->ouvrage_id=$request->input('ouvrage_id');
@@ -98,18 +99,17 @@ class ChargeController extends Controller
     public function update(Request $request, Charge $charge)
     {
         $request->validate([
-            "mod" => "required",
-            "mp" => "required",
-            "devi_id" => "required|exists:devis,id",
+            "designation" => "required",
+            "prix" => "required",
+            "qte" => "required",
+            "unite" => "required",
+            "ouvrage_id" => "required|exists:ouvrages,id",
             "fournisseur_id" => "required|exists:fournisseurs,id",
-            "matier_id"=>"required|exists:matiers,id",
-            "montant_charges_matier" => "required",
-            //"montant_credit" => "required",
+            "devi_id" => "required|exists:devis,id",
             "mode_paiement" => "required",
-            "date_charge" => "required",
-
-
+            "date" => "required",
         ]);
+        
         if($request->mode_paiement === "crédit"){
             $charge->montant_credit =  $request->montant_charges_matier;
         }

@@ -36,6 +36,13 @@ class Charge extends Model
         return $this->belongsTo(Devi::class);
     }
 
+    public function ouvrage()
+    {
+        return $this->belongsTo(Ouvrage::class);
+    }
+
+
+
 
 
 }

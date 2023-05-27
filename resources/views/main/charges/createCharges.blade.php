@@ -50,7 +50,7 @@ l'ajout des charges.
               </div>
               <div class="col-md-12">
                   <label for="qte">Quantite :</label>
-                  <input type="text" name="qte" id="qte" class="form-control" placeholder="Quantite" value="{{old('Quantite')}}">
+                  <input type="text" name="qte" id="qte" class="form-control" placeholder="Quantite" value="{{old('qte')}}">
               </div>
               <div class="col-md-12">
                   <label for="unite">Unité d'achat :</label>
@@ -59,7 +59,7 @@ l'ajout des charges.
 
               <div class="col-md-12">
                   <label for="date_charge">Date de charge :</label>
-                  <input type="date" id="date_charge" name="date" class="form-control" value="{{old('date_charge')}}">
+                  <input type="date" id="date_charge" name="date" class="form-control" value="{{old('date')}}">
               </div>
       
               <div class="col-md-12">
@@ -84,29 +84,7 @@ l'ajout des charges.
                   </select>
               </div>
 
-              {{-- <div class="col-md-12">
-                @livewire('project-article-form')
-            </div> --}}
-            <div class="form-group">
-                <label for="project">Select a Project:</label>
-                <select wire:model="projectId" name="devi_id" class="form-control" onchange="fetchArticles()">
-                    <option value="">Select Project</option>
-                    @foreach($devis as $project)
-                        <option value="{{ $project->id }}">{{ $project->nom_devi }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-12">
-                <label for="article_select">Article:</label>
-                <select name="ouvrage_id" id="article_select" class="form-select">
-                        <!-- Options will be dynamically populated using AJAX -->
-                        {{-- <option value="">vvvv</option>
-                        @foreach ($articles as $art )
-                            <option value="{{$art->id}} ">{{$art->designation_ouvrage}} </option>
-                        @endforeach --}}
-                </select>
-            </div>
-      
+                @livewire('article-selection', ['devis' => $devis])
       
               <div class="col-md-12 text-center">
                   <button class="btn btn-warning" type="submit">Valider</button>
@@ -119,33 +97,5 @@ l'ajout des charges.
   
       </div>
   </div>
-  <script>
-function fetchArticles() {
-        var projectId = $('select[name="devi_id"]').val();
-
-        // Perform an AJAX request to fetch articles based on the selected project
-        $.ajax({
-            url: '/get-articles', // Replace with the actual URL to fetch articles
-            type: 'GET',
-            data: {
-                devi_id: projectId
-            },
-            success: function(response) {
-                // Handle the response and update the articles dropdown or perform any other actions
-                // Example: Update the articles dropdown based on the response
-                var articlesDropdown = $('select[name="ouvrage_id"]');
-                articlesDropdown.empty();
-                articlesDropdown.append('<option value="">Select Article</option>');
-
-                $.each(response.articles, function(index, article) {
-                    articlesDropdown.append('<option value="' + article.id + '">' + article.designation_ouvrage + '</option>');
-                });
-            },
-            error: function(xhr) {
-                // Handle the error response
-                console.log(xhr.responseText);
-            }
-        });
-    }
-    </script>
+  
 @endsection

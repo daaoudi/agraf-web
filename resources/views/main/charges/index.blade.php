@@ -43,11 +43,10 @@ liste des charges
               <thead>
                 <tr>
                   <th>Projet</th>
-                  <th>fournisseur</th>
-                  <th>matier</th>
-                  <th>MOD</th>
-                  <th>MP</th>
-                  <th>montant_charges_matier</th>
+                  <th>Article</th>
+                  <th>Fournisseur</th>
+                  <th>Prix</th>
+                  <th>Quantité</th>
                   <th>montant_credit</th>
                   <th>mode_paiement</th>
                   <th>Date </th>
@@ -57,12 +56,11 @@ liste des charges
               <tbody>
                 @foreach($charges as $charge)
                 <tr>
-                    <td>{{$charge->devi->nom_devi}}</td>
+                  <td>{{$charge->devi->nom_devi}}</td>
+                  <td>{{$charge->ouvrage->designation_ouvrage}}</td>
+
                     <td>{{$charge->fournisseur->nom .' ' . $charge->fournisseur->prenom}} </td>
-                    <td>{{$charge->matier->designation}}</td>
-                    <td>{{$charge->mod}} DH</td>
-                    <td>{{$charge->mp}} DH</td>
-                    <td>
+                    {{-- <td>
                       @if ($charge->mode_paiement==="crédit")
                         <span style="color:green;">0 DH</span> 
                         @else
@@ -71,11 +69,14 @@ liste des charges
                         </span>
                        
                       @endif
-                     </td>
-                    <td>@php $color=""; if($charge->montant_credit > 0){$color="red";}@endphp
+                     </td> --}}
+                     <td>{{$charge->prix}} DH</td>
+                     <td>{{$charge->qte}} {{$charge->unite}}</td>
+                    <td>
+                      @php $color=""; if($charge->montant_credit > 0){$color="red";}@endphp
                       <span style="color:{{$color}}">{{$charge->montant_credit}}DH</span></td>
                     <td>{{$charge->mode_paiement}}</td>
-                    <td>{{$charge->date_charge}}</td>
+                    <td>{{$charge->date}}</td>
                     
                     <td>
                       @if(auth()->check())

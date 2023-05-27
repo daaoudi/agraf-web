@@ -46,7 +46,7 @@ $ouvrages = DB::table('ouvrages')
     ->join('reglements','devis.id','=','reglements.devi_id')
     ->join('charges','devis.id','=','charges.devi_id')
     ->join('poste_ouvriers','devis.id','=','poste_ouvriers.devi_id')
-    ->select('devis.nom_devi','charges.prix','charges.qte','reglements.montant','poste_ouvriers.salaire','poste_ouvriers.date_debut','poste_ouvriers.date_fin')
+    ->select('devis.nom_devi','devis.id','charges.prix','charges.qte','reglements.montant','poste_ouvriers.salaire','poste_ouvriers.date_debut','poste_ouvriers.date_fin')
     ->get();
 
     //MOD = SUM(salaire * nbr_jour)

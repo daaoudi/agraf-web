@@ -283,7 +283,7 @@
                         <table class="table table-striped table-bordered mb-5">
                             <thead>
                                 <tr>
-                                    <th>Devi</th>
+                                    <th>Projet</th>
                                     <th>Consommation MOD</th>
                                     <th>Consommation MP</th>
                                     <th>Cout Totale</th>
@@ -297,7 +297,7 @@
                                 @endphp
                                 @foreach ($revenue as $rev)
                                     @php
-                                        $resultat = floatVal($rev->montant) - (floatVal($mod) + floatVal($mp));
+                                        $resultat = (floatVal($rev->montant) - (floatVal($mod) + floatVal($mp)));
                                         if ($resultat < 0) {
                                             $color = 'red';
                                         } else {

@@ -39,15 +39,6 @@
                     <p class="text-center">Remplir tous les champs s'il vous plaît.</p>
                     <div class="row gy-3 ">
                 
-                        <div class="col-md-12">
-                            <label for="devi_id">Projet :</label>
-                            <select name="devi_id" class="form-select" required>
-                                <option selected disabled>Choisir le projet (devi) :</option>
-                                @foreach ($devis as $devi)
-                                    <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
-                                @endforeach
-                            </select>
-                        </div>
                 
                         <div class="col-md-12">
                             <label for="ouvrier_id">Ouvrier :</label>
@@ -69,17 +60,7 @@
                                 @endforeach
                             </select>
                         </div>
-                
-                        <div class="col-md-12">
-                            <label for="ouvrage_id">Ouvrage :</label>
-                            <select name="ouvrage_id" class="form-select" required>
-                                <option selected disabled>Choisir le nom de l'ouvrage</option>
-                                @foreach ($ouvrages as $ouvrage)
-                                    <option value="{{ $ouvrage->id }}">{{ $ouvrage->designation_ouvrage }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                
+ 
                 
                         <div class="col-md-12">
                             <label for="poste_ouvrier">Poste d'ouvrier :</label>
@@ -105,6 +86,9 @@
                             <label for="date_fin">Date de Fin :</label>
                             <input type="date" name="date_fin" class="form-control" placeholder="Date de fin" required>
                         </div>
+
+                        @livewire('article-selection', ['devis' => $devis])
+
                 
                         <div class="col-md-12 text-center">
                             <button class="btn btn-warning" type="submit">Valider</button>
