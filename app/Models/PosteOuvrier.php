@@ -22,6 +22,7 @@ class PosteOuvrier extends Model
         "ouvrier_id",
         "service_id",
         "ouvrage_id",
+        "devi_id",
         "type"
     ];
 

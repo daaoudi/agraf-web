@@ -49,6 +49,8 @@
                             <th>Date_Debut</th>
                             <th>Date_Fin</th>
                             <th>salaire</th>
+                            <th>salaire_par_semaine</th>
+                            <th>Article</th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -62,6 +64,31 @@
                                 <td>{{ $ouvrier->date_debut }}</td>
                                 <td>{{ $ouvrier->date_fin }}</td>
                                 <td>{{ $ouvrier->salaire }} DH</td>
+                                <td>@php
+                                    
+                                    // $date1=$ouvrier->date_debut;
+                                    // $date2=$ouvrier->date_fin;
+                                    // $resultDays=$date2->diffInDays($date1);
+                                    //  ($ouvrier->salaire * $resultDays)
+
+                                     $from_date = $ouvrier->date_debut;
+
+                                    $to_date = $ouvrier->date_fin;
+
+                                    $first_datetime = new DateTime($from_date);
+
+                                    $last_datetime = new DateTime($to_date);
+
+                                    $interval = $first_datetime->diff($last_datetime);
+
+                                    $final_days = $interval->format('%a');//and then print do whatever you like with $final_days
+
+                                  
+
+                                @endphp 
+                                {{$ouvrier->salaire * $final_days}} DH
+                            </td>
+                            <td>{{$ouvrier->ouvrage->designation_ouvrage}} </td>
                                 <td>
                                     @if (auth()->check())
                                         @if (auth()->user()->is_admin)

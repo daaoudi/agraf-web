@@ -18,7 +18,7 @@ class PosteOuvrierController extends Controller
     public function index()
     {
         //
-        $posteOuvriers=PosteOuvrier::with('devi','ouvrier','service')->get();
+        $posteOuvriers=PosteOuvrier::with('devi','ouvrier','service','ouvrage')->get();
         return view('main.poste_ouvriers.index',compact('posteOuvriers'));
     }
 
