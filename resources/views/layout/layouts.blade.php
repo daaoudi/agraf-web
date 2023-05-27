@@ -102,7 +102,7 @@
 
 
 
-
+  <script src="{{ asset('livewire/livewire.js') }}" defer></script>
 
   <!-- jQuery -->
 <script src="/adminlte_assets/plugins/jquery/jquery.min.js"></script>
@@ -153,9 +153,12 @@
    
 
   </script>
+<script src="{{ asset('livewire.js') }}"></script>
 
   @yield('script')
+  @livewireStyles
   @livewireScripts
+  
 
 </body>
 </html>

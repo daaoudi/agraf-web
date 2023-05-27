@@ -9,27 +9,22 @@ use Livewire\Component;
 class ProjectArticleForm extends Component
 {
     public $projectId;
-    public $articles = [];
+    public $articles;
 
-    public function updatedProjectId()
+    public function render()
     {
         if ($this->projectId) {
             $project = Devi::find($this->projectId);
             // dd($project->ouvrages);
-            $this->articles = $project ? $project->ouvrages : [];
+            $articles = $project->ouvrages;
+            $this->articles = $articles;
+
         } else {
             $this->articles = [];
         }
-    }
 
-    public function mount()
-    {
-        $this->articles = [];
-    }
-
-    public function render()
-    {
         $devis = Devi::all();
+
 
         return view('livewire.project-article-form', compact('devis'));
     }
