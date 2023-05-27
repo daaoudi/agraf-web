@@ -279,7 +279,7 @@
                     <!-- /.row -->
 
                     <hr>
-                    <h1>Table de revenue</h1>
+                    <h1>Table de resultats</h1>
                     <button id="toggleButton"  onclick="toggleTable1()">Afficher/Cacher</button>
 
                     <div id="tableContainer" class="foldable-table table-responsive ">

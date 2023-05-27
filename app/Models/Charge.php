@@ -13,21 +13,19 @@ class Charge extends Model
     use HasFactory;
     protected $fillable = [
         "id",
-        "mod",
-        "mp",
+        "prix",
+        "qte",
+        "unite",
+        "designation",
         "mode_paiement",
-       "devi_id",
+        "devi_id",
         "fournisseur_id",
-        "matier_id",
-        "montant_charges_matier",
         "montant_credit",
-        "date_charge"
+        "date_charge",
+        "ouvrage_id"
     ];
 
-    public function matier()
-    {
-        return $this->belongsTo(Matier::class);
-    }
+
     public function fournisseur()
     {
         return $this->belongsTo(Fournisseur::class);

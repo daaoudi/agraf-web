@@ -13,18 +13,20 @@ return new class extends Migration
     {
         Schema::create('charges', function (Blueprint $table) {
             $table->id();
-            $table->double('mod');
-            $table->double('mp');
-            $table->double('montant_charges_matier');
             $table->double('montant_credit')->default(0);
+            $table->double('prix');
+            $table->double('qte');
             $table->string('mode_paiement');
-            $table->date('date_charge');
+            $table->string('designation');
+            $table->string('unite');
+            $table->date('date');
 
             $table->unsignedBigInteger('devi_id');
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
+           
+            $table->unsignedBigInteger('ouvrage_id');
+            $table->foreign('ouvrageOu_id')->references('id')->on('ouvrageOus')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedBigInteger('matier_id');
-            $table->foreign('matier_id')->references('id')->on('matiers')->onDelete('cascade')->onUpdate('cascade');
             
             $table->unsignedBigInteger('fournisseur_id');
             $table->foreign('fournisseur_id')->references('id')->on('fournisseurs')->onDelete('cascade')->onUpdate('cascade');

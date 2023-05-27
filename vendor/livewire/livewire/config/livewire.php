@@ -16,6 +16,9 @@ return [
     */
 
     'class_namespace' => 'App\\Http\\Livewire',
+    'components' => [
+        'project-article-form' => \App\Http\Livewire\ProjectArticleForm::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -154,5 +157,6 @@ return [
     */
 
     'render_on_redirect' => false,
+    'debug' => true,
 
 ];
