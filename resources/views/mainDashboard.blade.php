@@ -286,7 +286,7 @@
                         <table class="table table-striped table-bordered mb-5">
                             <thead>
                                 <tr>
-                                    <th>Devi</th>
+                                    <th>Projet</th>
                                     <th>Consommation MOD</th>
                                     <th>Consommation MP</th>
                                     <th>Cout Totale</th>
@@ -322,8 +322,8 @@
                     <table class="table table-striped table-bordered mt-5">
                         <thead>
                             <tr>
-                                <th>Devi(s)</th>
-                                <th>Ouvrages(s)</th>
+                                <th>Projets</th>
+                                <th>Articles</th>
                                 <th>Taux d'avancement de projet</th>
                             </tr>
                         </thead>

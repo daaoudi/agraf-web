@@ -56,7 +56,7 @@ class OuvrageController extends Controller
                 $ouvrage->designation_ouvrage = $request->input('designation_ouvrage');
                 $ouvrage->qte = $qte;
                 $ouvrage->unite = $request->input('unite');
-                $ouvrage->prix = $prix_unitaire;
+                $ouvrage->prix = $request->input('prix_unitaire');
                 $ouvrage->devi_id = $request->input('devi_id');
                 $ouvrage->save();
 
