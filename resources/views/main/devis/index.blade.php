@@ -22,7 +22,7 @@
 
         </div>
     </div>
-    <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
+    <div class="container-md" style="position:relative;top:50px;min-height:1200px;">
 <button class="go-back" onclick="history.back();">
         <span class="material-symbols-outlined">
         arrow_back
@@ -53,16 +53,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($devis as $devi)
+                    @foreach ($devis as $groupedDevisi)
                         <tr>
-                            <td>{{ $devi->nom_devi }}</td>
-                            <td>{{ $devi->date_devi }}</td>
-                            <td>{{ $devi->numero_devi }}</td>
-                            <td>{{ $devi->totale }} DH</td>
+                            <td>{{ $groupedDevisi->nom_devi }}</td>
+                            <td>{{ $groupedDevisi->date_devi }}</td>
+                            <td>{{ $groupedDevisi->numero_devi }}</td>
+                            <td>{{ $groupedDevisi->totale }} DH</td>
                             <td style="text-align: center;">
-                                @if(!empty($devi->document))
+                                @if(!empty($groupedDevisi->document))
                                 <img src="storage/icons/download.png" class="mx-3" width="25px" />
-                                <a style="color:tomato;" href="{{ asset('/uploads/devis_docs/' . $devi->document) }}" download>Download Document</a>
+                                <a style="color:tomato;" href="{{ asset('/uploads/devis_docs/' . $groupedDevisi->document) }}" download>Download Document</a>
                                 @else
                                    <small><i>il n'a pas de document</i></small>
                                 @endif
@@ -71,12 +71,12 @@
                                 @if (auth()->check())
                                     @if (auth()->user()->is_admin)
                                         <button title="Modifier" class="btn btn-primary btn-sm"><a
-                                                href="{{ route('devis.edit', $devi->id) }}"><span
+                                                href="{{ route('devis.edit', $groupedDevisi->id) }}"><span
                                                     class="material-symbols-outlined" style="color:whitesmoke;">
                                                     edit
                                                 </span></a></button>
-                                        <form action="{{ route('devis.destroy', $devi->id) }}"
-                                            style="display: inline-block;" method="post" id="{{ $devi->id }}">
+                                        <form action="{{ route('devis.destroy', $groupedDevisi->id) }}"
+                                            style="display: inline-block;" method="post" id="{{ $groupedDevisi->id }}">
                                             @csrf
                                             @method('DELETE')
                                         </form>
@@ -84,12 +84,12 @@
                                         <button title="Supprimer" class="btn btn-danger btn-sm"
                                             onclick="event.preventDefault();
                   if(confirm('vous êtes sure pour la suppression ?'))
-                  document.getElementById('{{ $devi->id }}').submit();"
+                  document.getElementById('{{ $groupedDevisi->id }}').submit();"
                                             type="submit"><span class="material-symbols-outlined">
                                                 delete
                                             </span> </button>
                                         <button title="View" class="btn btn-secondary btn-sm view"> <a
-                                                href="{{ route('devis.show', $devi->id) }}"> <span
+                                                href="{{ route('devis.show', $groupedDevisi->id) }}"> <span
                                                     class="material-symbols-outlined">
                                                     visibility
                                                 </span></a></button>
@@ -104,37 +104,57 @@
             </table>
         </div>
         <!-- /.card-body -->
-        <div class="card-body mt-3">
-            <table class="table table-bordered table-striped">
+        <div class="card-body my-5">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Projet</th>
                         <th>Date Projet</th>
+                        <th>articles</th>
+                        <th>prix</th>
+                        <th>qte</th>
                         <th>Total HT</th>
-                        
+                        <th>Somme Total</th>
+                        <th>Total TVA 20%</th>
+                        <th>Total TTC</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @if(is_array($devi))
-                    @foreach ($devi as $de)
-                    <tr>
-                        <td>{{$de->nom_devi}} </td>
-                        <td>{{$de->date_devi}} </td>
-                        <td>
+                    
+                    @if (is_array($groupedDevis) || is_object($groupedDevis))
+                    @php
+                        $total = 0;
+                    @endphp
+                    @foreach ($groupedDevis as $dev)
+                    @foreach ($dev as $de)
+                        
+                            <tr>
+                                <td>{{ $de->nom_devi }}</td>
+                                <td>{{ $de->date_devi }}</td>
+                                <td>{{$de->designation_ouvrage}} </td>
+                                <td>{{$de->prix}} </td>
+                                <td>{{$de->qte}} </td>
+                                <td>
+                                    {{ $de->prix * $de->qte }}
+                                </td>
+                               
+                            </tr>
                             @php
-                                $pr=floatVal($de->prix);
-                                $qt=floatVal($de->qte);
-                                $t=$pr*$qt;
-                            @endphp
-                            {{$t}}
-                        </td>
-                    </tr>
+            $total += $de->prix * $de->qte;
+        @endphp 
+       
+        @endforeach
+        <tr>
+            <td colspan="3">Total: {{ $total }}</td>
+        </tr>
+                       
                     @endforeach
-                    @endif
+                    {{-- @endif --}}
                 </tbody>
             </table>
         </div>
     </div>
     </div>
+   
     
 @endsection

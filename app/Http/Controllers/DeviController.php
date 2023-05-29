@@ -14,12 +14,16 @@ class DeviController extends Controller
     public function index()
     {
         $devis = Devi::all();
-        $devi=DB::table('devis')
-        ->join('ouvrages','devis.id','=','ouvrages.devi_id')
-        ->select('ouvrages.prix','ouvrages.qte','devis.nom_devi','devis.date_devi')
-        ->get();
-        //dd($devi);
-        return view('main.devis.index', compact('devis','devi'));
+        $dev = DB::table('devis')
+        
+    ->join('ouvrages', 'devis.id', '=', 'ouvrages.devi_id')
+    
+    ->select('devis.*','ouvrages.*')
+    
+    ->get();
+    $groupedDevis = $dev->groupBy('devis.id');
+        //dd($dev);
+        return view('main.devis.index', compact('devis','groupedDevis'));
     }
 
     /**
