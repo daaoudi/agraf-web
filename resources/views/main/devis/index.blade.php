@@ -115,7 +115,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @if(is_array($devi)) --}}
+                    @if(is_array($devi))
                     @foreach ($devi as $de)
                     <tr>
                         <td>{{$de->nom_devi}} </td>
@@ -130,7 +130,7 @@
                         </td>
                     </tr>
                     @endforeach
-                    {{-- @endif --}}
+                    @endif
                 </tbody>
             </table>
         </div>
