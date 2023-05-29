@@ -52,18 +52,17 @@
               
               <li class="dropdown " id="link" ><a href="#" > <span >Creation</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul class="bg-secondary" >
-                  <li id="link"><a href="{{url('devis/create')}}" >Devis</a></li>
+                  <li id="link"><a href="{{url('devis/create')}}" >Projets</a></li>
                   <li id="link"><a href="{{url('fournisseurs/create')}}"  >Fournisseurs </a></li>
                   <li id="link"><a href="{{url('clients/create')}}" >Clients </a></li>
                   <li id="link"><a href="{{url('matiers/create')}}" >Matieres </a></li>
                   <li id="link" ><a href="{{url('chantiers/create')}}" >Projets </a></li>
                   <li id="link"><a href="{{url('ouvriers/create')}}" >Ouvries </a></li>
                   <li id="link"><a href="{{url('services/create')}}" >Services </a></li>
-                  <li id="link"><a href="{{url('articles/create')}}" >Articles </a></li>
-                  <li id="link"><a href="{{url('ouvrages/create')}}" >Ouvrages </a></li>
+                  <li id="link"><a href="{{url('ouvrages/create')}}" >Articles </a></li>
                   <li id="link"><a href="{{url('posteOuvriers/create')}}" >PosteOuvriers </a></li>
-                  <li id="link"><a href="{{url('chargements/create')}}" >Chargements </a></li>
-                  <li id="link"><a href="{{url('reglements/create')}}" >Reglements </a></li>
+                  <li id="link"><a href="{{url('chargements/create')}}" >Achats de MP </a></li>
+                  <li id="link"><a href="{{url('reglements/create')}}" >Reglements Clients </a></li>
 
 
 

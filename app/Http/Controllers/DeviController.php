@@ -14,16 +14,15 @@ class DeviController extends Controller
     public function index()
     {
         $devis = Devi::all();
+    
         $dev = DB::table('devis')
-        
-    ->join('ouvrages', 'devis.id', '=', 'ouvrages.devi_id')
+            ->join('ouvrages', 'devis.id', '=', 'ouvrages.devi_id')
+            ->select('devis.*', 'ouvrages.designation_ouvrage', 'ouvrages.prix', 'ouvrages.qte')
+            ->get();
     
-    ->select('devis.*','ouvrages.*')
+        $groupedDevis = $dev->groupBy('id');
     
-    ->get();
-    $groupedDevis = $dev->groupBy('devis.id');
-        //dd($dev);
-        return view('main.devis.index', compact('devis','groupedDevis'));
+        return view('main.devis.index', compact('devis', 'groupedDevis'));
     }
 
     /**
@@ -83,11 +82,10 @@ class DeviController extends Controller
     {
         if (auth()->user()->is_admin) {
 
-            return view('main.devis.editDevi',compact('devi'));
-            }
-            else{
-                abort(code:403);
-           }
+            return view('main.devis.editDevi', compact('devi'));
+        } else {
+            abort(code: 403);
+        }
     }
 
     /**
@@ -108,12 +106,12 @@ class DeviController extends Controller
             $Docextension = $Docfile->getClientOriginalExtension();
             $Docfilename = time() . "." . $Docextension;
             $Docfile->move('uploads/devis_docs', $Docfilename);
-            if(!empty($devi->document)){
-            unlink(public_path('uploads/devis_docs').'/'. $devi->document );
-        }
+            if (!empty($devi->document)) {
+                unlink(public_path('uploads/devis_docs') . '/' . $devi->document);
+            }
             $devi->document = $Docfilename;
-            
-        } 
+
+        }
         $devi->update([
             'nom_devi' => $request->input('nom_devi'),
             'date_devi' => $request->input('date_devi'),

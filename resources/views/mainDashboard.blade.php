@@ -108,7 +108,7 @@
                             <a href={{ route('devis.index') }} class="nav-link">
                                 <img src="storage/icons/devi.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
-                                    Devis
+                                    Projets
                                 </p>
                             </a>
                         </li>
@@ -116,15 +116,7 @@
                             <a href={{ route('ouvrages.index') }} class="nav-link">
                                 <img src="storage/icons/ouvrage.png" class="mx-3" class="mx-3" width="45px" />
                                 <p>
-                                    Ouvrages
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item my-3">
-                            <a href={{ route('matiers.index') }} class="nav-link">
-                                <img src="storage/icons/matier.png" class="mx-3" width="45px" />
-                                Matieres
+                                    Articles
                                 </p>
                             </a>
                         </li>
@@ -173,7 +165,7 @@
                             <a href={{ route('charges.index') }} class="nav-link">
                                 <img src="storage/icons/charges.png" class="mx-3" width="45px" />
                                 <p>
-                                    Charges
+                                    Achats de MP
                                 </p>
                             </a>
                         </li>

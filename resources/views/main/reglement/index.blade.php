@@ -42,7 +42,7 @@ liste des Reglements
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>devi</th>
+                  <th>Projet</th>
                   <th>client</th>
                   <th>numero_cheque</th>
                   <th>montant</th>

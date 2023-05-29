@@ -8,11 +8,11 @@
         style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-            <h2>Ouvrage</h2>
+            <h2>Article</h2>
             <ol>
                 <li><a href="/">Home</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li>Ouvrage</li>
+                <li>Article</li>
             </ol>
 
         </div>
@@ -36,7 +36,7 @@
 
                 <form action="{{ route('ouvrages.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
-                    <h3 class="text-center">Formulaire d'ouvrage :</h3>
+                    <h3 class="text-center">Formulaire d'article :</h3>
                     <p class="text-center">Remplir tous les champs s'il vous plaît. </p>
                     <div class="row gy-3 ">
                 
@@ -61,9 +61,9 @@
                         </div>
                 
                         <div class="col-md-12">
-                            <label for="devi_id">Devi:</label>
+                            <label for="devi_id">Projet :</label>
                             <select name="devi_id" id="devi_id" class="form-select">
-                                <option selected disabled>Choisir le nom de devis</option>
+                                <option selected disabled>Choisir le nom de projet</option>
                                 @foreach ($devis as $devi)
                                     <option value="{{ $devi->id }}" @if($devi->id === old('devi_id')) selected @endif>{{ $devi->nom_devi }}</option>
                                 @endforeach

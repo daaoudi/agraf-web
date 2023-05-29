@@ -1,6 +1,6 @@
 @extends('layout.layouts')
 @section('title')
-    la modification d'un devi :
+    la modification d'un Projet :
 @endsection
 
 @section('content')
@@ -8,11 +8,11 @@
         style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-            <h2>devi</h2>
+            <h2>Projet</h2>
             <ol>
                 <li><a href="/">Home</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li>devi</li>
+                <li>Projet</li>
             </ol>
 
         </div>

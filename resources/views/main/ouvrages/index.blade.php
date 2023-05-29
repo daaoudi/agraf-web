@@ -1,22 +1,22 @@
 @extends('layout.layouts')
 
 @section('title')
-liste des ouvrages
+liste des Articles
 @endsection
 
 @section('content')
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-      <h2>ouvrages</h2>
+      <h2>Articles</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>ouvragees</li>
+        <li>Articles</li>
       </ol>
 
       <a href={{route('ouvrages.create')}} class="btn btn-warning">
-        + Ajouter un ouvrage
+        + Ajouter un Article
       </a>
 
 
@@ -43,7 +43,7 @@ liste des ouvrages
               <thead>
                 <tr>
                   <th>Devi</th>
-                  <th>Designation d'ouvrage</th>
+                  <th>Designation d'article</th>
                   <th>prix</th>
                   <th>Quantité</th>
                   <th>Totale HT</th>

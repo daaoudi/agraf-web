@@ -1,22 +1,22 @@
 @extends('layout.layouts')
 
 @section('title')
-    liste des Devis
+    liste des Projets
 @endsection
 
 @section('content')
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-            <h2>Devis</h2>
+            <h2>Projets</h2>
             <ol>
                 <li><a href="/">Home</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li>Devis</li>
+                <li>Projets</li>
             </ol>
 
             <a href={{ route('devis.create') }} class="btn btn-warning">
-                + Ajouter un devi
+                + Ajouter un Projet
             </a>
 
 
@@ -29,7 +29,7 @@
         </span></button>
     <div class="card mt-3">
         <div class="card-header">
-            <h3 class="card-title">Liste des Devis</h3>
+            <h3 class="card-title">Liste des Projets</h3>
             @if (session()->has('success'))
             <div class="alert alert-success text-center">
              {{session()->get('success')}}
@@ -45,8 +45,8 @@
                 <thead>
                     <tr>
                         <th>Nom</th>
-                        <th>Date de devi</th>
-                        <th>Numero de devi </th>
+                        <th>Date de Projet</th>
+                        <th>Numero de Projet </th>
                         <th>Totale TTC </th>
                         <th>PDF</th>
                         <th>Actions</th>
@@ -105,53 +105,59 @@
         </div>
         <!-- /.card-body -->
         <div class="card-body my-5">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Projet</th>
                         <th>Date Projet</th>
-                        <th>articles</th>
-                        <th>prix</th>
-                        <th>qte</th>
+                        <th>Articles</th>
                         <th>Total HT</th>
-                        <th>Somme Total</th>
                         <th>Total TVA 20%</th>
                         <th>Total TTC</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
                     @if (is_array($groupedDevis) || is_object($groupedDevis))
-                    @php
-                        $total = 0;
-                    @endphp
-                    @foreach ($groupedDevis as $dev)
-                    @foreach ($dev as $de)
-                        
-                            <tr>
-                                <td>{{ $de->nom_devi }}</td>
-                                <td>{{ $de->date_devi }}</td>
-                                <td>{{$de->designation_ouvrage}} </td>
-                                <td>{{$de->prix}} </td>
-                                <td>{{$de->qte}} </td>
-                                <td>
-                                    {{ $de->prix * $de->qte }}
-                                </td>
-                               
-                            </tr>
+                        @foreach ($groupedDevis as $dev)
                             @php
-            $total += $de->prix * $de->qte;
-        @endphp 
-       
-        @endforeach
-        <tr>
-            <td colspan="3">Total: {{ $total }}</td>
-        </tr>
-                       
-                    @endforeach
-                    {{-- @endif --}}
+                                $projectTotal = 0;
+                                $articleCount = count($dev);
+                            @endphp
+                            @foreach ($dev as $index => $de)
+                                <tr>
+                                    @if ($index === 0)
+                                        <td rowspan="{{ $articleCount }}">{{ $de->nom_devi }}</td>
+                                        <td rowspan="{{ $articleCount }}">{{ $de->date_devi }}</td>
+                                        <td rowspan="{{ $articleCount }}">
+                                            <ul>
+                                                @foreach ($dev as $article)
+                                                    <li>{{ $article->designation_ouvrage }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                    @endif
+                                    <td>{{ $de->prix * $de->qte }} DH</td>
+                                    @php
+                                        $totalHT = floatVal($de->prix) * floatVal($de->qte);
+                                        $projectTotal = $projectTotal + $totalHT;
+                                    @endphp
+                                        <td align="center" rowspan="{{ $articleCount + 1 }}">{{ ($projectTotal * 0.2) }} DH</td>
+                                        <td align="center" rowspan="{{ $articleCount + 1 }}">{{ $projectTotal + ($projectTotal * 0.2) }} DH</td>
+                                </tr>
+                            @endforeach
+                            <tr style="background-color: #00f3f3; ">
+                                <td colspan="3" ><b>Somme Totale:</b></td>
+                                <td colspan="" align="center">{{ $projectTotal }} DH</td>
+                            </tr>
+                            @php $projectTotal = 0; @endphp
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
+            
+            
+            
+            
         </div>
     </div>
     </div>
