@@ -3,7 +3,7 @@
 l'ajout des charges.
 @endsection
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center " style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
   
       <h2>Matieres</h2>
@@ -16,7 +16,7 @@ l'ajout des charges.
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+  <div class="container-fluid my-5" style="position:relative;top:50px;min-height:1200px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -38,25 +38,28 @@ l'ajout des charges.
           <h3 class="text-center">Formulaire des charges :</h3>
           <p class="text-center">Modifier les champs s'il vous plaît.</p>
           <div class="row gy-3 ">
-      
+              
+                      <div class="col-md-12">
+                          <label for="designation">Designation :</label>
+                          <input type="text" name="designation" id="designation" class="form-control" placeholder="Designation" value="{{old('desination')}}">
+                      </div>
+              
               <div class="col-md-12">
-                  <label for="mod">MOD :</label>
-                  <input type="text" name="mod" id="mod" class="form-control" placeholder="MOD" value="{{old('mod')}}">
+                  <label for="prix">Prix :</label>
+                  <input type="text" name="prix" id="prix" class="form-control" placeholder="prix" value="{{old('prix')}}">
               </div>
-      
               <div class="col-md-12">
-                  <label for="mp">MP :</label>
-                  <input type="text" name="mp" id="mp" class="form-control" placeholder="MP" value="{{old('mp')}}">
+                  <label for="qte">Quantite :</label>
+                  <input type="text" name="qte" id="qte" class="form-control" placeholder="Quantite" value="{{old('qte')}}">
               </div>
-      
               <div class="col-md-12">
-                  <label for="montant_charges_matier">Montant des charges de matière :</label>
-                  <input type="text" name="montant_charges_matier" id="montant_charges_matier" class="form-control" placeholder="Montant des charges de matière" value="{{old('montant_charges_matier')}}">
+                  <label for="unite">Unité d'achat :</label>
+                  <input type="text" name="unite" id="unite" class="form-control" placeholder="Unite" value="{{old('unite')}}">
               </div>
-      
+
               <div class="col-md-12">
                   <label for="date_charge">Date de charge :</label>
-                  <input type="date" id="date_charge" name="date_charge" class="form-control" value="{{old('date_charge')}}">
+                  <input type="date" id="date_charge" name="date" class="form-control" value="{{old('date')}}">
               </div>
       
               <div class="col-md-12">
@@ -69,15 +72,7 @@ l'ajout des charges.
                   </select>
               </div>
       
-              <div class="col-md-12">
-                  <label for="devi_id">Devis :</label>
-                  <select name="devi_id" id="devi_id" class="form-select">
-                      <option selected disabled>Choisir le nom du devis</option>
-                      @foreach($devis as $devi)
-                      <option value="{{$devi->id}}">{{$devi->nom_devi}}</option>
-                      @endforeach
-                  </select>
-              </div>
+
       
               <div class="col-md-12">
                   <label for="fournisseur_id">Fournisseur :</label>
@@ -88,16 +83,8 @@ l'ajout des charges.
                       @endforeach
                   </select>
               </div>
-      
-              <div class="col-md-12">
-                  <label for="matier_id">Matière :</label>
-                  <select name="matier_id" id="matier_id" class="form-select">
-                      <option selected disabled>Choisir le nom de la matière</option>
-                      @foreach($matiers as $matier)
-                      <option value="{{$matier->id}}">{{$matier->designation}}</option>
-                      @endforeach
-                  </select>
-              </div>
+
+                @livewire('article-selection', ['devis' => $devis])
       
               <div class="col-md-12 text-center">
                   <button class="btn btn-warning" type="submit">Valider</button>
@@ -110,5 +97,5 @@ l'ajout des charges.
   
       </div>
   </div>
-    
+  
 @endsection

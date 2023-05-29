@@ -23,7 +23,7 @@ liste des charges
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -43,11 +43,10 @@ liste des charges
               <thead>
                 <tr>
                   <th>Projet</th>
-                  <th>fournisseur</th>
-                  <th>matier</th>
-                  <th>MOD</th>
-                  <th>MP</th>
-                  <th>montant_charges_matier</th>
+                  <th>Article</th>
+                  <th>Fournisseur</th>
+                  <th>Prix</th>
+                  <th>Quantité</th>
                   <th>montant_credit</th>
                   <th>mode_paiement</th>
                   <th>Date </th>
@@ -57,12 +56,11 @@ liste des charges
               <tbody>
                 @foreach($charges as $charge)
                 <tr>
-                    <td>{{$charge->devi->nom_devi}}</td>
+                  <td>{{$charge->devi->nom_devi}}</td>
+                  <td>{{$charge->ouvrage->designation_ouvrage}}</td>
+
                     <td>{{$charge->fournisseur->nom .' ' . $charge->fournisseur->prenom}} </td>
-                    <td>{{$charge->matier->designation}}</td>
-                    <td>{{$charge->mod}} DH</td>
-                    <td>{{$charge->mp}} DH</td>
-                    <td>
+                    {{-- <td>
                       @if ($charge->mode_paiement==="crédit")
                         <span style="color:green;">0 DH</span> 
                         @else
@@ -71,16 +69,19 @@ liste des charges
                         </span>
                        
                       @endif
-                     </td>
-                    <td>@php $color=""; if($charge->montant_credit > 0){$color="red";}@endphp
+                     </td> --}}
+                     <td>{{$charge->prix}} DH</td>
+                     <td>{{$charge->qte}} {{$charge->unite}}</td>
+                    <td>
+                      @php $color=""; if($charge->montant_credit > 0){$color="red";}@endphp
                       <span style="color:{{$color}}">{{$charge->montant_credit}}DH</span></td>
                     <td>{{$charge->mode_paiement}}</td>
-                    <td>{{$charge->date_charge}}</td>
+                    <td>{{$charge->date}}</td>
                     
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('charges.edit',$charge->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-primary btn-sm"><a href="{{route('charges.edit',$charge->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('charges.destroy',$charge->id)}}" style="display: inline-block;" method="post" id="{{$charge->id}}">
@@ -88,12 +89,12 @@ liste des charges
                         @method('DELETE')    
                         </form>
 
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                        <button title="Supprimer" class="btn btn-danger btn-sm" onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{$charge->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn view"> <a href="{{route('charges.show',$charge->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn btn-secondary btn-sm view"> <a href="{{route('charges.show',$charge->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else

@@ -37,6 +37,8 @@ class ClientController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
+            'email'=>'required|email',
+
 
         ]);
 
@@ -84,6 +86,7 @@ class ClientController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'telephone' => 'required|min:10|numeric',
+            'email'=>'required|email',
 
 
         ]);
@@ -92,6 +95,7 @@ class ClientController extends Controller
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'telephone' => $request->telephone,
+            'email'=>$request->email,
         ]);
 
         /*

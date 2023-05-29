@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+    <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
         <button class="go-back" onclick="history.back();">
             <span class="material-symbols-outlined">
                 arrow_back
@@ -32,7 +32,7 @@
         <div class="card">
             <div class="card-header">
                 @if (session()->has('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success text-center">
                         {{ session()->get('success') }}
                     </div>
                 @endif
@@ -49,6 +49,8 @@
                             <th>Date_Debut</th>
                             <th>Date_Fin</th>
                             <th>salaire</th>
+                            <th>salaire_par_semaine</th>
+                            <th>Article</th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -62,10 +64,31 @@
                                 <td>{{ $ouvrier->date_debut }}</td>
                                 <td>{{ $ouvrier->date_fin }}</td>
                                 <td>{{ $ouvrier->salaire }} DH</td>
+                                <td>@php
+    
+
+                                     $from_date = $ouvrier->date_debut;
+
+                                    $to_date = $ouvrier->date_fin;
+
+                                    $first_datetime = new DateTime($from_date);
+
+                                    $last_datetime = new DateTime($to_date);
+
+                                    $interval = $first_datetime->diff($last_datetime);
+
+                                    $final_days = $interval->format('%a');//and then print do whatever you like with $final_days
+
+                                  
+
+                                @endphp 
+                                {{$ouvrier->salaire * $final_days}} DH
+                            </td>
+                            <td>{{$ouvrier->ouvrage->designation_ouvrage}} </td>
                                 <td>
                                     @if (auth()->check())
                                         @if (auth()->user()->is_admin)
-                                            <button title="Modifier" class="btn btn-success"><a
+                                            <button title="Modifier" class="btn btn-primary btn-sm"><a
                                                     href="{{ route('posteOuvriers.edit', $ouvrier->id) }}"><span
                                                         class="material-symbols-outlined">
                                                         edit
@@ -76,14 +99,14 @@
                                                 @method('DELETE')
                                             </form>
 
-                                            <button title="Supprimer" class="btn btn-danger"
+                                            <button title="Supprimer" class="btn btn-danger btn-sm"
                                                 onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{ $ouvrier->id }}').submit();"
                                                 type="submit"><span class="material-symbols-outlined">
                                                     delete
                                                 </span> </button>
-                                            <button title="View" class="btn view"> <a
+                                            <button title="View" class="btn btn-secondary btn-sm view"> <a
                                                     href="{{ route('posteOuvriers.show', $ouvrier->id) }}"> <span
                                                         class="material-symbols-outlined">
                                                         visibility

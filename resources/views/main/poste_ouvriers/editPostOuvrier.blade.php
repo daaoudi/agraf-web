@@ -42,17 +42,7 @@
                     <p class="text-center">Modifiez tous les champs s'il vous plaît.</p>
                     <div class="row gy-3 ">
 
-                        <div class="col-md-12">
-                            <label for="devi_id">Projet :</label>
-                            <select name="devi_id" class="form-select" required>
-                                <option disabled>Choisir le projet (devi) :</option>
-                                @foreach ($devis as $devi)
-                                    <option value="{{ $devi->id }}"
-                                        {{ $posteOuvrier->devi_id == $devi->id ? 'selected' : '' }}>{{ $devi->nom_devi }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
+    
 
                         <div class="col-md-12">
                             <label for="ouvrier_id">Ouvrier :</label>
@@ -74,18 +64,6 @@
                                     <option value="{{ $service->id }}"
                                         {{ $posteOuvrier->service_id == $service->id ? 'selected' : '' }}>
                                         {{ $service->nom_service }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="ouvrage_id">Ouvrage :</label>
-                            <select name="ouvrage_id" class="form-select" required>
-                                <option disabled>Choisir le nom de l'ouvrage :</option>
-                                @foreach ($ouvrages as $ouvrage)
-                                    <option value="{{ $ouvrage->id }}"
-                                        {{ $posteOuvrier->ouvrage_id == $ouvrage->id ? 'selected' : '' }}>
-                                        {{ $ouvrage->designation_ouvrage }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -119,6 +97,9 @@
                             <input type="date" name="date_fin" class="form-control" placeholder="Date de fin"
                                 value="{{ $posteOuvrier->date_fin }}" required>
                         </div>
+
+                        @livewire('article-selection', ['devis' => $devis])
+
 
                         <div class="col-md-12 text-center">
                             <button class="btn btn-warning" type="submit">Modifier</button>

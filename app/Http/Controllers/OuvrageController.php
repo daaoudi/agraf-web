@@ -19,6 +19,13 @@ class OuvrageController extends Controller
         return view('main.ouvrages.index',compact('ouvrages'));
 
     }
+    
+
+    public function getArticles()
+    {
+        $articles = Ouvrage::all();
+        return response()->json($articles);
+    }
 
     /**
      * Show the form for creating a new resource.

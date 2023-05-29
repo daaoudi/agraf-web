@@ -16,6 +16,13 @@ return [
     */
 
     'class_namespace' => 'App\\Http\\Livewire',
+    'components' => [
+        'project-article-form' => \App\Http\Livewire\ProjectArticleForm::class,
+    ],
+    'aliases' => [
+        'project-article-form' => \App\Http\Livewire\ProjectArticleForm::class,
+    ],
+    'debug' =>true,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,6 +62,7 @@ return [
     */
 
     'asset_url' => null,
+
 
     /*
     |--------------------------------------------------------------------------

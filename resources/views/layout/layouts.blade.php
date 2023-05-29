@@ -11,7 +11,6 @@
   <link href="/storage/assets/img/agraf.png" rel="icon">
   <link href="/storage/assets/img/agraf.png" rel="">
   
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -83,6 +82,8 @@
 
 <div id="preloader"></div>
     <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script src="/storage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/storage/assets/vendor/aos/aos.js"></script>
   <script src="/storage/assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -102,7 +103,7 @@
 
 
 
-
+  <script src="{{ asset('livewire/livewire.js') }}" defer></script>
 
   <!-- jQuery -->
 <script src="/adminlte_assets/plugins/jquery/jquery.min.js"></script>
@@ -153,9 +154,12 @@
    
 
   </script>
+<script src="{{ asset('livewire.js') }}"></script>
 
   @yield('script')
+  @livewireStyles
   @livewireScripts
+  
 
 </body>
 </html>

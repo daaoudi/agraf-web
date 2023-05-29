@@ -40,23 +40,26 @@ Modifier les charges
           <div class="row gy-3 ">
       
               <div class="col-md-12">
-                  <label for="mod">MOD :</label>
-                  <input type="text" name="mod" id="mod" class="form-control" value="{{$charge->mod}}" placeholder="MOD">
+                  <label for="designation">Designation :</label>
+                  <input type="text" name="designation" id="designation" class="form-control" value="{{$charge->designation}}" placeholder="designation">
               </div>
       
               <div class="col-md-12">
-                  <label for="mp">MP :</label>
-                  <input type="text" name="mp" id="mp" class="form-control" value="{{$charge->mp}}" placeholder="MP">
+                  <label for="prix">prix :</label>
+                  <input type="text" name="prix" id="prix" class="form-control" value="{{$charge->prix}}" placeholder="prix">
               </div>
-      
               <div class="col-md-12">
-                  <label for="montant_charges_matier">Montant des charges de matière :</label>
-                  <input type="text" name="montant_charges_matier" id="montant_charges_matier" class="form-control" value="{{$charge->montant_charges_matier}}" placeholder="Montant des charges de matière">
+                  <label for="qte">Quantité :</label>
+                  <input type="text" name="qte" id="qte" class="form-control" value="{{$charge->qte}}" placeholder="qte">
+              </div>
+              <div class="col-md-12">
+                  <label for="unite">Unité :</label>
+                  <input type="text" name="unite" id="unite" class="form-control" value="{{$charge->unite}}" placeholder="unite">
               </div>
               
               <div class="col-md-12">
-                  <label for="date_charge">Date de charge :</label>
-                  <input type="date" id="date_charge" name="date_charge" class="form-control" value="{{$charge->date_charge}}">
+                  <label for="date">Date de charge :</label>
+                  <input type="date" id="date" name="date" class="form-control" value="{{$charge->date}}">
               </div>
       
               <div class="col-md-12">
@@ -69,19 +72,7 @@ Modifier les charges
                   </select>
               </div>
       
-              <div class="col-md-12">
-                  <label for="devi_id">Devis :</label>
-                  <select name="devi_id" id="devi_id" class="form-select">
-                      @foreach($devis as $devi)
-                      @if($devi->id==$charge->devi_id)
-                      <option selected value="{{$devi->id}}">{{$devi->nom_devi}}</option>
-                      @else 
-                      <option value="{{$devi->id}}">{{$devi->nom_devi}}</option>
-                      @endif
-                      @endforeach
-                  </select>
-              </div>
-      
+ 
               <div class="col-md-12">
                   <label for="fournisseur_id">Fournisseur :</label>
                   <select name="fournisseur_id" id="fournisseur_id" class="form-select">
@@ -94,19 +85,10 @@ Modifier les charges
                       @endforeach
                   </select>
               </div>
+
+              @livewire('article-selection', ['devis' => $devis])
+
       
-              <div class="col-md-12">
-                  <label for="matier_id">Matière :</label>
-                  <select name="matier_id" id="matier_id" class="form-select">
-                      @foreach($matiers as $matier)
-                      @if($matier->id==$charge->matier_id)
-                      <option selected value="{{$matier->id}}">{{$matier->designation}}</option>
-                      @else 
-                      <option value="{{$matier->id}}">{{$matier->designation}}</option>
-                      @endif
-                      @endforeach
-                  </select>
-              </div>
       
               <div class="col-md-12 text-center">
                   <button class="btn btn-warning" type="submit">Valider</button>

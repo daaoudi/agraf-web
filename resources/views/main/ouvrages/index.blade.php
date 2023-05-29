@@ -23,7 +23,7 @@ liste des ouvrages
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -32,7 +32,7 @@ liste des ouvrages
       <div class="card">
           <div class="card-header">
             @if (session()->has('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success text-center">
              {{session()->get('success')}}
             </div>
             @endif
@@ -79,7 +79,7 @@ liste des ouvrages
                     <td>
                       @if(auth()->check())
                         @if(auth()->user()->is_admin)
-                      <button title="Modifier" class="btn btn-success"><a href="{{route('ouvrages.edit',$ouvrage->id)}}"><span class="material-symbols-outlined">
+                      <button title="Modifier" class="btn btn-primary btn-sm"><a href="{{route('ouvrages.edit',$ouvrage->id)}}"><span class="material-symbols-outlined">
                         edit
                         </span></a></button>
                         <form action="{{route('ouvrages.destroy',$ouvrage->id)}}" style="display: inline-block;" method="post" id="{{$ouvrage->id}}">
@@ -87,12 +87,12 @@ liste des ouvrages
                         @method('DELETE')    
                         </form>
 
-                        <button title="Supprimer" class="btn btn-danger" onclick="event.preventDefault();
+                        <button title="Supprimer" class="btn btn-danger btn-sm" onclick="event.preventDefault();
                         if(confirm('vous êtes sure pour la suppression ?'))
                         document.getElementById('{{$ouvrage->id}}').submit();" type="submit"><span class="material-symbols-outlined">
                         delete
                         </span> </button>
-                        <button title="View" class="btn view"> <a href="{{route('ouvrages.show',$ouvrage->id)}}"> <span class="material-symbols-outlined">
+                        <button title="View" class="btn btn-secondary btn-sm view"> <a href="{{route('ouvrages.show',$ouvrage->id)}}"> <span class="material-symbols-outlined">
                             visibility
                             </span></a></button>
                             @else

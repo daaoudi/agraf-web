@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Devi;
 use App\Models\Charge;
 use App\Models\Fournisseur;
+use App\Models\Ouvrage;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreChargeRequest;
-use App\Http\Requests\UpdateChargeRequest;
-use App\Models\Matier;
+
 
 class ChargeController extends Controller
 {
@@ -18,7 +17,7 @@ class ChargeController extends Controller
     public function index()
     {
         //
-        $charges=Charge::with('devi','fournisseur')->get();
+        $charges=Charge::with('devi','fournisseur','ouvrage')->get();
         return view('main.charges.index',compact('charges'));
     }
 
@@ -30,9 +29,9 @@ class ChargeController extends Controller
         //
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
-        $matiers=Matier::all();
+        $ouvrages=Ouvrage::all();
 
-        return view('main.charges.createCharges',compact('devis','fournisseurs','matiers'));
+        return view('main.charges.createCharges',compact('devis','fournisseurs','ouvrages'));
     }
 
     /**
@@ -42,31 +41,31 @@ class ChargeController extends Controller
     {
         //
         $request->validate([
-            "mod" => "required",
-            "mp" => "required",
-            "devi_id" => "required|exists:devis,id",
+            "designation" => "required",
+            "prix" => "required",
+            "qte" => "required",
+            "unite" => "required",
+            "ouvrage_id" => "required|exists:ouvrages,id",
             "fournisseur_id" => "required|exists:fournisseurs,id",
-            "matier_id"=>"required|exists:matiers,id",
-            "montant_charges_matier" => "required",
-            //"montant_credit" => "required",
+            "devi_id" => "required|exists:devis,id",
             "mode_paiement" => "required",
-            "date_charge" => "required",
+            "date" => "required",
 
         ]);
         //$charge=Charge::create($request->all());
         $charge = new Charge();
-        $charge->mod=$request->input('mod');
-        $charge->mp=$request->input('mp');
         $charge->devi_id=$request->input('devi_id');
+        $charge->prix=$request->input('prix');
+        $charge->qte=$request->input('qte');
+        $charge->unite=$request->input('unite');
+        $charge->designation=$request->input('designation');
         $charge->fournisseur_id=$request->input('fournisseur_id');
-        $charge->matier_id=$request->input('matier_id');
-        $charge->montant_charges_matier=$request->input('montant_charges_matier');
-        $charge->montant_credit=$request->input('montant_credit');
+        $charge->ouvrage_id=$request->input('ouvrage_id');
         $charge->mode_paiement=$request->input('mode_paiement');
-        $charge->date_charge=$request->input('date_charge');
+        $charge->date=$request->input('date');
 
         if($request->mode_paiement === "crédit"){
-            $charge->montant_credit =  $request->montant_charges_matier;
+            $charge->montant_credit =  floatval($request->prix) *  floatval($request->qte);
         }
         else{
             $charge->montant_credit =  0;
@@ -91,8 +90,7 @@ class ChargeController extends Controller
     {
         $devis=Devi::all();
         $fournisseurs=Fournisseur::all();
-        $matiers=Matier::all();
-        return view('main.charges.editCharge',compact('charge','devis','fournisseurs','matiers'));
+        return view('main.charges.editCharge',compact('charge','devis','fournisseurs'));
         }
 
     /**
@@ -101,18 +99,17 @@ class ChargeController extends Controller
     public function update(Request $request, Charge $charge)
     {
         $request->validate([
-            "mod" => "required",
-            "mp" => "required",
-            "devi_id" => "required|exists:devis,id",
+            "designation" => "required",
+            "prix" => "required",
+            "qte" => "required",
+            "unite" => "required",
+            "ouvrage_id" => "required|exists:ouvrages,id",
             "fournisseur_id" => "required|exists:fournisseurs,id",
-            "matier_id"=>"required|exists:matiers,id",
-            "montant_charges_matier" => "required",
-            //"montant_credit" => "required",
+            "devi_id" => "required|exists:devis,id",
             "mode_paiement" => "required",
-            "date_charge" => "required",
-
-
+            "date" => "required",
         ]);
+        
         if($request->mode_paiement === "crédit"){
             $charge->montant_credit =  $request->montant_charges_matier;
         }

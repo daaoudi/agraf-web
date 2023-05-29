@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Devi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DeviController extends Controller
 {
@@ -13,7 +14,12 @@ class DeviController extends Controller
     public function index()
     {
         $devis = Devi::all();
-        return view('main.devis.index', compact('devis'));
+        $devi=DB::table('devis')
+        ->join('ouvrages','devis.id','=','ouvrages.devi_id')
+        ->select('ouvrages.prix','ouvrages.qte','devis.nom_devi','devis.date_devi')
+        ->get();
+        //dd($devi);
+        return view('main.devis.index', compact('devis','devi'));
     }
 
     /**

@@ -20,7 +20,6 @@ class Devi extends Model
         "nom_devi",
         "date_devi",
         "devi_numero",
-       "totale",
         "document",
     ];
 
