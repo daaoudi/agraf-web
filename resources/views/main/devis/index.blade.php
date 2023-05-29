@@ -104,6 +104,36 @@
             </table>
         </div>
         <!-- /.card-body -->
+        <div class="card-body mt-3">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Date Projet</th>
+                        <th>Total HT</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {{-- @if(is_array($devi)) --}}
+                    @foreach ($devi as $de)
+                    <tr>
+                        <td>{{$de->nom_devi}} </td>
+                        <td>{{$de->date_devi}} </td>
+                        <td>
+                            @php
+                                $pr=floatVal($de->prix);
+                                $qt=floatVal($de->qte);
+                                $t=$pr*$qt;
+                            @endphp
+                            {{$t}}
+                        </td>
+                    </tr>
+                    @endforeach
+                    {{-- @endif --}}
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     

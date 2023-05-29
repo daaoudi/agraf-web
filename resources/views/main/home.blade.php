@@ -305,7 +305,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image001.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image001.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Terrassement</p>
@@ -316,7 +316,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image005.png" style="width:280px; height:150px;box-shadow: 3px 3px rgb(255, 198, 77), -1em 0 .4em rgb(255, 211, 93);" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image005.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>les Fondations</p>
@@ -327,7 +327,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image007.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image007.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Dallages et Poteaux</p>
@@ -338,7 +338,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-construction" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image016.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image016.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Construction</h4>
               <p>Mur De Cloture et Cage d'escalier et Picsine</p>
@@ -349,7 +349,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image021.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image021.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Carllage Et Marbre</p>
@@ -360,7 +360,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image024.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image024.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Plattre</p>
@@ -371,7 +371,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image028.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image028.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Peinture</p>
@@ -382,7 +382,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image032.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image032.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Menuiserie bois</p>
@@ -393,7 +393,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image036.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image036.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Menuiserie alluminuim</p>
@@ -404,7 +404,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" style="position: absolute">
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image040.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image040.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Sanitaire</p>
@@ -415,7 +415,7 @@ Agrtravis - Construction Et Amenagement
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-design" >
           <div class="portfolio-content h-100">
-            <img loading="lazy" src="/storage/assets/img/services/image044.png" style="aspect-ratio: 1/1" alt="">
+            <img loading="lazy" src="/storage/assets/img/services/image044.png" style="aspect-ratio: 1/0.5" alt="">
             <div class="portfolio-info">
               <h4>Aménagement</h4>
               <p>Entretien et réparation</p>
