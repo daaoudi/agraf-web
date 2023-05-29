@@ -19,7 +19,7 @@ class DeviController extends Controller
     ->join('ouvrages', 'devis.id', '=', 'ouvrages.devi_id')
     
     ->select('devis.*','ouvrages.*')
-    ->distinct()
+    
     ->get();
     $groupedDevis = $dev->groupBy('devis.id');
         //dd($dev);
