@@ -345,52 +345,47 @@
                     <button id="toggleButton" onclick="toggleTable2()">Afficher/Cacher</button>
 
                     <div class="foldable-table table-responsive" id="tableContainer2">
-                        <table class="table table-striped table-bordered mt-5">
-                            <thead>
+                    <table class="table table-striped table-bordered mt-5">
+                        <thead>
+                            <tr>
+                                <th>Devi(s)</th>
+                                <th>Ouvrages(s)</th>
+                                <th>Taux d'avancement de projet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($ouvrages as $key => $values)
                                 <tr>
-                                    <th>Devi(s)</th>
-                                    <th>Ouvrages(s)</th>
-                                    <th>Taux d'avancement de projet</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($ouvrages as $key => $values)
-                                    <tr>
-                                        <td style="text-align:center;align-items:center;">{{ $key }}</td>
-                                        <td>
-                                            @php $taux_global=0; @endphp
-                                            @foreach ($values as $vals)
-                                                <div class="card mb-3">
-                                                    <div class="card-header">
-                                                        {{-- <h5 class="card-title mr-2">{{ $vals['designation_ouvrage'] }}</h5> --}}
-                                                        <a href={{ route('ouvrages.show', $vals['id']) }}><span
-                                                                class="card-text">
-                                                                @php
-                                                                    $avance = 0;
-                                                                    $taux_global_actuelle = 0;
-                                                                @endphp
-                                                                @if ($vals['etat'] === 'pas encore')
-                                                                    <span class="mt-2"
-                                                                        style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                                @endif
+                                    <td style="text-align:center;align-items:center;">{{ $key }}</td>
+                                    <td>
+                                        @php $taux_global=0; @endphp
+                                        @foreach ($values as $vals)
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    {{-- <h5 class="card-title mr-2">{{ $vals['designation_ouvrage'] }}</h5> --}}
+                                                    <a href={{route('ouvrages.show',$vals['id'])}}><span class="card-text">
+                                                        @php $avance=0;$taux_global_actuelle=0; @endphp 
+                                                        @if ($vals['etat'] === "pas encore")
+                                                        <span class="mt-2" style="color: red; background: rgba(255, 0, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                    @endif
+                                                    
+                                                    @if ($vals['etat'] === "en cours")
+                                                        <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                    @endif
+                                                    
+                                                    @if ($vals['etat'] === "complété")
+                                                        @php $avance=1;  @endphp
+                                                        <span class="mt-2" style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
+                                                    @endif    
+                                                    </span></a>
+                                                </div>
+                                                <div class="card-body" style="display:none">
+                                                    <p class="card-text"><b>Taux d'avancement:</b> 
+                                                        {{
 
-                                                                @if ($vals['etat'] === 'en cours')
-                                                                    <span class="mt-2"
-                                                                        style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                                @endif
-
-                                                                @if ($vals['etat'] === 'complété')
-                                                                    @php $avance=1;  @endphp
-                                                                    <span class="mt-2"
-                                                                        style="color: green; background: rgba(0, 128, 0, 0.1); padding: 5px;border-radius:12px;">{{ $vals['designation_ouvrage'] }}</span>
-                                                                @endif
-                                                            </span></a>
-                                                    </div>
-                                                    <div class="card-body" style="display:none">
-                                                        <p class="card-text"><b>Taux d'avancement:</b>
-                                                            {{ $taux_global_actuelle = number_format((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100 * $avance, 2) }}%
-                                                        </p>
-                                                    </div>
+                                                             $taux_global_actuelle= number_format(((($vals['qte'] * $vals['prix']) / $vals['totale']) * 100)*$avance, 2)
+                                                             
+                                                        }}%</p>
                                                 </div>
                                                 @php $taux_global = $taux_global + $taux_global_actuelle; @endphp
                                             @endforeach

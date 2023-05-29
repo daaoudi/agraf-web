@@ -44,7 +44,7 @@
                 
                         <div class="col-md-12">
                             <label for="prix_unitaire">Prix unitaire:</label>
-                            <input type="text" name="prix_unitaire" class="form-control" value="{{ old('prix_unitaire') }}"
+                            <input type="number" name="prix_unitaire" class="form-control" value="{{ old('prix_unitaire') }}"
                                 placeholder="Prix Unitaire" required>
                         </div>
                 

@@ -67,7 +67,7 @@ liste des ouvrages
                   @endif
                   
                   @if ($ouvrage->etat == "en cours")
-                      <span class="mt-2" style="color: yellow; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{$ouvrage->etat}}</span>
+                      <span class="mt-2" style="color: orange; background: rgba(255, 255, 0, 0.1); padding: 5px;border-radius:12px;">{{$ouvrage->etat}}</span>
                   @endif
                   
                   @if ($ouvrage->etat == "complété")
