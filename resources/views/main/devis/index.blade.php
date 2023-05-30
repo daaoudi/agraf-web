@@ -22,7 +22,7 @@
 
         </div>
     </div>
-    <div class="container-md" style="position:relative;top:50px;min-height:1200px;">
+    <div class="container-lg" style="position:relative;top:50px;min-height:1200px;">
 <button class="go-back" onclick="history.back();">
         <span class="material-symbols-outlined">
         arrow_back
@@ -37,7 +37,7 @@
             @endif
            
         </div>
-        <h4>Nombre de Projets: {{count($devis)}}</h4>        </div>
+        <h4>Nombre de Projets: {{count($devis)}}</h4>       
 
         <!-- /.card-header -->
         <div class="card-body">
@@ -161,6 +161,7 @@
         </div>
     </div>
     </div>
+    
    
     
 @endsection
