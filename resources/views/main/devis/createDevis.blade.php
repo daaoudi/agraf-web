@@ -49,17 +49,17 @@ l'ajout d'un Devi.
       
           <div class="col-md-12">
             <label for="nom_devi">Nom de devis :</label>
-            <input type="text" name="nom_devi" id="nom_devi" class="form-control" placeholder="Nom de devis" required>
+            <input type="text" name="nom_devi" id="nom_devi" class="form-control" placeholder="Nom de devis" value="{{old('nom_devi')}} ">
           </div>
       
           <div class="col-md-12">
             <label for="date_devi">Date de devis :</label>
-            <input type="date" name="date_devi" id="date_devi" class="form-control" placeholder="Date de devis" required>
+            <input type="date" name="date_devi" id="date_devi" class="form-control" placeholder="Date de devis" value="{{old('date_devi')}} ">
           </div>
       
           <div class="col-md-12">
             <label for="numero_devi">Numéro de devis :</label>
-            <input type="text" name="numero_devi" id="numero_devi" class="form-control" placeholder="Numéro de devis" required>
+            <input type="text" name="numero_devi" id="numero_devi" class="form-control" placeholder="Numéro de devis" value="{{old('numero_devi')}} ">
           </div>
 
       

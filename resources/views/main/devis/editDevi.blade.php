@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+    <div class="container-lg" style="position:relative;top:50px;min-height:992px;">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-6 " data-aos="fade">
 
@@ -64,13 +64,10 @@
                         <input type="text" name="numero_devi" id="numero_devi" class="form-control" value="{{ $devi->numero_devi }}" required>
                       </div>
                   
-                      <div class="col-md-12">
-                        <label for="totale">Totale TTC:</label>
-                        <input type="text" name="totale" id="totale" class="form-control" value="{{ $devi->totale }}" required>
-                      </div>
+                    
                   
                       <div class="col-md-12 text-center">
-                        <button class="btn btn-warning" type="submit">Valider</button>
+                        <button class="btn btn-warning" type="submit">Modifier</button>
                       </div>
                   
                     </div>

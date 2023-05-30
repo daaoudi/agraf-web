@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreign('devi_id')->references('id')->on('devis')->onDelete('cascade')->onUpdate('cascade');
            
             $table->unsignedBigInteger('ouvrage_id');
-            $table->foreign('ouvrageOu_id')->references('id')->on('ouvrageOus')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('ouvrage_id')->references('id')->on('ouvrages')->onDelete('cascade')->onUpdate('cascade');
 
             
             $table->unsignedBigInteger('fournisseur_id');

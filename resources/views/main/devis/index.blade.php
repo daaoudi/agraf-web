@@ -37,7 +37,7 @@
             @endif
            
         </div>
-        <h4>Nombre de fournisseurs: {{count($devis)}}</h4>        </div>
+        <h4>Nombre de Projets: {{count($devis)}}</h4>        </div>
 
         <!-- /.card-header -->
         <div class="card-body">

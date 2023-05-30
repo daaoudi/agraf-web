@@ -43,7 +43,7 @@
       <nav id="navbar" class="navbar ">
         <ul>
           <li><a href="/" class="text-white active">Acceuil</a></li>
-          <li><a href="#" class="text-white">à propos</a></li>
+          <li><a href="#alt-services" class="text-white">à propos</a></li>
           <li><a href="#services" class="text-white">Services</a></li>
           <li><a href="#projets" class="text-white">Projets</a></li>
          @if(auth()->check())

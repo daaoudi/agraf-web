@@ -39,7 +39,7 @@ class DeviController extends Controller
             'nom_devi' => 'required',
             'date_devi' => 'required',
             'numero_devi' => 'required',
-            'totale' => 'required',
+            
         ]);
 
 
@@ -47,7 +47,7 @@ class DeviController extends Controller
         $devi->nom_devi = $request->input('nom_devi');
         $devi->date_devi = $request->input('date_devi');
         $devi->numero_devi = $request->input('numero_devi');
-        $devi->totale = $request->input('totale');
+      
 
         //Document treatments
         if ($request->hasFile('doc')) {
@@ -97,7 +97,7 @@ class DeviController extends Controller
             'nom_devi' => 'required',
             'date_devi' => 'required',
             'numero_devi' => 'required',
-            'totale' => 'required',
+           
         ]);
 
         //Document treatments
@@ -116,7 +116,7 @@ class DeviController extends Controller
             'nom_devi' => $request->input('nom_devi'),
             'date_devi' => $request->input('date_devi'),
             'numero_devi' => $request->input('numero_devi'),
-            'totale' => $request->input('totale'),
+            
             'document' => $devi->document
         ]);
 
