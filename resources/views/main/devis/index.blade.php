@@ -105,7 +105,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-body my-5">
-            <table id="example1" class="table table-striped">
+            {{-- <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Projet</th>
@@ -153,7 +153,57 @@
                         @endforeach
                     @endif
                 </tbody>
+            </table> --}}
+            <table id="example1" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Date Projet</th>
+                        <th>Articles</th>
+                        <th>Total HT</th>
+                        <th>Total TVA 20%</th>
+                        <th>Total TTC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (is_array($groupedDevis) || is_object($groupedDevis))
+                        @foreach ($groupedDevis as $dev)
+                            @php
+                                $projectTotal = 0;
+                                $articleCount = count($dev);
+                            @endphp
+                            @foreach ($dev as $index => $de)
+                                <tr>
+                                    @if ($index === 0)
+                                        <td rowspan="{{ $articleCount }}">{{ $de->nom_devi }}</td>
+                                        <td rowspan="{{ $articleCount }}">{{ $de->date_devi }}</td>
+                                        <td rowspan="{{ $articleCount }}">
+                                            <ul>
+                                                @foreach ($dev as $article)
+                                                    <li>{{ $article->designation_ouvrage }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                    @endif
+                                    <td>{{ $de->prix * $de->qte }} DH</td>
+                                    @php
+                                        $totalHT = floatVal($de->prix) * floatVal($de->qte);
+                                        $projectTotal = $projectTotal + $totalHT;
+                                    @endphp
+                                </tr>
+                            @endforeach
+                            <tr style="background-color: #00f3f3; ">
+                                <td colspan="3"><b>Somme Totale:</b></td>
+                                <td colspan="" align="center">{{ $projectTotal }} DH</td>
+                                <td align="center">{{ ($projectTotal * 0.2) }} DH</td>
+                                <td align="center">{{ $projectTotal + ($projectTotal * 0.2) }} DH</td>
+                            </tr>
+                            @php $projectTotal = 0; @endphp
+                        @endforeach
+                    @endif
+                </tbody>
             </table>
+            
             
             
             
