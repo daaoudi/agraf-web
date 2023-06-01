@@ -23,7 +23,7 @@ liste des Ouvriers
     </div>
   </div>
   
-  <div class="container-fluid" style="position:relative;top:50px;min-height:768px;">
+  <div class="container-lg" style="position:relative;top:50px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back

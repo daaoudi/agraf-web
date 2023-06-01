@@ -23,7 +23,7 @@ liste des Matieres
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-lg" style="position:relative;top:150px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
