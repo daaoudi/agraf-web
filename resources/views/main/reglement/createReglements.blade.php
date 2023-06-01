@@ -72,9 +72,9 @@ l'ajout de reglement.
               </div>
       
               <div class="col-md-12">
-                  <label for="devi_id">Devis:</label>
+                  <label for="devi_id">Projet:</label>
                   <select name="devi_id" class="form-select">
-                      <option selected disabled>Choisir le nom de devis</option>
+                      <option selected disabled>Choisir le nom de projet</option>
                       @foreach ($devis as $devi)
                           <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
                       @endforeach

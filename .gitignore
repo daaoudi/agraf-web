@@ -1,7 +1,10 @@
 *.env
+*.png
+*.xlsx
 */.vscode
 .vscode/settings.json
 .vscode/settings.json
 storage/app/public/images/1685227916_web.png
 public/hot
 public/hot
+public/uploads/devis_docs/1685631226.xlsx

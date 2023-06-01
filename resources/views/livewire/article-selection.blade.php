@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <label for="devi_id">Projet :</label>
     <select class="form-select" id="devi_id" name="devi_id" wire:model="devi_id">
-        <option value="">Select Devi</option>
+        <option value="">Selecter un Projet</option>
         @foreach ($devis as $devi)
             <option value="{{ $devi->id }}">{{ $devi->nom_devi }}</option>
         @endforeach
