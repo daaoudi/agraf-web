@@ -4,7 +4,7 @@ la modification de {{$service->nom_service}}.
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/alt-services-2.jpg');">
   <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
     <h2>Service</h2>
@@ -16,7 +16,7 @@ la modification de {{$service->nom_service}}.
 
   </div>
 </div>
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
   <button class="go-back" onclick="history.back();">
     <span class="material-symbols-outlined">
     arrow_back
@@ -41,22 +41,22 @@ la modification de {{$service->nom_service}}.
         <div class="row gy-3 ">
   
           <div class="col-md-12">
-            <input type="text" name="nom_service" value="{{$service->nom_service}}" class="form-control" required>
+            <input type="text" name="nom_service" value="{{$service->nom_service}}" class="form-control" >
           </div>
   
           <div class="col-md-12">
             <label for="description1" class="form-label">description :</label>
-            <textarea class="form-control" name="description" id="description1"  required rows="3">{{$service->description}}</textarea>
+            <textarea class="form-control" name="description" id="description1"   rows="3">{{$service->description}}</textarea>
             </div>
 
             <div class="col-md-12 ">
                 <label for="service1">Votre Type de Service Ancien :</label>
-              <input type="text" name="type_service" class="form-control" value="{{$service->type_service}}" id="service1"  required>
+              <input type="text" name="type_service" class="form-control" value="{{$service->type_service}}" id="service1"  >
             </div>
 
             <div class="col-md-12">
                 <select name="type_service" class="form-select" >
-                <option selected>Choisir le Type de la Service</option>
+                <option selected >Choisir le Type de la Service</option>
                 <option value="Terrassement">Terrassement</option>
                 <option value="Fondation">Fondation</option>
                 <option value="Dallages et Poteaux">Three</option>

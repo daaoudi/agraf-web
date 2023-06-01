@@ -4,7 +4,7 @@ l'ajout d'un Devi.
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/constructions-3.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Projets</h2>
@@ -16,7 +16,7 @@ l'ajout d'un Devi.
 
     </div>
   </div>
-<div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
         <span class="material-symbols-outlined">
         arrow_back

@@ -1,11 +1,11 @@
 @extends('layout.layouts')
 @section('title')
-    l'ajout d'un ouvrage.
+    l'ajout d'un Article.
 @endsection
 
 @section('content')
     <div class="breadcrumbs d-flex align-items-center"
-        style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+        style="background-image: url('/storage/assets/img/features-1.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
             <h2>Article</h2>
@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="container-lg" style="position:relative;top:50px;min-height:992px;">
+    <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
         <button class="go-back" onclick="history.back();">
             <span class="material-symbols-outlined">
                 arrow_back

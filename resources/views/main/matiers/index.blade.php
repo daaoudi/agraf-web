@@ -1,29 +1,29 @@
 @extends('layout.layouts')
 
 @section('title')
-liste des Matieres
+liste des Achats des MP
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-2.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Matieres</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>Matieres</li>
+        <li>Achats des MP</li>
       </ol>
 
       <a href={{route('matiers.create')}} class="btn btn-warning">
-        + Ajouter un matier
+        + Ajouter des Achats des MP
       </a>
 
 
     </div>
   </div>
 
-  <div class="container-lg" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back

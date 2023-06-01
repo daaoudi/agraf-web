@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="breadcrumbs d-flex align-items-center"
-        style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+        style="background-image: url('/storage/assets/img/constructions-3.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
             <h2>Projet</h2>
@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="container-lg" style="position:relative;top:50px;min-height:992px;">
+    <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-6 " data-aos="fade">
 
@@ -51,17 +51,17 @@
                   
                       <div class="col-md-12">
                         <label for="nom_devi">Nom de devis:</label>
-                        <input type="text" name="nom_devi" id="nom_devi" class="form-control" value="{{ $devi->nom_devi }}" required>
+                        <input type="text" name="nom_devi" id="nom_devi" class="form-control" value="{{ $devi->nom_devi }}" >
                       </div>
                   
                       <div class="col-md-12">
                         <label for="date_devi">Date de devis:</label>
-                        <input type="date" name="date_devi" id="date_devi" class="form-control" value="{{ $devi->date_devi }}" required>
+                        <input type="date" name="date_devi" id="date_devi" class="form-control" value="{{ $devi->date_devi }}" >
                       </div>
                   
                       <div class="col-md-12">
                         <label for="numero_devi">Numéro de devis:</label>
-                        <input type="text" name="numero_devi" id="numero_devi" class="form-control" value="{{ $devi->numero_devi }}" required>
+                        <input type="text" name="numero_devi" id="numero_devi" class="form-control" value="{{ $devi->numero_devi }}" >
                       </div>
                   
                     

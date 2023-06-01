@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/features-4.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
             <h2>Ouvriers</h2>
@@ -16,7 +16,7 @@
 
         </div>
     </div>
-    <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+    <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
         <button class="go-back" onclick="history.back();">
             <span class="material-symbols-outlined">
                 arrow_back
@@ -40,22 +40,22 @@
                     <div class="row gy-3 ">
                         <div class="col-md-12">
                             <label for="nom">Nom :</label>
-                            <input type="text" name="nom" class="form-control" placeholder="Nom" required>
+                            <input type="text" name="nom" class="form-control" placeholder="Nom">
                         </div>
                 
                         <div class="col-md-12">
                             <label for="prenom">Prénom :</label>
-                            <input type="text" name="prenom" class="form-control" placeholder="Prénom" required>
+                            <input type="text" name="prenom" class="form-control" placeholder="Prénom" >
                         </div>
                 
                         <div class="col-md-12">
                             <label for="telephone">Téléphone :</label>
-                            <input type="text" name="telephone" class="form-control" placeholder="Téléphone" required>
+                            <input type="text" name="telephone" class="form-control" placeholder="Téléphone" >
                         </div>
                 
                         <div class="col-md-12">
                             <label for="cin">CIN :</label>
-                            <input type="text" name="cin" class="form-control" placeholder="CIN" required>
+                            <input type="text" name="cin" class="form-control" placeholder="CIN" >
                         </div>
                 
                         <div class="col-md-12 text-center">

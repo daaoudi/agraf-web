@@ -4,7 +4,7 @@ l'ajout d'un services.
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/alt-services-2.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
   
       <h2>Services</h2>
@@ -17,7 +17,7 @@ l'ajout d'un services.
     </div>
   </div>
 
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
   <button class="go-back" onclick="history.back();">
     <span class="material-symbols-outlined">
     arrow_back
@@ -38,11 +38,11 @@ l'ajout d'un services.
         @csrf
           <div class="col-md-12 mb-5">
       <label for="service" class="form-label">Nom Service :</label>
-      <input type="text" class="form-control" name="nom_service" id="service" placeholder="Nom de la Service" required>
+      <input type="text" class="form-control" name="nom_service" id="service" placeholder="Nom de la Service" >
       </div>
       <div class="col-md-12">
       <label for="description1" class="form-label">description de la Service :</label>
-      <textarea class="form-control" name="description" id="description1" placeholder="description de la Service" required rows="3"></textarea>
+      <textarea class="form-control" name="description" id="description1" placeholder="description de la Service"  rows="3"></textarea>
       </div>
       <div class="col-md-12 my-5">
       <label for="img" class="form-label">Image de la Service</label>
@@ -67,7 +67,7 @@ l'ajout d'un services.
       
       
       
-      <div class="col-12">
+      <div class="col-12 text-center">
           <button class="btn btn-primary"  type="submit">Valider</button>
       </div>
         </form>  

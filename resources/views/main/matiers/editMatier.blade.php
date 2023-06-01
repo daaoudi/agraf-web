@@ -17,7 +17,7 @@ la modification d'un Matier : {{$matier->designation}}.
 
   </div>
 </div>
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
   <button class="go-back" onclick="history.back();">
     <span class="material-symbols-outlined">
     arrow_back
@@ -43,27 +43,27 @@ la modification d'un Matier : {{$matier->designation}}.
       
           <div class="col-md-12">
             <label for="designation">Désignation:</label>
-            <input type="text" name="designation" class="form-control" value="{{ $matier->designation }}" id="designation" placeholder="Désignation" required>
+            <input type="text" name="designation" class="form-control" value="{{ $matier->designation }}" id="designation" placeholder="Désignation">
           </div>
       
           <div class="col-md-12">
             <label for="type">Type de Matière:</label>
-            <input type="text" name="type" class="form-control" value="{{ $matier->type }}" id="type" placeholder="Type de Matière" required>
+            <input type="text" name="type" class="form-control" value="{{ $matier->type }}" id="type" placeholder="Type de Matière" >
           </div>
       
           <div class="col-md-12">
             <label for="prix">Prix:</label>
-            <input type="text" name="prix" class="form-control" value="{{ $matier->prix }}" id="prix" placeholder="Prix" required>
+            <input type="text" name="prix" class="form-control" value="{{ $matier->prix }}" id="prix" placeholder="Prix" >
           </div>
       
           <div class="col-md-12">
             <label for="qte">Quantité:</label>
-            <input type="text" name="qte" class="form-control" value="{{ $matier->qte }}" id="qte" placeholder="Quantité" required>
+            <input type="text" name="qte" class="form-control" value="{{ $matier->qte }}" id="qte" placeholder="Quantité" >
           </div>
       
           <div class="col-md-12">
             <label for="matiere_unite">Unité de Matière:</label>
-            <input type="text" name="matiere_unite" class="form-control" value="{{ $matier->matiere_unite }}" id="matiere_unite" placeholder="Unité de Matière" required>
+            <input type="text" name="matiere_unite" class="form-control" value="{{ $matier->matiere_unite }}" id="matiere_unite" placeholder="Unité de Matière" >
           </div>
       
           <div class="col-md-12 text-center">

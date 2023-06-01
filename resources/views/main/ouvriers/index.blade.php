@@ -5,7 +5,7 @@ liste des Ouvriers
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/features-4.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
       <h2>Ouvriers</h2>
@@ -23,7 +23,7 @@ liste des Ouvriers
     </div>
   </div>
   
-  <div class="container-lg" style="position:relative;top:50px;min-height:768px;">
+  <div class="container-lg" style="position:relative;top:100px;min-height:768px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back

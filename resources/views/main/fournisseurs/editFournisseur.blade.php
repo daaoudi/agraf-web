@@ -4,7 +4,7 @@ la modification  d'un Fournisseur : {{$fournisseur->nom .' '. $fournisseur->pren
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/services.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/constructions-2.jpg');">
   <button class="go-back" onclick="history.back();">
     <span class="material-symbols-outlined">
     arrow_back
@@ -21,7 +21,7 @@ la modification  d'un Fournisseur : {{$fournisseur->nom .' '. $fournisseur->pren
     </div>
   </div>
   
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())
@@ -42,21 +42,19 @@ la modification  d'un Fournisseur : {{$fournisseur->nom .' '. $fournisseur->pren
       <div class="row gy-3 ">
 
         <div class="col-md-12">
-          <input type="text" name="nom" value="{{$fournisseur->nom}}" class="form-control" placeholder="Nom" required>
+          <input type="text" name="nom" value="{{$fournisseur->nom}}" class="form-control" placeholder="Nom" >
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="prenom" value="{{$fournisseur->prenom}}" class="form-control" placeholder="Prenom" required>
+          <input type="text" name="prenom" value="{{$fournisseur->prenom}}" class="form-control" placeholder="Prenom" >
         </div>
 
         <div class="col-md-12">
-          <input type="text" name="telephone" value="{{$fournisseur->telephone}}" class="form-control" placeholder="Telephone" required>
+          <input type="text" name="telephone" value="{{$fournisseur->telephone}}" class="form-control" placeholder="Telephone" >
         </div>
 
 
-        <div class="col-md-12">
-          <input type="email" class="form-control" value="{{$fournisseur->email}}" name="email" placeholder="Email" required>
-        </div>
+        
 
         
 

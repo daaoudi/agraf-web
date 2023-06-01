@@ -3,7 +3,7 @@
 Edit de reglement.
 @endsection
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/design-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
   
       <h2>Reglements</h2>
@@ -16,7 +16,7 @@ Edit de reglement.
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+  <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back

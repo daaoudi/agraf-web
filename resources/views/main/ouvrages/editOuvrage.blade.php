@@ -1,23 +1,23 @@
 @extends('layout.layouts')
 @section('title')
-la modification d'un Matier :
+la modification d'un Article:{{$ouvrage->designation_ouvrage}}
 @endsection
 
 @section('content')
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/features-1.jpg');">
  
   <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-    <h2>Ouvrage</h2>
+    <h2>Article</h2>
     <ol>
       <li><a href="/">Home</a></li>
       <li><a href="/dashboard">Dashboard</a></li>
-      <li>Ouvrage</li>
+      <li>Article</li>
     </ol>
 
   </div>
 </div>
-<div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+<div class="container-lg" style="position:relative;top:100px;min-height:992px;">
   <button class="go-back" onclick="history.back();">
     <span class="material-symbols-outlined">
     arrow_back
@@ -37,32 +37,32 @@ la modification d'un Matier :
       <form action="{{ route('ouvrages.update', $ouvrage->id) }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PUT')
-        <h3 class="text-center">Formulaire d'ouvrage : {{ $ouvrage->designation }}</h3>
+        <h3 class="text-center">Formulaire d'ouvrage : {{ $ouvrage->designation_ouvrage }}</h3>
     
         <div class="row gy-3 ">
     
             <div class="col-md-12">
                 <label for="designation_ouvrage">Designation d'ouvrage:</label>
                 <input type="text" name="designation_ouvrage" class="form-control"
-                    value="{{ $ouvrage->designation_ouvrage }}" placeholder="Designation" required>
+                    value="{{ $ouvrage->designation_ouvrage }}" placeholder="Designation" >
             </div>
     
             <div class="col-md-12">
                 <label for="prix_unitaire">Prix unitaire:</label>
                 <input type="text" name="prix_unitaire" class="form-control" value="{{ $ouvrage->prix }}"
-                    placeholder="Prix Unitaire" required>
+                    placeholder="Prix Unitaire" >
             </div>
     
             <div class="col-md-12">
                 <label for="qte">Quantité:</label>
                 <input type="text" name="qte" class="form-control" value="{{ $ouvrage->qte }}" placeholder="Quantité"
-                    required>
+                    >
             </div>
     
             <div class="col-md-12">
                 <label for="unite">Unité:</label>
                 <input type="text" name="unite" class="form-control" value="{{ $ouvrage->unite }}" placeholder="Unité"
-                    required>
+                    >
             </div>
     
             <div class="col-md-12">
