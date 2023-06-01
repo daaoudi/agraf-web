@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-2" style="height: 19em;overflow-y: scroll">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item my-3">
@@ -270,8 +270,8 @@
                     <hr>
                     <div class="flex">
                         <h1>Table de resultats</h1>
-                        <small>Vous douvez remplir tous les tables nécessaire pour voir ce table (charges, projet,
-                            réglement, Poste Ouvrier)</small>
+                        <small>Vous douvez remplir tous les tables nécessaire pour voir ce table (Achats des MP, Projet,
+                            Réglement, Poste Ouvrier)</small>
                     </div>
                     <button id="toggleButton" onclick="toggleTable1()">Afficher/Cacher</button>
 
