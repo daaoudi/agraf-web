@@ -55,13 +55,11 @@
                   <li id="link"><a href="{{url('devis/create')}}" >Projets</a></li>
                   <li id="link"><a href="{{url('fournisseurs/create')}}"  >Fournisseurs </a></li>
                   <li id="link"><a href="{{url('clients/create')}}" >Clients </a></li>
-                  <li id="link"><a href="{{url('matiers/create')}}" >Matieres </a></li>
-                  <li id="link" ><a href="{{url('chantiers/create')}}" >Projets </a></li>
                   <li id="link"><a href="{{url('ouvriers/create')}}" >Ouvries </a></li>
                   <li id="link"><a href="{{url('services/create')}}" >Services </a></li>
                   <li id="link"><a href="{{url('ouvrages/create')}}" >Articles </a></li>
                   <li id="link"><a href="{{url('posteOuvriers/create')}}" >PosteOuvriers </a></li>
-                  <li id="link"><a href="{{url('chargements/create')}}" >Achats de MP </a></li>
+                  <li id="link"><a href="{{url('charges/create')}}" >Achats de MP </a></li>
                   <li id="link"><a href="{{url('reglements/create')}}" >Reglements Clients </a></li>
 
 
