@@ -45,12 +45,12 @@ l'ajout d'un services.
       <textarea class="form-control" name="description" id="description1" placeholder="description de la Service"  rows="3"></textarea>
       </div>
       <div class="col-md-12 my-5">
-      <label for="img" class="form-label">Image de la Service</label>
+      <label for="img"  class="form-label">télécharger Image</label>
       <input class="form-control" name="image" type="file" id="img">
       </div>
       <div class="col-md-12 mb-5">
         <select name="type_service" class="form-select" >
-        <option selected>Choisir le Type de la Service</option>
+        <option disabled selected>Choisir le Type de la Service</option>
         <option value="Terrassement">Terrassement</option>
         <option value="Fondation">Fondation</option>
         <option value="Dallages et Poteaux">Three</option>
