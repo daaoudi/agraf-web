@@ -1,16 +1,16 @@
 @extends('layout.layouts')
 @section('title')
-Modifier les charges
+Modifier les Achats MP
 @endsection
 @section('content')
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
   
-      <h2>Charges</h2>
+      <h2>Achats MP</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>Charges</li>
+        <li><a href="/charges">Achats MP</a></li>
       </ol>
   
     </div>

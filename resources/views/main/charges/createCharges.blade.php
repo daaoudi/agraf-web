@@ -1,16 +1,16 @@
 @extends('layout.layouts')
 @section('title')
-l'ajout des charges.
+l'ajout des Achats MP.
 @endsection
 @section('content')
 <div class="breadcrumbs d-flex align-items-center " style="background-image: url('/storage/assets/img/projects/construction-1.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
   
-      <h2>Matieres</h2>
+      <h2>Achats MP</h2>
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li>Matieres</li>
+        <li><a href="/charges">Achats MP</a> </li>
       </ol>
   
     </div>
@@ -35,7 +35,7 @@ l'ajout des charges.
   
         <form action="{{route('charges.store')}}" enctype="multipart/form-data" method="post">
           @csrf
-          <h3 class="text-center">Formulaire des charges :</h3>
+          <h3 class="text-center">Formulaire des Achats MP :</h3>
           <p class="text-center">Modifier les champs s'il vous plaît.</p>
           <div class="row gy-3 ">
               
