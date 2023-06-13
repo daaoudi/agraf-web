@@ -16,7 +16,7 @@ Modifier les Achats MP
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+  <div class="container-lg" style="position:relative;top:50px;min-height:1200px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -24,7 +24,7 @@ Modifier les Achats MP
     <div class="row d-flex justify-content-center align-items-center">
           <div class="col-md-6 " data-aos="fade">
             @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger text-center">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -36,7 +36,7 @@ Modifier les Achats MP
           @csrf
           @method('PUT')
           <h3 class="text-center">Formulaire des charges :</h3>
-          <p class="text-center">Remplir les champs s'il vous plaît.</p>
+          <p class="text-center">Modifier les champs s'il vous plaît.</p>
           <div class="row gy-3 ">
       
               <div class="col-md-12">

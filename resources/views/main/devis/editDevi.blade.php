@@ -22,7 +22,7 @@
             <div class="col-md-6 " data-aos="fade">
 
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger text-center">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>

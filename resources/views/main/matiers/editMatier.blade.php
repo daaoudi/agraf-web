@@ -25,7 +25,7 @@ la modification d'un Matier : {{$matier->designation}}.
   <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-6 " data-aos="fade">
           @if ($errors->any())
-          <div class="alert alert-danger">
+          <div class="alert alert-danger text-center">
               <ul>
                   @foreach ($errors->all() as $error)
                       <li>{{ $error }}</li>

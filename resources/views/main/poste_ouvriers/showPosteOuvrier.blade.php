@@ -20,7 +20,7 @@
   </div>
 
   
-<div class="container my-5">
+<div class="container-lg my-5">
   <div class="card">
     <div class="card-body">
         <div class="row">

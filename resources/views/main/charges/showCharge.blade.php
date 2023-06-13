@@ -23,7 +23,7 @@ liste des charges
     </div>
   </div>
 
-  <div class="container-fluid" style="position:relative;top:150px;min-height:992px;">
+  <div class="container-lg" style="position:relative;top:50px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -31,11 +31,7 @@ liste des charges
       
       <div class="card">
           <div class="card-header">
-            @if (session()->has('success'))
-            <div class="alert alert-success text-center">
-             {{session()->get('success')}}
-            </div>
-            @endif
+            
                    </div>
           <!-- /.card-header -->
           <div class="card-body">

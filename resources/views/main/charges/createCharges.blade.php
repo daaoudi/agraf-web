@@ -16,7 +16,7 @@ l'ajout des Achats MP.
     </div>
   </div>
 
-  <div class="container-fluid my-5" style="position:relative;top:50px;min-height:1200px;">
+  <div class="container-lg my-5" style="position:relative;top:50px;min-height:1200px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
@@ -24,7 +24,7 @@ l'ajout des Achats MP.
     <div class="row d-flex justify-content-center align-items-center">
           <div class="col-md-6 " data-aos="fade">
             @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger text-center">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>

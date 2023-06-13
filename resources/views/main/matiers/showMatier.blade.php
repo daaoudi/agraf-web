@@ -18,7 +18,7 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
     </div>
   </div>
 
-  <div class="container">
+  <div class="container-lg">
     <div class="row justify-content-center mt-5">
       <div class="col-md-8">
         <div class="card">
@@ -28,11 +28,7 @@ Matiere : {{$matier->designation}} Type : {{$matier->type}}
             </button>
           </div>
           <div class="card-body">
-            @if (session()->has('success'))
-            <div class="alert alert-success">
-              {{ session()->get('success') }}
-            </div>
-            @endif
+           
   
             <div class="card-content">
               <div class="mb-3">

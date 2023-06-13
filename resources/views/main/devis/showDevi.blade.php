@@ -13,7 +13,7 @@
 
     </div>
   </div>
-  <div class="container">
+  <div class="container-lg">
     <div class="row justify-content-center mt-5">
       <div class="col-md-8">
         <div class="card">
@@ -22,11 +22,7 @@
               <button class="go-back" onclick="history.back();">
                 <span class="material-symbols-outlined">arrow_back</span>
               </button>
-              @if (session()->has('success'))
-              <div class="alert alert-success">
-                {{ session()->get('success') }}
-              </div>
-              @endif
+              
   
               <div class="row mt-4">
                 <div class="col-md-12">

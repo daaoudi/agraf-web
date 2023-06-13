@@ -32,7 +32,7 @@ liste des Achats des MP
       <div class="card">
           <div class="card-header">
             @if (session()->has('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success text-center">
              {{session()->get('success')}}
             </div>
             @endif

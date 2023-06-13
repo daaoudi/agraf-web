@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="container-fluid" style="position:relative;top:50px;min-height:992px;">
+    <div class="container-lg" style="position:relative;top:50px;min-height:992px;">
        
         <button class="go-back" onclick="history.back();">
             <span class="material-symbols-outlined">
@@ -26,7 +26,7 @@
             <div class="col-md-6 " data-aos="fade">
 
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger text-center">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>

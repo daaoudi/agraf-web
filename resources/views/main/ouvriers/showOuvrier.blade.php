@@ -27,11 +27,7 @@
             </button>
           </div>
           <div class="card-body">
-            @if (session()->has('success'))
-            <div class="alert alert-success">
-              {{ session()->get('success') }}
-            </div>
-            @endif
+          
   
             <div class="card-content">
               <div class="row mb-4">
