@@ -23,7 +23,7 @@ liste des Achats des MP
     </div>
   </div>
 
-  <div class="container-lg" style="position:relative;top:100px;min-height:992px;">
+  <div class="container-xl" style="position:relative;top:100px;min-height:992px;">
     <button class="go-back" onclick="history.back();">
       <span class="material-symbols-outlined">
       arrow_back
