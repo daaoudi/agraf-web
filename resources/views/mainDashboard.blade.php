@@ -66,7 +66,7 @@
             <a href="/" class="brand-link">
                 <img src="/storage/assets/img/agraf.png" alt="AGRAF Logo" class="brand-image rounded-1 elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">Agrtravis</span>
+                <span class="brand-text font-weight-light">AGRtravis</span>
             </a>
 
             <!-- Sidebar -->
@@ -269,7 +269,7 @@
 
                     <hr>
                     <div class="flex">
-                        <h1>Table de resultats</h1>
+                        <h1>Tableau de Board</h1>
                         <small>Vous douvez remplir tous les tables nécessaire pour voir ce table (Achats des MP, Projet,
                             Réglement, Poste Ouvrier)</small>
                     </div>
@@ -282,7 +282,7 @@
                                     <th>Projet</th>
                                     <th>Consommation MOD</th>
                                     <th>Consommation MP</th>
-                                    <th>Cout Totale</th>
+                                    <th>Cout Total</th>
                                     <th>Resultat</th>
                                 </tr>
                             </thead>
@@ -403,7 +403,7 @@
 
 
                     <hr>
-                    <h1>Table de crédit par Fournisseur</h1>
+                    <h1>Etat Fournisseur</h1>
                     <button id="toggleButton" onclick="toggleTable3()">Afficher/Cacher</button>
                     <div id='tableContainer3' class="foldable-table table-responsive">
                         <table class="table table-striped table-bordered mt-5">
@@ -468,7 +468,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="/">Agrtravis</a>.</strong>
+            <strong>Copyright &copy; 2023 <a href="/">AGRtravis</a>.</strong>
             All rights reserved.
 
         </footer>

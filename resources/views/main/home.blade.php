@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-Agrtravis - Construction Et Amenagement 
+AGRtravis - Construction Et Amenagement 
 @endsection
 
 @section('content')
@@ -13,8 +13,8 @@ Agrtravis - Construction Et Amenagement
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <h2 data-aos="fade-down">Bienvenue au <span>Agrtravis</span></h2>
-        <p data-aos="fade-up">pour une meilleure construction et aménagement agrtravis est la meilleure solution dans le domaine.</p>
+        <h2 data-aos="fade-down">Bienvenue au <span>AGRtravis</span></h2>
+        <p data-aos="fade-up">pour une meilleure construction et aménagement AGRtravis est la meilleure solution dans le domaine.</p>
         <a data-aos="fade-up" data-aos-delay="100" href="#services" class="btn-get-started">Commencer</a>
       </div>
     </div>
@@ -52,7 +52,7 @@ Agrtravis - Construction Et Amenagement
 
     <div class="section-header">
       <h2>Services</h2>
-      <p>Présentation des Services de l'entreprise Agrtravis</p>
+      <p>Présentation des Services de l'entreprise AGRtravis</p>
     </div>
 
     <div class="row gy-4">
@@ -212,7 +212,7 @@ Agrtravis - Construction Et Amenagement
       <div class="col-lg-6 img-bg" style="background-image: url('/storage/assets/img/alt-services.jpg');" data-aos="zoom-in" data-aos-delay="100"></div>
 
       <div class="col-lg-5 d-flex flex-column justify-content-center">
-        <h3>Agrtravis - Construction Et Amenagement </h3>
+        <h3>AGRtravis - Construction Et Amenagement </h3>
         <p>Agratravis Entreprise de Construction Et Amenagement En Forme Juridique <b>SARL</b> crée en Febrayer 2022 <br> a Capitale <b>500 000 DH</b> </p>
 
         <div class="icon-box d-flex justify-content-between align-items-center position-relative px-3 fade-in" data-aos="fade-up" data-aos-delay="100">

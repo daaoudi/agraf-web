@@ -36,7 +36,7 @@ l'ajout des Achats MP.
         <form action="{{route('charges.store')}}" enctype="multipart/form-data" method="post">
           @csrf
           <h3 class="text-center">Formulaire des Achats MP :</h3>
-          <p class="text-center">Modifier les champs s'il vous plaît.</p>
+          <p class="text-center">Remplir les champs s'il vous plaît.</p>
           <div class="row gy-3 ">
               
                       <div class="col-md-12">
