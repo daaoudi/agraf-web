@@ -34,7 +34,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
        
-         <img src="/agraf.png"  class="rounded-3" style="filter: contrast(150%);-webkit-filter: contrast(150%); min-width:60px;min-height:80px; " alt="AGRtravis">
+         <img src="/agraf.png"  class="rounded-3" style=" min-width:80px;min-height:90px; " alt="AGRtravis">
         <h1 class="text-white">AGRtravis<span>.</span></h1>
       </a>
 
